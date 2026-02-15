@@ -1,49 +1,107 @@
+const footerColumns = [
+  {
+    heading: "Alfie AI",
+    links: [
+      { label: "How Alfie Works", href: "#alfie" },
+      { label: "Alfie for Individuals", href: "#" },
+      { label: "Alfie for Businesses", href: "#" },
+      { label: "Alfie for Fintechs & Platforms", href: "#" },
+      { label: "Alfie Platform", href: "#" },
+    ],
+  },
+  {
+    heading: "Banking",
+    links: [
+      { label: "Personal Accounts", href: "#" },
+      { label: "Cards & Payments", href: "#" },
+      { label: "Savings & Goals", href: "#" },
+      { label: "Peer-to-Peer Payments", href: "#" },
+      { label: "Interac", href: "#" },
+    ],
+  },
+  {
+    heading: "Business",
+    links: [
+      { label: "Business Accounts", href: "#" },
+      { label: "Expense Tracking", href: "#" },
+      { label: "Bookkeeping Support", href: "#" },
+      { label: "Tax Readiness", href: "#" },
+      { label: "Financial Insights", href: "#" },
+    ],
+  },
+  {
+    heading: "Why Renda",
+    links: [
+      { label: "Our Philosophy", href: "#philosophy" },
+      { label: "Signal Over Noise", href: "#signals" },
+      { label: "Trust & Responsibility", href: "#trust" },
+      { label: "AI-Native Banking", href: "#belief" },
+    ],
+  },
+  {
+    heading: "Platform",
+    links: [
+      { label: "Alfie as Infrastructure", href: "#infrastructure" },
+      { label: "Developer & Integration", href: "#" },
+      { label: "Security & Compliance", href: "#" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About Us", href: "#company" },
+      { label: "Careers", href: "#" },
+      { label: "Blog", href: "#" },
+      { label: "News", href: "#" },
+      { label: "Contact", href: "#" },
+    ],
+  },
+  {
+    heading: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Use", href: "#" },
+      { label: "Compliance & Disclosures", href: "#" },
+    ],
+  },
+];
+
 export default function Footer() {
   return (
-    <footer id="company" className="border-t border-border py-16">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          <div>
-            <p className="text-xl font-bold text-foreground">Renda</p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              The AI-native bank.
-            </p>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-4">
-              Alfie AI
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Individuals</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Businesses</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Platform</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-4">
-              Company
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Press</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-4">
-              Legal
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Privacy</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Terms</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Security</a></li>
-            </ul>
-          </div>
+    <footer id="company" className="border-t border-border py-16 lg:py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Brand row */}
+        <div className="mb-14">
+          <p className="text-xl font-bold text-foreground">Renda</p>
+          <p className="mt-2 text-sm text-muted-foreground max-w-xs">
+            The AI-native bank. Intelligence-first financial infrastructure for individuals and businesses.
+          </p>
         </div>
 
+        {/* Link columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-x-6 gap-y-10">
+          {footerColumns.map((col) => (
+            <div key={col.heading}>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-4">
+                {col.heading}
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-border text-xs text-muted-foreground">
           © {new Date().getFullYear()} Renda. All rights reserved.
         </div>

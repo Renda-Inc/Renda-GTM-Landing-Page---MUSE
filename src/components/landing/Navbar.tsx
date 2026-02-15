@@ -69,7 +69,7 @@ const navGroups: NavGroup[] = [
       {
         heading: "",
         links: [
-          { label: "About Us", href: "#company" },
+          { label: "About Us", href: "/about" },
           { label: "Careers", href: "#" },
           { label: "Blog / Insights", href: "#" },
           { label: "News", href: "#" },

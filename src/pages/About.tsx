@@ -1,6 +1,10 @@
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
+import headshotAlexandre from "@/assets/headshot-alexandre.jpg";
+import headshotSofia from "@/assets/headshot-sofia.jpg";
+import headshotMarcus from "@/assets/headshot-marcus.jpg";
+import headshotPriya from "@/assets/headshot-priya.jpg";
 
 /* ── Reusable fade-in wrapper ─────────────────────────────── */
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -39,10 +43,10 @@ const timeline = [
 ];
 
 const leaders = [
-  { name: "Alexandre Dumont", role: "Co-Founder & CEO", bio: "Former fintech executive with 12 years building financial products. Obsessed with making intelligence accessible." },
-  { name: "Sofia Chen", role: "Co-Founder & CTO", bio: "ML engineering leader with a background in applied AI at scale. Designed Alfie's reasoning architecture from scratch." },
-  { name: "Marcus Williams", role: "Chief Risk Officer", bio: "20 years in banking regulation and compliance. Ensures every system meets the highest standards of responsibility." },
-  { name: "Priya Sharma", role: "VP of Product", bio: "Product leader focused on building financial tools that respect attention and deliver clarity over complexity." },
+  { name: "Alexandre Dumont", role: "Co-Founder & CEO", bio: "Former fintech executive with 12 years building financial products. Obsessed with making intelligence accessible.", photo: headshotAlexandre },
+  { name: "Sofia Chen", role: "Co-Founder & CTO", bio: "ML engineering leader with a background in applied AI at scale. Designed Alfie's reasoning architecture from scratch.", photo: headshotSofia },
+  { name: "Marcus Williams", role: "Chief Risk Officer", bio: "20 years in banking regulation and compliance. Ensures every system meets the highest standards of responsibility.", photo: headshotMarcus },
+  { name: "Priya Sharma", role: "VP of Product", bio: "Product leader focused on building financial tools that respect attention and deliver clarity over complexity.", photo: headshotPriya },
 ];
 
 /* ── Page ──────────────────────────────────────────────────── */
@@ -170,12 +174,11 @@ export default function About() {
           <div className="grid sm:grid-cols-2 gap-12">
             {leaders.map((l) => (
               <div key={l.name} className="flex gap-5">
-                {/* Avatar placeholder */}
-                <div className="w-16 h-16 rounded-full bg-muted/40 border border-border shrink-0 flex items-center justify-center">
-                  <span className="text-lg font-semibold text-muted-foreground">
-                    {l.name.split(" ").map((n) => n[0]).join("")}
-                  </span>
-                </div>
+                <img
+                  src={l.photo}
+                  alt={l.name}
+                  className="w-16 h-16 rounded-full object-cover border border-border shrink-0"
+                />
                 <div>
                   <h3 className="text-base font-semibold text-foreground">{l.name}</h3>
                   <p className="text-sm text-accent-foreground font-medium">{l.role}</p>

@@ -183,7 +183,7 @@ export default function About() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
             {leaders.map((l) => (
               <div key={l.name} className="group text-center">
-                <div className="relative mx-auto w-28 h-28 md:w-36 md:h-36 mb-4 overflow-hidden rounded-2xl">
+                <div className="relative mx-auto w-40 h-40 md:w-48 md:h-48 mb-4 overflow-hidden rounded-2xl">
                   <img
                     src={l.photo}
                     alt={l.name}

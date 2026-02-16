@@ -43,10 +43,17 @@ const timeline = [
 ];
 
 const leaders = [
-  { name: "Alexandre Dumont", role: "Co-Founder & CEO", bio: "Former fintech executive with 12 years building financial products. Obsessed with making intelligence accessible.", photo: headshotAlexandre },
-  { name: "Sofia Chen", role: "Co-Founder & CTO", bio: "ML engineering leader with a background in applied AI at scale. Designed Alfie's reasoning architecture from scratch.", photo: headshotSofia },
-  { name: "Marcus Williams", role: "Chief Risk Officer", bio: "20 years in banking regulation and compliance. Ensures every system meets the highest standards of responsibility.", photo: headshotMarcus },
-  { name: "Priya Sharma", role: "VP of Product", bio: "Product leader focused on building financial tools that respect attention and deliver clarity over complexity.", photo: headshotPriya },
+  { name: "Alexandre Dumont", role: "Co-Founder & CEO", photo: headshotAlexandre },
+  { name: "Sofia Chen", role: "Chief Technology Officer", photo: headshotSofia },
+  { name: "Marcus Williams", role: "Chief Operating Officer", photo: headshotMarcus },
+  { name: "Priya Sharma", role: "Head of Product", photo: headshotPriya },
+  { name: "Daniel Okafor", role: "Chief Financial Officer", photo: headshotMarcus },
+  { name: "Isabelle Tremblay", role: "Chief Compliance & Risk Officer", photo: headshotSofia },
+  { name: "Liam Carter", role: "Head of Branding, Growth & Marketing", photo: headshotAlexandre },
+  { name: "Anika Patel", role: "Head of Data & AI", photo: headshotPriya },
+  { name: "Rachel Nguyen", role: "VP, People & Culture", photo: headshotSofia },
+  { name: "James Thornton", role: "General Counsel", photo: headshotMarcus },
+  { name: "Kofi Asante", role: "Head of Banking Platforms", photo: headshotAlexandre },
 ];
 
 /* ── Page ──────────────────────────────────────────────────── */
@@ -166,24 +173,25 @@ export default function About() {
 
       {/* ── Leadership ────────────────────────────────────── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Leadership</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
-            The people behind Renda.
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-12">
+        <Fade className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">Leadership</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+              The people behind Renda.
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
             {leaders.map((l) => (
-              <div key={l.name} className="flex gap-5">
-                <img
-                  src={l.photo}
-                  alt={l.name}
-                  className="w-16 h-16 rounded-full object-cover border border-border shrink-0"
-                />
-                <div>
-                  <h3 className="text-base font-semibold text-foreground">{l.name}</h3>
-                  <p className="text-sm text-accent-foreground font-medium">{l.role}</p>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{l.bio}</p>
+              <div key={l.name} className="group text-center">
+                <div className="relative mx-auto w-28 h-28 md:w-36 md:h-36 mb-4 overflow-hidden rounded-2xl">
+                  <img
+                    src={l.photo}
+                    alt={l.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                  />
                 </div>
+                <h3 className="text-sm md:text-base font-semibold text-foreground">{l.name}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground mt-1 leading-snug">{l.role}</p>
               </div>
             ))}
           </div>

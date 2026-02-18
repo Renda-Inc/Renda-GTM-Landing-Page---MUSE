@@ -13,9 +13,9 @@ const navGroups: NavGroup[] = [
       {
         heading: "Personal Banking",
         links: [
-          { label: "Smart Accounts", href: "#" },
-          { label: "Cards & Payments", href: "#" },
-          { label: "Savings & Goals", href: "#" },
+          { label: "Smart Accounts", href: "/personal-banking#smart-accounts" },
+          { label: "Cards & Payments", href: "/personal-banking#cards-payments" },
+          { label: "Savings & Goals", href: "/personal-banking#savings-goals" },
         ],
       },
       {

@@ -71,7 +71,7 @@ const navGroups: NavGroup[] = [
         links: [
           { label: "About Us", href: "/about" },
           { label: "Careers", href: "/careers" },
-          { label: "Blog / Insights", href: "#" },
+          { label: "Blog / Insights", href: "/blog" },
           { label: "News", href: "#" },
         ],
       },

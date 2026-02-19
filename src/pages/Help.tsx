@@ -3,6 +3,12 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { ChevronRight } from "lucide-react";
+import helpGettingStarted from "@/assets/help-getting-started.jpg";
+import helpAccountsCards from "@/assets/help-accounts-cards.jpg";
+import helpPayments from "@/assets/help-payments.jpg";
+import helpAlfieAi from "@/assets/help-alfie-ai.jpg";
+import helpSecurity from "@/assets/help-security.jpg";
+import helpBilling from "@/assets/help-billing.jpg";
 
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const { ref, isVisible } = useFadeIn();
@@ -24,6 +30,7 @@ export interface HelpCategory {
   slug: string;
   title: string;
   description: string;
+  image: string;
   topics: { title: string; summary: string }[];
 }
 
@@ -31,6 +38,7 @@ export const helpCategories: HelpCategory[] = [
   {
     slug: "getting-started",
     title: "Getting Started",
+    image: helpGettingStarted,
     description: "Everything you need to open your account and start using Renda.",
     topics: [
       { title: "How to create an account", summary: "Step-by-step guide to signing up for Renda and verifying your identity." },
@@ -42,6 +50,7 @@ export const helpCategories: HelpCategory[] = [
   {
     slug: "accounts-and-cards",
     title: "Accounts & Cards",
+    image: helpAccountsCards,
     description: "Manage your personal accounts, cards, and payment methods.",
     topics: [
       { title: "Account types explained", summary: "Understand the difference between Everyday, Savings, and Goal accounts." },
@@ -53,6 +62,7 @@ export const helpCategories: HelpCategory[] = [
   {
     slug: "payments-and-transfers",
     title: "Payments & Transfers",
+    image: helpPayments,
     description: "Send money, pay bills, and manage your transactions.",
     topics: [
       { title: "Sending an Interac e-Transfer", summary: "How to send and receive money instantly across Canada." },
@@ -64,6 +74,7 @@ export const helpCategories: HelpCategory[] = [
   {
     slug: "alfie-ai",
     title: "Alfie AI Assistant",
+    image: helpAlfieAi,
     description: "Learn how to get the most out of Renda's intelligent assistant.",
     topics: [
       { title: "What Alfie can do", summary: "An overview of Alfie's capabilities — from spending insights to proactive alerts." },
@@ -75,6 +86,7 @@ export const helpCategories: HelpCategory[] = [
   {
     slug: "security-and-privacy",
     title: "Security & Privacy",
+    image: helpSecurity,
     description: "Protect your account and understand how we keep your data safe.",
     topics: [
       { title: "Two-factor authentication", summary: "Enable 2FA for an extra layer of security on your account." },
@@ -86,6 +98,7 @@ export const helpCategories: HelpCategory[] = [
   {
     slug: "billing-and-fees",
     title: "Billing & Fees",
+    image: helpBilling,
     description: "Understand pricing, subscription plans, and any applicable fees.",
     topics: [
       { title: "Renda pricing plans", summary: "Compare features across Free, Plus, and Premium tiers." },
@@ -123,8 +136,14 @@ export default function Help() {
             {helpCategories.map((cat) => (
               <div
                 key={cat.slug}
-                className="rounded-lg border border-border bg-card p-6 flex flex-col"
+                className="rounded-lg border border-border bg-card overflow-hidden flex flex-col"
               >
+                <img
+                  src={cat.image}
+                  alt={cat.title}
+                  className="w-full h-40 object-cover"
+                />
+                <div className="p-6 flex flex-col flex-1">
                 <h2 className="text-lg font-semibold text-foreground">{cat.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{cat.description}</p>
 
@@ -145,6 +164,7 @@ export default function Help() {
                   See all topics
                   <ChevronRight className="w-4 h-4" />
                 </Link>
+                </div>
               </div>
             ))}
           </div>

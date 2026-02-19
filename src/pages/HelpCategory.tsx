@@ -59,6 +59,11 @@ export default function HelpCategory() {
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             {category.description}
           </p>
+          <img
+            src={category.image}
+            alt={category.title}
+            className="mt-10 w-full max-w-xl rounded-lg object-cover h-56"
+          />
         </Fade>
       </section>
 

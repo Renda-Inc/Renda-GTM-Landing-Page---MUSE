@@ -42,7 +42,7 @@ export default function PersonalBanking() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
             Personal Banking
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground font-serif">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
             Banking that thinks ahead.
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -75,7 +75,7 @@ export default function PersonalBanking() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               Smart Accounts
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
               Your money shouldn't just sit there. It should think.
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -149,7 +149,7 @@ export default function PersonalBanking() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               Cards & Payments
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
               A card that learns. Payments that just work.
             </h2>
           </div>
@@ -237,7 +237,7 @@ export default function PersonalBanking() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               Savings & Goals
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
               Savings that adapt to your life.
             </h2>
             <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -317,7 +317,7 @@ export default function PersonalBanking() {
       {/* ════════════ CLOSING CTA ════════════ */}
       <section className="py-24 lg:py-32">
         <FadeSection className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
             One intelligent system. Total financial clarity.
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground">

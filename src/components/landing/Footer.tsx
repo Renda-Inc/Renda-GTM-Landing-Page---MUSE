@@ -57,6 +57,14 @@ const footerColumns = [
     ],
   },
   {
+    heading: "Support",
+    links: [
+      { label: "Help", href: "/help" },
+      { label: "Contact Us", href: "/help#contact" },
+      { label: "Refer a Friend", href: "/help#refer" },
+    ],
+  },
+  {
     heading: "Legal",
     links: [
       { label: "Privacy Policy", href: "#" },

@@ -139,7 +139,7 @@ export default function Blog() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
             Blog & Insights
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground font-serif max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground max-w-3xl">
             Ideas shaping the future of intelligent finance.
           </h1>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
@@ -261,7 +261,7 @@ export default function Blog() {
       {/* ════════════ NEWSLETTER CTA ════════════ */}
       <section className="py-20 lg:py-24 border-t border-border">
         <FadeSection className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground font-serif">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
             Stay informed.
           </h2>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">

@@ -5,6 +5,9 @@ import headshotAlexandre from "@/assets/headshot-alexandre.jpg";
 import headshotSofia from "@/assets/headshot-sofia.jpg";
 import headshotMarcus from "@/assets/headshot-marcus.jpg";
 import headshotPriya from "@/assets/headshot-priya.jpg";
+import aboutHero from "@/assets/about-hero.jpg";
+import aboutAlfie from "@/assets/about-alfie.jpg";
+import aboutCanada from "@/assets/about-canada.jpg";
 
 /* ── Reusable fade-in wrapper ─────────────────────────────── */
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -73,6 +76,12 @@ export default function About() {
             An AI-native financial institution powered by Alfie — designed to understand your money, not just move it.
           </p>
         </Fade>
+        {/* Hero image */}
+        <Fade className="max-w-5xl mx-auto px-6 mt-14">
+          <div className="rounded-2xl overflow-hidden">
+            <img src={aboutHero} alt="Renda team working together" className="w-full h-64 md:h-80 lg:h-96 object-cover" />
+          </div>
+        </Fade>
       </section>
 
       <Divider />
@@ -102,21 +111,28 @@ export default function About() {
 
       {/* ── What We're Building ────────────────────────────── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Alfie: a financial reasoning system.
-          </h2>
-          <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p>
-              Alfie isn't a chatbot or a dashboard overlay. It's a modular intelligence engine built into every layer of the Renda experience — from individual insights to cross-account reasoning, from real-time signals to long-term financial modeling.
-            </p>
-            <p>
-              Where traditional banks process transactions, Alfie processes meaning. It understands the context behind your money — why things happened, what's changing, and what deserves your attention.
-            </p>
-            <p className="text-foreground font-medium">
-              We didn't bolt AI onto banking. We built banking on top of intelligence.
-            </p>
+        <Fade className="max-w-5xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+                Alfie: a financial reasoning system.
+              </h2>
+              <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Alfie isn't a chatbot or a dashboard overlay. It's a modular intelligence engine built into every layer of the Renda experience — from individual insights to cross-account reasoning, from real-time signals to long-term financial modeling.
+                </p>
+                <p>
+                  Where traditional banks process transactions, Alfie processes meaning. It understands the context behind your money — why things happened, what's changing, and what deserves your attention.
+                </p>
+                <p className="text-foreground font-medium">
+                  We didn't bolt AI onto banking. We built banking on top of intelligence.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden">
+              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-72 lg:h-96 object-cover" />
+            </div>
           </div>
         </Fade>
       </section>
@@ -144,21 +160,21 @@ export default function About() {
         </Fade>
       </section>
 
-      {/* ── Our Journey ───────────────────────────────────── */}
+      {/* ── Our Journey (horizontal timeline) ─────────────── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-3xl mx-auto px-6">
+        <Fade className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             From conviction to product.
           </h2>
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border" />
-            <div className="space-y-10">
+          <div className="relative overflow-x-auto pb-4">
+            {/* Horizontal line */}
+            <div className="absolute top-[7px] left-0 right-0 h-px bg-border" style={{ minWidth: `${timeline.length * 240}px` }} />
+            <div className="flex gap-0" style={{ minWidth: `${timeline.length * 240}px` }}>
               {timeline.map((t, i) => (
-                <div key={i} className="relative pl-10">
+                <div key={i} className="relative pt-8 pr-6" style={{ minWidth: 240, flex: '1 0 240px' }}>
                   {/* Dot */}
-                  <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-accent-foreground bg-background" />
+                  <div className="absolute top-0 left-0 w-[15px] h-[15px] rounded-full border-2 border-accent-foreground bg-background" />
                   <p className="text-xs font-semibold uppercase tracking-[0.15em] text-accent-foreground">{t.year}</p>
                   <h3 className="mt-1 text-base font-semibold text-foreground">{t.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{t.desc}</p>
@@ -183,7 +199,7 @@ export default function About() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
             {leaders.map((l) => (
               <div key={l.name} className="group text-center">
-                <div className="relative mx-auto w-40 h-40 md:w-48 md:h-48 mb-4 overflow-hidden rounded-2xl">
+                <div className="relative mx-auto w-44 h-44 md:w-52 md:h-52 mb-4 overflow-hidden rounded-2xl">
                   <img
                     src={l.photo}
                     alt={l.name}
@@ -202,18 +218,25 @@ export default function About() {
 
       {/* ── Built in Canada ───────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-surface-elevated">
-        <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Built in Canada. Designed for the world.
-          </h2>
-          <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p>
-              Renda is headquartered in Toronto, built on Canadian values of stability, inclusion, and responsible innovation. But our ambition extends far beyond borders.
-            </p>
-            <p>
-              We're designing every system — from compliance architecture to Alfie's reasoning engine — to scale globally from day one.
-            </p>
+        <Fade className="max-w-5xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+                Built in Canada. Designed for the world.
+              </h2>
+              <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Renda is headquartered in Toronto, built on Canadian values of stability, inclusion, and responsible innovation. But our ambition extends far beyond borders.
+                </p>
+                <p>
+                  We're designing every system — from compliance architecture to Alfie's reasoning engine — to scale globally from day one.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden">
+              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-72 lg:h-96 object-cover" />
+            </div>
           </div>
         </Fade>
       </section>

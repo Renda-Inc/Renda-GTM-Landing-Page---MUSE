@@ -3,6 +3,15 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
 
+import blogAiNativeBanking from "@/assets/blog-ai-native-banking.jpg";
+import blogSmartspend from "@/assets/blog-smartspend.jpg";
+import blogSignalNoise from "@/assets/blog-signal-noise.jpg";
+import blogResponsibleAi from "@/assets/blog-responsible-ai.jpg";
+import blogSeedRound from "@/assets/blog-seed-round.jpg";
+import blogFutureSavings from "@/assets/blog-future-savings.jpg";
+import blogOpenBanking from "@/assets/blog-open-banking.jpg";
+import blogAlfiePlatform from "@/assets/blog-alfie-platform.jpg";
+
 /* ─── Fade wrapper ─── */
 function FadeSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const { ref, isVisible } = useFadeIn();
@@ -27,7 +36,20 @@ interface Article {
   date: string;
   readTime: string;
   featured?: boolean;
+  image: string;
 }
+
+/* ─── Image map by slug ─── */
+const imageMap: Record<string, string> = {
+  "why-ai-native-banking": blogAiNativeBanking,
+  "introducing-smartspend": blogSmartspend,
+  "signal-over-noise-banking": blogSignalNoise,
+  "responsible-ai-finance": blogResponsibleAi,
+  "renda-seed-announcement": blogSeedRound,
+  "future-of-savings": blogFutureSavings,
+  "open-banking-canada": blogOpenBanking,
+  "building-alfie-platform": blogAlfiePlatform,
+};
 
 /* ─── Static articles ─── */
 const articles: Article[] = [
@@ -40,6 +62,7 @@ const articles: Article[] = [
     date: "Feb 12, 2026",
     readTime: "8 min read",
     featured: true,
+    image: blogAiNativeBanking,
   },
   {
     slug: "introducing-smartspend",
@@ -50,6 +73,7 @@ const articles: Article[] = [
     date: "Feb 5, 2026",
     readTime: "5 min read",
     featured: true,
+    image: blogSmartspend,
   },
   {
     slug: "signal-over-noise-banking",
@@ -59,6 +83,7 @@ const articles: Article[] = [
     category: "AI & Finance",
     date: "Jan 28, 2026",
     readTime: "6 min read",
+    image: blogSignalNoise,
   },
   {
     slug: "responsible-ai-finance",
@@ -68,6 +93,7 @@ const articles: Article[] = [
     category: "Industry",
     date: "Jan 20, 2026",
     readTime: "7 min read",
+    image: blogResponsibleAi,
   },
   {
     slug: "renda-seed-announcement",
@@ -77,6 +103,7 @@ const articles: Article[] = [
     category: "Company",
     date: "Jan 14, 2026",
     readTime: "4 min read",
+    image: blogSeedRound,
   },
   {
     slug: "future-of-savings",
@@ -86,6 +113,7 @@ const articles: Article[] = [
     category: "AI & Finance",
     date: "Jan 6, 2026",
     readTime: "6 min read",
+    image: blogFutureSavings,
   },
   {
     slug: "open-banking-canada",
@@ -95,6 +123,7 @@ const articles: Article[] = [
     category: "Industry",
     date: "Dec 18, 2025",
     readTime: "7 min read",
+    image: blogOpenBanking,
   },
   {
     slug: "building-alfie-platform",
@@ -104,6 +133,7 @@ const articles: Article[] = [
     category: "Product",
     date: "Dec 10, 2025",
     readTime: "9 min read",
+    image: blogAlfiePlatform,
   },
 ];
 
@@ -160,11 +190,12 @@ export default function Blog() {
                   href="#"
                   className="group block border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-colors"
                 >
-                  {/* Image placeholder */}
-                  <div className="aspect-[16/9] bg-card flex items-center justify-center">
-                    <span className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
-                      Featured Image
-                    </span>
+                  <div className="aspect-[16/9] bg-card overflow-hidden">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                   <div className="p-6 lg:p-8 space-y-3">
                     <div className="flex items-center gap-3 text-xs">
@@ -223,10 +254,12 @@ export default function Blog() {
                 className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-8 first:pt-0"
               >
                 {/* Thumbnail */}
-                <div className="shrink-0 w-full md:w-48 aspect-[16/9] md:aspect-[4/3] rounded-xl bg-card flex items-center justify-center">
-                  <span className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
-                    Image
-                  </span>
+                <div className="shrink-0 w-full md:w-48 aspect-[16/9] md:aspect-[4/3] rounded-xl bg-card overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 {/* Content */}
                 <div className="flex-1 space-y-2">

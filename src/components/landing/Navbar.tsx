@@ -72,7 +72,6 @@ const navGroups: NavGroup[] = [
           { label: "About Us", href: "/about" },
           { label: "Careers", href: "/careers" },
           { label: "Blog / Insights", href: "/blog" },
-          { label: "News", href: "#" },
         ],
       },
     ],

@@ -75,41 +75,44 @@ const footerColumns = [
 
 export default function Footer() {
   return (
-    <footer id="company" className="border-t border-border py-16 lg:py-20">
+    <footer id="company" className="bg-surface-dark text-surface-dark-foreground py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Brand row */}
-        <div className="mb-14">
-          <p className="text-xl font-bold text-foreground">Renda</p>
-          <p className="mt-2 text-sm text-muted-foreground max-w-xs">
-            The AI-native bank. Intelligence-first financial infrastructure for individuals and businesses.
-          </p>
-        </div>
+        {/* Main layout: brand left, links right */}
+        <div className="flex flex-col lg:flex-row gap-14 lg:gap-20">
+          {/* Brand / description — left side */}
+          <div className="lg:w-1/3 shrink-0">
+            <p className="text-xl font-bold">Renda</p>
+            <p className="mt-3 text-sm text-surface-dark-foreground/60 max-w-xs leading-relaxed">
+              The AI-native bank. Intelligence-first financial infrastructure for individuals and businesses.
+            </p>
+          </div>
 
-        {/* Link columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-x-6 gap-y-10">
-          {footerColumns.map((col) => (
-            <div key={col.heading}>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-4">
-                {col.heading}
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Link columns — right side, 3-4 per row */}
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+            {footerColumns.map((col) => (
+              <div key={col.heading}>
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-surface-dark-foreground/40 mb-4">
+                  {col.heading}
+                </p>
+                <ul className="space-y-2 text-sm text-surface-dark-foreground/60">
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="hover:text-surface-dark-foreground transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-border text-xs text-muted-foreground">
+        <div className="mt-16 pt-8 border-t border-surface-dark-foreground/10 text-xs text-surface-dark-foreground/40">
           © {new Date().getFullYear()} Renda. All rights reserved.
         </div>
       </div>

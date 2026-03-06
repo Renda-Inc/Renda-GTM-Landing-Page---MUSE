@@ -26,20 +26,20 @@ export default function SignalsOverNoise() {
         </p>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           <div className="border border-surface-dark-foreground/10 rounded-lg p-6">
-            <h3 className="text-sm font-semibold text-surface-dark-foreground/80 mb-2">Purposeful</h3>
-            <p className="text-sm text-surface-dark-foreground/50 leading-relaxed">
+            <h3 className="text-base font-semibold text-surface-dark-foreground/80 mb-2">Purposeful</h3>
+            <p className="text-base text-surface-dark-foreground/50 leading-relaxed">
               Every insight Alfie surfaces has a reason. No filler, no vanity metrics.
             </p>
           </div>
           <div className="border border-surface-dark-foreground/10 rounded-lg p-6">
-            <h3 className="text-sm font-semibold text-surface-dark-foreground/80 mb-2">Timely</h3>
-            <p className="text-sm text-surface-dark-foreground/50 leading-relaxed">
+            <h3 className="text-base font-semibold text-surface-dark-foreground/80 mb-2">Timely</h3>
+            <p className="text-base text-surface-dark-foreground/50 leading-relaxed">
               Context-aware timing means Alfie reaches you when the information is actionable.
             </p>
           </div>
           <div className="border border-surface-dark-foreground/10 rounded-lg p-6">
-            <h3 className="text-sm font-semibold text-surface-dark-foreground/80 mb-2">Calm</h3>
-            <p className="text-sm text-surface-dark-foreground/50 leading-relaxed">
+            <h3 className="text-base font-semibold text-surface-dark-foreground/80 mb-2">Calm</h3>
+            <p className="text-base text-surface-dark-foreground/50 leading-relaxed">
               Designed for peace of mind. Intelligence that works quietly in the background.
             </p>
           </div>

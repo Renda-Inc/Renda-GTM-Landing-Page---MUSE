@@ -2,7 +2,6 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
 
-/* ── Fade wrapper ─────────────────────────────────────────── */
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const { ref, isVisible } = useFadeIn();
   return (
@@ -19,7 +18,6 @@ function Divider() {
   return <div className="max-w-4xl mx-auto px-6"><div className="h-px bg-border" /></div>;
 }
 
-/* ── Data ─────────────────────────────────────────────────── */
 const workingPrinciples = [
   { title: "High autonomy", desc: "We hire people we trust, then give them the space to do their best work. No micromanagement, no busywork." },
   { title: "Written thinking", desc: "We write before we meet. Clear writing forces clear thinking — and it scales better than meetings." },
@@ -55,7 +53,6 @@ const openRoles = [
   { team: "Operations", roles: ["Head of Customer Experience", "Financial Operations Analyst"] },
 ];
 
-/* ── Page ─────────────────────────────────────────────────── */
 export default function Careers() {
   return (
     <main className="min-h-screen bg-background">
@@ -64,7 +61,7 @@ export default function Careers() {
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">Careers</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">Careers</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
             Build the Intelligence Layer for Finance.
           </h1>
@@ -73,7 +70,7 @@ export default function Careers() {
           </p>
           <a
             href="#roles"
-            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
           >
             View Open Roles
           </a>
@@ -85,7 +82,7 @@ export default function Careers() {
       {/* ── Why Join Renda ─────────────────────────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Why Join Renda</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Why Join Renda</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             The rare chance to build from zero.
           </h2>
@@ -108,7 +105,7 @@ export default function Careers() {
       {/* ── Working at Renda ───────────────────────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Working at Renda</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Working at Renda</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             How we work.
           </h2>
@@ -116,7 +113,7 @@ export default function Careers() {
             {workingPrinciples.map((p) => (
               <div key={p.title} className="border-l-2 border-accent-foreground/30 pl-6">
                 <h3 className="text-base font-semibold text-foreground">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-2xl">{p.desc}</p>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed max-w-2xl">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -128,7 +125,7 @@ export default function Careers() {
       {/* ── Culture & Values ──────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-surface-elevated">
         <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Culture & Values</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Culture & Values</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             What we believe.
           </h2>
@@ -136,7 +133,7 @@ export default function Careers() {
             {cultureValues.map((v) => (
               <div key={v.title}>
                 <h3 className="text-base font-semibold text-foreground">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -146,7 +143,7 @@ export default function Careers() {
       {/* ── Diversity & Inclusion ─────────────────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Diversity & Inclusion</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Diversity & Inclusion</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Better perspectives build better products.
           </h2>
@@ -166,7 +163,7 @@ export default function Careers() {
       {/* ── Benefits ──────────────────────────────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Benefits</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Benefits</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             Built for people who do their best work.
           </h2>
@@ -186,7 +183,7 @@ export default function Careers() {
       {/* ── Early Talent ──────────────────────────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Early Talent</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Early Talent</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Start building early.
           </h2>
@@ -206,7 +203,7 @@ export default function Careers() {
       {/* ── Team & Workplace ──────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-surface-elevated">
         <Fade className="max-w-5xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Team & Workplace</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Team & Workplace</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             The people you'll work with.
           </h2>
@@ -218,7 +215,7 @@ export default function Careers() {
                 key={i}
                 className="aspect-[4/3] rounded-xl bg-card border border-border flex items-center justify-center"
               >
-                <span className="text-sm text-muted-foreground">Team photo {i}</span>
+                <span className="text-base text-muted-foreground">Team photo {i}</span>
               </div>
             ))}
           </div>
@@ -229,7 +226,7 @@ export default function Careers() {
               <p className="text-base text-foreground leading-relaxed italic">
                 "I've never worked somewhere that trusts its people this much. The bar is high, but the support is real."
               </p>
-              <footer className="mt-4 text-sm text-muted-foreground">
+              <footer className="mt-4 text-base text-muted-foreground">
                 — Engineering team member
               </footer>
             </blockquote>
@@ -237,7 +234,7 @@ export default function Careers() {
               <p className="text-base text-foreground leading-relaxed italic">
                 "At Renda, your ideas actually ship. There's no red tape between thinking and building."
               </p>
-              <footer className="mt-4 text-sm text-muted-foreground">
+              <footer className="mt-4 text-base text-muted-foreground">
                 — Product team member
               </footer>
             </blockquote>
@@ -248,14 +245,14 @@ export default function Careers() {
       {/* ── Open Roles ────────────────────────────────────── */}
       <section id="roles" className="py-24 lg:py-32">
         <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Open Roles</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Open Roles</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             Current openings.
           </h2>
           <div className="space-y-10">
             {openRoles.map((group) => (
               <div key={group.team}>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-accent-foreground mb-4">{group.team}</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-accent-foreground mb-4">{group.team}</h3>
                 <div className="space-y-0 border-t border-border">
                   {group.roles.map((role) => (
                     <a
@@ -264,7 +261,7 @@ export default function Careers() {
                       className="flex items-center justify-between py-4 border-b border-border group hover:bg-muted/10 px-2 -mx-2 rounded transition-colors"
                     >
                       <span className="text-base font-medium text-foreground">{role}</span>
-                      <span className="text-sm text-muted-foreground group-hover:text-accent-foreground transition-colors">
+                      <span className="text-base text-muted-foreground group-hover:text-accent-foreground transition-colors">
                         View →
                       </span>
                     </a>
@@ -289,7 +286,7 @@ export default function Careers() {
           </p>
           <a
             href="#"
-            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
           >
             View Open Positions
           </a>

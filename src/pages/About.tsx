@@ -68,7 +68,7 @@ export default function About() {
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">About Renda</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">About Renda</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
             Building the Intelligence Layer for Modern Finance.
           </h1>
@@ -89,7 +89,7 @@ export default function About() {
       {/* ── Our Belief ─────────────────────────────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Finance should empower, not overwhelm.
           </h2>
@@ -100,7 +100,7 @@ export default function About() {
             {beliefs.map((b) => (
               <div key={b.title} className="border-l-2 border-accent-foreground/30 pl-5">
                 <h3 className="text-base font-semibold text-foreground">{b.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -114,7 +114,7 @@ export default function About() {
         <Fade className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
@@ -142,7 +142,7 @@ export default function About() {
       {/* ── The Company We Aim to Be ──────────────────────── */}
       <section className="py-24 lg:py-32 bg-surface-elevated">
         <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Built to endure.
           </h2>
@@ -153,7 +153,7 @@ export default function About() {
             {values.map((v) => (
               <div key={v.title}>
                 <h3 className="text-base font-semibold text-foreground">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -163,7 +163,7 @@ export default function About() {
       {/* ── Our Journey (horizontal timeline) ─────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-6xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             From conviction to product.
           </h2>
@@ -175,9 +175,9 @@ export default function About() {
                 <div key={i} className="relative pt-8 pr-6" style={{ minWidth: 240, flex: '1 0 240px' }}>
                   {/* Dot */}
                   <div className="absolute top-0 left-0 w-[15px] h-[15px] rounded-full border-2 border-accent-foreground bg-background" />
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-accent-foreground">{t.year}</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.15em] text-accent-foreground">{t.year}</p>
                   <h3 className="mt-1 text-base font-semibold text-foreground">{t.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{t.desc}</p>
+                  <p className="mt-1 text-base text-muted-foreground leading-relaxed">{t.desc}</p>
                 </div>
               ))}
             </div>
@@ -191,7 +191,7 @@ export default function About() {
       <section className="py-24 lg:py-32">
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">Leadership</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">Leadership</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
               The people behind Renda.
             </h2>
@@ -206,8 +206,8 @@ export default function About() {
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-foreground">{l.name}</h3>
-                <p className="text-xs md:text-sm text-muted-foreground mt-1 leading-snug">{l.role}</p>
+                <h3 className="text-base font-semibold text-foreground">{l.name}</h3>
+                <p className="text-sm text-muted-foreground mt-1 leading-snug">{l.role}</p>
               </div>
             ))}
           </div>
@@ -221,7 +221,7 @@ export default function About() {
         <Fade className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
@@ -244,7 +244,7 @@ export default function About() {
       {/* ── Partners & Backers ────────────────────────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Partners & Backers</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Partners & Backers</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Backed by those who believe.
           </h2>
@@ -257,7 +257,7 @@ export default function About() {
                 key={p}
                 className="h-20 rounded-lg border border-border bg-card flex items-center justify-center"
               >
-                <span className="text-sm text-muted-foreground">{p}</span>
+                <span className="text-base text-muted-foreground">{p}</span>
               </div>
             ))}
           </div>
@@ -277,7 +277,7 @@ export default function About() {
           </p>
           <a
             href="#waitlist"
-            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
           >
             Get Early Access
           </a>

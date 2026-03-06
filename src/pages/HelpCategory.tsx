@@ -32,7 +32,7 @@ export default function HelpCategory() {
         <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h1 className="text-3xl font-bold text-foreground">Category not found</h1>
-            <Link to="/help" className="mt-6 inline-flex items-center gap-2 text-sm text-accent-foreground hover:opacity-80">
+            <Link to="/help" className="mt-6 inline-flex items-center gap-2 text-base text-accent-foreground hover:opacity-80">
               <ArrowLeft className="w-4 h-4" /> Back to Help
             </Link>
           </div>
@@ -49,10 +49,10 @@ export default function HelpCategory() {
       {/* Hero */}
       <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
         <Fade className="max-w-3xl mx-auto px-6">
-          <Link to="/help" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+          <Link to="/help" className="inline-flex items-center gap-2 text-base text-muted-foreground hover:text-foreground transition-colors mb-8">
             <ArrowLeft className="w-4 h-4" /> Back to Help
           </Link>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">Help Centre</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">Help Centre</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
             {category.title}
           </h1>
@@ -79,7 +79,7 @@ export default function HelpCategory() {
                 className="py-6 border-b border-border"
               >
                 <h2 className="text-base font-semibold text-foreground">{topic.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{topic.summary}</p>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">{topic.summary}</p>
               </div>
             ))}
           </div>
@@ -99,7 +99,7 @@ export default function HelpCategory() {
           </p>
           <a
             href="mailto:support@renda.com"
-            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
           >
             Email Support
           </a>

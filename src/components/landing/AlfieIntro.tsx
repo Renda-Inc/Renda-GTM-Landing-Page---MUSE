@@ -16,7 +16,7 @@ export default function AlfieIntro() {
             <div className="w-8 h-8 rounded-full bg-accent/30" />
           </div>
         </div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-surface-dark-foreground/50 mb-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-surface-dark-foreground/50 mb-8">
           Introducing
         </p>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-surface-dark-foreground">

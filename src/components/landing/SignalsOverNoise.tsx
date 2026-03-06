@@ -11,7 +11,7 @@ export default function SignalsOverNoise() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-surface-dark-foreground/40 mb-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-surface-dark-foreground/40 mb-8">
           What matters, when it matters
         </p>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-surface-dark-foreground">

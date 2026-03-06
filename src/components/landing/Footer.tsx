@@ -67,7 +67,7 @@ const footerColumns = [
     heading: "Legal",
     links: [
       { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Use", href: "#" },
+      { label: "Terms of Use", href: "/terms" },
       { label: "Compliance & Disclosures", href: "#" },
     ],
   },

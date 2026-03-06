@@ -10,6 +10,7 @@ import PersonalBanking from "./pages/PersonalBanking";
 import Blog from "./pages/Blog";
 import Help from "./pages/Help";
 import HelpCategory from "./pages/HelpCategory";
+import TermsOfUse from "./pages/TermsOfUse";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

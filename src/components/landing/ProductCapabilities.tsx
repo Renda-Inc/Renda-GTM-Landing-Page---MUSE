@@ -27,7 +27,7 @@ export default function ProductCapabilities() {
         }`}
       >
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
             Built on solid ground
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
@@ -43,7 +43,7 @@ export default function ProductCapabilities() {
           {products.map((p) => (
             <div key={p.title} className="border-t border-border pt-6 space-y-3">
               <h3 className="text-lg font-semibold text-foreground">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
+              <p className="text-base text-muted-foreground leading-relaxed">{p.description}</p>
             </div>
           ))}
         </div>

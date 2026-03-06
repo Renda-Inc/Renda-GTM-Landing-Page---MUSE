@@ -166,7 +166,7 @@ export default function Blog() {
       {/* ════════════ HERO ════════════ */}
       <section className="pt-32 pb-16 lg:pt-44 lg:pb-20">
         <FadeSection className="max-w-5xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
             Blog & Insights
           </p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-foreground max-w-3xl">
@@ -198,7 +198,7 @@ export default function Blog() {
                     />
                   </div>
                   <div className="p-6 lg:p-8 space-y-3">
-                    <div className="flex items-center gap-3 text-xs">
+                    <div className="flex items-center gap-3 text-sm">
                       <span className={`font-semibold uppercase tracking-[0.12em] ${categoryColor(article.category)}`}>
                         {article.category}
                       </span>
@@ -208,10 +208,10 @@ export default function Blog() {
                     <h2 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                       {article.title}
                     </h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    <p className="text-base text-muted-foreground leading-relaxed line-clamp-3">
                       {article.excerpt}
                     </p>
-                    <p className="text-xs text-muted-foreground">{article.readTime}</p>
+                    <p className="text-sm text-muted-foreground">{article.readTime}</p>
                   </div>
                 </a>
               ))}
@@ -229,7 +229,7 @@ export default function Blog() {
                 <button
                   key={cat}
                   onClick={() => setActive(cat)}
-                  className={`px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
+                  className={`px-4 py-3 text-base font-medium whitespace-nowrap border-b-2 transition-colors ${
                     active === cat
                       ? "border-primary text-foreground"
                       : "border-transparent text-muted-foreground hover:text-foreground"
@@ -263,7 +263,7 @@ export default function Blog() {
                 </div>
                 {/* Content */}
                 <div className="flex-1 space-y-2">
-                  <div className="flex items-center gap-3 text-xs">
+                  <div className="flex items-center gap-3 text-sm">
                     <span className={`font-semibold uppercase tracking-[0.12em] ${categoryColor(article.category)}`}>
                       {article.category}
                     </span>
@@ -275,7 +275,7 @@ export default function Blog() {
                   <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                  <p className="text-base text-muted-foreground leading-relaxed line-clamp-2">
                     {article.excerpt}
                   </p>
                 </div>
@@ -284,7 +284,7 @@ export default function Blog() {
           </div>
 
           {filtered.length === 0 && (
-            <p className="py-16 text-center text-muted-foreground text-sm">
+            <p className="py-16 text-center text-muted-foreground text-base">
               No articles in this category yet. Check back soon.
             </p>
           )}
@@ -297,7 +297,7 @@ export default function Blog() {
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
             Stay informed.
           </h2>
-          <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
             Get our latest thinking on AI, banking, and financial infrastructure — delivered
             monthly. No noise.
           </p>
@@ -305,9 +305,9 @@ export default function Blog() {
             <input
               type="email"
               placeholder="you@email.com"
-              className="h-12 w-full sm:flex-1 px-5 rounded-full border border-border bg-card text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+              className="h-12 w-full sm:flex-1 px-5 rounded-full border border-border bg-card text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
-            <button className="h-12 px-6 rounded-full bg-foreground text-background text-sm font-semibold hover:opacity-90 transition-opacity whitespace-nowrap">
+            <button className="h-12 px-6 rounded-full bg-foreground text-background text-base font-semibold hover:opacity-90 transition-opacity whitespace-nowrap">
               Subscribe
             </button>
           </div>

@@ -39,7 +39,7 @@ export default function PersonalBanking() {
       {/* ════════════ HERO ════════════ */}
       <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
         <FadeSection className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
             Personal Banking
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
@@ -72,7 +72,7 @@ export default function PersonalBanking() {
       <section id="smart-accounts" className="scroll-mt-20 py-24 lg:py-32">
         <FadeSection className="max-w-5xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               Smart Accounts
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
@@ -116,7 +116,7 @@ export default function PersonalBanking() {
 
             {/* Right — conversational UI mockup */}
             <div className="bg-card border border-border rounded-2xl p-8 space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 Alfie Insight
               </p>
               <div className="space-y-4">
@@ -128,13 +128,13 @@ export default function PersonalBanking() {
                   "I moved $120 to SenseSave. Your groceries came in under pattern this week."
                 </div>
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-sm text-muted-foreground">
                 Instead of charts you never look at, you get conversations that move you forward.
               </p>
             </div>
           </div>
 
-          <p className="mt-12 text-sm font-medium text-primary tracking-wide">
+          <p className="mt-12 text-base font-medium text-primary tracking-wide">
             This is adaptive banking — built around you.
           </p>
         </FadeSection>
@@ -146,7 +146,7 @@ export default function PersonalBanking() {
       <section id="cards-payments" className="scroll-mt-20 py-24 lg:py-32">
         <FadeSection className="max-w-5xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               Cards & Payments
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
@@ -162,7 +162,7 @@ export default function PersonalBanking() {
                 Your Renda Smart Card is connected to your financial intelligence layer. It adapts
                 with you.
               </p>
-              <ul className="space-y-3 text-foreground/80 text-sm">
+              <ul className="space-y-3 text-foreground/80 text-base">
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                   <span>Real-time transaction intelligence</span>
@@ -180,7 +180,7 @@ export default function PersonalBanking() {
                   <span>Seamless control from your app</span>
                 </li>
               </ul>
-              <p className="mt-6 text-sm text-muted-foreground italic">
+              <p className="mt-6 text-base text-muted-foreground italic">
                 It's not just a debit card. It's your financial operating system in your wallet.
               </p>
             </div>
@@ -189,12 +189,12 @@ export default function PersonalBanking() {
             <div className="flex justify-center">
               <div className="w-72 h-44 rounded-2xl bg-gradient-to-br from-[hsl(36,90%,50%)] to-[hsl(25,85%,42%)] p-6 flex flex-col justify-between shadow-lg">
                 <div className="flex justify-between items-start">
-                  <span className="text-sm font-bold tracking-wider text-white/90">RENDA</span>
-                  <span className="text-[10px] uppercase tracking-[0.15em] text-white/60">Smart</span>
+                  <span className="text-base font-bold tracking-wider text-white/90">RENDA</span>
+                  <span className="text-xs uppercase tracking-[0.15em] text-white/60">Smart</span>
                 </div>
                 <div>
-                  <div className="text-xs text-white/50 tracking-widest mb-1">•••• •••• •••• 4821</div>
-                  <div className="text-xs text-white/70">Cardholder Name</div>
+                  <div className="text-sm text-white/50 tracking-widest mb-1">•••• •••• •••• 4821</div>
+                  <div className="text-sm text-white/70">Cardholder Name</div>
                 </div>
               </div>
             </div>
@@ -215,13 +215,13 @@ export default function PersonalBanking() {
                 { title: "Renda P2P", desc: "Instant transfers within the Renda network — no friction, no delays." },
               ].map((item) => (
                 <div key={item.title} className="border-t border-border pt-5 space-y-2">
-                  <h4 className="text-sm font-semibold text-foreground">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <h4 className="text-base font-semibold text-foreground">{item.title}</h4>
+                  <p className="text-base text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
 
-            <p className="mt-10 text-sm text-muted-foreground leading-relaxed max-w-xl">
+            <p className="mt-10 text-base text-muted-foreground leading-relaxed max-w-xl">
               When both sides use intelligent banking, payments feel invisible.
             </p>
           </div>
@@ -234,7 +234,7 @@ export default function PersonalBanking() {
       <section id="savings-goals" className="scroll-mt-20 py-24 lg:py-32">
         <FadeSection className="max-w-5xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               Savings & Goals
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
@@ -269,14 +269,14 @@ export default function PersonalBanking() {
                   <span>Accelerate when you're ahead</span>
                 </li>
               </ul>
-              <p className="text-sm text-muted-foreground italic">
+              <p className="text-base text-muted-foreground italic">
                 It feels less like "auto-transfer" and more like having a financial partner.
               </p>
             </div>
 
             {/* Savings insight mockup */}
             <div className="bg-card border border-border rounded-2xl p-8 space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 Goal Progress
               </p>
               <div className="space-y-4">
@@ -306,7 +306,7 @@ export default function PersonalBanking() {
             </div>
           </div>
 
-          <p className="mt-12 text-sm font-medium text-primary tracking-wide">
+          <p className="mt-12 text-base font-medium text-primary tracking-wide">
             You don't just set goals. You make progress.
           </p>
         </FadeSection>
@@ -320,7 +320,7 @@ export default function PersonalBanking() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">
             One intelligent system. Total financial clarity.
           </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground">
+          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-base font-medium text-muted-foreground">
             <span>Smart Accounts</span>
             <span className="text-border">·</span>
             <span>Adaptive Card</span>
@@ -329,7 +329,7 @@ export default function PersonalBanking() {
             <span className="text-border">·</span>
             <span>Personalized Savings</span>
           </div>
-          <p className="mt-4 text-sm text-primary font-medium">All powered by Alfie.</p>
+          <p className="mt-4 text-base text-primary font-medium">All powered by Alfie.</p>
           <div className="mt-10">
             <a
               href="#waitlist"

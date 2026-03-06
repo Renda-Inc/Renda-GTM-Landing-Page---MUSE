@@ -11,7 +11,7 @@ export default function FutureVision() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
           The road ahead
         </p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">

@@ -117,7 +117,7 @@ export default function Help() {
       {/* Hero */}
       <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">Help Centre</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">Help Centre</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
             How can we help you?
           </h1>
@@ -145,12 +145,12 @@ export default function Help() {
                 />
                 <div className="p-6 flex flex-col flex-1">
                 <h2 className="text-lg font-semibold text-foreground">{cat.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{cat.description}</p>
+                <p className="mt-2 text-base text-muted-foreground leading-relaxed">{cat.description}</p>
 
                 {/* Preview topics */}
                 <ul className="mt-5 space-y-2 flex-1">
                   {cat.topics.slice(0, 3).map((t) => (
-                    <li key={t.title} className="text-sm text-foreground/80 flex items-start gap-2">
+                    <li key={t.title} className="text-base text-foreground/80 flex items-start gap-2">
                       <span className="mt-1.5 w-1 h-1 rounded-full bg-accent-foreground shrink-0" />
                       {t.title}
                     </li>
@@ -159,7 +159,7 @@ export default function Help() {
 
                 <Link
                   to={`/help/${cat.slug}`}
-                  className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent-foreground hover:opacity-80 transition-opacity"
+                  className="mt-6 inline-flex items-center gap-1 text-base font-medium text-accent-foreground hover:opacity-80 transition-opacity"
                 >
                   See all topics
                   <ChevronRight className="w-4 h-4" />
@@ -176,7 +176,7 @@ export default function Help() {
       {/* Contact section */}
       <section id="contact" className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Contact Us</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Contact Us</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Still need help?
           </h2>
@@ -185,7 +185,7 @@ export default function Help() {
           </p>
           <a
             href="mailto:support@renda.com"
-            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
           >
             Email Support
           </a>
@@ -197,7 +197,7 @@ export default function Help() {
       {/* Refer a Friend */}
       <section id="refer" className="py-24 lg:py-32 bg-surface-elevated">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Refer a Friend</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Refer a Friend</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Share Renda. Earn rewards.
           </h2>
@@ -206,7 +206,7 @@ export default function Help() {
           </p>
           <a
             href="#waitlist"
-            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+            className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
           >
             Get Your Referral Link
           </a>

@@ -2,11 +2,6 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { FileText, ChevronRight } from "lucide-react";
 
-interface Policy {
-  label: string;
-  href: string;
-}
-
 interface PolicySection {
   title: string;
   description: string;
@@ -123,8 +118,8 @@ export default function TermsOfUse() {
 
       {/* Hero */}
       <header className="pt-32 pb-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">
             Legal Center
           </p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
@@ -140,33 +135,33 @@ export default function TermsOfUse() {
 
       {/* Sections */}
       <main className="pb-24 px-6">
-        <div className="max-w-3xl mx-auto space-y-16">
+        <div className="max-w-4xl mx-auto space-y-20">
           {sections.map((section) => (
             <section key={section.title}>
-              <h2 className="text-xl font-bold tracking-tight mb-2">
+              <h2 className="text-2xl font-bold tracking-tight mb-3">
                 {section.title}
               </h2>
-              <p className="text-sm text-muted-foreground mb-6">
+              <p className="text-base text-muted-foreground mb-8">
                 {section.description}
               </p>
 
-              <div className="border border-border rounded-xl overflow-hidden divide-y divide-border bg-card">
+              <div className="border border-border rounded-2xl overflow-hidden divide-y divide-border bg-card">
                 {section.policies.map((policy) => (
                   <a
                     key={policy.label}
                     href={policy.href}
-                    className="flex items-start gap-4 px-5 py-4 hover:bg-muted/10 transition-colors group"
+                    className="flex items-start gap-5 px-7 py-6 hover:bg-muted/10 transition-colors group"
                   >
-                    <FileText className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
+                    <FileText className="w-6 h-6 text-muted-foreground mt-0.5 shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                      <p className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
                         {policy.label}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                      <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
                         {policy.summary}
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-muted-foreground mt-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ChevronRight className="w-5 h-5 text-muted-foreground mt-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 ))}
               </div>

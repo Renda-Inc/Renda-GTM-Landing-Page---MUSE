@@ -111,8 +111,6 @@ export default function Navbar() {
     timeoutRef.current = setTimeout(() => setOpenMenu(null), 200);
   };
 
-  const activeGroup = navGroups.find((g) => g.label === openMenu);
-
   return (
     <nav
       ref={navRef}
@@ -121,7 +119,6 @@ export default function Navbar() {
           ? "bg-background/95 backdrop-blur-sm border-b border-border"
           : "bg-transparent"
       }`}
-      onMouseLeave={handleMouseLeave}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}

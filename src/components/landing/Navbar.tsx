@@ -108,17 +108,20 @@ export default function Navbar() {
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setOpenMenu(null), 150);
+    timeoutRef.current = setTimeout(() => setOpenMenu(null), 200);
   };
+
+  const activeGroup = navGroups.find((g) => g.label === openMenu);
 
   return (
     <nav
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || openMenu
           ? "bg-background/95 backdrop-blur-sm border-b border-border"
           : "bg-transparent"
       }`}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -133,12 +136,11 @@ export default function Navbar() {
               key={group.label}
               className="relative"
               onMouseEnter={() => handleMouseEnter(group.label)}
-              onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-[15px] font-medium transition-colors rounded-md ${
                   openMenu === group.label
-                    ? "text-foreground bg-muted/20"
+                    ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
                 onClick={() => setOpenMenu(openMenu === group.label ? null : group.label)}
@@ -150,45 +152,6 @@ export default function Navbar() {
                   }`}
                 />
               </button>
-
-              {/* Dropdown */}
-              {openMenu === group.label && (
-                <div
-                  className="absolute top-full left-0 mt-1 bg-card border border-border rounded-lg shadow-lg py-4 px-5 min-w-[220px] animate-in fade-in-0 zoom-in-95 duration-150"
-                  onMouseEnter={() => handleMouseEnter(group.label)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <div className={`flex gap-8 ${group.sections.length > 1 ? "min-w-[480px]" : ""}`}>
-                    {group.sections.map((section, si) => (
-                      <div key={si} className="min-w-[160px]">
-                        {section.heading && (
-                          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-3">
-                            {section.heading}
-                          </p>
-                        )}
-                        <ul className="space-y-1">
-                          {section.links.map((link) => (
-                            <li key={link.label}>
-                              <a
-                                href={link.href}
-                                className="flex items-center gap-2 px-2 py-1.5 text-sm text-foreground/80 hover:text-foreground hover:bg-muted/20 rounded transition-colors"
-                                onClick={() => setOpenMenu(null)}
-                              >
-                                {link.label}
-                                {link.badge && (
-                                  <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-muted/30 px-1.5 py-0.5 rounded">
-                                    {link.badge}
-                                  </span>
-                                )}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -197,13 +160,13 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           <a
             href="#"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="text-[15px] font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Sign In
           </a>
           <a
             href="#waitlist"
-            className="h-9 px-5 inline-flex items-center rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+            className="h-9 px-5 inline-flex items-center rounded-full bg-foreground text-background text-[15px] font-medium hover:opacity-90 transition-opacity"
           >
             Get Early Access
           </a>
@@ -219,6 +182,55 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Full-width dropdown panel */}
+      <div
+        className={`hidden lg:block overflow-hidden transition-all duration-300 ease-in-out ${
+          activeGroup ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+        onMouseEnter={() => {
+          if (openMenu) {
+            clearTimeout(timeoutRef.current);
+          }
+        }}
+        onMouseLeave={handleMouseLeave}
+      >
+        {activeGroup && (
+          <div className="border-t border-border bg-background/95 backdrop-blur-sm">
+            <div className="max-w-6xl mx-auto px-6 py-8">
+              <div className={`flex gap-16 ${activeGroup.sections.length > 1 ? "" : "max-w-md"}`}>
+                {activeGroup.sections.map((section, si) => (
+                  <div key={si} className="min-w-[180px]">
+                    {section.heading && (
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-4">
+                        {section.heading}
+                      </p>
+                    )}
+                    <ul className="space-y-1">
+                      {section.links.map((link) => (
+                        <li key={link.label}>
+                          <a
+                            href={link.href}
+                            className="flex items-center gap-2.5 py-2 text-[15px] text-foreground/70 hover:text-foreground transition-colors"
+                            onClick={() => setOpenMenu(null)}
+                          >
+                            {link.label}
+                            {link.badge && (
+                              <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-muted/30 px-1.5 py-0.5 rounded">
+                                {link.badge}
+                              </span>
+                            )}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-background border-t border-border max-h-[80vh] overflow-y-auto">
@@ -226,7 +238,7 @@ export default function Navbar() {
             {navGroups.map((group) => (
               <div key={group.label}>
                 <button
-                  className="w-full flex items-center justify-between py-3 text-sm font-medium text-foreground"
+                  className="w-full flex items-center justify-between py-3 text-base font-medium text-foreground"
                   onClick={() =>
                     setMobileExpanded(mobileExpanded === group.label ? null : group.label)
                   }
@@ -252,7 +264,7 @@ export default function Navbar() {
                             <li key={link.label}>
                               <a
                                 href={link.href}
-                                className="flex items-center gap-2 py-1.5 text-sm text-foreground/80 hover:text-foreground transition-colors"
+                                className="flex items-center gap-2 py-2 text-[15px] text-foreground/80 hover:text-foreground transition-colors"
                                 onClick={() => setMobileOpen(false)}
                               >
                                 {link.label}
@@ -273,12 +285,12 @@ export default function Navbar() {
             ))}
 
             <div className="pt-4 border-t border-border flex flex-col gap-3">
-              <a href="#" className="text-sm font-medium text-muted-foreground">
+              <a href="#" className="text-base font-medium text-muted-foreground">
                 Sign In
               </a>
               <a
                 href="#waitlist"
-                className="h-10 inline-flex items-center justify-center rounded-full bg-foreground text-background text-sm font-medium"
+                className="h-10 inline-flex items-center justify-center rounded-full bg-foreground text-background text-base font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Early Access

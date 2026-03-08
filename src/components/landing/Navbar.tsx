@@ -136,6 +136,7 @@ export default function Navbar() {
               key={group.label}
               className="relative"
               onMouseEnter={() => handleMouseEnter(group.label)}
+              onMouseLeave={handleMouseLeave}
             >
               <button
                 className={`flex items-center gap-1.5 px-4 py-2 text-[15px] font-medium transition-colors rounded-md ${
@@ -152,6 +153,49 @@ export default function Navbar() {
                   }`}
                 />
               </button>
+
+              {/* Dropdown positioned under this nav item */}
+              {openMenu === group.label && (
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50"
+                  onMouseEnter={() => {
+                    clearTimeout(timeoutRef.current);
+                  }}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg p-5">
+                    <div className={`flex gap-10 ${group.sections.length > 1 ? "" : ""}`}>
+                      {group.sections.map((section, si) => (
+                        <div key={si} className="min-w-[180px]">
+                          {section.heading && (
+                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">
+                              {section.heading}
+                            </p>
+                          )}
+                          <ul className="space-y-0.5">
+                            {section.links.map((link) => (
+                              <li key={link.label}>
+                                <a
+                                  href={link.href}
+                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
+                                  onClick={() => setOpenMenu(null)}
+                                >
+                                  {link.label}
+                                  {link.badge && (
+                                    <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-muted/30 px-1.5 py-0.5 rounded">
+                                      {link.badge}
+                                    </span>
+                                  )}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

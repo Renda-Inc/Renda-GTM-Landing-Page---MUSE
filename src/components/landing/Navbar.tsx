@@ -111,8 +111,6 @@ export default function Navbar() {
     timeoutRef.current = setTimeout(() => setOpenMenu(null), 200);
   };
 
-  const activeGroup = navGroups.find((g) => g.label === openMenu);
-
   return (
     <nav
       ref={navRef}
@@ -121,7 +119,6 @@ export default function Navbar() {
           ? "bg-background/95 backdrop-blur-sm border-b border-border"
           : "bg-transparent"
       }`}
-      onMouseLeave={handleMouseLeave}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -136,6 +133,7 @@ export default function Navbar() {
               key={group.label}
               className="relative"
               onMouseEnter={() => handleMouseEnter(group.label)}
+              onMouseLeave={handleMouseLeave}
             >
               <button
                 className={`flex items-center gap-1.5 px-4 py-2 text-[15px] font-medium transition-colors rounded-md ${
@@ -152,6 +150,49 @@ export default function Navbar() {
                   }`}
                 />
               </button>
+
+              {/* Dropdown positioned under this nav item */}
+              {openMenu === group.label && (
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50"
+                  onMouseEnter={() => {
+                    clearTimeout(timeoutRef.current);
+                  }}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg p-5">
+                    <div className={`flex gap-10 ${group.sections.length > 1 ? "" : ""}`}>
+                      {group.sections.map((section, si) => (
+                        <div key={si} className="min-w-[180px]">
+                          {section.heading && (
+                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">
+                              {section.heading}
+                            </p>
+                          )}
+                          <ul className="space-y-0.5">
+                            {section.links.map((link) => (
+                              <li key={link.label}>
+                                <a
+                                  href={link.href}
+                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
+                                  onClick={() => setOpenMenu(null)}
+                                >
+                                  {link.label}
+                                  {link.badge && (
+                                    <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-muted/30 px-1.5 py-0.5 rounded">
+                                      {link.badge}
+                                    </span>
+                                  )}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -182,54 +223,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Full-width dropdown panel */}
-      <div
-        className={`hidden lg:block overflow-hidden transition-all duration-300 ease-in-out ${
-          activeGroup ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-        onMouseEnter={() => {
-          if (openMenu) {
-            clearTimeout(timeoutRef.current);
-          }
-        }}
-        onMouseLeave={handleMouseLeave}
-      >
-        {activeGroup && (
-          <div className="border-t border-border bg-background/95 backdrop-blur-sm">
-            <div className="max-w-6xl mx-auto px-6 py-8">
-              <div className={`flex gap-16 ${activeGroup.sections.length > 1 ? "" : "max-w-md"}`}>
-                {activeGroup.sections.map((section, si) => (
-                  <div key={si} className="min-w-[180px]">
-                    {section.heading && (
-                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-4">
-                        {section.heading}
-                      </p>
-                    )}
-                    <ul className="space-y-1">
-                      {section.links.map((link) => (
-                        <li key={link.label}>
-                          <a
-                            href={link.href}
-                            className="flex items-center gap-2.5 py-2 text-[15px] text-foreground/70 hover:text-foreground transition-colors"
-                            onClick={() => setOpenMenu(null)}
-                          >
-                            {link.label}
-                            {link.badge && (
-                              <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-muted/30 px-1.5 py-0.5 rounded">
-                                {link.badge}
-                              </span>
-                            )}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
 
       {/* Mobile menu */}
       {mobileOpen && (

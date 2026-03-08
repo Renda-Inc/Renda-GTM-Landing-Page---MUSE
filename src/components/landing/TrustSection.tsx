@@ -11,10 +11,12 @@ export default function TrustSection() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-32 lg:py-40 bg-surface-elevated">
+    <section className="relative py-32 lg:py-40 bg-surface-elevated overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-warm)' }} />
+
       <div
         ref={ref}
-        className={`max-w-3xl mx-auto px-6 transition-all duration-700 ${
+        className={`relative z-10 max-w-3xl mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
@@ -32,7 +34,7 @@ export default function TrustSection() {
         <ul className="mt-10 space-y-4">
           {commitments.map((c) => (
             <li key={c} className="flex items-start gap-3">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-primary/60 shrink-0" />
               <span className="text-base text-foreground">{c}</span>
             </li>
           ))}

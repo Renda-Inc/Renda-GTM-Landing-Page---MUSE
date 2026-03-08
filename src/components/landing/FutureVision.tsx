@@ -4,7 +4,10 @@ export default function FutureVision() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section id="vision" className="py-32 lg:py-40">
+    <section id="vision" className="relative py-32 lg:py-40 overflow-hidden">
+      {/* Subtle bottom gradient hinting at next dark section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-surface-dark/5 pointer-events-none" />
+
       <div
         ref={ref}
         className={`max-w-3xl mx-auto px-6 transition-all duration-700 ${

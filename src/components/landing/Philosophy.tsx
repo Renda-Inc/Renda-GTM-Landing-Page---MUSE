@@ -4,10 +4,13 @@ export default function Philosophy() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-32 lg:py-40 bg-surface-elevated">
+    <section className="relative py-32 lg:py-40 bg-surface-elevated overflow-hidden">
+      {/* Subtle warm gradient overlay */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-warm)' }} />
+
       <div
         ref={ref}
-        className={`max-w-3xl mx-auto px-6 transition-all duration-700 ${
+        className={`relative z-10 max-w-3xl mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >

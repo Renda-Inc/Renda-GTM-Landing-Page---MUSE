@@ -4,10 +4,14 @@ export default function AlfieInfrastructure() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-32 lg:py-40 bg-surface-dark text-surface-dark-foreground">
+    <section className="relative py-32 lg:py-40 bg-surface-dark text-surface-dark-foreground overflow-hidden">
+      {/* Radial glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 30% 50%, hsl(27 95% 60% / 0.06), transparent 60%)' }} />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+
       <div
         ref={ref}
-        className={`max-w-3xl mx-auto px-6 transition-all duration-700 ${
+        className={`relative z-10 max-w-3xl mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >

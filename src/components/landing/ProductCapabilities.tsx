@@ -1,4 +1,5 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
+import productImg from "@/assets/product-banking.jpg";
 
 const products = [
   {
@@ -39,7 +40,16 @@ export default function ProductCapabilities() {
           </p>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-10">
+        {/* Product image */}
+        <div className="mt-12 rounded-xl overflow-hidden">
+          <img
+            src={productImg}
+            alt="Renda smart banking cards"
+            className="w-full h-64 md:h-80 object-cover"
+          />
+        </div>
+
+        <div className="mt-12 grid md:grid-cols-3 gap-10">
           {products.map((p) => (
             <div key={p.title} className="border-t border-border pt-6 space-y-3">
               <h3 className="text-lg font-semibold text-foreground">{p.title}</h3>

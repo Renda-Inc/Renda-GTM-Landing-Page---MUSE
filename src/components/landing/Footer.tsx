@@ -1,3 +1,5 @@
+import { Instagram, Linkedin } from "lucide-react";
+
 const footerColumns = [
   {
     heading: "Alfie AI",

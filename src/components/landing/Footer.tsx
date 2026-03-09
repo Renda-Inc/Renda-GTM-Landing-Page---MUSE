@@ -34,10 +34,10 @@ const footerColumns = [
   {
     heading: "Why Renda",
     links: [
-      { label: "Our Philosophy", href: "#philosophy" },
-      { label: "Signal Over Noise", href: "#signals" },
-      { label: "Trust & Responsibility", href: "#trust" },
-      { label: "AI-Native Banking", href: "#belief" },
+      { label: "Our Philosophy", href: "/why-renda#philosophy" },
+      { label: "Signal Over Noise", href: "/why-renda#signals" },
+      { label: "AI-Native Banking", href: "/why-renda#belief" },
+      { label: "Trust & Responsibility", href: "/why-renda#trust" },
     ],
   },
   {

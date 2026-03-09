@@ -12,6 +12,7 @@ import Help from "./pages/Help";
 import HelpCategory from "./pages/HelpCategory";
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import WhyRenda from "./pages/WhyRenda";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

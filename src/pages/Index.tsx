@@ -17,6 +17,7 @@ const Index = () => {
       <CoreBelief />
       <ProblemSection />
       <AlfieIntro />
+      <AlfieMockups />
       <ProductCapabilities />
       <TrustSection />
       <BeliefClose />

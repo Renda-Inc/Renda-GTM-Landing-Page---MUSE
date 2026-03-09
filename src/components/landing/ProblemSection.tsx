@@ -25,7 +25,7 @@ export default function ProblemSection() {
 
   return (
     <section className="py-20 lg:py-28 bg-surface-dark text-surface-dark-foreground relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,hsl(220_90%_56%/0.06),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,hsl(var(--primary)/0.04),transparent)]" />
       <div
         ref={ref}
         className={`relative max-w-5xl mx-auto px-6 transition-all duration-700 ${

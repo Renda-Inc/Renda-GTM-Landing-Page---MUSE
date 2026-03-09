@@ -1,17 +1,24 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
+import lifestyleCafeLaptop from "@/assets/lifestyle-cafe-laptop.jpg";
 
 export default function FutureVision() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section id="vision" className="py-24 lg:py-32">
+    <section id="vision" className="py-24 lg:py-32 relative overflow-hidden">
       <div
         ref={ref}
-        className={`max-w-5xl mx-auto px-6 transition-all duration-700 ${
+        className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Image */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[450px] group">
+            <img src={lifestyleCafeLaptop} alt="Working at cafe" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
+          </div>
+
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               The road ahead
@@ -30,33 +37,33 @@ export default function FutureVision() {
                 that compounds in value over time — for every user it serves.
               </p>
             </div>
-          </div>
 
-          {/* Roadmap visual */}
-          <div className="space-y-4">
-            {[
-              { phase: "Now", title: "Personal banking with Alfie", active: true },
-              { phase: "Next", title: "Business accounts & expense intelligence", active: false },
-              { phase: "Future", title: "Multi-account reasoning & open platform", active: false },
-            ].map((item) => (
-              <div
-                key={item.phase}
-                className={`rounded-2xl border p-6 transition-all ${
-                  item.active
-                    ? "border-primary/30 bg-primary/5"
-                    : "border-border bg-card"
-                }`}
-              >
-                <span
-                  className={`text-xs font-semibold uppercase tracking-wider ${
-                    item.active ? "text-primary" : "text-muted-foreground"
+            {/* Roadmap */}
+            <div className="mt-8 space-y-3">
+              {[
+                { phase: "Now", title: "Personal banking with Alfie", active: true },
+                { phase: "Next", title: "Business accounts & expense intelligence", active: false },
+                { phase: "Future", title: "Multi-account reasoning & open platform", active: false },
+              ].map((item) => (
+                <div
+                  key={item.phase}
+                  className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+                    item.active
+                      ? "border-primary/30 bg-primary/5"
+                      : "border-border bg-card hover:border-primary/15"
                   }`}
                 >
-                  {item.phase}
-                </span>
-                <p className="text-base font-medium text-foreground mt-1">{item.title}</p>
-              </div>
-            ))}
+                  <span
+                    className={`text-xs font-semibold uppercase tracking-wider ${
+                      item.active ? "text-primary" : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.phase}
+                  </span>
+                  <p className="text-base font-medium text-foreground mt-1">{item.title}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

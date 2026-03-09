@@ -23,7 +23,7 @@ export default function AlfieMoat() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-24 lg:py-32 bg-secondary/20">
       <div
         ref={ref}
         className={`max-w-5xl mx-auto px-6 transition-all duration-700 ${
@@ -44,12 +44,13 @@ export default function AlfieMoat() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {capabilities.map((c) => (
+          {capabilities.map((c, i) => (
             <div
               key={c.title}
-              className="rounded-2xl border border-border bg-card p-8 hover:shadow-md transition-shadow"
+              className={`rounded-2xl border border-border bg-card p-8 hover:shadow-xl hover:-translate-y-2 hover:border-primary/20 transition-all duration-500`}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <c.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">{c.title}</h3>

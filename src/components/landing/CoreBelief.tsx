@@ -1,16 +1,34 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { Zap, Brain, TrendingUp } from "lucide-react";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
+import lifestyleCafeLaptop from "@/assets/lifestyle-cafe-laptop.jpg";
 
 export default function CoreBelief() {
   const { ref, isVisible } = useFadeIn();
 
+  const items = [
+    {
+      icon: Brain,
+      title: "Understands context",
+      text: "Alfie connects your spending, saving, and goals into a coherent financial picture.",
+    },
+    {
+      icon: Zap,
+      title: "Acts proactively",
+      text: "Insights surface before you ask — at the right time, with the right context.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Learns continuously",
+      text: "The longer you use Renda, the more personalized and accurate Alfie becomes.",
+    },
+  ];
+
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
+    <section className="py-20 lg:py-28 relative overflow-hidden bg-background">
       <div
         ref={ref}
-        className={`relative max-w-5xl mx-auto px-6 transition-all duration-700 ${
+        className={`relative max-w-6xl mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
@@ -26,40 +44,35 @@ export default function CoreBelief() {
           </p>
         </div>
 
-        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative rounded-3xl overflow-hidden shadow-xl h-[450px]">
-            <img src={lifestyleStudying} alt="Studying at home" className="w-full h-full object-cover" />
+        {/* Image mosaic + cards */}
+        <div className="grid lg:grid-cols-12 gap-6">
+          {/* Left image */}
+          <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
+            <img src={lifestyleStudying} alt="Studying at home" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>
-          <div className="grid gap-5">
-            {[
-              {
-                icon: Brain,
-                title: "Understands context",
-                text: "Alfie connects your spending, saving, and goals into a coherent financial picture.",
-              },
-              {
-                icon: Zap,
-                title: "Acts proactively",
-                text: "Insights surface before you ask — at the right time, with the right context.",
-              },
-              {
-                icon: TrendingUp,
-                title: "Learns continuously",
-                text: "The longer you use Renda, the more personalized and accurate Alfie becomes.",
-              },
-            ].map((item) => (
+
+          {/* Center cards */}
+          <div className="lg:col-span-4 flex flex-col gap-4">
+            {items.map((item, i) => (
               <div
                 key={item.title}
-                className="group rounded-2xl border border-border bg-card p-7 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300"
+                className={`group rounded-2xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-500`}
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-5 group-hover:from-primary/25 group-hover:to-primary/10 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/25 group-hover:to-primary/10 group-hover:scale-110 transition-all duration-300">
                   <item.icon className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{item.title}</h3>
+                <h3 className="text-base font-semibold text-foreground mb-1.5">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
               </div>
             ))}
+          </div>
+
+          {/* Right image */}
+          <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
+            <img src={lifestyleCafeLaptop} alt="Working at cafe" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>
         </div>
       </div>

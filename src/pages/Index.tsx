@@ -3,6 +3,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import CoreBelief from "@/components/landing/CoreBelief";
 import ProblemSection from "@/components/landing/ProblemSection";
 import AlfieIntro from "@/components/landing/AlfieIntro";
+import AlfieMockups from "@/components/landing/AlfieMockups";
 import ProductCapabilities from "@/components/landing/ProductCapabilities";
 import TrustSection from "@/components/landing/TrustSection";
 import BeliefClose from "@/components/landing/BeliefClose";
@@ -16,6 +17,7 @@ const Index = () => {
       <CoreBelief />
       <ProblemSection />
       <AlfieIntro />
+      <AlfieMockups />
       <ProductCapabilities />
       <TrustSection />
       <BeliefClose />

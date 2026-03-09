@@ -1,7 +1,7 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { Zap, Brain, TrendingUp } from "lucide-react";
-import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
-import lifestyleCafeLaptop from "@/assets/lifestyle-cafe-laptop.jpg";
+import lifestyleDreamJob from "@/assets/lifestyle-dream-job.jpg";
+import lifestyleAdventureHike from "@/assets/lifestyle-adventure-hike.jpg";
 
 export default function CoreBelief() {
   const { ref, isVisible } = useFadeIn();
@@ -46,9 +46,9 @@ export default function CoreBelief() {
 
         {/* Image mosaic + cards */}
         <div className="grid lg:grid-cols-12 gap-6">
-          {/* Left image */}
+          {/* Left image - dream job */}
           <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
-            <img src={lifestyleStudying} alt="Studying at home" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={lifestyleDreamJob} alt="Person working at a job they love" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>
 
@@ -69,9 +69,9 @@ export default function CoreBelief() {
             ))}
           </div>
 
-          {/* Right image */}
+          {/* Right image - adventure hike */}
           <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
-            <img src={lifestyleCafeLaptop} alt="Working at cafe" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={lifestyleAdventureHike} alt="Person hiking on a mountain adventure" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>
         </div>

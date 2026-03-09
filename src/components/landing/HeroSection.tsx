@@ -66,110 +66,94 @@ export default function HeroSection() {
         {/* Product visual — centered below copy */}
         <div className="mt-14 flex justify-center animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
           <div className="relative">
-            {/* Main app frame — browser-style */}
-            <div className="w-full max-w-[720px] rounded-2xl border border-surface-dark-foreground/8 bg-[hsl(222_47%_8%)] shadow-2xl overflow-hidden">
-              {/* Window chrome */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-surface-dark-foreground/6">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-surface-dark-foreground/10" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-surface-dark-foreground/10" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-surface-dark-foreground/10" />
-                </div>
-                <div className="flex-1 flex justify-center">
-                  <div className="h-6 px-4 rounded-md bg-surface-dark-foreground/[0.04] border border-surface-dark-foreground/6 flex items-center">
-                    <span className="text-[11px] text-surface-dark-foreground/25 font-medium">app.renda.ca</span>
-                  </div>
-                </div>
-                <div className="w-12" />
+            {/* Main app frame — phone-style */}
+            <div className="w-[320px] h-[650px] rounded-[40px] border-[8px] border-surface-dark-foreground/10 bg-background shadow-2xl overflow-hidden relative flex flex-col mx-auto">
+              {/* Notch */}
+              <div className="absolute top-0 inset-x-0 h-7 flex justify-center z-20">
+                <div className="w-32 h-full bg-surface-dark-foreground/10 rounded-b-2xl"></div>
               </div>
-
+              
               {/* App content */}
-              <div className="p-6 grid grid-cols-[200px_1fr] gap-5">
-                {/* Sidebar */}
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-primary/10">
-                    <div className="w-4 h-4 rounded bg-primary/30" />
-                    <span className="text-[13px] font-medium text-primary">Dashboard</span>
+              <div className="flex-1 overflow-y-auto p-5 pt-12 pb-8 flex flex-col gap-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                {/* Chat with Alfie */}
+                <div className="flex gap-3 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                    <div className="w-3 h-3 rounded-full bg-primary"></div>
                   </div>
-                  {["Accounts", "Cards", "Payments", "Savings", "Alfie"].map((item) => (
-                    <div key={item} className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-dark-foreground/[0.03] transition-colors">
-                      <div className="w-4 h-4 rounded bg-surface-dark-foreground/[0.06]" />
-                      <span className="text-[13px] text-surface-dark-foreground/40">{item}</span>
-                    </div>
-                  ))}
+                  <div className="bg-surface-dark-foreground/[0.03] border border-surface-dark-foreground/5 rounded-2xl rounded-tl-sm p-4 text-[13px] text-foreground/80 leading-relaxed shadow-sm">
+                    Hey! Based on your spending, you might like the <span className="font-semibold text-foreground">Renda Essential Card</span>. It has zero fees and smart insights built right in.
+                  </div>
                 </div>
 
-                {/* Main content */}
-                <div className="space-y-4">
-                  {/* Balance row */}
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <p className="text-[11px] text-surface-dark-foreground/30 uppercase tracking-wider font-medium">Total Balance</p>
-                      <p className="text-3xl font-bold text-surface-dark-foreground/90 tracking-tight mt-0.5">$12,847.50</p>
-                    </div>
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-accent/10">
-                      <span className="text-[12px] font-semibold text-accent">↑ 2.4%</span>
-                      <span className="text-[11px] text-surface-dark-foreground/25">this month</span>
-                    </div>
+                {/* User reply */}
+                <div className="flex gap-3 justify-end animate-fade-in-up" style={{ animationDelay: "1.2s" }}>
+                  <div className="bg-primary text-primary-foreground rounded-2xl rounded-tr-sm p-4 text-[13px] leading-relaxed shadow-md">
+                    That sounds perfect. How do I get it?
                   </div>
+                </div>
 
-                  {/* Cards row */}
-                  <div className="grid grid-cols-3 gap-3">
-                    {[
-                      { label: "Chequing", value: "$6,420.00" },
-                      { label: "Savings", value: "$4,827.50" },
-                      { label: "Investment", value: "$1,600.00" },
-                    ].map((acc) => (
-                      <div key={acc.label} className="rounded-xl bg-surface-dark-foreground/[0.03] border border-surface-dark-foreground/5 p-3.5">
-                        <p className="text-[10px] text-surface-dark-foreground/30 uppercase tracking-wider">{acc.label}</p>
-                        <p className="text-[15px] font-semibold text-surface-dark-foreground/80 mt-1">{acc.value}</p>
-                      </div>
-                    ))}
+                {/* Card Preview */}
+                <div className="flex gap-3 animate-fade-in-up" style={{ animationDelay: "1.9s" }}>
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                    <div className="w-3 h-3 rounded-full bg-primary"></div>
                   </div>
-
-                  {/* Alfie insight */}
-                  <div className="rounded-xl bg-gradient-to-r from-primary/[0.06] to-accent/[0.03] border border-primary/10 p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-primary-foreground" />
-                      </div>
-                      <span className="text-[12px] font-semibold text-primary">Alfie Insight</span>
-                      <span className="text-[10px] text-surface-dark-foreground/20 ml-auto">Just now</span>
+                  <div className="w-full max-w-[220px]">
+                    <div className="bg-surface-dark-foreground/[0.03] border border-surface-dark-foreground/5 rounded-2xl rounded-tl-sm p-4 text-[13px] text-foreground/80 leading-relaxed mb-3 shadow-sm">
+                      You can pre-order the non-premium plan right here. Ready?
                     </div>
-                    <p className="text-[13px] text-surface-dark-foreground/55 leading-relaxed">
-                      Your spending is 12% below average this month. Consider moving $340 to your savings goal — you'll reach your target 2 weeks early.
-                    </p>
-                    <div className="flex gap-2 mt-3">
-                      <button className="h-7 px-3 rounded-md bg-primary text-primary-foreground text-[11px] font-medium">Move funds</button>
-                      <button className="h-7 px-3 rounded-md border border-surface-dark-foreground/8 text-surface-dark-foreground/40 text-[11px] font-medium">Dismiss</button>
-                    </div>
-                  </div>
-
-                  {/* Transactions */}
-                  <div className="space-y-2">
-                    <p className="text-[11px] font-semibold text-surface-dark-foreground/25 uppercase tracking-wider">Recent transactions</p>
-                    {[
-                      { name: "Uber Eats", cat: "Food & Drink", amount: "-$24.50", time: "2h ago" },
-                      { name: "Spotify", cat: "Subscription", amount: "-$11.99", time: "Yesterday" },
-                      { name: "Salary — Acme Inc", cat: "Income", amount: "+$4,200.00", time: "Mar 1" },
-                    ].map((tx) => (
-                      <div key={tx.name} className="flex items-center justify-between py-2 border-b border-surface-dark-foreground/[0.04] last:border-0">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-surface-dark-foreground/[0.04] border border-surface-dark-foreground/5" />
-                          <div>
-                            <p className="text-[13px] font-medium text-surface-dark-foreground/70">{tx.name}</p>
-                            <p className="text-[11px] text-surface-dark-foreground/25">{tx.cat}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className={`text-[13px] font-semibold ${tx.amount.startsWith("+") ? "text-accent/70" : "text-surface-dark-foreground/50"}`}>{tx.amount}</p>
-                          <p className="text-[10px] text-surface-dark-foreground/20">{tx.time}</p>
-                        </div>
+                    
+                    {/* Card Graphic */}
+                    <div className="rounded-xl bg-gradient-to-br from-foreground to-foreground/90 p-5 shadow-lg relative overflow-hidden h-32 flex flex-col justify-between group cursor-pointer transition-transform hover:scale-[1.02]">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.2),transparent_50%)]"></div>
+                      <div className="text-background/50 font-medium text-[10px] tracking-widest uppercase relative z-10">Renda</div>
+                      <div className="text-background/90 font-mono text-[13px] tracking-[0.15em] relative z-10">**** **** **** 4092</div>
+                      <div className="flex justify-between items-end relative z-10">
+                        <div className="text-background/80 text-[11px] font-medium">Essential</div>
+                        <div className="w-7 h-4 rounded-sm bg-background/20 backdrop-blur-sm"></div>
                       </div>
-                    ))}
+                    </div>
+                    
+                    <button 
+                      onClick={(e) => {
+                        const btn = e.currentTarget;
+                        btn.textContent = 'Pre-ordered!';
+                        btn.classList.add('bg-accent', 'text-accent-foreground');
+                        btn.classList.remove('bg-primary', 'text-primary-foreground');
+                        
+                        const toast = document.createElement('div');
+                        toast.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background px-5 py-3 rounded-full shadow-2xl z-50 transition-all duration-500 ease-in-out font-medium text-sm translate-y-10 opacity-0 flex items-center gap-2';
+                        toast.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 6 9 17l-5-5"/></svg> Thank you! We\'ll notify you.';
+                        document.body.appendChild(toast);
+                        
+                        requestAnimationFrame(() => {
+                          toast.classList.remove('translate-y-10', 'opacity-0');
+                        });
+                        
+                        setTimeout(() => {
+                          toast.classList.add('translate-y-10', 'opacity-0');
+                          setTimeout(() => document.body.removeChild(toast), 500);
+                          
+                          // Reset button
+                          setTimeout(() => {
+                            btn.textContent = 'Pre-order Card';
+                            btn.classList.remove('bg-accent', 'text-accent-foreground');
+                            btn.classList.add('bg-primary', 'text-primary-foreground');
+                          }, 1000);
+                        }, 3000);
+                      }}
+                      className="mt-3 w-full py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-[13px] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95"
+                    >
+                      Pre-order Card
+                    </button>
                   </div>
                 </div>
               </div>
+              
+              {/* Home indicator */}
+              <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[35%] h-[4px] rounded-full bg-surface-dark-foreground/20 z-20"></div>
+              
+              {/* Overlay gradient for bottom fade */}
+              <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
             </div>
 
             {/* Glow */}

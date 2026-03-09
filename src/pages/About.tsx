@@ -196,18 +196,20 @@ export default function About() {
               The people behind Renda.
             </h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10">
             {leaders.map((l) => (
-              <div key={l.name} className="group text-center">
-                <div className="relative mx-auto w-48 h-48 md:w-56 md:h-56 mb-4 overflow-hidden rounded-2xl">
+              <div key={l.name} className="group">
+                <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg bg-secondary">
                   <img
                     src={l.photo}
                     alt={l.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
-                <h3 className="text-base font-semibold text-foreground">{l.name}</h3>
-                <p className="text-sm text-muted-foreground mt-1 leading-snug">{l.role}</p>
+                <div className="mt-4">
+                  <h3 className="text-base font-semibold text-foreground">{l.name}</h3>
+                  <p className="text-sm text-muted-foreground mt-0.5 leading-snug">{l.role}</p>
+                </div>
               </div>
             ))}
           </div>

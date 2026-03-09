@@ -71,7 +71,7 @@ function ChatScreen() {
         {/* User message */}
         <div className="flex justify-end mb-4">
           <div className="rounded-2xl rounded-br-sm bg-foreground text-background px-4 py-2.5 max-w-[80%]">
-            <p className="text-[13px] leading-relaxed">Alfie, I'm thinking of taking a week off to travel. Any money advice?</p>
+            <p className="text-[13px] leading-relaxed">Hey Alfie, I want to take a trip but not sure if I can afford it?</p>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ function ChatScreen() {
           <div>
             <p className="text-[11px] text-muted-foreground mb-1">Alfie</p>
             <p className="text-[13px] text-foreground leading-relaxed">
-              Nice! Taking a week off? Based on your usual spending, you can safely budget <span className="font-semibold">$1,200</span> for the trip — no dip into savings needed.
+              Love that for you! Looking at your spending, you've got about <span className="font-semibold">$1,200</span> you can use without touching savings. Where are you thinking?
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ function ChatScreen() {
         {/* User message 2 */}
         <div className="flex justify-end mb-4">
           <div className="rounded-2xl rounded-br-sm bg-foreground text-background px-4 py-2.5 max-w-[80%]">
-            <p className="text-[13px] leading-relaxed">Amazing. Can you help me save up for it?</p>
+            <p className="text-[13px] leading-relaxed">Portugal! Can you help me save for it?</p>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ function ChatScreen() {
           <div>
             <p className="text-[11px] text-muted-foreground mb-1">Alfie</p>
             <p className="text-[13px] text-foreground leading-relaxed">
-              Already started. I'll move $200 weekly from your chequing account into a "Italy Getaway" goal wallet. ✈️
+              On it. I'll set aside $150/week into a "Portugal Fund" — you'll be good to go in 8 weeks. 🇵🇹
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ function ChatScreen() {
       {/* Input */}
       <div className="px-4 pb-3">
         <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-2.5">
-          <p className="text-[12px] text-muted-foreground flex-1">Let's talk your finance!</p>
+          <p className="text-[12px] text-muted-foreground flex-1">Ask me anything...</p>
           <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
             <Send className="w-3.5 h-3.5 text-muted-foreground" />
           </div>
@@ -125,43 +125,43 @@ function InsightsScreen() {
       {/* Nav bar */}
       <div className="flex items-center justify-between px-5 py-3 border-b border-border">
         <ChevronLeft className="w-5 h-5 text-foreground" />
-        <p className="text-sm font-semibold text-foreground">AI Insights</p>
+        <p className="text-sm font-semibold text-foreground">Your Money</p>
         <div className="w-5" />
       </div>
 
       <div className="flex-1 px-4 py-5 flex flex-col gap-4">
-        {/* Investment Growth card */}
+        {/* Savings card */}
         <div className="rounded-2xl bg-foreground text-background p-5">
           <div className="flex items-center gap-2 mb-4">
             <Shield className="w-4 h-4 text-background/60" />
             <div>
-              <p className="text-[10px] text-background/50 uppercase tracking-wider">AI Insights</p>
-              <p className="text-sm font-semibold text-background">Investment Growth</p>
+              <p className="text-[10px] text-background/50 uppercase tracking-wider">Savings</p>
+              <p className="text-sm font-semibold text-background">You're doing great</p>
             </div>
           </div>
 
           <div className="flex items-center justify-between mb-5">
             <div>
-              <p className="text-2xl font-bold text-background">$8,500</p>
-              <p className="text-[11px] text-background/50">current</p>
+              <p className="text-2xl font-bold text-background">$4,200</p>
+              <p className="text-[11px] text-background/50">saved</p>
             </div>
             <ArrowRight className="w-4 h-4 text-background/30" />
             <div className="text-right">
-              <p className="text-2xl font-bold text-background">$11,200</p>
-              <p className="text-[11px] text-background/50">predicted</p>
+              <p className="text-2xl font-bold text-background">$6,000</p>
+              <p className="text-[11px] text-background/50">goal</p>
             </div>
           </div>
 
           <div className="space-y-2.5 border-t border-background/10 pt-3">
             <div className="flex items-center justify-between">
-              <span className="text-[12px] text-background/60">Stocks</span>
-              <span className="text-[13px] font-semibold text-background">$5,000</span>
-              <span className="text-[12px] text-accent">+12% YTD</span>
+              <span className="text-[12px] text-background/60">Emergency Fund</span>
+              <span className="text-[13px] font-semibold text-background">$2,800</span>
+              <span className="text-[12px] text-accent">70%</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-[12px] text-background/60">Crypto</span>
-              <span className="text-[13px] font-semibold text-background">$3,500</span>
-              <span className="text-[12px] text-accent">+38% YTD</span>
+              <span className="text-[12px] text-background/60">Portugal Fund</span>
+              <span className="text-[13px] font-semibold text-background">$1,400</span>
+              <span className="text-[12px] text-accent">New</span>
             </div>
           </div>
         </div>
@@ -170,19 +170,19 @@ function InsightsScreen() {
         <div className="rounded-2xl border border-border p-4">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">This month</p>
           <div className="flex items-end gap-2">
-            <p className="text-xl font-bold text-foreground">$2,340</p>
+            <p className="text-xl font-bold text-foreground">$1,840</p>
             <div className="flex items-center gap-1 mb-0.5">
               <TrendingUp className="w-3 h-3 text-accent" />
-              <span className="text-[11px] font-medium text-accent">On track</span>
+              <span className="text-[11px] font-medium text-accent">Looking good</span>
             </div>
           </div>
-          <p className="text-[11px] text-muted-foreground mt-1">$660 under your monthly budget</p>
+          <p className="text-[11px] text-muted-foreground mt-1">You've got $460 left to spend this month</p>
         </div>
 
         {/* Alfie note */}
         <div className="rounded-xl bg-secondary/60 px-4 py-3">
           <p className="text-[12px] text-foreground/80 leading-relaxed">
-            <span className="font-semibold">Alfie:</span> Your portfolio is trending 18% above projections. Consider rebalancing next quarter.
+            <span className="font-semibold">Alfie:</span> Nice work this month! You're on track to hit your emergency fund goal by September.
           </p>
         </div>
       </div>
@@ -211,7 +211,7 @@ export default function AlfieMockups() {
             Meet Alfie.
           </h2>
           <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-            Ask questions. Get insights. Take action — all through a conversation.
+            Got questions? Alfie's got answers. No jargon, no judgment — just real help.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <button className="h-10 px-6 rounded-full bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors">
@@ -228,11 +228,11 @@ export default function AlfieMockups() {
           <div className="text-center">
             <ChatScreen />
             <p className="mt-5 text-sm font-semibold text-foreground">Talk to Alfie</p>
-            <p className="text-[13px] text-muted-foreground mt-1">Like texting a financially savvy friend</p>
+            <p className="text-[13px] text-muted-foreground mt-1">Like texting a friend who's good with money</p>
           </div>
           <div className="text-center">
             <InsightsScreen />
-            <p className="mt-5 text-sm font-semibold text-foreground">AI-powered insights</p>
+            <p className="mt-5 text-sm font-semibold text-foreground">See how you're doing</p>
             <p className="text-[13px] text-muted-foreground mt-1">Your money, explained — not just displayed</p>
           </div>
         </div>

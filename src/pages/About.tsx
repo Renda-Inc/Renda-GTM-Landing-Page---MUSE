@@ -196,19 +196,26 @@ export default function About() {
               The people behind Renda.
             </h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {leaders.map((l) => (
-              <div key={l.name} className="group">
-                <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg bg-secondary">
+              <div key={l.name} className="group bg-foreground rounded-2xl overflow-hidden">
+                {/* Photo - square aspect, consistent sizing */}
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <img
                     src={l.photo}
                     alt={l.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="mt-4">
-                  <h3 className="text-base font-semibold text-foreground">{l.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-0.5 leading-snug">{l.role}</p>
+                {/* Info bar */}
+                <div className="px-5 py-4 flex items-end justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-background leading-tight">{l.name}</h3>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="w-2 h-2 rounded-sm bg-background/40" />
+                    <span className="text-xs font-semibold uppercase tracking-wider text-background/60">{l.role}</span>
+                  </div>
                 </div>
               </div>
             ))}

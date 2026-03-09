@@ -18,12 +18,62 @@ function Divider() {
   return <div className="max-w-4xl mx-auto px-6"><div className="h-px bg-border" /></div>;
 }
 
+function SectionBlock({
+  id,
+  label,
+  headline,
+  description,
+  bullets,
+  closing,
+  elevated = false,
+}: {
+  id: string;
+  label: string;
+  headline: string;
+  description: string;
+  bullets: string[];
+  closing?: string;
+  elevated?: boolean;
+}) {
+  return (
+    <section
+      id={id}
+      className={`py-24 lg:py-32 scroll-mt-20 ${elevated ? "bg-surface-elevated" : ""}`}
+    >
+      <Fade className="max-w-3xl mx-auto px-6">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-6">
+          {label}
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+          {headline}
+        </h2>
+        <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+          {description}
+        </p>
+        <ul className="mt-8 space-y-4">
+          {bullets.map((b) => (
+            <li key={b} className="flex items-start gap-3">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+              <span className="text-base md:text-lg text-foreground leading-relaxed">{b}</span>
+            </li>
+          ))}
+        </ul>
+        {closing && (
+          <p className="mt-8 text-base md:text-lg text-foreground font-medium leading-relaxed">
+            {closing}
+          </p>
+        )}
+      </Fade>
+    </section>
+  );
+}
+
 export default function WhyRenda() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* Hero */}
       <section className="pt-36 pb-24 lg:pt-48 lg:pb-32">
         <Fade className="max-w-3xl mx-auto px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">
@@ -38,7 +88,7 @@ export default function WhyRenda() {
           <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
             Most apps still show the same things banks have shown for decades — transactions, balances, and charts — and expect people to figure out the rest.
           </p>
-          <p className="mt-6 text-base md:text-lg text-foreground leading-relaxed max-w-2xl">
+          <p className="mt-6 text-base md:text-lg text-foreground font-medium leading-relaxed max-w-2xl">
             We believe your bank should do more than record what happened.
           </p>
         </Fade>
@@ -46,145 +96,67 @@ export default function WhyRenda() {
 
       <Divider />
 
-      {/* ── Section 1: Our Philosophy ────────────────────────── */}
-      <section id="philosophy" className="py-24 lg:py-32 scroll-mt-20">
-        <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
-            Our Philosophy
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Understanding over reporting.
-          </h2>
-          <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p>
-              For decades, banks have focused on recording financial activity.
-            </p>
-            <p className="text-foreground font-medium">
-              Balances. Transactions. Statements.
-            </p>
-            <p>
-              But simply reporting information does not help people make better financial decisions.
-            </p>
-            <p>
-              We believe modern banking should do something more valuable.
-            </p>
-          </div>
-          <p className="mt-8 text-base md:text-lg text-foreground font-medium leading-relaxed">
-            It should interpret financial activity, surface meaning, and help people act with confidence.
-          </p>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Renda is designed to turn financial information into clear understanding — not just records.
-          </p>
-        </Fade>
-      </section>
+      <SectionBlock
+        id="philosophy"
+        label="Our Philosophy"
+        headline="Understanding over reporting."
+        description="For decades, banks have focused on recording financial activity — balances, transactions, statements. But simply reporting information does not help people make better financial decisions."
+        bullets={[
+          "Interpret financial activity, not just display it.",
+          "Surface meaning from patterns, not raw data.",
+          "Help people act with confidence, not confusion.",
+        ]}
+        closing="Renda is designed to turn financial information into clear understanding — not just records."
+      />
 
       <Divider />
 
-      {/* ── Section 2: Signal Over Noise ─────────────────────── */}
-      <section id="signals" className="py-24 lg:py-32 scroll-mt-20 bg-surface-elevated">
-        <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
-            Signal Over Noise
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Signal over noise.
-          </h2>
-          <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p>
-              Most banks flood you with data.
-            </p>
-            <p className="text-foreground font-medium">
-              Transaction lists. Endless notifications. Dashboards full of charts you never asked for.
-            </p>
-            <p>
-              But more information doesn't create clarity.
-            </p>
-          </div>
-          <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p className="text-foreground font-medium">
-              We believe your attention is sacred.
-            </p>
-            <p>
-              You shouldn't have to dig through noise to find what matters.
-            </p>
-          </div>
-          <p className="mt-8 text-base md:text-lg text-foreground font-medium leading-relaxed">
-            Renda is designed to surface the right insight at the right moment — quietly, clearly, and only when it matters.
-          </p>
-        </Fade>
-      </section>
+      <SectionBlock
+        id="signals"
+        label="Signal Over Noise"
+        headline="Signal over noise."
+        description="Most banks flood you with data — transaction lists, endless notifications, dashboards full of charts you never asked for. But more information doesn't create clarity."
+        bullets={[
+          "Your attention is sacred — don't waste it on noise.",
+          "Surface the right insight at the right moment.",
+          "Quiet by design — intelligence that speaks only when it matters.",
+        ]}
+        closing="Renda is designed to surface what's relevant — quietly, clearly, and only when it matters."
+        elevated
+      />
 
       <Divider />
 
-      {/* ── Section 3: AI-Native Banking ─────────────────────── */}
-      <section id="belief" className="py-24 lg:py-32 scroll-mt-20">
-        <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
-            AI-Native Banking
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Intelligence, not features.
-          </h2>
-          <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p>
-              Most financial apps treat artificial intelligence like a feature.
-            </p>
-            <p className="text-foreground font-medium">
-              A chatbot in the corner.<br />
-              A budgeting tool.<br />
-              A recommendation engine layered on top.
-            </p>
-            <p>
-              We believe intelligence should be part of the foundation of the bank itself.
-            </p>
-          </div>
-          <p className="mt-8 text-base md:text-lg text-foreground font-medium leading-relaxed">
-            Renda is powered by Alfie, an intelligence layer built directly into the platform.
-          </p>
-          <div className="mt-5 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p>
-              This allows the bank to continuously understand patterns, detect unusual activity, and surface meaningful guidance.
-            </p>
-            <p className="text-foreground font-medium">
-              Not because you asked — but because it matters.
-            </p>
-          </div>
-        </Fade>
-      </section>
+      <SectionBlock
+        id="belief"
+        label="AI-Native Banking"
+        headline="Intelligence, not features."
+        description="Most financial apps treat artificial intelligence like a feature — a chatbot in the corner, a budgeting tool, a recommendation engine layered on top. We believe intelligence should be part of the foundation."
+        bullets={[
+          "Alfie is an intelligence layer built directly into the platform.",
+          "Continuously understands patterns and detects unusual activity.",
+          "Surfaces meaningful guidance — not because you asked, but because it matters.",
+        ]}
+        closing="Renda is powered by Alfie — intelligence woven into every layer of the bank."
+      />
 
       <Divider />
 
-      {/* ── Section 4: Trust & Responsibility ────────────────── */}
-      <section id="trust" className="py-24 lg:py-32 scroll-mt-20 bg-surface-elevated">
-        <Fade className="max-w-3xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
-            Trust &amp; Responsibility
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Trust by design.
-          </h2>
-          <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            <p>
-              A bank powered by intelligence must also be built on responsibility.
-            </p>
-            <p className="text-foreground font-medium">
-              Financial guidance carries real consequences.<br />
-              It requires transparency, restraint, and user control.
-            </p>
-            <p>
-              We believe people should always remain in charge of their financial decisions.
-            </p>
-          </div>
-          <p className="mt-8 text-base md:text-lg text-foreground font-medium leading-relaxed">
-            Renda is designed so that insights are explainable, automation is optional, and users maintain full control.
-          </p>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Technology should support your judgment — never replace it.
-          </p>
-        </Fade>
-      </section>
+      <SectionBlock
+        id="trust"
+        label="Trust & Responsibility"
+        headline="Trust by design."
+        description="A bank powered by intelligence must also be built on responsibility. Financial guidance carries real consequences — it requires transparency, restraint, and user control."
+        bullets={[
+          "Insights are always explainable and transparent.",
+          "Automation is optional — you stay in control.",
+          "Technology supports your judgment, never replaces it.",
+        ]}
+        closing="People should always remain in charge of their financial decisions."
+        elevated
+      />
 
-      {/* ── Closing CTA ───────────────────────────────────────── */}
+      {/* Closing CTA */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">

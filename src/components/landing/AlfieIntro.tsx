@@ -1,24 +1,19 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
-import alfieGlow from "@/assets/alfie-glow.jpg";
 
 export default function AlfieIntro() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section id="alfie" className="relative py-32 lg:py-40 bg-surface-dark text-surface-dark-foreground overflow-hidden">
-      {/* Radial glow from top */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-dark-radial)' }} />
-
+    <section id="alfie" className="py-32 lg:py-40 bg-surface-dark text-surface-dark-foreground">
       <div
         ref={ref}
-        className={`relative z-10 max-w-3xl mx-auto px-6 text-center transition-all duration-700 ${
+        className={`max-w-3xl mx-auto px-6 text-center transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="mb-12 flex justify-center">
-          <div className="w-32 h-32 relative">
-            <img src={alfieGlow} alt="Alfie AI" className="w-full h-full object-cover rounded-full" />
-            <div className="absolute inset-0 rounded-full" style={{ boxShadow: '0 0 60px 20px hsl(27 95% 60% / 0.15)' }} />
+          <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-accent/30" />
           </div>
         </div>
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-surface-dark-foreground/50 mb-8">

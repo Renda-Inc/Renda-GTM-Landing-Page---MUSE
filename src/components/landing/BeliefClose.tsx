@@ -4,15 +4,10 @@ export default function BeliefClose() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section id="waitlist" className="relative py-32 lg:py-44 overflow-hidden" style={{ background: 'var(--gradient-close)' }}>
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-30 blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, hsl(27 95% 60% / 0.15), transparent 70%)' }}
-      />
-
+    <section id="waitlist" className="py-32 lg:py-44">
       <div
         ref={ref}
-        className={`relative z-10 max-w-3xl mx-auto px-6 text-center transition-all duration-700 ${
+        className={`max-w-3xl mx-auto px-6 text-center transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >

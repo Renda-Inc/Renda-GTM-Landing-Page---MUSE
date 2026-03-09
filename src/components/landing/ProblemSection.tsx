@@ -44,8 +44,7 @@ export default function ProblemSection() {
 
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           {problems.map((p) => (
-            <div key={p.title} className="relative p-6 rounded-lg border border-border bg-card/50 space-y-3">
-              <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            <div key={p.title} className="space-y-3">
               <h3 className="text-lg font-semibold text-foreground">{p.title}</h3>
               <p className="text-base text-muted-foreground leading-relaxed">{p.description}</p>
             </div>

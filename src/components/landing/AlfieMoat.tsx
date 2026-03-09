@@ -42,8 +42,7 @@ export default function AlfieMoat() {
 
         <div className="mt-16 grid md:grid-cols-3 gap-10">
           {capabilities.map((c) => (
-            <div key={c.title} className="relative p-6 rounded-lg space-y-3" style={{ background: 'var(--gradient-warm)' }}>
-              <div className="absolute top-0 left-0 w-12 h-px bg-primary/40" />
+            <div key={c.title} className="space-y-3">
               <h3 className="text-lg font-semibold text-foreground">{c.title}</h3>
               <p className="text-base text-muted-foreground leading-relaxed">{c.description}</p>
             </div>

@@ -1,24 +1,7 @@
-import heroImg from "@/assets/hero-abstract.jpg";
-
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImg}
-          alt=""
-          className="w-full h-full object-cover opacity-[0.07]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
-      </div>
-
-      {/* Radial glow accent */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, hsl(27 95% 60% / 0.3), transparent 70%)' }}
-      />
-
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center py-32">
+    <section className="min-h-screen flex items-center justify-center pt-16">
+      <div className="max-w-3xl mx-auto px-6 text-center py-32">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-foreground">
           Meet the bank built around intelligence.
         </h1>

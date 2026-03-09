@@ -4,10 +4,7 @@ export default function CoreBelief() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="relative py-32 lg:py-40 overflow-hidden" style={{ background: 'var(--gradient-warm)' }}>
-      {/* Subtle accent line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
-
+    <section className="py-32 lg:py-40">
       <div
         ref={ref}
         className={`max-w-3xl mx-auto px-6 transition-all duration-700 ${

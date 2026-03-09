@@ -81,9 +81,14 @@ export default {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
   			},
-  			'surface-dark': 'hsl(var(--surface-dark))',
-  			'surface-dark-foreground': 'hsl(var(--surface-dark-foreground))',
-  			'surface-elevated': 'hsl(var(--surface-elevated))'
+  		'surface-dark': 'hsl(var(--surface-dark))',
+  		'surface-dark-foreground': 'hsl(var(--surface-dark-foreground))',
+  		'surface-elevated': 'hsl(var(--surface-elevated))',
+  		'hero-gradient': {
+  			start: 'hsl(var(--hero-gradient-start))',
+  			mid: 'hsl(var(--hero-gradient-mid))',
+  			end: 'hsl(var(--hero-gradient-end))'
+  		}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

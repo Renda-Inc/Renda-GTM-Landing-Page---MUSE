@@ -4,7 +4,7 @@ export default function BeliefClose() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section id="waitlist" className="py-32 lg:py-44">
+    <section id="waitlist" className="py-24 lg:py-32">
       <div
         ref={ref}
         className={`max-w-3xl mx-auto px-6 text-center transition-all duration-700 ${
@@ -14,18 +14,26 @@ export default function BeliefClose() {
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-foreground">
           Banking should understand you.
           <br />
-          We're building it.
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            We're building it.
+          </span>
         </h2>
         <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           Renda is for people who believe their bank should be as intelligent
           as the rest of their life.
         </p>
-        <div className="mt-12">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#waitlist"
-            className="inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="h-12 px-8 inline-flex items-center rounded-xl bg-primary text-primary-foreground text-base font-semibold hover:brightness-110 transition-all shadow-lg shadow-primary/25"
           >
             Join the Waitlist
+          </a>
+          <a
+            href="#"
+            className="h-12 px-6 inline-flex items-center rounded-xl border border-border text-foreground text-base font-medium hover:bg-secondary transition-all"
+          >
+            Learn More
           </a>
         </div>
       </div>

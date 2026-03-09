@@ -7,6 +7,24 @@ export default function FloatingCards() {
 
   return (
     <section className="py-20 lg:py-28 bg-foreground overflow-hidden">
+      <style>{`
+        @keyframes float-front {
+          0%, 100% { transform: rotateY(18deg) rotateX(-12deg) rotateZ(3deg) translateY(0px); }
+          50% { transform: rotateY(18deg) rotateX(-12deg) rotateZ(3deg) translateY(-15px); }
+        }
+        @keyframes float-back {
+          0%, 100% { transform: rotateY(-12deg) rotateX(8deg) rotateZ(-5deg) translateY(0px); }
+          50% { transform: rotateY(-12deg) rotateX(8deg) rotateZ(-5deg) translateY(-10px); }
+        }
+        @keyframes glow-pulse {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        .card-front-float { animation: float-front 4s ease-in-out infinite; }
+        .card-back-float { animation: float-back 5s ease-in-out infinite; }
+        .glow-float { animation: glow-pulse 4s ease-in-out infinite; }
+      `}</style>
+
       <div
         ref={ref}
         className={`max-w-6xl mx-auto px-6 transition-all duration-1000 ${
@@ -25,59 +43,66 @@ export default function FloatingCards() {
           </p>
         </div>
 
-        {/* 3D Floating Cards */}
-        <div className="relative h-[400px] md:h-[500px] flex items-center justify-center perspective-[1500px]">
-          {/* Back card - tilted left, behind */}
+        {/* 3D Floating Cards - dynamic pose */}
+        <div className="relative h-[420px] md:h-[520px] flex items-center justify-center" style={{ perspective: "1200px" }}>
+          
+          {/* Back card - angled dramatically, floating behind */}
           <div
-            className={`absolute w-[280px] md:w-[380px] transition-all duration-1000 delay-300 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
+            className={`absolute w-[260px] md:w-[360px] transition-all duration-1000 delay-300 ${
+              isVisible ? "opacity-100" : "opacity-0 translate-y-24"
             }`}
             style={{
-              transform: isVisible
-                ? "rotateY(-15deg) rotateX(5deg) translateX(-60px) translateZ(-50px)"
-                : "rotateY(0deg) rotateX(0deg) translateX(0) translateZ(0)",
               transformStyle: "preserve-3d",
+              left: "50%",
+              marginLeft: "-240px",
+              top: "15%",
             }}
           >
-            <img
-              src={cardBack}
-              alt="Renda card back"
-              className="w-full rounded-2xl shadow-2xl shadow-black/40 hover:shadow-black/60 transition-shadow duration-500"
-              style={{
-                filter: "brightness(0.85)",
-              }}
-            />
+            <div className={isVisible ? "card-back-float" : ""} style={{ transformStyle: "preserve-3d" }}>
+              <img
+                src={cardBack}
+                alt="Renda card back"
+                className="w-full rounded-2xl"
+                style={{
+                  filter: "brightness(0.8)",
+                  boxShadow: "0 30px 60px -15px rgba(0,0,0,0.5), 0 0 40px rgba(74,140,207,0.15)",
+                }}
+              />
+            </div>
           </div>
 
-          {/* Front card - tilted right, in front */}
+          {/* Front card - steep angle, floating in front */}
           <div
-            className={`absolute w-[280px] md:w-[380px] transition-all duration-1000 delay-500 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-20"
+            className={`absolute w-[260px] md:w-[360px] transition-all duration-1000 delay-500 ${
+              isVisible ? "opacity-100" : "opacity-0 translate-y-24"
             }`}
             style={{
-              transform: isVisible
-                ? "rotateY(12deg) rotateX(-3deg) translateX(80px) translateZ(50px)"
-                : "rotateY(0deg) rotateX(0deg) translateX(0) translateZ(0)",
               transformStyle: "preserve-3d",
+              left: "50%",
+              marginLeft: "-40px",
+              top: "8%",
+              zIndex: 10,
             }}
           >
-            <img
-              src={cardFront}
-              alt="Renda card front"
-              className="w-full rounded-2xl shadow-2xl shadow-black/50 hover:shadow-black/70 hover:scale-[1.02] transition-all duration-500"
-            />
+            <div className={isVisible ? "card-front-float" : ""} style={{ transformStyle: "preserve-3d" }}>
+              <img
+                src={cardFront}
+                alt="Renda card front"
+                className="w-full rounded-2xl hover:scale-[1.03] transition-transform duration-500 cursor-pointer"
+                style={{
+                  boxShadow: "0 40px 80px -20px rgba(0,0,0,0.6), 0 0 60px rgba(255,180,163,0.2)",
+                }}
+              />
+            </div>
           </div>
 
-          {/* Glow effect */}
-          <div className="absolute w-[500px] h-[300px] bg-primary/20 blur-[100px] rounded-full -z-10" />
+          {/* Accent glows */}
+          <div className="absolute w-[300px] h-[200px] rounded-full -z-10 glow-float" style={{ background: "radial-gradient(circle, hsla(211,52%,55%,0.3), transparent 70%)", left: "15%", top: "30%" }} />
+          <div className="absolute w-[250px] h-[200px] rounded-full -z-10 glow-float" style={{ background: "radial-gradient(circle, hsla(11,100%,82%,0.25), transparent 70%)", right: "15%", top: "20%", animationDelay: "2s" }} />
         </div>
 
         {/* Features below cards */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { label: "Zero monthly fees", value: "$0" },
             { label: "Cashback", value: "1.5%" },
@@ -85,7 +110,7 @@ export default function FloatingCards() {
             { label: "Real-time alerts", value: "Instant" },
           ].map((item) => (
             <div key={item.label} className="group">
-              <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-primary transition-colors duration-300">
+              <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
                 {item.value}
               </p>
               <p className="text-sm text-background/50 mt-1">{item.label}</p>

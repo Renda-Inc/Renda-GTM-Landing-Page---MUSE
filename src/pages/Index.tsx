@@ -23,8 +23,8 @@ const Index = () => {
       <AlfieMockups />
       <ProductCapabilities />
       <TrustSection />
-      <PartnersMarquee />
       <BeliefClose />
+      <PartnersMarquee />
       <Footer />
     </main>
   );

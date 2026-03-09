@@ -116,13 +116,13 @@ export default function Navbar() {
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || openMenu
-          ? "bg-background/60 backdrop-blur-xl backdrop-saturate-150 border-b border-border/40 shadow-lg"
+          ? "bg-surface-dark/90 backdrop-blur-xl border-b border-surface-dark-foreground/10 shadow-lg"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="text-xl font-bold tracking-tight text-foreground">
+        <a href="/" className="text-xl font-bold tracking-tight text-surface-dark-foreground">
           Renda
         </a>
 
@@ -138,8 +138,8 @@ export default function Navbar() {
               <button
                 className={`flex items-center gap-1.5 px-4 py-2 text-[15px] font-medium transition-colors rounded-md ${
                   openMenu === group.label
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-surface-dark-foreground"
+                    : "text-surface-dark-foreground/60 hover:text-surface-dark-foreground"
                 }`}
                 onClick={() => setOpenMenu(openMenu === group.label ? null : group.label)}
               >
@@ -151,21 +151,18 @@ export default function Navbar() {
                 />
               </button>
 
-              {/* Dropdown positioned under this nav item */}
               {openMenu === group.label && (
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50"
-                  onMouseEnter={() => {
-                    clearTimeout(timeoutRef.current);
-                  }}
+                  onMouseEnter={() => clearTimeout(timeoutRef.current)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg p-5">
-                    <div className={`flex gap-10 ${group.sections.length > 1 ? "" : ""}`}>
+                  <div className="bg-surface-dark/95 backdrop-blur-xl border border-surface-dark-foreground/10 rounded-xl shadow-2xl p-5">
+                    <div className={`flex gap-10`}>
                       {group.sections.map((section, si) => (
                         <div key={si} className="min-w-[180px]">
                           {section.heading && (
-                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">
+                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground/40 mb-3">
                               {section.heading}
                             </p>
                           )}
@@ -174,12 +171,12 @@ export default function Navbar() {
                               <li key={link.label}>
                                 <a
                                   href={link.href}
-                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
+                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-surface-dark-foreground/70 hover:text-surface-dark-foreground transition-colors whitespace-nowrap"
                                   onClick={() => setOpenMenu(null)}
                                 >
                                   {link.label}
                                   {link.badge && (
-                                    <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-muted/30 px-1.5 py-0.5 rounded">
+                                    <span className="text-[10px] font-medium uppercase tracking-wider text-surface-dark-foreground/40 bg-surface-dark-foreground/10 px-1.5 py-0.5 rounded">
                                       {link.badge}
                                     </span>
                                   )}
@@ -201,13 +198,13 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           <a
             href="#"
-            className="text-[15px] font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="text-[15px] font-medium text-surface-dark-foreground/60 hover:text-surface-dark-foreground transition-colors"
           >
             Sign In
           </a>
           <a
             href="#waitlist"
-            className="h-9 px-5 inline-flex items-center rounded-full bg-foreground text-background text-[15px] font-medium hover:opacity-90 transition-opacity"
+            className="h-9 px-5 inline-flex items-center rounded-xl bg-primary text-primary-foreground text-[15px] font-medium hover:brightness-110 transition-all"
           >
             Get Early Access
           </a>
@@ -215,7 +212,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-surface-dark-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -223,15 +220,14 @@ export default function Navbar() {
         </button>
       </div>
 
-
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-background border-t border-border max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-surface-dark border-t border-surface-dark-foreground/10 max-h-[80vh] overflow-y-auto">
           <div className="px-6 py-4 space-y-1">
             {navGroups.map((group) => (
               <div key={group.label}>
                 <button
-                  className="w-full flex items-center justify-between py-3 text-base font-medium text-foreground"
+                  className="w-full flex items-center justify-between py-3 text-base font-medium text-surface-dark-foreground"
                   onClick={() =>
                     setMobileExpanded(mobileExpanded === group.label ? null : group.label)
                   }
@@ -248,7 +244,7 @@ export default function Navbar() {
                     {group.sections.map((section, si) => (
                       <div key={si}>
                         {section.heading && (
-                          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2">
+                          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-surface-dark-foreground/40 mb-2">
                             {section.heading}
                           </p>
                         )}
@@ -257,12 +253,12 @@ export default function Navbar() {
                             <li key={link.label}>
                               <a
                                 href={link.href}
-                                className="flex items-center gap-2 py-2 text-[15px] text-foreground/80 hover:text-foreground transition-colors"
+                                className="flex items-center gap-2 py-2 text-[15px] text-surface-dark-foreground/70 hover:text-surface-dark-foreground transition-colors"
                                 onClick={() => setMobileOpen(false)}
                               >
                                 {link.label}
                                 {link.badge && (
-                                  <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-muted/30 px-1.5 py-0.5 rounded">
+                                  <span className="text-[10px] font-medium uppercase tracking-wider text-surface-dark-foreground/40 bg-surface-dark-foreground/10 px-1.5 py-0.5 rounded">
                                     {link.badge}
                                   </span>
                                 )}
@@ -277,13 +273,13 @@ export default function Navbar() {
               </div>
             ))}
 
-            <div className="pt-4 border-t border-border flex flex-col gap-3">
-              <a href="#" className="text-base font-medium text-muted-foreground">
+            <div className="pt-4 border-t border-surface-dark-foreground/10 flex flex-col gap-3">
+              <a href="#" className="text-base font-medium text-surface-dark-foreground/60">
                 Sign In
               </a>
               <a
                 href="#waitlist"
-                className="h-10 inline-flex items-center justify-center rounded-full bg-foreground text-background text-base font-medium"
+                className="h-10 inline-flex items-center justify-center rounded-xl bg-primary text-primary-foreground text-base font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Early Access

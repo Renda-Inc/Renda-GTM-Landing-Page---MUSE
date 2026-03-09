@@ -1,5 +1,6 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { AlertCircle, Eye, TrendingDown } from "lucide-react";
+import lifestyleHike from "@/assets/lifestyle-outdoor-hike.jpg";
 
 const problems = [
   {
@@ -43,20 +44,26 @@ export default function ProblemSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
-          {problems.map((p, i) => (
-            <div
-              key={p.title}
-              className="group rounded-2xl border border-surface-dark-foreground/8 bg-surface-dark-foreground/[0.02] p-7 hover:border-surface-dark-foreground/15 hover:bg-surface-dark-foreground/[0.04] hover:-translate-y-1 transition-all duration-300"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div className="w-10 h-10 rounded-xl bg-surface-dark-foreground/[0.05] flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
-                <p.icon className="w-5 h-5 text-surface-dark-foreground/40 group-hover:text-primary transition-colors" />
+        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid gap-5">
+            {problems.map((p, i) => (
+              <div
+                key={p.title}
+                className="group rounded-2xl border border-surface-dark-foreground/8 bg-card p-7 hover:border-surface-dark-foreground/15 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                  <p.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-base font-semibold text-surface-dark-foreground/90 mb-2">{p.title}</h3>
+                <p className="text-sm text-surface-dark-foreground/50 leading-relaxed">{p.description}</p>
               </div>
-              <h3 className="text-base font-semibold text-surface-dark-foreground/90 mb-2">{p.title}</h3>
-              <p className="text-sm text-surface-dark-foreground/45 leading-relaxed">{p.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="relative rounded-3xl overflow-hidden shadow-xl h-[450px]">
+            <img src={lifestyleHike} alt="Friends hiking outdoors" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
+          </div>
         </div>
       </div>
     </section>

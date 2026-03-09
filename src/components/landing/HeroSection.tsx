@@ -1,4 +1,5 @@
 import { Apple, Play, ArrowRight } from "lucide-react";
+import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 
 export default function HeroSection() {
   return (
@@ -64,8 +65,14 @@ export default function HeroSection() {
         </div>
 
         {/* Product visual — centered below copy */}
-        <div className="mt-14 flex justify-center animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
-          <div className="relative">
+        <div className="mt-14 grid lg:grid-cols-2 gap-12 items-center animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+          
+          <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl h-[500px] lg:h-[650px] bg-secondary">
+            <img src={lifestyleGathering} alt="Friends casually gathering" className="object-cover w-full h-full" />
+            <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+          </div>
+
+          <div className="order-1 lg:order-2 relative flex justify-center">
             {/* Main app frame — phone-style */}
             <div className="w-[320px] h-[650px] rounded-[40px] border-[8px] border-surface-dark-foreground/10 bg-background shadow-2xl overflow-hidden relative flex flex-col mx-auto">
               {/* Notch */}

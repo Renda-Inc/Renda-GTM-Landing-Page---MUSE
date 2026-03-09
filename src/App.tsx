@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/personal-banking" element={<PersonalBanking />} />
+          <Route path="/why-renda" element={<WhyRenda />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/help" element={<Help />} />
           <Route path="/help/:slug" element={<HelpCategory />} />

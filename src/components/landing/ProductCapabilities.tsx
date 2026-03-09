@@ -1,6 +1,5 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { Wallet, CreditCard, ArrowRightLeft, Sparkles } from "lucide-react";
-import lifestyleFriendsCooking from "@/assets/lifestyle-friends-cooking.jpg";
 
 const products = [
   {
@@ -62,8 +61,21 @@ export default function ProductCapabilities() {
             ))}
           </div>
 
+          {/* Video section - birthday sparklers */}
           <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-xl h-[400px] lg:h-auto group">
-            <img src={lifestyleFriendsCooking} alt="Friends cooking together" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              poster=""
+            >
+              <source
+                src="https://videos.pexels.com/video-files/3249935/3249935-uhd_2560_1440_25fps.mp4"
+                type="video/mp4"
+              />
+            </video>
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>
         </div>

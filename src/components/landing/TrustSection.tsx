@@ -1,5 +1,6 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { Shield, Eye, Lock, Users } from "lucide-react";
+import lifestyleCooking from "@/assets/lifestyle-friends-cooking.jpg";
 
 const commitments = [
   { icon: Shield, title: "User control", text: "You decide what Alfie can see and do." },
@@ -32,6 +33,10 @@ export default function TrustSection() {
             <p className="mt-4 text-base text-muted-foreground leading-relaxed">
               AI and money require seriousness. Every system is built with transparency, control, and accountability.
             </p>
+            <div className="mt-10 relative rounded-3xl overflow-hidden shadow-xl h-[300px]">
+              <img src={lifestyleCooking} alt="Friends cooking together" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">

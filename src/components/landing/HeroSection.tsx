@@ -1,11 +1,12 @@
 import { Apple, Play, ArrowRight } from "lucide-react";
+import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-surface-dark">
       {/* Gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-20%,hsl(220_90%_56%/0.14),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_90%_60%,hsl(160_84%_39%/0.05),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-20%,hsl(var(--primary)/0.05),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_90%_60%,hsl(var(--primary)/0.03),transparent)]" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-surface-dark-foreground/8 to-transparent" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-12 w-full">
@@ -64,8 +65,14 @@ export default function HeroSection() {
         </div>
 
         {/* Product visual — centered below copy */}
-        <div className="mt-14 flex justify-center animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
-          <div className="relative">
+        <div className="mt-14 grid lg:grid-cols-2 gap-12 items-center animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+          
+          <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl h-[500px] lg:h-[650px] bg-secondary">
+            <img src={lifestyleGathering} alt="Friends casually gathering" className="object-cover w-full h-full" />
+            <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+          </div>
+
+          <div className="order-1 lg:order-2 relative flex justify-center">
             {/* Main app frame — phone-style */}
             <div className="w-[320px] h-[650px] rounded-[40px] border-[8px] border-surface-dark-foreground/10 bg-background shadow-2xl overflow-hidden relative flex flex-col mx-auto">
               {/* Notch */}
@@ -157,7 +164,7 @@ export default function HeroSection() {
             </div>
 
             {/* Glow */}
-            <div className="absolute -inset-20 -z-10 bg-[radial-gradient(circle,hsl(220_90%_56%/0.08),transparent_60%)]" />
+            <div className="absolute -inset-20 -z-10 bg-[radial-gradient(circle,hsl(var(--primary)/0.05),transparent_60%)]" />
           </div>
         </div>
 

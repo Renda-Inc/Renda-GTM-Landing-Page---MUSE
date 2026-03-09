@@ -83,7 +83,7 @@ export default function AlfieIntro() {
               </div>
 
               {/* Glow */}
-              <div className="absolute -inset-16 -z-10 bg-[radial-gradient(circle,hsl(220_90%_56%/0.06),transparent_60%)]" />
+              <div className="absolute -inset-16 -z-10 bg-[radial-gradient(circle,hsl(var(--primary)/0.06),transparent_60%)]" />
             </div>
           </div>
         </div>

@@ -1,17 +1,18 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
+import lifestyleCreativeHobby from "@/assets/lifestyle-creative-hobby.jpg";
 
 export default function Philosophy() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary/30">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
       <div
         ref={ref}
-        className={`max-w-5xl mx-auto px-6 transition-all duration-700 ${
+        className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
               Our philosophy
@@ -35,21 +36,24 @@ export default function Philosophy() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { value: "0", label: "Unnecessary alerts" },
-              { value: "100%", label: "Actionable insights" },
-              { value: "24/7", label: "Intelligent monitoring" },
-              { value: "Your", label: "Attention respected" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-border bg-card p-6 text-center"
-              >
-                <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+          {/* Replace stat cards with lifestyle image */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[450px] group">
+            <img src={lifestyleCreativeHobby} alt="Creative hobby at home" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
+            {/* Overlay stats */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/80 to-transparent p-6">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "0", label: "Unnecessary alerts" },
+                  { value: "100%", label: "Actionable insights" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <p className="text-2xl font-bold text-background">{stat.value}</p>
+                    <p className="text-sm text-background/60">{stat.label}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

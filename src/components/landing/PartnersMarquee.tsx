@@ -33,7 +33,7 @@ export default function PartnersMarquee() {
             <img
               src={partner.logo}
               alt={partner.name}
-              className="h-8 w-auto opacity-60 hover:opacity-90 transition-opacity duration-300 invert grayscale filter"
+              className="h-12 w-auto opacity-60 hover:opacity-90 transition-opacity duration-300 invert grayscale filter"
               loading="lazy"
             />
           </div>

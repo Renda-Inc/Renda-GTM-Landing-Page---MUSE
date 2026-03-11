@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import rendaLogoBlack from "@/assets/renda-logo-black.png";
+import rendaLogoWhite from "@/assets/renda-logo-white.png";
 
 const navLinks = [
   { label: "Product", href: "/personal-banking" },
@@ -28,13 +30,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="/"
-          className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
-            scrolled ? "text-foreground" : "text-white"
-          }`}
-        >
-          Renda
+        <a href="/" className="flex items-center">
+          <img
+            src={scrolled ? rendaLogoBlack : rendaLogoWhite}
+            alt="Renda"
+            className="h-7 w-auto transition-opacity duration-300"
+          />
         </a>
 
         {/* Desktop nav */}

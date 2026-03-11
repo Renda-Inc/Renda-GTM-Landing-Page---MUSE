@@ -102,21 +102,22 @@ export default function FloatingCards() {
         </div>
 
         {/* Features below cards */}
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { label: "Zero monthly fees", value: "$0" },
-            { label: "Cashback", value: "1.5%" },
-            { label: "Foreign exchange", value: "No fees" },
-            { label: "Real-time alerts", value: "Instant" },
-          ].map((item) => (
-            <div key={item.label} className="group">
-              <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
-                {item.value}
-              </p>
-              <p className="text-sm text-background/50 mt-1">{item.label}</p>
-            </div>
-          ))}
+        <div className="mt-8 grid grid-cols-2 gap-6 text-center max-w-lg mx-auto">
+          <div className="group">
+            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
+              Zero-Dollar
+            </p>
+            <p className="text-sm text-background/50 mt-1">Monthly Fees*</p>
+          </div>
+          <div className="group">
+            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
+              Instant
+            </p>
+            <p className="text-sm text-background/50 mt-1">Real-Time Alerts</p>
+            <p className="text-xs text-background/40 mt-0.5">Powered by your Bankee patterns</p>
+          </div>
         </div>
+        <p className="text-xs text-background/40 text-center mt-4">*Fees start at $0/month.</p>
       </div>
     </section>
   );

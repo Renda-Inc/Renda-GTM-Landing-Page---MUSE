@@ -7,6 +7,7 @@ import AlfieIntro from "@/components/landing/AlfieIntro";
 import AlfieMockups from "@/components/landing/AlfieMockups";
 import ProductCapabilities from "@/components/landing/ProductCapabilities";
 import TrustSection from "@/components/landing/TrustSection";
+import FAQ from "@/components/landing/FAQ";
 import PartnersMarquee from "@/components/landing/PartnersMarquee";
 import BeliefClose from "@/components/landing/BeliefClose";
 import Footer from "@/components/landing/Footer";
@@ -23,6 +24,7 @@ const Index = () => {
       <AlfieMockups />
       <ProductCapabilities />
       <TrustSection />
+      <FAQ />
       <BeliefClose />
       <PartnersMarquee />
       <Footer />

@@ -1,77 +1,41 @@
 import { Instagram, Linkedin } from "lucide-react";
+import rendaLogoWhite from "@/assets/renda-logo-white.png";
 
 const footerColumns = [
   {
     heading: "Alfie AI",
-    links: [
-      { label: "How Alfie Works", href: "#alfie" },
-      { label: "Alfie for Individuals", href: "#" },
-      { label: "Alfie for Businesses", href: "#" },
-      { label: "Alfie for Fintechs & Platforms", href: "#" },
-      { label: "Alfie Platform", href: "#" },
-    ],
+    links: [],
   },
   {
     heading: "Banking",
     links: [
-      { label: "Personal Accounts", href: "#" },
-      { label: "Cards & Payments", href: "#" },
-      { label: "Savings & Goals", href: "#" },
-      { label: "Peer-to-Peer Payments", href: "#" },
-      { label: "Interac", href: "#" },
+      { label: "Personal Banking", href: "/personal-banking" },
+      { label: "Smart Account", href: "#" },
     ],
   },
   {
     heading: "Business",
-    links: [
-      { label: "Business Accounts", href: "#" },
-      { label: "Expense Tracking", href: "#" },
-      { label: "Bookkeeping Support", href: "#" },
-      { label: "Tax Readiness", href: "#" },
-      { label: "Financial Insights", href: "#" },
-    ],
+    links: [],
   },
   {
     heading: "Why Renda",
-    links: [
-      { label: "Our Philosophy", href: "/why-renda#philosophy" },
-      { label: "Signal Over Noise", href: "/why-renda#signals" },
-      { label: "AI-Native Banking", href: "/why-renda#belief" },
-      { label: "Trust & Responsibility", href: "/why-renda#trust" },
-    ],
+    links: [],
   },
   {
     heading: "Platform",
-    links: [
-      { label: "Alfie as Infrastructure", href: "#infrastructure" },
-      { label: "Developer & Integration", href: "#" },
-      { label: "Security & Compliance", href: "#" },
-    ],
+    links: [],
   },
   {
     heading: "Company",
-    links: [
-      { label: "About Us", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Blog / Insights", href: "/blog" },
-      { label: "Contact", href: "#" },
-    ],
+    links: [],
   },
   {
     heading: "Support",
-    links: [
-      { label: "Help", href: "/help" },
-      { label: "Contact Us", href: "/help#contact" },
-      { label: "Refer a Friend", href: "/help#refer" },
-    ],
+    links: [],
   },
   {
     heading: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Use", href: "/terms" },
-      { label: "Compliance & Disclosures", href: "#" },
-    ],
+    links: [],
   },
 ];
 
@@ -81,7 +45,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-14 lg:gap-20">
           <div className="lg:w-1/3 shrink-0">
-            <p className="text-xl font-bold">Renda</p>
+            <a href="/">
+              <img src={rendaLogoWhite} alt="Renda" className="h-8 w-auto" />
+            </a>
             <p className="mt-3 text-base text-background/70 max-w-xs leading-relaxed">
               The AI-native bank. Intelligence-first financial infrastructure for individuals and businesses.
             </p>
@@ -110,18 +76,20 @@ export default function Footer() {
                 <p className="text-sm font-semibold uppercase tracking-[0.15em] text-background/50 mb-4">
                   {col.heading}
                 </p>
-                <ul className="space-y-2 text-base text-background/70">
-                  {col.links.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="hover:text-background transition-colors duration-200"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                {col.links.length > 0 && (
+                  <ul className="space-y-2 text-base text-background/70">
+                    {col.links.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.href}
+                          className="hover:text-background transition-colors duration-200"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

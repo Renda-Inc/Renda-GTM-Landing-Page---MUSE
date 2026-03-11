@@ -111,10 +111,9 @@ export default function FloatingCards() {
           </div>
           <div className="group">
             <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
-              Instant
+              Instant Real-Time Alerts
             </p>
-            <p className="text-sm text-background/50 mt-1">Real-Time Alerts</p>
-            <p className="text-xs text-background/40 mt-0.5">Powered by your Bankee patterns</p>
+            <p className="text-sm text-background/50 mt-1">Powered by your Bankee patterns</p>
           </div>
         </div>
         <p className="text-xs text-background/40 text-center mt-4">*Fees start at $0/month.</p>

@@ -1,5 +1,6 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { AlertCircle, Eye, TrendingDown } from "lucide-react";
+import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 
 const problems = [
   {
@@ -23,22 +24,23 @@ export default function ProblemSection() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden bg-foreground">
-      {/* Animated motion background */}
+    <section className="py-20 lg:py-28 relative overflow-hidden">
+      {/* Looped lifestyle background with Ken Burns effect */}
+      <div className="absolute inset-0">
+        <img
+          src={lifestyleGathering}
+          alt=""
+          className="w-full h-full object-cover animate-[ken-burns_25s_ease-in-out_infinite_alternate]"
+        />
+        <div className="absolute inset-0 bg-foreground/85" />
+      </div>
+
+      {/* Animated motion elements on top */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-accent-peach/10 blur-[120px] animate-[drift-1_20s_ease-in-out_infinite]" />
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent-blue/10 blur-[100px] animate-[drift-2_25s_ease-in-out_infinite]" />
         <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] animate-[drift-3_18s_ease-in-out_infinite]" />
-        
-        {/* Animated grid lines */}
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var(--background)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--background)) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-            animation: 'grid-move 30s linear infinite',
-          }}
-        />
         
         {/* Flowing horizontal lines */}
         {[...Array(5)].map((_, i) => (
@@ -92,6 +94,10 @@ export default function ProblemSection() {
       </div>
 
       <style>{`
+        @keyframes ken-burns {
+          0% { transform: scale(1) translate(0, 0); }
+          100% { transform: scale(1.15) translate(-2%, -1%); }
+        }
         @keyframes drift-1 {
           0%, 100% { transform: translate(0, 0) scale(1); }
           33% { transform: translate(80px, -40px) scale(1.1); }
@@ -105,10 +111,6 @@ export default function ProblemSection() {
         @keyframes drift-3 {
           0%, 100% { transform: translate(-50%, -50%) scale(1); }
           50% { transform: translate(-50%, -50%) scale(1.3); }
-        }
-        @keyframes grid-move {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(60px, 60px); }
         }
         @keyframes flow-line {
           0% { transform: translateX(-25%); }

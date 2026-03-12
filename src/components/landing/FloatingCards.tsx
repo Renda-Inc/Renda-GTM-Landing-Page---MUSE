@@ -104,17 +104,17 @@ export default function FloatingCards() {
         {/* Features below cards */}
         <div className="mt-8 grid grid-cols-2 gap-6 text-center max-w-lg mx-auto">
           <div className="group">
-            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300 whitespace-nowrap">
-              Zero-Dollar Monthly Fees*
+            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
+              Zero-Dollar Monthly*
             </p>
+            <p className="text-xs text-background/40 mt-2">*Fees start at $0/month.</p>
           </div>
           <div className="group">
-            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300 whitespace-nowrap">
+            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
               Instant Real-Time Alerts
             </p>
           </div>
         </div>
-        <p className="text-xs text-background/40 text-center mt-4">*Fees start at $0/month.</p>
       </div>
     </section>
   );

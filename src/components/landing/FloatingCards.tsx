@@ -104,16 +104,14 @@ export default function FloatingCards() {
         {/* Features below cards */}
         <div className="mt-8 grid grid-cols-2 gap-6 text-center max-w-lg mx-auto">
           <div className="group">
-            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
-              Zero-Dollar
+            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300 whitespace-nowrap">
+              Zero-Dollar Monthly Fees*
             </p>
-            <p className="text-sm text-background/50 mt-1">Monthly Fees*</p>
           </div>
           <div className="group">
-            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300">
+            <p className="text-2xl md:text-3xl font-bold text-background group-hover:text-accent-peach transition-colors duration-300 whitespace-nowrap">
               Instant Real-Time Alerts
             </p>
-            <p className="text-sm text-background/50 mt-1">Powered by your Bankee patterns</p>
           </div>
         </div>
         <p className="text-xs text-background/40 text-center mt-4">*Fees start at $0/month.</p>

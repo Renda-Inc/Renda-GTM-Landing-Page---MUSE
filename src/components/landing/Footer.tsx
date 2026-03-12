@@ -4,38 +4,75 @@ import rendaLogoWhite from "@/assets/renda-logo-white.png";
 const footerColumns = [
   {
     heading: "Alfie AI",
-    links: [],
+    links: [
+      { label: "How Alfie Works", href: "#alfie" },
+      { label: "Alfie for Individuals", href: "#" },
+      { label: "Alfie for Businesses", href: "#" },
+      { label: "Alfie for Fintechs & Platforms", href: "#" },
+      { label: "Alfie Platform", href: "#" },
+    ],
   },
   {
     heading: "Banking",
     links: [
-      { label: "Personal Banking", href: "/personal-banking" },
-      { label: "Smart Account", href: "#" },
+      { label: "Personal Accounts", href: "#" },
+      { label: "Cards & Payments", href: "#" },
+      { label: "Savings & Goals", href: "#" },
+      { label: "Peer-to-Peer Payments", href: "#" },
+      { label: "Interac", href: "#" },
     ],
   },
   {
     heading: "Business",
-    links: [],
+    links: [
+      { label: "Business Accounts", href: "#" },
+      { label: "Expense Tracking", href: "#" },
+      { label: "Bookkeeping Support", href: "#" },
+      { label: "Tax Readiness", href: "#" },
+      { label: "Financial Insights", href: "#" },
+    ],
   },
   {
     heading: "Why Renda",
-    links: [],
+    links: [
+      { label: "Our Philosophy", href: "/why-renda#philosophy" },
+      { label: "Signal Over Noise", href: "/why-renda#signals" },
+      { label: "AI-Native Banking", href: "/why-renda#belief" },
+      { label: "Trust & Responsibility", href: "/why-renda#trust" },
+    ],
   },
   {
     heading: "Platform",
-    links: [],
+    links: [
+      { label: "Alfie as Infrastructure", href: "#infrastructure" },
+      { label: "Developer & Integration", href: "#" },
+      { label: "Security & Compliance", href: "#" },
+    ],
   },
   {
     heading: "Company",
-    links: [],
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Careers", href: "/careers" },
+      { label: "Blog / Insights", href: "/blog" },
+      { label: "Contact", href: "#" },
+    ],
   },
   {
     heading: "Support",
-    links: [],
+    links: [
+      { label: "Help", href: "/help" },
+      { label: "Contact Us", href: "/help#contact" },
+      { label: "Refer a Friend", href: "/help#refer" },
+    ],
   },
   {
     heading: "Legal",
-    links: [],
+    links: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Use", href: "/terms" },
+      { label: "Compliance & Disclosures", href: "#" },
+    ],
   },
 ];
 

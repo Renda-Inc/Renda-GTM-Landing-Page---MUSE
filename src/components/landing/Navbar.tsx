@@ -138,13 +138,13 @@ export default function Navbar() {
               </button>
 
               {activeDropdown === dropdown.label && (
-                <div className={`absolute top-full pt-2 ${dropdown.columns.length > 1 ? "left-0" : "left-1/2 -translate-x-1/2"}`}>
-                  <div className={`bg-background border border-border rounded-xl shadow-xl p-6 ${dropdown.columns.length > 1 ? "min-w-[560px]" : "min-w-[220px]"}`}>
-                    <div className={`flex ${dropdown.columns.length > 1 ? "gap-10" : ""}`}>
+                <div className="fixed top-[64px] left-1/2 -translate-x-1/2 pt-2">
+                  <div className={`bg-background border border-border rounded-xl shadow-xl p-8 ${dropdown.columns.length > 1 ? "min-w-[720px]" : "min-w-[240px]"}`}>
+                    <div className={`flex ${dropdown.columns.length > 1 ? "gap-14" : ""}`}>
                       {dropdown.columns.map((col, ci) => (
-                        <div key={ci} className="flex flex-col gap-1">
+                        <div key={ci} className="flex flex-col gap-1.5">
                           {col.title && (
-                            <span className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-2">
+                            <span className="text-[11px] font-medium tracking-[0.1em] text-foreground/50 mb-2">
                               {col.title}
                             </span>
                           )}
@@ -152,7 +152,7 @@ export default function Navbar() {
                             <a
                               key={item.label}
                               href={item.href}
-                              className="flex items-center gap-2 py-1.5 text-sm text-foreground/80 hover:text-foreground transition-colors duration-150"
+                              className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/80 hover:text-foreground transition-colors duration-150 whitespace-nowrap"
                             >
                               {item.label}
                               {"soon" in item && item.soon && (

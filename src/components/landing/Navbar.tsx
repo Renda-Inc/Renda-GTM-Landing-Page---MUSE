@@ -7,40 +7,73 @@ const navDropdowns = [
   {
     label: "Product",
     href: "/personal-banking",
-    items: [
-      { label: "Personal Banking", href: "/personal-banking", desc: "Smart spending & savings accounts" },
-      { label: "The Renda Card", href: "/personal-banking#card", desc: "Zero-fee card powered by AI" },
-      { label: "Savings & Goals", href: "/personal-banking#savings", desc: "Automated savings with Alfie" },
-      { label: "Payments", href: "/personal-banking#payments", desc: "Send & receive money instantly" },
+    columns: [
+      {
+        title: "PERSONAL BANKING",
+        items: [
+          { label: "Smart Accounts", href: "/personal-banking" },
+          { label: "Cards & Payments", href: "/personal-banking#card" },
+          { label: "Savings & Goals", href: "/personal-banking#savings" },
+        ],
+      },
+      {
+        title: "BUSINESS BANKING",
+        items: [
+          { label: "Business Accounts", href: "#", soon: true },
+          { label: "Expense Tracking", href: "#", soon: true },
+          { label: "Bookkeeping & Tax Support", href: "#", soon: true },
+        ],
+      },
+      {
+        title: "ALFIE AI",
+        items: [
+          { label: "How Alfie Works", href: "/why-renda#belief" },
+          { label: "Alfie for Individuals", href: "/personal-banking" },
+          { label: "Alfie for Businesses", href: "#" },
+          { label: "Alfie Platform", href: "#infrastructure" },
+        ],
+      },
     ],
   },
   {
     label: "Why Renda",
     href: "/why-renda",
-    items: [
-      { label: "Our Philosophy", href: "/why-renda#philosophy", desc: "Why we built Renda differently" },
-      { label: "Signal Over Noise", href: "/why-renda#signals", desc: "Cutting through financial clutter" },
-      { label: "AI-Native Banking", href: "/why-renda#belief", desc: "Built AI-first, not bolted on" },
-      { label: "Trust & Responsibility", href: "/why-renda#trust", desc: "Regulated, secure, transparent" },
+    columns: [
+      {
+        items: [
+          { label: "Our Philosophy", href: "/why-renda#philosophy" },
+          { label: "Signal Over Noise", href: "/why-renda#signals" },
+          { label: "AI-Native Banking", href: "/why-renda#belief" },
+          { label: "Trust & Responsibility", href: "/why-renda#trust" },
+        ],
+      },
     ],
   },
   {
     label: "Platform",
     href: "#infrastructure",
-    items: [
-      { label: "Alfie as Infrastructure", href: "#infrastructure", desc: "The intelligence layer behind Renda" },
-      { label: "Developer & Integration", href: "#", desc: "APIs and partner ecosystem" },
-      { label: "Security & Compliance", href: "#", desc: "Enterprise-grade protection" },
+    columns: [
+      {
+        items: [
+          { label: "Alfie as Infrastructure", href: "#infrastructure" },
+          { label: "Developer & Integration", href: "#" },
+          { label: "Security & Compliance", href: "#" },
+        ],
+      },
     ],
   },
   {
     label: "Company",
     href: "/about",
-    items: [
-      { label: "About Us", href: "/about", desc: "Our story and mission" },
-      { label: "Careers", href: "/careers", desc: "Join the team building the future" },
-      { label: "Blog & Insights", href: "/blog", desc: "Thoughts on AI and fintech" },
-      { label: "Help Centre", href: "/help", desc: "Get support and answers" },
+    columns: [
+      {
+        items: [
+          { label: "About Us", href: "/about" },
+          { label: "Careers", href: "/careers" },
+          { label: "Blog & Insights", href: "/blog" },
+          { label: "Help Centre", href: "/help" },
+        ],
+      },
     ],
   },
 ];
@@ -95,29 +128,43 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`px-4 py-2 text-[15px] font-medium transition-colors duration-200 inline-flex items-center gap-1 ${
+                className={`px-4 py-2 text-[15px] font-medium transition-colors duration-200 ${
                   scrolled
-                    ? "text-foreground/60 hover:text-primary"
+                    ? "text-foreground/60 hover:text-foreground"
                     : "text-white/70 hover:text-white"
                 }`}
               >
                 {dropdown.label}
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === dropdown.label ? "rotate-180" : ""}`} />
               </button>
 
               {activeDropdown === dropdown.label && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
-                  <div className="bg-background/95 backdrop-blur-xl border border-border rounded-xl shadow-xl p-2 min-w-[280px]">
-                    {dropdown.items.map((item) => (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        className="flex flex-col gap-0.5 px-4 py-3 rounded-lg hover:bg-accent transition-colors duration-150"
-                      >
-                        <span className="text-sm font-semibold text-foreground">{item.label}</span>
-                        <span className="text-xs text-muted-foreground">{item.desc}</span>
-                      </a>
-                    ))}
+                <div className={`absolute top-full pt-2 ${dropdown.columns.length > 1 ? "left-0" : "left-1/2 -translate-x-1/2"}`}>
+                  <div className={`bg-background border border-border rounded-xl shadow-xl p-6 ${dropdown.columns.length > 1 ? "min-w-[560px]" : "min-w-[220px]"}`}>
+                    <div className={`flex ${dropdown.columns.length > 1 ? "gap-10" : ""}`}>
+                      {dropdown.columns.map((col, ci) => (
+                        <div key={ci} className="flex flex-col gap-1">
+                          {col.title && (
+                            <span className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground mb-2">
+                              {col.title}
+                            </span>
+                          )}
+                          {col.items.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="flex items-center gap-2 py-1.5 text-sm text-foreground/80 hover:text-foreground transition-colors duration-150"
+                            >
+                              {item.label}
+                              {"soon" in item && item.soon && (
+                                <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
+                                  SOON
+                                </span>
+                              )}
+                            </a>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -126,7 +173,15 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center gap-4">
+          <a
+            href="#"
+            className={`text-[15px] font-medium transition-colors duration-200 ${
+              scrolled ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
+            }`}
+          >
+            Sign In
+          </a>
           <a
             href="#waitlist"
             className={`group h-10 px-6 inline-flex items-center gap-2 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all duration-200 ${
@@ -135,7 +190,7 @@ export default function Navbar() {
                 : "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20"
             }`}
           >
-            Join Waitlist
+            Get Early Access
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
@@ -157,7 +212,7 @@ export default function Navbar() {
             {navDropdowns.map((dropdown) => (
               <div key={dropdown.label}>
                 <button
-                  className="flex items-center justify-between w-full py-3 text-base font-medium text-foreground hover:text-primary transition-colors"
+                  className="flex items-center justify-between w-full py-3 text-base font-medium text-foreground hover:text-foreground/70 transition-colors"
                   onClick={() => setMobileExpanded(mobileExpanded === dropdown.label ? null : dropdown.label)}
                 >
                   {dropdown.label}
@@ -165,27 +220,48 @@ export default function Navbar() {
                 </button>
                 {mobileExpanded === dropdown.label && (
                   <div className="pl-4 pb-2 space-y-1">
-                    {dropdown.items.map((item) => (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </a>
+                    {dropdown.columns.map((col, ci) => (
+                      <div key={ci}>
+                        {col.title && (
+                          <span className="block text-[10px] font-semibold tracking-[0.1em] text-muted-foreground mt-2 mb-1">
+                            {col.title}
+                          </span>
+                        )}
+                        {col.items.map((item) => (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            className="flex items-center gap-2 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {item.label}
+                            {"soon" in item && item.soon && (
+                              <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
+                                SOON
+                              </span>
+                            )}
+                          </a>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 )}
               </div>
             ))}
-            <div className="pt-4 border-t border-border">
+            <div className="pt-4 border-t border-border space-y-3">
+              <a
+                href="#"
+                className="block text-center py-2 text-base font-medium text-foreground"
+                onClick={() => setMobileOpen(false)}
+              >
+                Sign In
+              </a>
               <a
                 href="#waitlist"
                 className="h-11 inline-flex items-center justify-center gap-2 w-full rounded-full bg-foreground text-background text-base font-semibold"
                 onClick={() => setMobileOpen(false)}
               >
-                Join Waitlist
+                Get Early Access
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

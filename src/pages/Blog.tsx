@@ -35,7 +35,7 @@ export interface Article {
 }
 
 /* ─── Static articles ─── */
-const articles: Article[] = [
+export const articles: Article[] = [
   {
     slug: "why-ai-native-banking",
     title: "Why AI-Native Banking Is Inevitable",

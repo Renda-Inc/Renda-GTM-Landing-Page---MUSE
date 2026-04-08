@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import type { Article } from "@/pages/Blog";
 import { categoryColor } from "@/pages/Blog";
@@ -19,9 +20,9 @@ export default function BlogArticleList({ articles }: Props) {
       >
         <div className="divide-y divide-border">
           {articles.map((article) => (
-            <a
+            <Link
               key={article.slug}
-              href="#"
+              to={`/blog/${article.slug}`}
               className="group flex flex-col md:flex-row md:items-start gap-5 md:gap-8 py-8 first:pt-0"
             >
               {/* Thumbnail */}
@@ -51,7 +52,7 @@ export default function BlogArticleList({ articles }: Props) {
                   {article.excerpt}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

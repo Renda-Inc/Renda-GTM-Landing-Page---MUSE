@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import type { Article } from "@/pages/Blog";
 import { categoryColor } from "@/pages/Blog";
@@ -26,9 +27,9 @@ export default function BlogFeatured({ articles, visible }: Props) {
 
         <div className="grid md:grid-cols-2 gap-8">
           {articles.map((article) => (
-            <a
+            <Link
               key={article.slug}
-              href="#"
+              to={`/blog/${article.slug}`}
               className="group block rounded-2xl overflow-hidden bg-background shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="aspect-[16/9] overflow-hidden">
@@ -55,7 +56,7 @@ export default function BlogFeatured({ articles, visible }: Props) {
                 </p>
                 <p className="text-sm text-muted-foreground">{article.readTime}</p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

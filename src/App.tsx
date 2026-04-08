@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Careers from "./pages/Careers";
 import PersonalBanking from "./pages/PersonalBanking";
 import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 import Help from "./pages/Help";
 import HelpCategory from "./pages/HelpCategory";
 import TermsOfUse from "./pages/TermsOfUse";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/personal-banking" element={<PersonalBanking />} />
           <Route path="/why-renda" element={<WhyRenda />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
           <Route path="/help" element={<Help />} />
           <Route path="/help/:slug" element={<HelpCategory />} />
           <Route path="/terms" element={<TermsOfUse />} />

@@ -26,7 +26,7 @@ export default function BlogArticleList({ articles }: Props) {
         }`}
       >
         <div className="divide-y divide-border">
-          {articles.map((article) => (
+          {displayed.map((article) => (
             <Link
               key={article.slug}
               to={`/blog/${article.slug}`}
@@ -62,6 +62,17 @@ export default function BlogArticleList({ articles }: Props) {
             </Link>
           ))}
         </div>
+
+        {hasMore && (
+          <div className="flex justify-center pt-12">
+            <button
+              onClick={() => setVisibleCount((c) => c + 4)}
+              className="px-8 py-3 rounded-full border border-border text-sm font-semibold text-foreground hover:bg-muted transition-colors duration-200"
+            >
+              View More
+            </button>
+          </div>
+        )}
 
         {articles.length === 0 && (
           <p className="py-16 text-center text-muted-foreground text-base">

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import type { Article } from "@/pages/Blog";
@@ -7,8 +8,14 @@ interface Props {
   articles: Article[];
 }
 
+const INITIAL_COUNT = 4;
+
 export default function BlogArticleList({ articles }: Props) {
   const { ref, isVisible } = useFadeIn();
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+
+  const displayed = articles.slice(0, visibleCount);
+  const hasMore = visibleCount < articles.length;
 
   return (
     <section className="pb-24 lg:pb-32 pt-4">
@@ -19,7 +26,7 @@ export default function BlogArticleList({ articles }: Props) {
         }`}
       >
         <div className="divide-y divide-border">
-          {articles.map((article) => (
+          {displayed.map((article) => (
             <Link
               key={article.slug}
               to={`/blog/${article.slug}`}
@@ -55,6 +62,17 @@ export default function BlogArticleList({ articles }: Props) {
             </Link>
           ))}
         </div>
+
+        {hasMore && (
+          <div className="flex justify-center pt-12">
+            <button
+              onClick={() => setVisibleCount((c) => c + 4)}
+              className="px-8 py-3 rounded-full border border-border text-sm font-semibold text-foreground hover:bg-muted transition-colors duration-200"
+            >
+              View More
+            </button>
+          </div>
+        )}
 
         {articles.length === 0 && (
           <p className="py-16 text-center text-muted-foreground text-base">

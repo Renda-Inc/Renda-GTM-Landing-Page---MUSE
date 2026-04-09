@@ -7,8 +7,14 @@ interface Props {
   articles: Article[];
 }
 
+const INITIAL_COUNT = 4;
+
 export default function BlogArticleList({ articles }: Props) {
   const { ref, isVisible } = useFadeIn();
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+
+  const displayed = articles.slice(0, visibleCount);
+  const hasMore = visibleCount < articles.length;
 
   return (
     <section className="pb-24 lg:pb-32 pt-4">

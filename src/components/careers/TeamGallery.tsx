@@ -74,7 +74,7 @@ export default function TeamGallery() {
             {[...photos, ...photos].map((photo, i) => (
               <div
                 key={i}
-                className="w-[320px] h-[220px] md:w-[400px] md:h-[280px] rounded-2xl overflow-hidden shrink-0"
+                className="w-[400px] h-[300px] md:w-[520px] md:h-[360px] rounded-2xl overflow-hidden shrink-0"
               >
                 <img
                   src={photo.src}

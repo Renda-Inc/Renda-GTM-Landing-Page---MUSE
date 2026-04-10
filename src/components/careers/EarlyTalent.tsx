@@ -42,7 +42,7 @@ export default function EarlyTalent() {
             </h2>
             <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                We welcome interns, co-ops, and early-career builders who want to do meaningful work from day one. At Renda, junior doesn't mean sidelined — it means mentored, challenged, and trusted.
+                We welcome interns, co-ops, and early-career builders who want to do meaningful work from day one. At Renda, junior doesn't mean sidelined; it means mentored, challenged, and trusted.
               </p>
               <p>
                 If you're a student or recent graduate with a passion for finance, AI, or product design, we'd love to hear from you.

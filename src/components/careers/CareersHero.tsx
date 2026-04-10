@@ -23,7 +23,7 @@ export default function CareersHero() {
           Build the Intelligence Layer for Finance.
         </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Join a small, ambitious team shaping the future of AI-native banking. We're building something foundational — and we need exceptional people to do it.
+          Join a small, ambitious team shaping the future of AI-native banking. We're building something foundational, and we need exceptional people to do it.
         </p>
         <a
           href="#roles"

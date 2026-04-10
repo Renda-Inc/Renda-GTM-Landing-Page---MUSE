@@ -3,6 +3,7 @@ import Footer from "@/components/landing/Footer";
 import CareersHero from "@/components/careers/CareersHero";
 import WhyJoinRenda from "@/components/careers/WhyJoinRenda";
 import WorkingPrinciples from "@/components/careers/WorkingPrinciples";
+import TeamGallery from "@/components/careers/TeamGallery";
 import CultureValues from "@/components/careers/CultureValues";
 import DiversitySection from "@/components/careers/DiversitySection";
 import Benefits from "@/components/careers/Benefits";
@@ -17,6 +18,7 @@ export default function Careers() {
       <CareersHero />
       <WhyJoinRenda />
       <WorkingPrinciples />
+      <TeamGallery />
       <CultureValues />
       <DiversitySection />
       <Benefits />

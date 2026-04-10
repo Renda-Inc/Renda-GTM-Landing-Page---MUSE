@@ -22,7 +22,7 @@ export default function WhyJoinRenda() {
             </h2>
             <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                Most fintech jobs are about optimizing what already exists. At Renda, you'll build AI-native financial infrastructure from scratch — the kind of systems that define how the next generation interacts with money.
+                Most fintech jobs are about optimizing what already exists. At Renda, you'll build AI-native financial infrastructure from scratch; the kind of systems that define how the next generation interacts with money.
               </p>
               <p>
                 This isn't incremental improvement. It's foundational work. You'll have real ownership over hard problems, direct access to leadership, and the autonomy to make consequential decisions every day.

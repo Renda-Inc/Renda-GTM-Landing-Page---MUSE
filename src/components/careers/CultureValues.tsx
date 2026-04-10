@@ -13,7 +13,7 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 const values = [
   { title: "Intelligence Over Activity", desc: "We measure impact, not hours. Thoughtful work beats busy work." },
   { title: "Responsibility at Scale", desc: "We build systems that touch people's financial lives. That demands rigor and humility." },
-  { title: "Long-Term > Short-Term", desc: "Short-term hacks create long-term debt — in code, in culture, and in trust." },
+  { title: "Long-Term Over Short-Term", desc: "Short-term hacks create long-term debt; in code, in culture, and in trust." },
   { title: "Ownership Without Ego", desc: "Take full responsibility for your work. The best idea wins, regardless of who proposed it." },
   { title: "Clarity is Kindness", desc: "We communicate with precision and honesty because people deserve to know where they stand." },
   { title: "Inclusion Improves Intelligence", desc: "Diverse perspectives make better products. We actively build a team that reflects the global population we serve." },
@@ -41,20 +41,6 @@ export default function CultureValues() {
           <Fade className="sticky top-32">
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img src={team5} alt="Team celebration" className="w-full object-cover aspect-square" loading="lazy" width={640} height={640} />
-            </div>
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <blockquote className="bg-secondary rounded-xl p-5">
-                <p className="text-sm text-foreground leading-relaxed italic">
-                  "I've never worked somewhere that trusts its people this much."
-                </p>
-                <footer className="mt-3 text-xs text-muted-foreground">— Engineering team</footer>
-              </blockquote>
-              <blockquote className="bg-secondary rounded-xl p-5">
-                <p className="text-sm text-foreground leading-relaxed italic">
-                  "Your ideas actually ship. No red tape between thinking and building."
-                </p>
-                <footer className="mt-3 text-xs text-muted-foreground">— Product team</footer>
-              </blockquote>
             </div>
           </Fade>
         </div>

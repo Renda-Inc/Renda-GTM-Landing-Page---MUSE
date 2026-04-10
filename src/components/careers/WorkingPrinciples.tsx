@@ -12,7 +12,7 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 
 const principles = [
   { icon: Zap, title: "High autonomy", desc: "We hire people we trust, then give them the space to do their best work. No micromanagement, no busywork." },
-  { icon: PenLine, title: "Written thinking", desc: "We write before we meet. Clear writing forces clear thinking — and it scales better than meetings." },
+  { icon: PenLine, title: "Written thinking", desc: "We write before we meet. Clear writing forces clear thinking, and it scales better than meetings." },
   { icon: Hammer, title: "Bias toward building", desc: "Ideas are cheap. We value people who prototype, ship, and iterate over those who only theorize." },
   { icon: MessageCircle, title: "Direct communication", desc: "We say what we mean, respectfully and without ambiguity. Clarity is a form of care." },
   { icon: TrendingUp, title: "Long-term focus", desc: "We optimize for years, not quarters. Every decision is weighed against what we're building for the long run." },

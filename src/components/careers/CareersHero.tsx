@@ -20,10 +20,10 @@ export default function CareersHero() {
       <Fade className="max-w-4xl mx-auto px-6 text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">Careers</p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
-          Build the Intelligence Layer for Finance.
+          Join us in building the intelligence layer for finance.
         </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Join a small, ambitious team shaping the future of AI-native banking. We're building something foundational, and we need exceptional people to do it.
+          Join a growing, ambitious team shaping the future of AI-native banking. We're building something foundational, and we need exceptional people to do it.
         </p>
         <a
           href="#roles"

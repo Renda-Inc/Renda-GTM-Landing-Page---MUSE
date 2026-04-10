@@ -94,6 +94,17 @@ export default function OpenRoles() {
             );
           })}
         </div>
+
+        <Fade>
+          <div className="mt-12 text-center">
+            <a
+              href="#roles"
+              className="inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
+            >
+              View Open Roles
+            </a>
+          </div>
+        </Fade>
       </div>
     </section>
   );

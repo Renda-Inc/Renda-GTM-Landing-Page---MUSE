@@ -1,6 +1,7 @@
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
+import { Eye, Zap, Brain, Users, Shield, Scale, Building2, Search } from "lucide-react";
 import headshotAlexandre from "@/assets/headshot-alexandre.jpg";
 import headshotSofia from "@/assets/headshot-sofia.jpg";
 import headshotMarcus from "@/assets/headshot-marcus.jpg";
@@ -26,17 +27,17 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 
 /* ── Data ─────────────────────────────────────────────────── */
 const beliefs = [
-  { title: "Clarity over control", desc: "We believe people don't need more dashboards - they need understanding." },
-  { title: "Signal over noise", desc: "Your attention is sacred. We surface only what matters, when it matters." },
-  { title: "Ethical AI", desc: "Every AI decision is transparent, explainable, and built with human oversight." },
-  { title: "Financial empowerment", desc: "Intelligence should serve everyone, not just those who can afford advisors." },
+  { icon: Eye, title: "Clarity over control", desc: "We believe people don't need more dashboards - they need understanding." },
+  { icon: Search, title: "Signal over noise", desc: "Your attention is sacred. We surface only what matters, when it matters." },
+  { icon: Brain, title: "Ethical AI", desc: "Every AI decision is transparent, explainable, and built with human oversight." },
+  { icon: Users, title: "Financial empowerment", desc: "Intelligence should serve everyone, not just those who can afford advisors." },
 ];
 
 const values = [
-  { title: "Responsible AI", desc: "We hold ourselves to the highest standards of safety, fairness, and accountability in every system we build." },
-  { title: "Radical inclusion", desc: "Financial intelligence should be accessible to everyone, regardless of income, background, or expertise." },
-  { title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made; always." },
-  { title: "Long-term institution", desc: "We're not building for a quick exit. We're building a financial institution designed to endure." },
+  { icon: Shield, title: "Responsible AI", desc: "We hold ourselves to the highest standards of safety, fairness, and accountability in every system we build." },
+  { icon: Users, title: "Radical inclusion", desc: "Financial intelligence should be accessible to everyone, regardless of income, background, or expertise." },
+  { icon: Scale, title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made; always." },
+  { icon: Building2, title: "Long-term institution", desc: "We're not building for a quick exit. We're building a financial institution designed to endure." },
 ];
 
 const timeline = [
@@ -61,6 +62,17 @@ const leaders = [
   { name: "Kofi Asante", role: "Head of Banking Platforms", photo: headshotAlexandre },
 ];
 
+const vcPartners = [
+  { name: "Y Combinator", logo: "YC" },
+  { name: "Andreessen Horowitz", logo: "a16z" },
+  { name: "Sequoia Capital", logo: "Sequoia" },
+  { name: "Accel", logo: "Accel" },
+  { name: "Index Ventures", logo: "Index" },
+  { name: "Ribbit Capital", logo: "Ribbit" },
+  { name: "Lightspeed", logo: "Lightspeed" },
+  { name: "General Catalyst", logo: "GC" },
+];
+
 /* ── Page ──────────────────────────────────────────────────── */
 export default function About() {
   return (
@@ -69,7 +81,6 @@ export default function About() {
 
       {/* ── Hero with overhead image ───────────────────────── */}
       <section className="relative">
-        {/* Full-bleed overhead image */}
         <div className="w-full h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden">
           <img
             src={aboutOverhead}
@@ -78,16 +89,16 @@ export default function About() {
             width={1920}
             height={800}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
-        {/* Text overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Fade className="max-w-3xl mx-auto px-6 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/80 mb-6">About Renda</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-background">
+        {/* Text overlay - left aligned */}
+        <div className="absolute inset-0 flex items-center">
+          <Fade className="max-w-6xl mx-auto px-6 w-full">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-6">About Renda</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-3xl">
               Building the Intelligence Layer for Modern Finance.
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-background/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
               An AI-native financial institution powered by Alfie, designed to understand your money, not just move it.
             </p>
           </Fade>
@@ -111,11 +122,14 @@ export default function About() {
               <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-72 lg:h-96 object-cover" loading="lazy" width={1280} height={720} />
             </div>
           </div>
-          <div className="mt-14 grid sm:grid-cols-2 gap-8">
+          <div className="mt-14 grid sm:grid-cols-2 gap-5">
             {beliefs.map((b) => (
-              <div key={b.title} className="border-l-2 border-accent-foreground/30 pl-5">
-                <h3 className="text-base font-semibold text-foreground">{b.title}</h3>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">{b.desc}</p>
+              <div key={b.title} className="bg-secondary/60 rounded-2xl p-8 border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <b.icon className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-base font-semibold text-foreground mb-2">{b.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -171,11 +185,14 @@ export default function About() {
               <img src={aboutValues} alt="Team working in modern office" className="w-full h-72 lg:h-96 object-cover" loading="lazy" width={1280} height={720} />
             </div>
           </div>
-          <div className="mt-14 grid sm:grid-cols-2 gap-8">
+          <div className="mt-14 grid sm:grid-cols-2 gap-5">
             {values.map((v) => (
-              <div key={v.title}>
-                <h3 className="text-base font-semibold text-foreground">{v.title}</h3>
-                <p className="mt-2 text-base text-muted-foreground leading-relaxed">{v.desc}</p>
+              <div key={v.title} className="bg-background rounded-2xl p-8 border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <v.icon className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-base font-semibold text-foreground mb-2">{v.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -190,12 +207,10 @@ export default function About() {
             From conviction to product.
           </h2>
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-[23px] top-0 bottom-0 w-px bg-border" />
             <div className="space-y-10">
               {timeline.map((t, i) => (
                 <div key={i} className="relative pl-16">
-                  {/* Year badge */}
                   <div className="absolute left-0 top-0 w-[47px] h-[47px] rounded-full bg-foreground text-background flex items-center justify-center text-xs font-bold">
                     {t.year}
                   </div>
@@ -219,7 +234,7 @@ export default function About() {
               The people behind Renda.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {leaders.map((l) => (
               <div key={l.name} className="group bg-foreground rounded-2xl overflow-hidden">
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -230,10 +245,12 @@ export default function About() {
                     loading="lazy"
                   />
                 </div>
-                {/* Name + role, left-aligned, stacked */}
                 <div className="px-5 py-4">
                   <h3 className="text-lg font-bold text-background leading-tight">{l.name}</h3>
-                  <p className="mt-1 text-sm font-medium text-background/60">{l.role}</p>
+                  <p className="mt-1 text-sm font-medium text-background/60 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block flex-shrink-0" />
+                    {l.role}
+                  </p>
                 </div>
               </div>
             ))}
@@ -270,7 +287,7 @@ export default function About() {
 
       {/* ── Partners & Backers ────────────────────────────── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-3xl mx-auto px-6 text-center">
+        <Fade className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Partners & Backers</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             Backed by those who believe.
@@ -278,13 +295,14 @@ export default function About() {
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
             We're fortunate to be supported by investors and partners who share our long-term vision for intelligent finance.
           </p>
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {["Partner 1", "Partner 2", "Partner 3", "Partner 4"].map((p) => (
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-5">
+            {vcPartners.map((p) => (
               <div
-                key={p}
-                className="h-20 rounded-lg border border-border bg-card flex items-center justify-center"
+                key={p.name}
+                className="h-24 rounded-2xl border border-border bg-card hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 flex flex-col items-center justify-center gap-1"
               >
-                <span className="text-base text-muted-foreground">{p}</span>
+                <span className="text-lg font-bold text-foreground">{p.logo}</span>
+                <span className="text-xs text-muted-foreground">{p.name}</span>
               </div>
             ))}
           </div>

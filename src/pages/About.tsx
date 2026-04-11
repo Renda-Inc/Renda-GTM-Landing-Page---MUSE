@@ -5,9 +5,11 @@ import headshotAlexandre from "@/assets/headshot-alexandre.jpg";
 import headshotSofia from "@/assets/headshot-sofia.jpg";
 import headshotMarcus from "@/assets/headshot-marcus.jpg";
 import headshotPriya from "@/assets/headshot-priya.jpg";
-import aboutHero from "@/assets/about-hero.jpg";
+import aboutOverhead from "@/assets/about-overhead.jpg";
 import aboutAlfie from "@/assets/about-alfie.jpg";
 import aboutCanada from "@/assets/about-canada.jpg";
+import aboutBelief from "@/assets/about-belief.jpg";
+import aboutValues from "@/assets/about-values.jpg";
 
 /* ── Reusable fade-in wrapper ─────────────────────────────── */
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -24,16 +26,16 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 
 /* ── Data ─────────────────────────────────────────────────── */
 const beliefs = [
-  { title: "Clarity over control", desc: "We believe people don't need more dashboards — they need understanding." },
+  { title: "Clarity over control", desc: "We believe people don't need more dashboards - they need understanding." },
   { title: "Signal over noise", desc: "Your attention is sacred. We surface only what matters, when it matters." },
   { title: "Ethical AI", desc: "Every AI decision is transparent, explainable, and built with human oversight." },
-  { title: "Financial empowerment", desc: "Intelligence should serve everyone — not just those who can afford advisors." },
+  { title: "Financial empowerment", desc: "Intelligence should serve everyone, not just those who can afford advisors." },
 ];
 
 const values = [
   { title: "Responsible AI", desc: "We hold ourselves to the highest standards of safety, fairness, and accountability in every system we build." },
   { title: "Radical inclusion", desc: "Financial intelligence should be accessible to everyone, regardless of income, background, or expertise." },
-  { title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made — always." },
+  { title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made; always." },
   { title: "Long-term institution", desc: "We're not building for a quick exit. We're building a financial institution designed to endure." },
 ];
 
@@ -41,7 +43,7 @@ const timeline = [
   { year: "2024", title: "Founded", desc: "Renda incorporated in Toronto, Canada. Core team assembled around a shared belief: banking should think." },
   { year: "2024", title: "Alfie development begins", desc: "First prototypes of the Alfie financial reasoning engine. Architecture designed for modularity from day one." },
   { year: "2025", title: "Early access launch", desc: "Invite-only beta for individuals. Core banking + Alfie intelligence layer goes live." },
-  { year: "2025", title: "Business banking", desc: "Alfie expands to serve small businesses — expense intelligence, tax readiness, and financial clarity." },
+  { year: "2025", title: "Business banking", desc: "Alfie expands to serve small businesses - expense intelligence, tax readiness, and financial clarity." },
   { year: "2026+", title: "Platform & global expansion", desc: "Alfie as infrastructure for fintechs and platforms. Expansion beyond Canada." },
 ];
 
@@ -65,37 +67,50 @@ export default function About() {
     <main className="min-h-screen bg-background">
       <Navbar />
 
-      {/* ── Hero ───────────────────────────────────────────── */}
-      <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
-        <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">About Renda</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
-            Building the Intelligence Layer for Modern Finance.
-          </h1>
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            An AI-native financial institution powered by Alfie — designed to understand your money, not just move it.
-          </p>
-        </Fade>
-        {/* Hero image */}
-        <Fade className="max-w-5xl mx-auto px-6 mt-14">
-          <div className="rounded-2xl overflow-hidden">
-            <img src={aboutHero} alt="Renda team working together" className="w-full h-64 md:h-80 lg:h-96 object-cover" />
-          </div>
-        </Fade>
+      {/* ── Hero with overhead image ───────────────────────── */}
+      <section className="relative">
+        {/* Full-bleed overhead image */}
+        <div className="w-full h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden">
+          <img
+            src={aboutOverhead}
+            alt="Renda team collaborating in the office"
+            className="w-full h-full object-cover"
+            width={1920}
+            height={800}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
+        </div>
+        {/* Text overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Fade className="max-w-3xl mx-auto px-6 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/80 mb-6">About Renda</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-background">
+              Building the Intelligence Layer for Modern Finance.
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-background/70 max-w-2xl mx-auto leading-relaxed">
+              An AI-native financial institution powered by Alfie, designed to understand your money, not just move it.
+            </p>
+          </Fade>
+        </div>
       </section>
-
-      <Divider />
 
       {/* ── Our Belief ─────────────────────────────────────── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Finance should empower, not overwhelm.
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            We believe the financial system fails most people — not because of lack of tools, but because of lack of understanding. Renda exists to close that gap.
-          </p>
+        <Fade className="max-w-5xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+                Finance should empower, not overwhelm.
+              </h2>
+              <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+                We believe the financial system fails most people, not because of lack of tools, but because of lack of understanding. Renda exists to close that gap.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden">
+              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-72 lg:h-96 object-cover" loading="lazy" width={1280} height={720} />
+            </div>
+          </div>
           <div className="mt-14 grid sm:grid-cols-2 gap-8">
             {beliefs.map((b) => (
               <div key={b.title} className="border-l-2 border-accent-foreground/30 pl-5">
@@ -120,10 +135,10 @@ export default function About() {
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Alfie isn't a chatbot or a dashboard overlay. It's a modular intelligence engine built into every layer of the Renda experience — from individual insights to cross-account reasoning, from real-time signals to long-term financial modeling.
+                  Alfie isn't a chatbot or a dashboard overlay. It's a modular intelligence engine built into every layer of the Renda experience, from individual insights to cross-account reasoning, from real-time signals to long-term financial modeling.
                 </p>
                 <p>
-                  Where traditional banks process transactions, Alfie processes meaning. It understands the context behind your money — why things happened, what's changing, and what deserves your attention.
+                  Where traditional banks process transactions, Alfie processes meaning. It understands the context behind your money - why things happened, what's changing, and what deserves your attention.
                 </p>
                 <p className="text-foreground font-medium">
                   We didn't bolt AI onto banking. We built banking on top of intelligence.
@@ -131,7 +146,7 @@ export default function About() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-72 lg:h-96 object-cover" />
+              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-72 lg:h-96 object-cover" loading="lazy" />
             </div>
           </div>
         </Fade>
@@ -140,15 +155,22 @@ export default function About() {
       <Divider />
 
       {/* ── The Company We Aim to Be ──────────────────────── */}
-      <section className="py-24 lg:py-32 bg-surface-elevated">
-        <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-            Built to endure.
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            We're not optimizing for speed-to-market. We're building a financial institution with the seriousness, rigor, and long-term thinking that money demands.
-          </p>
+      <section className="py-24 lg:py-32 bg-secondary/40">
+        <Fade className="max-w-5xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+                Built to endure.
+              </h2>
+              <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+                We're not optimizing for speed-to-market. We're building a financial institution with the seriousness, rigor, and long-term thinking that money demands.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden">
+              <img src={aboutValues} alt="Team working in modern office" className="w-full h-72 lg:h-96 object-cover" loading="lazy" width={1280} height={720} />
+            </div>
+          </div>
           <div className="mt-14 grid sm:grid-cols-2 gap-8">
             {values.map((v) => (
               <div key={v.title}>
@@ -160,23 +182,24 @@ export default function About() {
         </Fade>
       </section>
 
-      {/* ── Our Journey (horizontal timeline) ─────────────── */}
+      {/* ── Our Journey (vertical timeline with years) ────── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+        <Fade className="max-w-4xl mx-auto px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
             From conviction to product.
           </h2>
-          <div className="relative overflow-x-auto pb-4">
-            {/* Horizontal line */}
-            <div className="absolute top-[7px] left-0 right-0 h-px bg-border" style={{ minWidth: `${timeline.length * 240}px` }} />
-            <div className="flex gap-0" style={{ minWidth: `${timeline.length * 240}px` }}>
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-[23px] top-0 bottom-0 w-px bg-border" />
+            <div className="space-y-10">
               {timeline.map((t, i) => (
-                <div key={i} className="relative pt-8 pr-6" style={{ minWidth: 240, flex: '1 0 240px' }}>
-                  {/* Dot */}
-                  <div className="absolute top-0 left-0 w-[15px] h-[15px] rounded-full border-2 border-accent-foreground bg-background" />
-                  <p className="text-sm font-semibold uppercase tracking-[0.15em] text-accent-foreground">{t.year}</p>
-                  <h3 className="mt-1 text-base font-semibold text-foreground">{t.title}</h3>
+                <div key={i} className="relative pl-16">
+                  {/* Year badge */}
+                  <div className="absolute left-0 top-0 w-[47px] h-[47px] rounded-full bg-foreground text-background flex items-center justify-center text-xs font-bold">
+                    {t.year}
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground">{t.title}</h3>
                   <p className="mt-1 text-base text-muted-foreground leading-relaxed">{t.desc}</p>
                 </div>
               ))}
@@ -199,23 +222,18 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {leaders.map((l) => (
               <div key={l.name} className="group bg-foreground rounded-2xl overflow-hidden">
-                {/* Photo - square aspect, consistent sizing */}
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <img
                     src={l.photo}
                     alt={l.name}
                     className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
                   />
                 </div>
-                {/* Info bar */}
-                <div className="px-5 py-4 flex items-end justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-background leading-tight">{l.name}</h3>
-                  </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    <span className="w-2 h-2 rounded-sm bg-background/40" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-background/60">{l.role}</span>
-                  </div>
+                {/* Name + role, left-aligned, stacked */}
+                <div className="px-5 py-4">
+                  <h3 className="text-lg font-bold text-background leading-tight">{l.name}</h3>
+                  <p className="mt-1 text-sm font-medium text-background/60">{l.role}</p>
                 </div>
               </div>
             ))}
@@ -226,7 +244,7 @@ export default function About() {
       <Divider />
 
       {/* ── Built in Canada ───────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-surface-elevated">
+      <section className="py-24 lg:py-32 bg-secondary/40">
         <Fade className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -239,12 +257,12 @@ export default function About() {
                   Renda is headquartered in Toronto, built on Canadian values of stability, inclusion, and responsible innovation. But our ambition extends far beyond borders.
                 </p>
                 <p>
-                  We're designing every system — from compliance architecture to Alfie's reasoning engine — to scale globally from day one.
+                  We're designing every system, from compliance architecture to Alfie's reasoning engine, to scale globally from day one.
                 </p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-72 lg:h-96 object-cover" />
+              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-72 lg:h-96 object-cover" loading="lazy" />
             </div>
           </div>
         </Fade>
@@ -282,7 +300,7 @@ export default function About() {
             The future of finance isn't louder. It's smarter.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            We're building for a world where your bank understands you — not the other way around.
+            We're building for a world where your bank understands you, not the other way around.
           </p>
           <a
             href="#waitlist"

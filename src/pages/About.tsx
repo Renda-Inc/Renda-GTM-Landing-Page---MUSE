@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { Eye, Zap, Brain, Users, Shield, Scale, Building2, Search } from "lucide-react";
+import { Eye, Zap, Brain, Users, Shield, Scale, Building2, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import headshotAlexandre from "@/assets/headshot-alexandre.jpg";
 import headshotSofia from "@/assets/headshot-sofia.jpg";
 import headshotMarcus from "@/assets/headshot-marcus.jpg";
@@ -11,6 +12,11 @@ import aboutAlfie from "@/assets/about-alfie.jpg";
 import aboutCanada from "@/assets/about-canada.jpg";
 import aboutBelief from "@/assets/about-belief.jpg";
 import aboutValues from "@/assets/about-values.jpg";
+import timelineFounded from "@/assets/timeline-founded.jpg";
+import timelineAlfie from "@/assets/timeline-alfie.jpg";
+import timelineBeta from "@/assets/timeline-beta.jpg";
+import timelineBusiness from "@/assets/timeline-business.jpg";
+import timelineGlobal from "@/assets/timeline-global.jpg";
 
 /* ── Reusable fade-in wrapper ─────────────────────────────── */
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -41,11 +47,11 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2024", title: "Founded", desc: "Renda incorporated in Toronto, Canada. Core team assembled around a shared belief: banking should think." },
-  { year: "2024", title: "Alfie development begins", desc: "First prototypes of the Alfie financial reasoning engine. Architecture designed for modularity from day one." },
-  { year: "2025", title: "Early access launch", desc: "Invite-only beta for individuals. Core banking + Alfie intelligence layer goes live." },
-  { year: "2025", title: "Business banking", desc: "Alfie expands to serve small businesses - expense intelligence, tax readiness, and financial clarity." },
-  { year: "2026+", title: "Platform & global expansion", desc: "Alfie as infrastructure for fintechs and platforms. Expansion beyond Canada." },
+  { year: "2024", title: "Founded", desc: "Renda incorporated in Toronto, Canada. Core team assembled around a shared belief: banking should think.", image: timelineFounded },
+  { year: "2024", title: "Alfie development begins", desc: "First prototypes of the Alfie financial reasoning engine. Architecture designed for modularity from day one.", image: timelineAlfie },
+  { year: "2025", title: "Early access launch", desc: "Invite-only beta for individuals. Core banking + Alfie intelligence layer goes live.", image: timelineBeta },
+  { year: "2025", title: "Business banking", desc: "Alfie expands to serve small businesses - expense intelligence, tax readiness, and financial clarity.", image: timelineBusiness },
+  { year: "2026+", title: "Platform & global expansion", desc: "Alfie as infrastructure for fintechs and platforms. Expansion beyond Canada.", image: timelineGlobal },
 ];
 
 const leaders = [
@@ -73,26 +79,118 @@ const vcPartners = [
   { name: "General Catalyst", logo: "GC" },
 ];
 
+/* ── Timeline component ───────────────────────────────────── */
+function Timeline() {
+  const [active, setActive] = useState(0);
+  const current = timeline[active];
+
+  return (
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Left: year, description, tracker */}
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-10">
+          From conviction to product.
+        </h2>
+
+        {/* Big year + title + description */}
+        <div className="mb-10 min-h-[140px]">
+          <p className="text-6xl md:text-7xl font-bold text-foreground tracking-tight leading-none">{current.year}</p>
+          <h3 className="mt-3 text-xl font-semibold text-foreground">{current.title}</h3>
+          <p className="mt-2 text-base text-muted-foreground leading-relaxed max-w-md">{current.desc}</p>
+        </div>
+
+        {/* Horizontal milestone tracker */}
+        <div className="flex items-center gap-0 relative">
+          {/* Arrows */}
+          <button
+            onClick={() => setActive(Math.max(0, active - 1))}
+            disabled={active === 0}
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground disabled:opacity-30 transition-colors mr-4"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <div className="flex-1 flex items-center relative">
+            {/* Line */}
+            <div className="absolute left-0 right-0 top-1/2 h-px bg-border -translate-y-1/2" />
+
+            {timeline.map((t, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className="flex-1 flex flex-col items-center relative z-10 group"
+              >
+                {/* Dot */}
+                <div
+                  className={`w-3.5 h-3.5 rounded-full border-2 transition-all duration-300 ${
+                    i === active
+                      ? "bg-foreground border-foreground scale-125"
+                      : "bg-background border-muted-foreground/40 group-hover:border-foreground"
+                  }`}
+                />
+                {/* Year label */}
+                <span
+                  className={`mt-2 text-sm font-medium transition-colors ${
+                    i === active ? "text-foreground font-bold" : "text-muted-foreground"
+                  }`}
+                >
+                  {t.year}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={() => setActive(Math.min(timeline.length - 1, active + 1))}
+            disabled={active === timeline.length - 1}
+            className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground disabled:opacity-30 transition-colors ml-4"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Right: image */}
+      <div className="rounded-2xl overflow-hidden">
+        <img
+          src={current.image}
+          alt={current.title}
+          className="w-full h-[320px] lg:h-[440px] object-cover transition-all duration-500"
+          loading="lazy"
+          width={800}
+          height={600}
+        />
+      </div>
+    </div>
+  );
+}
+
 /* ── Page ──────────────────────────────────────────────────── */
 export default function About() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
 
-      {/* ── Hero with full-bleed image (Revolut style) ────── */}
-      <section className="relative w-full h-[520px] md:h-[640px] lg:h-[720px] overflow-hidden">
-        <img
-          src={aboutOverhead}
-          alt="Renda team collaborating in the office"
-          className="w-full h-full object-cover"
-          width={1920}
-          height={800}
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        {/* Text overlay - left aligned */}
-        <div className="absolute inset-0 flex items-end pb-16 md:pb-24">
-          <Fade className="max-w-6xl mx-auto px-6 w-full">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-6">About Renda</p>
+      {/* ── Hero - matching home page (min-h-screen, bottom-left text) ── */}
+      <section className="relative min-h-screen flex items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={aboutOverhead}
+            alt="Renda team collaborating in the office"
+            className="w-full h-full object-cover object-top"
+            width={1920}
+            height={800}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-32 w-full">
+          <Fade>
+            {/* Glass badge with pulsing dot */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
+              <span className="text-sm font-medium text-white/90">About Renda</span>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-3xl">
               Building the Intelligence Layer for Modern Finance.
             </h1>
@@ -127,7 +225,7 @@ export default function About() {
                   <b.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-base font-semibold text-foreground mb-2">{b.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -190,34 +288,17 @@ export default function About() {
                   <v.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-base font-semibold text-foreground mb-2">{v.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
         </Fade>
       </section>
 
-      {/* ── Our Journey (vertical timeline with years) ────── */}
+      {/* ── Our Journey (horizontal timeline with images) ──── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-4xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
-            From conviction to product.
-          </h2>
-          <div className="relative">
-            <div className="absolute left-[23px] top-0 bottom-0 w-px bg-border" />
-            <div className="space-y-10">
-              {timeline.map((t, i) => (
-                <div key={i} className="relative pl-16">
-                  <div className="absolute left-0 top-0 w-[47px] h-[47px] rounded-full bg-foreground text-background flex items-center justify-center text-xs font-bold">
-                    {t.year}
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">{t.title}</h3>
-                  <p className="mt-1 text-base text-muted-foreground leading-relaxed">{t.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <Fade className="max-w-6xl mx-auto px-6">
+          <Timeline />
         </Fade>
       </section>
 

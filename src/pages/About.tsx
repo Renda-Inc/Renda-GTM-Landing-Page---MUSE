@@ -79,20 +79,18 @@ export default function About() {
     <main className="min-h-screen bg-background">
       <Navbar />
 
-      {/* ── Hero with overhead image ───────────────────────── */}
-      <section className="relative">
-        <div className="w-full h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden">
-          <img
-            src={aboutOverhead}
-            alt="Renda team collaborating in the office"
-            className="w-full h-full object-cover"
-            width={1920}
-            height={800}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
-        </div>
+      {/* ── Hero with full-bleed image (Revolut style) ────── */}
+      <section className="relative w-full h-[520px] md:h-[640px] lg:h-[720px] overflow-hidden">
+        <img
+          src={aboutOverhead}
+          alt="Renda team collaborating in the office"
+          className="w-full h-full object-cover"
+          width={1920}
+          height={800}
+        />
+        <div className="absolute inset-0 bg-black/40" />
         {/* Text overlay - left aligned */}
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-end pb-16 md:pb-24">
           <Fade className="max-w-6xl mx-auto px-6 w-full">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-6">About Renda</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-3xl">
@@ -248,7 +246,7 @@ export default function About() {
                 <div className="px-5 py-4">
                   <h3 className="text-lg font-bold text-background leading-tight">{l.name}</h3>
                   <p className="mt-1 text-sm font-medium text-background/60 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground inline-block flex-shrink-0" />
                     {l.role}
                   </p>
                 </div>

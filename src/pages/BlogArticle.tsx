@@ -90,13 +90,15 @@ export default function BlogArticle() {
         {content ? (
           <div
             className="prose prose-lg max-w-none
-              prose-headings:text-foreground prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4
-              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-5
+              prose-headings:text-foreground prose-headings:font-bold
+              prose-h2:text-2xl prose-h2:mt-14 prose-h2:mb-5
+              prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4
+              prose-p:text-muted-foreground prose-p:leading-[1.85] prose-p:mb-6 prose-p:text-[1.05rem]
               prose-strong:text-foreground
               prose-em:text-foreground/80
               prose-a:text-primary prose-a:underline
-              prose-blockquote:border-primary prose-blockquote:text-muted-foreground
-              prose-li:text-muted-foreground"
+              prose-blockquote:border-primary prose-blockquote:text-muted-foreground prose-blockquote:pl-6 prose-blockquote:my-8
+              prose-li:text-muted-foreground prose-li:leading-[1.85]"
             dangerouslySetInnerHTML={{ __html: content.body }}
           />
         ) : (

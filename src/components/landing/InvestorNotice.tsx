@@ -38,7 +38,7 @@ export default function InvestorNotice() {
             <div className="md:col-span-4 flex md:justify-end">
               <a
                 href="#"
-                className="group inline-flex items-center gap-2 h-12 px-7 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20 transition-all duration-200"
+                className="group inline-flex items-center gap-2 h-12 px-7 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-foreground/90 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
               >
                 Access Investor Portal
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

@@ -1,5 +1,7 @@
 import Navbar from "@/components/landing/Navbar";
+import AnnouncementBar from "@/components/landing/AnnouncementBar";
 import HeroSection from "@/components/landing/HeroSection";
+import InvestorNotice from "@/components/landing/InvestorNotice";
 import CoreBelief from "@/components/landing/CoreBelief";
 import FloatingCards from "@/components/landing/FloatingCards";
 import ProblemSection from "@/components/landing/ProblemSection";
@@ -16,8 +18,10 @@ import Footer from "@/components/landing/Footer";
 const Index = () => {
   return (
     <main className="min-h-screen bg-background">
+      <AnnouncementBar />
       <Navbar />
       <HeroSection />
+      <InvestorNotice />
       <CoreBelief />
       <FloatingCards />
       <ProblemSection />

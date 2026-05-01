@@ -131,13 +131,18 @@ export default {
 				to: {
 					transform: 'translateX(-50%)'
 				}
+			},
+			'marquee': {
+				from: { transform: 'translateX(0)' },
+				to: { transform: 'translateX(-50%)' }
 			}
 		},
 		animation: {
 			'accordion-down': 'accordion-down 0.2s ease-out',
 			'accordion-up': 'accordion-up 0.2s ease-out',
 			'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
-			'scroll': 'scroll 40s linear infinite'
+			'scroll': 'scroll 40s linear infinite',
+			'marquee': 'marquee 60s linear infinite'
 		},
   		boxShadow: {
   			'2xs': 'var(--shadow-2xs)',

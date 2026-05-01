@@ -102,7 +102,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent"
@@ -138,7 +138,7 @@ export default function Navbar() {
               </button>
 
               {activeDropdown === dropdown.label && (
-                <div className="fixed top-[64px] left-1/2 -translate-x-1/2 pt-2">
+                <div className="fixed top-[100px] left-1/2 -translate-x-1/2 pt-2">
                   <div className={`bg-background border border-border rounded-xl shadow-xl p-8 ${dropdown.columns.length > 1 ? "min-w-[720px]" : "min-w-[240px]"}`}>
                     <div className={`flex ${dropdown.columns.length > 1 ? "gap-14" : ""}`}>
                       {dropdown.columns.map((col, ci) => (

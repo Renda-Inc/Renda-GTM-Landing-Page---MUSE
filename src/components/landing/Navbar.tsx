@@ -138,7 +138,7 @@ export default function Navbar() {
               </button>
 
               {activeDropdown === dropdown.label && (
-                <div className="fixed top-[64px] left-1/2 -translate-x-1/2 pt-2">
+                <div className="fixed top-[100px] left-1/2 -translate-x-1/2 pt-2">
                   <div className={`bg-background border border-border rounded-xl shadow-xl p-8 ${dropdown.columns.length > 1 ? "min-w-[720px]" : "min-w-[240px]"}`}>
                     <div className={`flex ${dropdown.columns.length > 1 ? "gap-14" : ""}`}>
                       {dropdown.columns.map((col, ci) => (

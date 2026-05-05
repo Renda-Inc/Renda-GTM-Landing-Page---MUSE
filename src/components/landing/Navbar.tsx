@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import rendaLogoBlack from "@/assets/renda-logo-black.png";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
+import AnnouncementBar from "./AnnouncementBar";
 
 const navDropdowns = [
   {

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import rendaLogoBlack from "@/assets/renda-logo-black.png";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
+import AnnouncementBar from "./AnnouncementBar";
 
 const navDropdowns = [
   {
@@ -101,13 +102,15 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
+    <>
+      <AnnouncementBar />
+      <nav
+        className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm"
+            : "bg-transparent"
+        }`}
+      >
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center">
@@ -268,6 +271,7 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 }

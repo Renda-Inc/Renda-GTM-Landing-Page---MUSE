@@ -21,18 +21,26 @@ export default function Investors() {
   const contact = useFadeIn();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-secondary/40">
       <Navbar />
 
       {/* CEO Letter */}
-      <section className="pt-36 pb-16 lg:pt-44 lg:pb-24">
+      <section className="pt-36 pb-20 lg:pt-44 lg:pb-28 relative overflow-hidden">
+        {/* warm ambient backdrop */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute top-1/3 -right-32 w-[420px] h-[420px] rounded-full bg-primary/5 blur-3xl" />
+        </div>
+
         <div
           ref={letter.ref}
-          className={`max-w-3xl mx-auto px-6 transition-all duration-700 ${
+          className={`relative max-w-3xl mx-auto px-6 transition-all duration-700 ${
             letter.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <div className="rounded-3xl bg-card border border-border shadow-sm p-8 md:p-14">
+          <div className="rounded-3xl bg-background border border-border shadow-[0_20px_60px_-20px_hsl(var(--foreground)/0.18)] p-8 md:p-14 relative">
+            {/* paper edge accent */}
+            <div className="absolute left-0 top-10 bottom-10 w-1 rounded-r-full bg-primary/70" />
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-4">
               From the desk of the CEO
             </div>
@@ -65,10 +73,14 @@ export default function Investors() {
       </section>
 
       {/* Board */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28 bg-foreground relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{
+          backgroundImage: "radial-gradient(hsl(var(--background)) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }} />
         <div
           ref={boardSec.ref}
-          className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${
+          className={`relative max-w-6xl mx-auto px-6 transition-all duration-700 ${
             boardSec.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -76,22 +88,22 @@ export default function Investors() {
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-3">
               Board of Directors
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background mb-4">
               Stewards of the company.
             </h2>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-base text-background/70 leading-relaxed">
               Our board brings decades of experience across banking, regulation, technology, and consumer products.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-background/10 rounded-2xl overflow-hidden border border-background/10">
             {board.map((m) => (
               <div
                 key={m.name}
-                className="bg-background p-8 hover:bg-secondary/40 transition-colors"
+                className="bg-foreground p-8 hover:bg-background/[0.04] transition-colors"
               >
-                <p className="text-lg font-semibold text-foreground mb-1">{m.name}</p>
-                <p className="text-sm text-muted-foreground">{m.title}</p>
+                <p className="text-lg font-semibold text-background mb-1">{m.name}</p>
+                <p className="text-sm text-background/60">{m.title}</p>
               </div>
             ))}
           </div>

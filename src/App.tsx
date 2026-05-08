@@ -15,6 +15,7 @@ import HelpCategory from "./pages/HelpCategory";
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import WhyRenda from "./pages/WhyRenda";
+import Investors from "./pages/Investors";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/personal-banking" element={<PersonalBanking />} />
           <Route path="/why-renda" element={<WhyRenda />} />
+          <Route path="/investors" element={<Investors />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
           <Route path="/help" element={<Help />} />

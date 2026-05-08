@@ -55,6 +55,7 @@ const footerColumns = [
       { label: "About Us", href: "/about" },
       { label: "Careers", href: "/careers" },
       { label: "Blog / Insights", href: "/blog" },
+      { label: "Our Investors", href: "/investors" },
       { label: "Contact", href: "#" },
     ],
   },

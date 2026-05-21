@@ -305,33 +305,26 @@ export default function About() {
       <Divider />
 
       {/* ── Leadership ────────────────────────────────────── */}
-      <section className="py-24 lg:py-32">
+      <section className="py-24 lg:py-32 bg-foreground">
         <Fade className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">Leadership</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+          <div className="mb-16">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background leading-tight">
               The people behind Renda.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {leaders.map((l) => (
-              <div key={l.name} className="group bg-foreground rounded-2xl overflow-hidden">
-                <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  <img
-                    src={l.photo}
-                    alt={l.name}
-                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="px-5 py-4">
-                  <h3 className="text-lg font-bold text-background leading-tight">{l.name}</h3>
-                  <p className="mt-1 text-sm font-medium text-background/60 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground inline-block flex-shrink-0" />
-                    {l.role}
-                  </p>
-                </div>
-              </div>
+
+          {/* First row: CEO + COO — two large */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {leaders.slice(0, 2).map((l) => (
+              <LeaderCard key={l.name} leader={l} large />
+            ))}
+          </div>
+
+          {/* Remaining: rows of three, aligned to the same edges */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {leaders.slice(2).map((l) => (
+              <LeaderCard key={l.name} leader={l} />
             ))}
           </div>
         </Fade>
@@ -416,4 +409,40 @@ export default function About() {
 /* ── Divider component ────────────────────────────────────── */
 function Divider() {
   return <div className="max-w-4xl mx-auto px-6"><div className="h-px bg-border" /></div>;
+}
+
+/* ── Leader card ──────────────────────────────────────────── */
+function LeaderCard({
+  leader,
+  large = false,
+}: {
+  leader: { name: string; role: string; photo: string };
+  large?: boolean;
+}) {
+  return (
+    <div className="group">
+      <div className="mb-4">
+        <p className="text-xs md:text-sm text-background/50 mb-1">{leader.role}</p>
+        <h3
+          className={`font-serif text-background leading-tight ${
+            large ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"
+          }`}
+        >
+          {leader.name}
+        </h3>
+      </div>
+      <div
+        className={`relative w-full overflow-hidden bg-background/5 ${
+          large ? "aspect-[4/3]" : "aspect-[4/5]"
+        }`}
+      >
+        <img
+          src={leader.photo}
+          alt={leader.name}
+          className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.02]"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  );
 }

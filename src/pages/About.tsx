@@ -420,8 +420,8 @@ function LeaderCard({
   large?: boolean;
 }) {
   return (
-    <div className="group">
-      <div className="mb-4">
+    <div className="group pb-12 md:pb-16">
+      <div className="mb-5">
         <p className="text-xs md:text-sm text-background/50 mb-1">{leader.role}</p>
         <h3
           className={`font-serif text-background leading-tight ${
@@ -432,7 +432,7 @@ function LeaderCard({
         </h3>
       </div>
       <div
-        className={`relative w-full overflow-hidden bg-background/5 ${
+        className={`relative w-full overflow-hidden rounded-2xl bg-background/5 ${
           large ? "aspect-[4/3]" : "aspect-[4/5]"
         }`}
       >

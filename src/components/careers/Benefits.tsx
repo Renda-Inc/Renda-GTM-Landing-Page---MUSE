@@ -1,5 +1,12 @@
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { Heart, Laptop, GraduationCap, Home, Baby, Plane, Brain, DollarSign } from "lucide-react";
+import equitySalary from "@/assets/benefits/equity-salary.jpg";
+import health from "@/assets/benefits/health.jpg";
+import remote from "@/assets/benefits/remote.jpg";
+import learning from "@/assets/benefits/learning.jpg";
+import homeOffice from "@/assets/benefits/home-office.jpg";
+import parental from "@/assets/benefits/parental.jpg";
+import retreats from "@/assets/benefits/retreats.jpg";
+import mentalHealth from "@/assets/benefits/mental-health.jpg";
 
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const { ref, isVisible } = useFadeIn();
@@ -11,14 +18,14 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 }
 
 const benefits = [
-  { icon: DollarSign, label: "Competitive Equity & Salary", desc: "Market-rate compensation with meaningful equity so you share in what we build." },
-  { icon: Heart, label: "Health, Dental & Vision", desc: "Comprehensive coverage for you and your family from day one." },
-  { icon: Laptop, label: "Flexible Remote Work", desc: "Work from anywhere with a remote-first culture built for deep focus." },
-  { icon: GraduationCap, label: "Learning Budget", desc: "Annual stipend for courses, conferences, and books to keep growing." },
-  { icon: Home, label: "Home Office Stipend", desc: "One-time setup budget plus monthly allowance for your workspace." },
-  { icon: Baby, label: "Generous Parental Leave", desc: "Extended paid leave for all new parents, with a phased return." },
-  { icon: Plane, label: "Annual Team Retreats", desc: "In-person offsites to connect, celebrate, and plan what's next." },
-  { icon: Brain, label: "Mental Health Support", desc: "Therapy and wellness benefits because sustainable work starts with wellbeing." },
+  { image: equitySalary, label: "Competitive Equity & Salary", desc: "Market-rate compensation with meaningful equity so you share in what we build." },
+  { image: health, label: "Health, Dental & Vision", desc: "Comprehensive coverage for you and your family from day one." },
+  { image: remote, label: "Flexible Remote Work", desc: "Work from anywhere with a remote-first culture built for deep focus." },
+  { image: learning, label: "Learning Budget", desc: "Annual stipend for courses, conferences, and books to keep growing." },
+  { image: homeOffice, label: "Home Office Stipend", desc: "One-time setup budget plus monthly allowance for your workspace." },
+  { image: parental, label: "Generous Parental Leave", desc: "Extended paid leave for all new parents, with a phased return." },
+  { image: retreats, label: "Annual Team Retreats", desc: "In-person offsites to connect, celebrate, and plan what's next." },
+  { image: mentalHealth, label: "Mental Health Support", desc: "Therapy and wellness benefits because sustainable work starts with wellbeing." },
 ];
 
 export default function Benefits() {
@@ -31,15 +38,24 @@ export default function Benefits() {
             Built for people who do their best work.
           </h2>
         </Fade>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((b) => (
             <Fade key={b.label}>
-              <div className="bg-background rounded-2xl p-8 border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full flex flex-col group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <b.icon className="w-7 h-7 text-primary" />
+              <div className="group h-full flex flex-col">
+                <div className="overflow-hidden rounded-2xl aspect-[4/3] bg-background">
+                  <img
+                    src={b.image}
+                    alt={b.label}
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{b.label}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                <div className="pt-5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug">{b.label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                </div>
               </div>
             </Fade>
           ))}

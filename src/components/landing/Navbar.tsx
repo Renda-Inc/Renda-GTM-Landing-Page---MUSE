@@ -141,32 +141,34 @@ export default function Navbar() {
               </button>
 
               {activeDropdown === dropdown.label && (
-                <div className="fixed top-[100px] left-1/2 -translate-x-1/2 pt-2">
-                  <div className={`bg-background border border-border rounded-xl shadow-xl p-8 ${dropdown.columns.length > 1 ? "min-w-[720px]" : "min-w-[240px]"}`}>
-                    <div className={`flex ${dropdown.columns.length > 1 ? "gap-14" : ""}`}>
-                      {dropdown.columns.map((col, ci) => (
-                        <div key={ci} className="flex flex-col gap-1.5">
-                          {col.title && (
-                            <span className="text-[11px] font-medium tracking-[0.1em] text-foreground/50 mb-2">
-                              {col.title}
-                            </span>
-                          )}
-                          {col.items.map((item) => (
-                            <a
-                              key={item.label}
-                              href={item.href}
-                              className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/80 hover:text-foreground transition-colors duration-150 whitespace-nowrap"
-                            >
-                              {item.label}
-                              {"soon" in item && item.soon && (
-                                <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
-                                  SOON
-                                </span>
-                              )}
-                            </a>
-                          ))}
-                        </div>
-                      ))}
+                <div className="fixed top-[100px] left-0 right-0 animate-fade-in">
+                  <div className="bg-background shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                    <div className="max-w-7xl mx-auto px-10 py-10">
+                      <div className={`grid ${dropdown.columns.length > 1 ? "grid-cols-3 gap-x-16 gap-y-2" : "grid-cols-1"} ${dropdown.columns.length === 1 ? "max-w-xs" : ""}`}>
+                        {dropdown.columns.map((col, ci) => (
+                          <div key={ci} className="flex flex-col gap-2">
+                            {col.title && (
+                              <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45 mb-2">
+                                {col.title}
+                              </span>
+                            )}
+                            {col.items.map((item) => (
+                              <a
+                                key={item.label}
+                                href={item.href}
+                                className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/80 hover:text-foreground transition-colors duration-150 whitespace-nowrap"
+                              >
+                                {item.label}
+                                {"soon" in item && item.soon && (
+                                  <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
+                                    SOON
+                                  </span>
+                                )}
+                              </a>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

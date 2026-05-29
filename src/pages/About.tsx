@@ -215,7 +215,7 @@ export default function About() {
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight font-semibold">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Finance should empower, not overwhelm.
               </h2>
               <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -248,7 +248,7 @@ export default function About() {
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight font-semibold">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -278,7 +278,7 @@ export default function About() {
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight font-semibold">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built to endure.
               </h2>
               <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -346,7 +346,7 @@ export default function About() {
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight font-semibold">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">

@@ -174,37 +174,37 @@ export default function About() {
     <main
       className="min-h-screen bg-background"
       style={{
-        fontFamily:
-          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
-      }}
-    >
-      <Navbar />
-
-      {/* ── Hero - matching home page (min-h-screen, bottom-left text) ── */}
-      <section className="relative min-h-screen flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={aboutOverhead}
-            alt="Renda team collaborating in the office"
-            className="w-full h-full object-cover object-top"
-            width={1920}
-            height={800}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-32 w-full">
-          <Fade>
-            {/* Glass badge with pulsing dot */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
-              <span className="text-sm font-medium text-white/90">About Renda</span>
+      {/* ── Our Belief ─────────────────────────────────────── */}
+      <section className="py-24 lg:py-32">
+        <Fade className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+            <div className="rounded-2xl overflow-hidden lg:order-1">
+              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-3xl">
-              Building the Intelligence Layer for Modern Finance.
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-              An AI-native financial institution powered by Alfie, designed to understand your money, not just move it.
-            </p>
+            <div className="lg:order-2">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+                Finance should empower, not overwhelm.
+              </h2>
+              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+                We believe the financial system fails most people, not because of lack of tools, but because of lack of understanding. Renda exists to close that gap.
+              </p>
+            </div>
+          </div>
+          <div className="mt-14 grid sm:grid-cols-2 gap-5">
+            {beliefs.map((b) => (
+              <div key={b.title} className="bg-secondary/60 rounded-2xl p-8 border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <b.icon className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-base font-semibold text-foreground mb-2">{b.title}</h3>
+                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </Fade>
+      </section>
+
           </Fade>
         </div>
       </section>

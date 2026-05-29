@@ -194,7 +194,6 @@ export default function About() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-32 w-full">
           <Fade>
-            {/* Glass badge with pulsing dot */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
               <span className="text-sm font-medium text-white/90">About Renda</span>
@@ -209,21 +208,21 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Our Belief ─────────────────────────────────────── */}
+      {/* ── Our Belief (image LEFT, text RIGHT) ───────────── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-5xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+        <Fade className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+            <div className="rounded-2xl overflow-hidden">
+              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
+            </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Finance should empower, not overwhelm.
               </h2>
-              <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 We believe the financial system fails most people, not because of lack of tools, but because of lack of understanding. Renda exists to close that gap.
               </p>
-            </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
           </div>
           <div className="mt-14 grid sm:grid-cols-2 gap-5">
@@ -233,32 +232,33 @@ export default function About() {
                   <b.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-base font-semibold text-foreground mb-2">{b.title}</h3>
-                <p className="text-[15px] text-muted-foreground leading-relaxed">{b.desc}</p>
+                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
         </Fade>
       </section>
 
+
       <Divider />
 
-      {/* ── What We're Building ────────────────────────────── */}
+      {/* ── What We're Building (text LEFT, image RIGHT) ─── */}
       <section className="py-24 lg:py-32">
-        <Fade className="max-w-5xl mx-auto px-6">
+        <Fade className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
-              <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+              <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 <p>
                   Alfie isn't a chatbot or a dashboard overlay. It's a modular intelligence engine built into every layer of the Renda experience, from individual insights to cross-account reasoning, from real-time signals to long-term financial modeling.
                 </p>
                 <p>
                   Where traditional banks process transactions, Alfie processes meaning. It understands the context behind your money - why things happened, what's changing, and what deserves your attention.
                 </p>
-                <p className="text-foreground font-medium">
+                <p className="text-black/80 font-semibold">
                   We didn't bolt AI onto banking. We built banking on top of intelligence.
                 </p>
               </div>
@@ -272,21 +272,21 @@ export default function About() {
 
       <Divider />
 
-      {/* ── The Company We Aim to Be ──────────────────────── */}
+      {/* ── The Company We Aim to Be (image LEFT, text RIGHT) ─ */}
       <section className="py-24 lg:py-32 bg-secondary/40">
-        <Fade className="max-w-5xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+        <Fade className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+            <div className="rounded-2xl overflow-hidden">
+              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
+            </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built to endure.
               </h2>
-              <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 We're not optimizing for speed-to-market. We're building a financial institution with the seriousness, rigor, and long-term thinking that money demands.
               </p>
-            </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
           </div>
           <div className="mt-14 grid sm:grid-cols-2 gap-5">
@@ -296,7 +296,7 @@ export default function About() {
                   <v.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-base font-semibold text-foreground mb-2">{v.title}</h3>
-                <p className="text-[15px] text-muted-foreground leading-relaxed">{v.desc}</p>
+                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -340,16 +340,19 @@ export default function About() {
 
       <Divider />
 
-      {/* ── Built in Canada ───────────────────────────────── */}
+      {/* ── Built in Canada / Global Vision (image LEFT, text RIGHT) ── */}
       <section className="py-24 lg:py-32 bg-secondary/40">
-        <Fade className="max-w-5xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+        <Fade className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+            <div className="rounded-2xl overflow-hidden">
+              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
+            </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
-              <div className="mt-10 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+              <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 <p>
                   Renda is headquartered in Toronto, built on Canadian values of stability, inclusion, and responsible innovation. But our ambition extends far beyond borders.
                 </p>
@@ -358,12 +361,10 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
-            </div>
           </div>
         </Fade>
       </section>
+
 
       {/* ── Partners & Backers ────────────────────────────── */}
       <section className="py-24 lg:py-32">

@@ -120,9 +120,16 @@ function Timeline() {
                 key={i}
                 onClick={() => setActive(i)}
                 className="flex-1 flex flex-col items-center relative z-10 group"
-              >
-                {/* Dot */}
-                <div
+  return (
+    <main
+      className="min-h-screen bg-background"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
+      }}
+    >
+      <Navbar />
+
                   className={`w-3.5 h-3.5 rounded-full border-2 transition-all duration-300 ${
                     i === active
                       ? "bg-foreground border-foreground scale-125"

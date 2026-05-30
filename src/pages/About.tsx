@@ -211,7 +211,7 @@ export default function About() {
       {/* ── Our Belief (image LEFT, text RIGHT) ───────────── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
@@ -227,7 +227,7 @@ export default function About() {
           </div>
           <div className="mt-14 grid sm:grid-cols-2 gap-5">
             {beliefs.map((b) => (
-              <div key={b.title} className="bg-secondary/60 rounded-2xl p-8 border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+              <div key={b.title} className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
                   <b.icon className="w-7 h-7 text-primary" />
                 </div>
@@ -245,7 +245,7 @@ export default function About() {
       {/* ── What We're Building (text LEFT, image RIGHT) ─── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
@@ -275,7 +275,7 @@ export default function About() {
       {/* ── The Company We Aim to Be (image LEFT, text RIGHT) ─ */}
       <section className="py-24 lg:py-32 bg-secondary/40">
         <Fade className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img src={aboutValues} alt="Team working in modern office" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
@@ -291,7 +291,7 @@ export default function About() {
           </div>
           <div className="mt-14 grid sm:grid-cols-2 gap-5">
             {values.map((v) => (
-              <div key={v.title} className="bg-background rounded-2xl p-8 border border-border hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+              <div key={v.title} className="bg-background rounded-2xl p-8 border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
                   <v.icon className="w-7 h-7 text-primary" />
                 </div>
@@ -343,7 +343,7 @@ export default function About() {
       {/* ── Built in Canada / Global Vision (image LEFT, text RIGHT) ── */}
       <section className="py-24 lg:py-32 bg-secondary/40">
         <Fade className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
             </div>

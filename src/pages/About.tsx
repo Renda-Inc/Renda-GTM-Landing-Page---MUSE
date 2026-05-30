@@ -343,7 +343,7 @@ export default function About() {
       {/* ── Built in Canada / Global Vision (image LEFT, text RIGHT) ── */}
       <section className="py-24 lg:py-32 bg-secondary/40">
         <Fade className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
             </div>

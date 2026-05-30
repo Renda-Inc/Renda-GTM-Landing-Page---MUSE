@@ -245,7 +245,7 @@ export default function About() {
       {/* ── What We're Building (text LEFT, image RIGHT) ─── */}
       <section className="py-24 lg:py-32">
         <Fade className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">

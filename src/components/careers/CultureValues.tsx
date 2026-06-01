@@ -23,24 +23,24 @@ export default function CultureValues() {
   return (
     <section className="py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
           <Fade>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-8">Culture & Values</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-10">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Culture & Values</p>
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
               What we believe.
             </h2>
             <div className="space-y-6">
               {values.map((v) => (
                 <div key={v.title} className="border-l-2 border-primary/30 pl-5">
                   <h3 className="text-base font-semibold text-foreground">{v.title}</h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                  <p className="mt-1.5 text-[15px] text-black/60 font-medium leading-relaxed">{v.desc}</p>
                 </div>
               ))}
             </div>
           </Fade>
           <Fade className="sticky top-32">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src={team5} alt="Team celebration" className="w-full object-cover aspect-square" loading="lazy" width={640} height={640} />
+            <div className="rounded-2xl overflow-hidden">
+              <img src={team5} alt="Team celebration" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
           </Fade>
         </div>

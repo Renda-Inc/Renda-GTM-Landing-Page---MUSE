@@ -30,11 +30,11 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-24 lg:py-32 bg-secondary">
+    <section className="py-24 lg:py-32 bg-secondary/40">
       <div className="max-w-6xl mx-auto px-6">
         <Fade>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-8">Benefits</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-14">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Benefits</p>
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-14">
             Built for people who do their best work.
           </h2>
         </Fade>
@@ -54,7 +54,7 @@ export default function Benefits() {
                 </div>
                 <div className="pt-5">
                   <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug">{b.label}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                  <p className="text-[15px] text-black/60 font-medium leading-relaxed">{b.desc}</p>
                 </div>
               </div>
             </Fade>

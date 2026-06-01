@@ -13,13 +13,13 @@ export default function DiversitySection() {
   return (
     <section className="py-24 lg:py-32 bg-foreground text-background">
       <Fade className="max-w-3xl mx-auto px-6 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-8">Diversity & Inclusion</p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-          Better perspectives build better products.
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary mb-8">Diversity & Inclusion</p>
+        <h2 className="text-3xl md:text-4xl font-medium tracking-tight leading-tight">
+          Better perspective build better products.
         </h2>
-        <div className="mt-10 space-y-6 text-base md:text-lg text-background/70 leading-relaxed max-w-2xl mx-auto">
+        <div className="mt-10 space-y-6 text-base md:text-lg text-background/70 font-medium leading-relaxed max-w-2xl mx-auto">
           <p>
-            We're building financial infrastructure for a global population. That requires a team that reflects the diversity of the people we serve — in background, experience, identity, and thought.
+            We're building financial infrastructure for a global population. That requires a team that reflects the diversity of the people we serve, in background, experience, identity, and thought.
           </p>
           <p>
             Inclusion isn't a program at Renda. It's a design principle. We actively seek out perspectives that challenge our assumptions and make our products more intelligent.

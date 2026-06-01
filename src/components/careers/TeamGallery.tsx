@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import team1 from "@/assets/careers/team-1.jpg";
 import team2 from "@/assets/careers/team-2.jpg";
@@ -33,94 +34,124 @@ const testimonials = [
   {
     quote: "I joined Renda because I wanted to build something real, not just ship features. Every week I'm solving problems that genuinely matter.",
     name: "Amara O.",
-    role: "Senior Backend Engineer",
+    role: "Senior Backend Engineer, Toronto",
     img: testimonial1,
   },
   {
     quote: "The autonomy here is unmatched. I own my designs end to end, and my ideas actually ship. There's no gap between thinking and building.",
     name: "Raj P.",
-    role: "Product Designer",
+    role: "Product Designer, Vancouver",
     img: testimonial2,
   },
   {
     quote: "What surprised me most is how much leadership trusts the team. You're given real problems, real context, and real freedom to solve them.",
     name: "Sophie L.",
-    role: "Data Scientist",
+    role: "Data Scientist, New York",
     img: testimonial3,
   },
 ];
 
 export default function TeamGallery() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % photos.length);
+    }, 1800);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <section className="py-24 lg:py-32 bg-secondary overflow-hidden">
+    <section className="py-24 lg:py-32 bg-secondary/40">
       <div className="max-w-6xl mx-auto px-6">
         <Fade>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-8">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">
             Our Team
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
             The people behind the product.
           </h2>
-          <p className="text-base text-muted-foreground mb-14 max-w-2xl">
-            A distributed team of builders, thinkers, and operators across Toronto, London, and Lagos.
+          <p className="text-base text-black/60 font-medium mb-14 max-w-2xl">
+            A distributed team of builders, thinkers, and operators across Toronto, Vancouver, and New York.
           </p>
         </Fade>
-      </div>
 
-      {/* Scrolling photo strip */}
-      <Fade>
-        <div className="relative">
-          <div className="flex gap-4 animate-[scroll_40s_linear_infinite] hover:[animation-play-state:paused] w-max">
-            {[...photos, ...photos].map((photo, i) => (
-              <div
-                key={i}
-                className="w-[400px] h-[300px] md:w-[520px] md:h-[360px] rounded-2xl overflow-hidden shrink-0"
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width={400}
-                  height={280}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </Fade>
-
-      {/* Testimonials */}
-      <div className="max-w-6xl mx-auto px-6 mt-20">
+        {/* One-by-one slider with autoplay */}
         <Fade>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-10">
-            What Our Team Says
-          </p>
-        </Fade>
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <Fade key={t.name}>
-              <div className="bg-background rounded-2xl p-8 border border-border h-full flex flex-col">
-                <p className="text-base text-foreground leading-relaxed flex-1 italic">
-                  "{t.quote}"
-                </p>
-                <div className="flex items-center gap-4 mt-8 pt-6 border-t border-border">
+          <div className="relative rounded-2xl overflow-hidden bg-background">
+            <div
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              {photos.map((p, i) => (
+                <div key={i} className="w-full shrink-0">
                   <img
-                    src={t.img}
-                    alt={t.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    src={p.src}
+                    alt={p.alt}
+                    className="w-full h-[420px] lg:h-[600px] object-cover"
                     loading="lazy"
-                    width={48}
-                    height={48}
+                    width={1280}
+                    height={720}
                   />
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pagination */}
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <div className="flex items-center gap-2">
+              {photos.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === index
+                      ? "w-2.5 h-2.5 bg-foreground"
+                      : "w-2 h-2 bg-black/25 hover:bg-black/50"
+                  }`}
+                />
+              ))}
+            </div>
+            <span className="text-xs font-medium text-black/60 tabular-nums">
+              {index + 1} / {photos.length}
+            </span>
+          </div>
+        </Fade>
+
+        {/* Testimonials */}
+        <div className="mt-20">
+          <Fade>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-10">
+              What Our Team Says
+            </p>
+          </Fade>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <Fade key={t.name}>
+                <div className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]">
+                  <p className="text-base text-black/70 font-medium leading-relaxed flex-1 italic">
+                    "{t.quote}"
+                  </p>
+                  <div className="flex items-center gap-4 mt-8 pt-6 border-t border-black/10">
+                    <img
+                      src={t.img}
+                      alt={t.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                      loading="lazy"
+                      width={48}
+                      height={48}
+                    />
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                      <p className="text-xs text-black/60 font-medium">{t.role}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Fade>
-          ))}
+              </Fade>
+            ))}
+          </div>
         </div>
       </div>
     </section>

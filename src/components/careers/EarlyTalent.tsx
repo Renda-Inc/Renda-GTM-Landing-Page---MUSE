@@ -33,14 +33,14 @@ export default function EarlyTalent() {
   return (
     <section className="py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
           {/* Left — Info + Image */}
           <Fade>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-8">Early Talent</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Early Talent</p>
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
               Start building early.
             </h2>
-            <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+            <div className="mt-8 space-y-5 text-base md:text-lg text-black/60 font-medium leading-relaxed">
               <p>
                 We welcome interns, co-ops, and early-career builders who want to do meaningful work from day one. At Renda, junior doesn't mean sidelined; it means mentored, challenged, and trusted.
               </p>
@@ -49,17 +49,18 @@ export default function EarlyTalent() {
               </p>
             </div>
             <div className="mt-10 rounded-2xl overflow-hidden">
-              <img src={earlyTalentImg} alt="Mentor and intern working together" className="w-full object-cover aspect-[16/9]" loading="lazy" width={1280} height={720} />
+              <img src={earlyTalentImg} alt="Mentor and intern working together" className="w-full h-[420px] lg:h-[500px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
           </Fade>
 
           {/* Right — Application form */}
           <Fade>
-            <div className="bg-secondary rounded-2xl p-8 border border-border sticky top-32">
-              <h3 className="text-xl font-bold text-foreground mb-2">Send us your resume</h3>
-              <p className="text-sm text-muted-foreground mb-8">
+            <div className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent sticky top-32">
+              <h3 className="text-xl font-semibold text-foreground mb-2">Send us your resume</h3>
+              <p className="text-sm text-black/60 font-medium mb-8">
                 Tell us about yourself and we'll be in touch if there's a fit.
               </p>
+
 
               {submitted ? (
                 <div className="text-center py-12">

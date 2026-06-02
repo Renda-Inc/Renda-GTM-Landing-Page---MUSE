@@ -57,12 +57,12 @@ export default function TeamGallery() {
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % photos.length);
-    }, 1800);
+    }, 3000);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary/40">
+    <section className="py-24 lg:py-32 bg-[#F6F5F2]">
       <div className="max-w-6xl mx-auto px-6">
         <Fade>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">
@@ -114,9 +114,6 @@ export default function TeamGallery() {
                 />
               ))}
             </div>
-            <span className="text-xs font-medium text-black/60 tabular-nums">
-              {index + 1} / {photos.length}
-            </span>
           </div>
         </Fade>
 
@@ -130,7 +127,7 @@ export default function TeamGallery() {
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
               <Fade key={t.name}>
-                <div className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]">
+                <div className="bg-white rounded-2xl p-8 border border-transparent h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]">
                   <p className="text-base text-black/70 font-medium leading-relaxed flex-1 italic">
                     "{t.quote}"
                   </p>

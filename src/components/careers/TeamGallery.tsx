@@ -127,7 +127,7 @@ export default function TeamGallery() {
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
               <Fade key={t.name}>
-                <div className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]">
+                <div className="bg-white rounded-2xl p-8 border border-transparent h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]">
                   <p className="text-base text-black/70 font-medium leading-relaxed flex-1 italic">
                     "{t.quote}"
                   </p>

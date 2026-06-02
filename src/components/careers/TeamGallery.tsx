@@ -57,7 +57,7 @@ export default function TeamGallery() {
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % photos.length);
-    }, 1800);
+    }, 3000);
     return () => clearInterval(id);
   }, []);
 

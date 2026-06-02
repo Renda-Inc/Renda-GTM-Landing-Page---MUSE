@@ -47,7 +47,7 @@ export default function OpenRoles() {
             Current openings. Start building early.
           </h2>
           <p className="text-base text-black/60 font-medium mb-14">
-            {openRoles.length} open positions across {teamCount} teams.
+            93 open positions across {teamCount} teams.
           </p>
         </Fade>
 

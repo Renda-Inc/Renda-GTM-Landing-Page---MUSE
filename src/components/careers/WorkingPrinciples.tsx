@@ -31,7 +31,7 @@ export default function WorkingPrinciples() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {principles.map((p, i) => (
             <Fade key={p.title} className={i === principles.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}>
-              <div className="bg-[#F6F5F2] rounded-2xl p-8 h-full border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
+              <div className="bg-white rounded-2xl p-8 h-full border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
                   <p.icon className="w-7 h-7 text-primary" />
                 </div>

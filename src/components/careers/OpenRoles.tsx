@@ -89,6 +89,20 @@ export default function OpenRoles() {
             );
           })}
         </div>
+
+        <Fade>
+          <div className="mt-14 flex justify-center">
+            <a
+              href="https://jobs.renda.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
+            >
+              View open positions
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        </Fade>
       </div>
     </section>
   );

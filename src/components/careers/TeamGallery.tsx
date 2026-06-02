@@ -114,9 +114,6 @@ export default function TeamGallery() {
                 />
               ))}
             </div>
-            <span className="text-xs font-medium text-black/60 tabular-nums">
-              {index + 1} / {photos.length}
-            </span>
           </div>
         </Fade>
 

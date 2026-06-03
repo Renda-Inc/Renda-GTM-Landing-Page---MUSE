@@ -188,7 +188,7 @@ export default function Help() {
       <section id="contact" className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Contact Us</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             Still need help?
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">

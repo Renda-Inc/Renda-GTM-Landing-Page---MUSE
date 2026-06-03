@@ -11,6 +11,14 @@ import OpenRoles from "@/components/careers/OpenRoles";
 import EarlyTalent from "@/components/careers/EarlyTalent";
 import CareersCTA from "@/components/careers/CareersCTA";
 
+function Divider() {
+  return (
+    <div className="max-w-4xl mx-auto px-6">
+      <div className="h-px bg-border" />
+    </div>
+  );
+}
+
 export default function Careers() {
   return (
     <main
@@ -23,13 +31,21 @@ export default function Careers() {
       <Navbar />
       <CareersHero />
       <WhyJoinRenda />
+      <Divider />
       <WorkingPrinciples />
+      <Divider />
       <TeamGallery />
+      <Divider />
       <CultureValues />
+      <Divider />
       <DiversitySection />
+      <Divider />
       <Benefits />
+      <Divider />
       <OpenRoles />
+      <Divider />
       <EarlyTalent />
+      <Divider />
       <CareersCTA />
       <Footer />
     </main>

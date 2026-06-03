@@ -50,9 +50,7 @@ export default function CultureValues() {
   return (
     <section className="py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <Fade>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Culture & Values</p>
-        </Fade>
+
 
         <div ref={scrollerRef} className="relative" style={{ height: `${values.length * 100}vh` }}>
           <div className="sticky top-0 h-screen flex items-center">
@@ -62,8 +60,9 @@ export default function CultureValues() {
                 <img src={team5} alt="Team celebration" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
               </div>
 
-              {/* Right column: static heading + values stack */}
+              {/* Right column: eyebrow + static heading + values stack */}
               <div className="flex flex-col">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">Culture & Values</p>
                 <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
                   What we believe.
                 </h2>

@@ -112,7 +112,13 @@ export const helpCategories: HelpCategory[] = [
 
 export default function Help() {
   return (
-    <main className="min-h-screen bg-background">
+    <main
+      className="min-h-screen bg-background"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
+      }}
+    >
       <Navbar />
 
       {/* Hero */}

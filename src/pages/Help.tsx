@@ -116,13 +116,17 @@ export default function Help() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
-        <Fade className="max-w-3xl mx-auto px-6 text-center">
+      <section
+        className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 bg-cover bg-center"
+        style={{ backgroundImage: `url(${helpHeroBg})` }}
+      >
+        <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+        <Fade className="relative max-w-3xl mx-auto px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-foreground mb-6">Help Centre</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
             How can we help you?
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
             Find answers to common questions, explore topic guides, and get the support you need.
           </p>
         </Fade>

@@ -9,6 +9,7 @@ import helpPayments from "@/assets/help-payments.jpg";
 import helpAlfieAi from "@/assets/help-alfie-ai.jpg";
 import helpSecurity from "@/assets/help-security.jpg";
 import helpBilling from "@/assets/help-billing.jpg";
+import helpHeroBg from "@/assets/help-hero-bg.jpeg";
 
 function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const { ref, isVisible } = useFadeIn();

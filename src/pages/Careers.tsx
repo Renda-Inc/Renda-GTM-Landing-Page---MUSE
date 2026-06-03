@@ -14,7 +14,7 @@ import CareersCTA from "@/components/careers/CareersCTA";
 function Divider() {
   return (
     <div className="max-w-4xl mx-auto px-6">
-      <div className="h-px bg-border" />
+      <div className="h-[2px] bg-black/15 rounded-full" />
     </div>
   );
 }

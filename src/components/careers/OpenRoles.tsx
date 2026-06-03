@@ -96,10 +96,9 @@ export default function OpenRoles() {
               href="https://jobs.renda.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center h-12 px-8 rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
             >
               View open positions
-              <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
         </Fade>

@@ -50,8 +50,8 @@ export default function Investors() {
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-4">
               From the desk of the CEO
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-10 tracking-tight">
-              A note to our investors.
+            <h1 className="text-2xl md:text-3xl font-semibold text-foreground mb-10 tracking-tight">
+              A note to those who believed in us.
             </h1>
 
             <div className="space-y-6 text-[17px] leading-[1.85] text-foreground/80">

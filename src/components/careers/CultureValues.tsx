@@ -52,7 +52,7 @@ export default function CultureValues() {
       <div className="max-w-6xl mx-auto px-6">
 
 
-        <div ref={scrollerRef} className="relative" style={{ height: `${values.length * 100}vh` }}>
+        <div ref={scrollerRef} className="relative" style={{ height: `${values.length * 60 + 100}vh` }}>
           <div className="sticky top-0 h-screen flex items-center">
             <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
               {/* Image left */}

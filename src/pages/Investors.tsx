@@ -21,7 +21,13 @@ export default function Investors() {
   const contact = useFadeIn();
 
   return (
-    <div className="min-h-screen bg-secondary/40">
+    <div
+      className="min-h-screen bg-secondary/40"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
+      }}
+    >
       <Navbar />
 
       {/* CEO Letter */}
@@ -44,8 +50,8 @@ export default function Investors() {
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-4">
               From the desk of the CEO
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-10 tracking-tight">
-              A note to our investors.
+            <h1 className="text-2xl md:text-3xl font-semibold text-foreground mb-10 tracking-tight">
+              A note to those who believed in us.
             </h1>
 
             <div className="space-y-6 text-[17px] leading-[1.85] text-foreground/80">
@@ -88,7 +94,7 @@ export default function Investors() {
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-3">
               Board of Directors
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
               Stewards of the company.
             </h2>
             <p className="text-base text-background/70 leading-relaxed">
@@ -123,7 +129,7 @@ export default function Investors() {
               <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-3">
                 Get in touch
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-4">
                 Investor Relations
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">

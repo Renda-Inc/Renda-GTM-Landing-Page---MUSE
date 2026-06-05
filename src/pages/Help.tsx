@@ -147,12 +147,12 @@ export default function Help() {
                     <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h2 className="text-base font-semibold text-foreground mb-2">{cat.title}</h2>
-                    <p className="text-[15px] text-black/60 font-medium leading-relaxed">{cat.description}</p>
+                    <h2 className="text-lg font-semibold text-foreground mb-2">{cat.title}</h2>
+                    <p className="text-[16px] text-black/60 font-medium leading-relaxed">{cat.description}</p>
 
                     <ul className="mt-5 space-y-2 flex-1">
                       {previewTopics.map((t) => (
-                        <li key={t.title} className="text-[14px] text-black/70 font-medium flex items-start gap-2 leading-relaxed">
+                        <li key={t.title} className="text-[15px] text-black/70 font-medium flex items-start gap-2 leading-relaxed">
                           <span className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
                           {t.title}
                         </li>
@@ -161,7 +161,7 @@ export default function Help() {
 
                     <Link
                       to={`/help/${cat.slug}`}
-                      className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:opacity-80 transition-opacity"
+                      className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-foreground hover:opacity-70 transition-opacity"
                     >
                       See all {cat.topics.length} articles
                       <ChevronRight className="w-4 h-4" />

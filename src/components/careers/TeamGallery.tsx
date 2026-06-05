@@ -68,7 +68,7 @@ export default function TeamGallery() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">
             Our Team
           </p>
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
             The people behind the product.
           </h2>
           <p className="text-base text-black/60 font-medium mb-14 max-w-2xl">

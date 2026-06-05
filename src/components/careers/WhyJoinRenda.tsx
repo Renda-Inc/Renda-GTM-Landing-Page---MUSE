@@ -17,7 +17,7 @@ export default function WhyJoinRenda() {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Why Join Renda</p>
-            <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
               The rare chance to build from zero.
             </h2>
             <div className="mt-8 space-y-5 text-base md:text-lg text-black/60 font-medium leading-relaxed">

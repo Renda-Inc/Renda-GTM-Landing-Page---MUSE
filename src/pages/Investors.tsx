@@ -94,7 +94,7 @@ export default function Investors() {
             <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-3">
               Board of Directors
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
               Stewards of the company.
             </h2>
             <p className="text-base text-background/70 leading-relaxed">

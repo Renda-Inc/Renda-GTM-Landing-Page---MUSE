@@ -43,7 +43,7 @@ export default function OpenRoles() {
       <div className="max-w-6xl mx-auto px-6">
         <Fade>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Open Roles</p>
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
             Current openings. Start building early.
           </h2>
           <p className="text-base text-black/60 font-medium mb-14">

@@ -34,7 +34,7 @@ export default function Benefits() {
       <div className="max-w-6xl mx-auto px-6">
         <Fade>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Benefits</p>
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-14">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-14">
             Built for people who do their best work.
           </h2>
         </Fade>

@@ -63,7 +63,7 @@ export default function CultureValues() {
               {/* Right column: eyebrow + static heading + values stack */}
               <div className="flex flex-col">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">Culture & Values</p>
-                <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
                   What we believe.
                 </h2>
                 <div className="relative h-[440px] flex items-center justify-center overflow-hidden">

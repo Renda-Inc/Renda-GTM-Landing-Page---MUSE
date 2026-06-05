@@ -129,7 +129,7 @@ export default function Investors() {
               <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-3">
                 Get in touch
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-4">
                 Investor Relations
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">

@@ -97,50 +97,50 @@ export default function PersonalBanking() {
       <Navbar />
 
       {/* ════════════ HERO ════════════ */}
-      <section className="relative min-h-screen flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroLifestyle}
-            alt="Person using Renda app"
-            className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-32 w-full">
-          <Fade>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-white/90">Personal Banking</span>
-            </div>
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white max-w-3xl"
-              style={{ fontFamily: SF_FONT }}
+      <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">
+        <Fade className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">
+            Personal Banking
+          </p>
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black/80 hover:text-black transition-colors duration-300"
+            style={{ fontFamily: SF_FONT }}
+          >
+            Banking that thinks ahead.
+          </h1>
+          <p className="mt-6 text-lg md:text-xl text-black/60 font-medium max-w-2xl mx-auto leading-relaxed">
+            Renda combines intelligent accounts, an adaptive card, instant payments, and
+            goal-based savings; all guided by Alfie, your personal AI financial assistant.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#waitlist"
+              className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
             >
-              Banking that thinks ahead.
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed font-medium">
-              Renda combines intelligent accounts, an adaptive card, instant payments, and
-              goal-based savings; all guided by Alfie, your personal AI financial assistant.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#waitlist"
-                className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-white text-black text-sm font-semibold hover:opacity-90 transition"
-              >
-                Open Your Smart Account
-              </a>
-              <a
-                href="#smart-accounts"
-                className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-semibold hover:bg-white/20 transition"
-              >
-                See How It Works
-              </a>
-            </div>
-          </Fade>
-        </div>
+              Open Your Smart Account
+            </a>
+            <a
+              href="#smart-accounts"
+              className="h-12 px-8 inline-flex items-center justify-center rounded-full border border-black/15 bg-background text-foreground text-base font-medium hover:bg-black/5 transition"
+            >
+              See How It Works
+            </a>
+          </div>
+        </Fade>
+
+        <Fade className="mt-16 max-w-6xl mx-auto px-6">
+          <div className="rounded-2xl overflow-hidden">
+            <img
+              src={heroLifestyle}
+              alt="Person using Renda app"
+              className="w-full h-[420px] lg:h-[600px] object-cover"
+              width={1920}
+              height={1080}
+            />
+          </div>
+        </Fade>
       </section>
+
 
       {/* ════════════ SMART ACCOUNTS ════════════ */}
       <section id="smart-accounts" className="scroll-mt-20 py-24 lg:py-32">

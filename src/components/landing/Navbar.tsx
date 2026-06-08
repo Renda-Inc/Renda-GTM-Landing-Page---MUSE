@@ -12,9 +12,11 @@ const navDropdowns = [
       {
         title: "PERSONAL BANKING",
         items: [
-          { label: "Smart Accounts", href: "/personal-banking" },
-          { label: "Cards & Payments", href: "/personal-banking#card" },
-          { label: "Savings & Goals", href: "/personal-banking#savings" },
+          { label: "Smart Accounts", href: "/personal-banking#smart-accounts" },
+          { label: "Cards & Payments", href: "/personal-banking#cards-payments" },
+          { label: "Peer-to-Peer Payments", href: "/personal-banking#p2p" },
+          { label: "Savings & Goals", href: "/personal-banking#savings-goals" },
+          { label: "Interac", href: "/personal-banking#interac" },
         ],
       },
       {

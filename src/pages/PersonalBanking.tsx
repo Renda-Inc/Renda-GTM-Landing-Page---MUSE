@@ -184,7 +184,7 @@ export default function PersonalBanking() {
           </div>
 
           {/* Feature boxes */}
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Wallet, title: "SmartSpend", desc: "Your everyday account, with real-time intelligence built in." },
               { icon: PiggyBank, title: "SenseSave", desc: "Savings that adapt to your income and spending patterns." },
@@ -193,13 +193,13 @@ export default function PersonalBanking() {
             ].map((f) => (
               <div
                 key={f.title}
-                className="bg-[#F6F5F2] rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group"
+                className="bg-[#F6F5F2] rounded-2xl p-9 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group min-h-[260px]"
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                  <f.icon className="w-6 h-6 text-primary" />
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <f.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-base font-semibold text-black/80 mb-2">{f.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-semibold text-black/80 mb-3">{f.title}</h3>
+                <p className="text-base text-black/60 font-medium leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

@@ -254,7 +254,7 @@ export default function PersonalBanking() {
               <img
                 src={lifestyleCafe}
                 alt="Tapping to pay at a cafe"
-                className="w-full h-[420px] lg:h-[520px] object-cover"
+                className="w-full h-[420px] lg:h-[600px] object-cover"
                 loading="lazy"
               />
             </div>

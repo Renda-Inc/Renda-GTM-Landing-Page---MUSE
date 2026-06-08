@@ -13,17 +13,17 @@ const footerColumns = [
     ],
   },
   {
-    heading: "Banking",
+    heading: "Personal Banking",
     links: [
-      { label: "Personal Accounts", href: "#" },
-      { label: "Cards & Payments", href: "#" },
-      { label: "Savings & Goals", href: "#" },
-      { label: "Peer-to-Peer Payments", href: "#" },
-      { label: "Interac", href: "#" },
+      { label: "Smart Accounts", href: "/personal-banking#smart-accounts" },
+      { label: "Cards & Payments", href: "/personal-banking#cards-payments" },
+      { label: "Peer-to-Peer Payments", href: "/personal-banking#p2p" },
+      { label: "Savings & Goals", href: "/personal-banking#savings-goals" },
+      { label: "Interac", href: "/personal-banking#interac" },
     ],
   },
   {
-    heading: "Business",
+    heading: "Business Banking",
     links: [
       { label: "Business Accounts", href: "#" },
       { label: "Expense Tracking", href: "#" },

@@ -13,8 +13,7 @@ import {
   Tag,
   Eye,
   Users,
-  ScanLine,
-  Phone,
+  QrCode,
   Target,
   PiggyBank,
   Banknote,
@@ -98,50 +97,50 @@ export default function PersonalBanking() {
       <Navbar />
 
       {/* ════════════ HERO ════════════ */}
-      <section className="relative min-h-screen flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroLifestyle}
-            alt="Person using Renda app"
-            className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-32 w-full">
-          <Fade>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-white/90">Personal Banking</span>
-            </div>
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white max-w-3xl"
-              style={{ fontFamily: SF_FONT }}
+      <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">
+        <Fade className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">
+            Personal Banking
+          </p>
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black/80 hover:text-black transition-colors duration-300"
+            style={{ fontFamily: SF_FONT }}
+          >
+            Banking that thinks ahead.
+          </h1>
+          <p className="mt-6 text-lg md:text-xl text-black/60 font-medium max-w-2xl mx-auto leading-relaxed">
+            Renda combines intelligent accounts, an adaptive card, instant payments, and
+            goal-based savings; all guided by Alfie, your personal AI financial assistant.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#waitlist"
+              className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
             >
-              Banking that thinks ahead.
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed font-medium">
-              Renda combines intelligent accounts, an adaptive card, instant payments, and
-              goal-based savings; all guided by Alfie, your personal AI financial assistant.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#waitlist"
-                className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-white text-black text-sm font-semibold hover:opacity-90 transition"
-              >
-                Open Your Smart Account
-              </a>
-              <a
-                href="#smart-accounts"
-                className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-semibold hover:bg-white/20 transition"
-              >
-                See How It Works
-              </a>
-            </div>
-          </Fade>
-        </div>
+              Open Your Smart Account
+            </a>
+            <a
+              href="#smart-accounts"
+              className="h-12 px-8 inline-flex items-center justify-center rounded-full border border-black/15 bg-background text-foreground text-base font-medium hover:bg-black/5 transition"
+            >
+              See How It Works
+            </a>
+          </div>
+        </Fade>
+
+        <Fade className="mt-16 max-w-6xl mx-auto px-6">
+          <div className="rounded-2xl overflow-hidden">
+            <img
+              src={heroLifestyle}
+              alt="Person using Renda app"
+              className="w-full h-[420px] lg:h-[600px] object-cover"
+              width={1920}
+              height={1080}
+            />
+          </div>
+        </Fade>
       </section>
+
 
       {/* ════════════ SMART ACCOUNTS ════════════ */}
       <section id="smart-accounts" className="scroll-mt-20 py-24 lg:py-32">
@@ -185,7 +184,7 @@ export default function PersonalBanking() {
           </div>
 
           {/* Feature boxes */}
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Wallet, title: "SmartSpend", desc: "Your everyday account, with real-time intelligence built in." },
               { icon: PiggyBank, title: "SenseSave", desc: "Savings that adapt to your income and spending patterns." },
@@ -194,13 +193,13 @@ export default function PersonalBanking() {
             ].map((f) => (
               <div
                 key={f.title}
-                className="bg-[#F6F5F2] rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group"
+                className="bg-[#F6F5F2] rounded-2xl p-9 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group min-h-[260px]"
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                  <f.icon className="w-6 h-6 text-primary" />
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <f.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-base font-semibold text-black/80 mb-2">{f.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{f.desc}</p>
+                <h3 className="text-lg font-semibold text-black/80 mb-3">{f.title}</h3>
+                <p className="text-base text-black/60 font-medium leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -255,7 +254,7 @@ export default function PersonalBanking() {
               <img
                 src={lifestyleCafe}
                 alt="Tapping to pay at a cafe"
-                className="w-full h-[420px] lg:h-[520px] object-cover"
+                className="w-full h-[420px] lg:h-[600px] object-cover"
                 loading="lazy"
               />
             </div>
@@ -317,21 +316,20 @@ export default function PersonalBanking() {
               <H2>Instant transfers. Real network.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 Renda Peer-to-Peer is the fastest way to send money to friends, family, or
-                anyone in the Renda network. Add someone by their Renda ID, phone number, or
-                by scanning their barcode, they instantly appear as a contact. Money moves
-                immediately. No delays. No friction.
+                anyone in the Renda network. Add someone by their Renda ID or by scanning
+                their QR code, they instantly appear as a contact. Money moves immediately.
+                No delays. No friction.
               </p>
               <ul className="mt-8 space-y-3">
                 <Bullet>Instant transfers within the Renda network</Bullet>
-                <Bullet>Add contacts by account, phone, or barcode scan</Bullet>
+                <Bullet>Add contacts by Renda ID or QR code scan</Bullet>
                 <Bullet>No transaction delays, money moves when you need it to</Bullet>
               </ul>
 
-              <div className="mt-10 grid sm:grid-cols-3 gap-4">
+              <div className="mt-10 grid sm:grid-cols-2 gap-4">
                 {[
                   { icon: Users, label: "Renda ID" },
-                  { icon: Phone, label: "Phone Number" },
-                  { icon: ScanLine, label: "Barcode Scan" },
+                  { icon: QrCode, label: "QR Code Scan" },
                 ].map((m) => (
                   <div
                     key={m.label}
@@ -385,7 +383,7 @@ export default function PersonalBanking() {
               <img
                 src={lifestyleStudying}
                 alt="Planning savings goals"
-                className="w-full h-[420px] lg:h-[520px] object-cover"
+                className="w-full h-[420px] lg:h-[600px] object-cover"
                 loading="lazy"
               />
             </div>

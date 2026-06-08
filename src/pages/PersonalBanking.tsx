@@ -383,7 +383,7 @@ export default function PersonalBanking() {
               <img
                 src={lifestyleStudying}
                 alt="Planning savings goals"
-                className="w-full h-[420px] lg:h-[520px] object-cover"
+                className="w-full h-[420px] lg:h-[600px] object-cover"
                 loading="lazy"
               />
             </div>

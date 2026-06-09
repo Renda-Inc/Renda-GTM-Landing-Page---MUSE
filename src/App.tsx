@@ -13,6 +13,7 @@ import BlogArticle from "./pages/BlogArticle";
 import Help from "./pages/Help";
 import HelpCategory from "./pages/HelpCategory";
 import TermsOfUse from "./pages/TermsOfUse";
+import TermsPolicy from "./pages/TermsPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import WhyRenda from "./pages/WhyRenda";
 import Investors from "./pages/Investors";

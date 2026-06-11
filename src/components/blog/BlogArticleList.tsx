@@ -52,7 +52,7 @@ export default function BlogArticleList({ articles }: Props) {
                   <span className="text-muted-foreground">·</span>
                   <span className="text-muted-foreground">{article.readTime}</span>
                 </div>
-                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                <h3 className="text-lg font-bold text-foreground leading-snug">
                   {article.title}
                 </h3>
                 <p className="text-base text-muted-foreground leading-relaxed line-clamp-2">

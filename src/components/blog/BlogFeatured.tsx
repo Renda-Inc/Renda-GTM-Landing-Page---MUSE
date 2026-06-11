@@ -48,7 +48,7 @@ export default function BlogFeatured({ articles, visible }: Props) {
                   <span className="text-muted-foreground">·</span>
                   <span className="text-muted-foreground">{article.date}</span>
                 </div>
-                <h2 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                <h2 className="text-xl font-bold text-foreground leading-snug">
                   {article.title}
                 </h2>
                 <p className="text-base text-muted-foreground leading-relaxed line-clamp-3">

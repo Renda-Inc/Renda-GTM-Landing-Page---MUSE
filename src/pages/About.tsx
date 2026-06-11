@@ -192,7 +192,7 @@ export default function About() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-32 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-32 md:pb-48 pt-32 w-full">
           <Fade>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />

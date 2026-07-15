@@ -23,7 +23,7 @@ export default function AlfieMoat() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary/20">
+    <section className="py-16 lg:py-20 bg-secondary/20">
       <div
         ref={ref}
         className={`max-w-5xl mx-auto px-6 transition-all duration-700 ${

@@ -195,7 +195,7 @@ export default function AlfieMockups() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden bg-background">
+    <section className="py-16 lg:py-20 relative overflow-hidden bg-background">
       <div
         ref={ref}
         className={`relative max-w-5xl mx-auto px-6 transition-all duration-700 ${

@@ -12,7 +12,7 @@ export default function TrustSection() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden bg-secondary/30">
+    <section className="py-16 lg:py-20 relative overflow-hidden bg-secondary/30">
       <div
         ref={ref}
         className={`relative max-w-5xl mx-auto px-6 transition-all duration-700 ${

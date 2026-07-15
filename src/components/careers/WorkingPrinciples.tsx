@@ -20,8 +20,8 @@ const principles = [
 
 export default function WorkingPrinciples() {
   return (
-    <section className="py-24 lg:py-32 bg-[#F6F5F2]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 lg:py-20 bg-[#F6F5F2]">
+      <div className="max-w-7xl mx-auto px-6">
         <Fade>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Working at Renda</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-14">

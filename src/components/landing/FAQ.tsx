@@ -35,7 +35,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section className="py-16 lg:py-20 bg-background">
       <div
         ref={ref}
         className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${

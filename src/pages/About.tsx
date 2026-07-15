@@ -209,11 +209,11 @@ export default function About() {
       </section>
 
       {/* ── Our Belief (image LEFT, text RIGHT) ───────────── */}
-      <section className="py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section className="py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
+              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
@@ -243,8 +243,8 @@ export default function About() {
       <Divider />
 
       {/* ── What We're Building (text LEFT, image RIGHT) ─── */}
-      <section className="py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section className="py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
@@ -264,7 +264,7 @@ export default function About() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
+              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
           </div>
         </Fade>
@@ -273,11 +273,11 @@ export default function About() {
       <Divider />
 
       {/* ── The Company We Aim to Be (image LEFT, text RIGHT) ─ */}
-      <section className="py-24 lg:py-32 bg-secondary/40">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section className="py-16 lg:py-20 bg-secondary/40">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
+              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
@@ -304,8 +304,8 @@ export default function About() {
       </section>
 
       {/* ── Our Journey (horizontal timeline with images) ──── */}
-      <section className="py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section className="py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <Timeline />
         </Fade>
       </section>
@@ -313,8 +313,8 @@ export default function About() {
       <Divider />
 
       {/* ── Leadership ────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-foreground">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section className="py-16 lg:py-20 bg-foreground">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background leading-tight">
@@ -341,11 +341,11 @@ export default function About() {
       <Divider />
 
       {/* ── Built in Canada / Global Vision (image LEFT, text RIGHT) ── */}
-      <section className="py-24 lg:py-32 bg-secondary/40">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section className="py-16 lg:py-20 bg-secondary/40">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
+              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
@@ -367,7 +367,7 @@ export default function About() {
 
 
       {/* ── Partners & Backers ────────────────────────────── */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 lg:py-20">
         <Fade className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Partners & Backers</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
@@ -393,7 +393,7 @@ export default function About() {
       <Divider />
 
       {/* ── Closing CTA ───────────────────────────────────── */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 lg:py-20">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
             The future of finance isn't louder. It's smarter.

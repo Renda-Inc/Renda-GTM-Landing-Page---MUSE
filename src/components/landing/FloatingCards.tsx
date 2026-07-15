@@ -6,7 +6,7 @@ export default function FloatingCards() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-20 lg:py-28 bg-foreground overflow-hidden">
+    <section className="py-16 lg:py-20 bg-foreground overflow-hidden">
       <style>{`
         @keyframes float-front {
           0%, 100% { transform: rotateY(18deg) rotateX(-12deg) rotateZ(3deg) translateY(0px); }

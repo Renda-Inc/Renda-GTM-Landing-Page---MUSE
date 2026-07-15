@@ -5,7 +5,7 @@ export default function SignalsOverNoise() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-24 lg:py-32 overflow-hidden relative">
+    <section className="py-16 lg:py-20 overflow-hidden relative">
       {/* Full bleed lifestyle image */}
       <div className="absolute inset-0">
         <img src={lifestyleCasualGathering} alt="" className="w-full h-full object-cover" />

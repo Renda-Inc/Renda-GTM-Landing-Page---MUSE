@@ -24,7 +24,7 @@ export default function ProblemSection() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-16 lg:py-20 relative overflow-hidden">
       {/* Looped lifestyle background with Ken Burns effect */}
       <div className="absolute inset-0">
         <img

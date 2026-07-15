@@ -45,7 +45,7 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 /* ─── Section divider ─── */
 function Divider() {
   return (
-    <div className="max-w-6xl mx-auto px-6">
+    <div className="max-w-7xl mx-auto px-6">
       <div className="border-t-2 border-border/70" />
     </div>
   );
@@ -128,12 +128,12 @@ export default function PersonalBanking() {
           </div>
         </Fade>
 
-        <Fade className="mt-16 max-w-6xl mx-auto px-6">
+        <Fade className="mt-16 max-w-7xl mx-auto px-6">
           <div className="rounded-2xl overflow-hidden">
             <img
               src={heroLifestyle}
               alt="Person using Renda app"
-              className="w-full h-[420px] lg:h-[600px] object-cover"
+              className="w-full h-[480px] lg:h-[720px] object-cover"
               width={1920}
               height={1080}
             />
@@ -143,8 +143,8 @@ export default function PersonalBanking() {
 
 
       {/* ════════════ SMART ACCOUNTS ════════════ */}
-      <section id="smart-accounts" className="scroll-mt-20 py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="smart-accounts" className="scroll-mt-20 py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <Eyebrow>Smart Accounts</Eyebrow>
@@ -209,8 +209,8 @@ export default function PersonalBanking() {
       <Divider />
 
       {/* ════════════ CARDS & PAYMENTS ════════════ */}
-      <section id="cards-payments" className="scroll-mt-20 py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="cards-payments" className="scroll-mt-20 py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16">
             <Eyebrow>Cards & Payments</Eyebrow>
             <H2>A card that learns. Payments that just work.</H2>
@@ -254,7 +254,7 @@ export default function PersonalBanking() {
               <img
                 src={lifestyleCafe}
                 alt="Tapping to pay at a cafe"
-                className="w-full h-[420px] lg:h-[600px] object-cover"
+                className="w-full h-[480px] lg:h-[720px] object-cover"
                 loading="lazy"
               />
             </div>
@@ -308,8 +308,8 @@ export default function PersonalBanking() {
       <Divider />
 
       {/* ════════════ PEER-TO-PEER ════════════ */}
-      <section id="p2p" className="scroll-mt-20 py-24 lg:py-32 bg-[#F6F5F2]">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="p2p" className="scroll-mt-20 py-16 lg:py-20 bg-[#F6F5F2]">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <Eyebrow>Move Money Your Way</Eyebrow>
@@ -376,14 +376,14 @@ export default function PersonalBanking() {
       <Divider />
 
       {/* ════════════ SAVINGS & GOALS ════════════ */}
-      <section id="savings-goals" className="scroll-mt-20 py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="savings-goals" className="scroll-mt-20 py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
               <img
                 src={lifestyleStudying}
                 alt="Planning savings goals"
-                className="w-full h-[420px] lg:h-[600px] object-cover"
+                className="w-full h-[480px] lg:h-[720px] object-cover"
                 loading="lazy"
               />
             </div>
@@ -439,8 +439,8 @@ export default function PersonalBanking() {
       <Divider />
 
       {/* ════════════ INTERAC ════════════ */}
-      <section id="interac" className="scroll-mt-20 py-24 lg:py-32 bg-[#F6F5F2]">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="interac" className="scroll-mt-20 py-16 lg:py-20 bg-[#F6F5F2]">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <Eyebrow>Interac</Eyebrow>
@@ -484,7 +484,7 @@ export default function PersonalBanking() {
       <Divider />
 
       {/* ════════════ CLOSING CTA ════════════ */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={lifestyleFriends}

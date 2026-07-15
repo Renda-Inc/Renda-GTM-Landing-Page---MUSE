@@ -25,7 +25,7 @@ export default function CoreBelief() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden bg-background">
+    <section className="py-16 lg:py-20 relative overflow-hidden bg-background">
       <div
         ref={ref}
         className={`relative max-w-6xl mx-auto px-6 transition-all duration-700 ${

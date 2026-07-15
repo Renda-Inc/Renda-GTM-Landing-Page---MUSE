@@ -29,7 +29,7 @@ export default function ProductCapabilities() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-16 lg:py-20 relative overflow-hidden">
       <div
         ref={ref}
         className={`relative max-w-6xl mx-auto px-6 transition-all duration-700 ${

@@ -5,7 +5,7 @@ export default function Philosophy() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-16 lg:py-20 relative overflow-hidden">
       <div
         ref={ref}
         className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${

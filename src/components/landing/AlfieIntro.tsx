@@ -5,7 +5,7 @@ export default function AlfieIntro() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section id="alfie" className="py-20 lg:py-28 relative overflow-hidden">
+    <section id="alfie" className="py-16 lg:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-background" />
       <div
         ref={ref}

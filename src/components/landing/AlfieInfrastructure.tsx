@@ -24,7 +24,7 @@ export default function AlfieInfrastructure() {
   ];
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-16 lg:py-20 relative overflow-hidden">
       {/* Lifestyle background */}
       <div className="absolute inset-0">
         <img src={lifestyleStudying} alt="" className="w-full h-full object-cover" />

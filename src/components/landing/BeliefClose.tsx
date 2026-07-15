@@ -6,7 +6,7 @@ export default function BeliefClose() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section id="waitlist" className="py-20 lg:py-28 relative overflow-hidden">
+    <section id="waitlist" className="py-16 lg:py-20 relative overflow-hidden">
       {/* Softer background - less orange, more natural */}
       <div className="absolute inset-0">
         <img src={lifestyleBeach} alt="" className="w-full h-full object-cover" />

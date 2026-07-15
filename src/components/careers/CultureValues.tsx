@@ -48,8 +48,8 @@ export default function CultureValues() {
   }, []);
 
   return (
-    <section className="py-24 lg:py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-6">
 
 
         <div ref={scrollerRef} className="relative" style={{ height: `${values.length * 60 + 100}vh` }}>
@@ -57,7 +57,7 @@ export default function CultureValues() {
             <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
               {/* Image left */}
               <div className="rounded-2xl overflow-hidden">
-                <img src={team5} alt="Team celebration" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
+                <img src={team5} alt="Team celebration" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
               </div>
 
               {/* Right column: eyebrow + static heading + values stack */}

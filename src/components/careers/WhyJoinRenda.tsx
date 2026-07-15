@@ -12,8 +12,8 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 
 export default function WhyJoinRenda() {
   return (
-    <section className="py-24 lg:py-32">
-      <Fade className="max-w-6xl mx-auto px-6">
+    <section className="py-16 lg:py-20">
+      <Fade className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Why Join Renda</p>
@@ -33,7 +33,7 @@ export default function WhyJoinRenda() {
             </div>
           </div>
           <div className="order-first lg:order-last rounded-2xl overflow-hidden">
-            <img src={officeImg} alt="Renda office space" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" width={1280} height={720} />
+            <img src={officeImg} alt="Renda office space" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
           </div>
         </div>
       </Fade>

@@ -11,7 +11,7 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 
 export default function DiversitySection() {
   return (
-    <section className="py-24 lg:py-32 bg-foreground text-background">
+    <section className="py-16 lg:py-20 bg-foreground text-background">
       <Fade className="max-w-3xl mx-auto px-6 text-center">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary mb-8">Diversity & Inclusion</p>
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">

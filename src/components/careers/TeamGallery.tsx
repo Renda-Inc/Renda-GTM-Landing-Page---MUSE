@@ -62,8 +62,8 @@ export default function TeamGallery() {
   }, []);
 
   return (
-    <section className="py-24 lg:py-32 bg-[#F6F5F2]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 lg:py-20 bg-[#F6F5F2]">
+      <div className="max-w-7xl mx-auto px-6">
         <Fade>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">
             Our Team
@@ -88,7 +88,7 @@ export default function TeamGallery() {
                   <img
                     src={p.src}
                     alt={p.alt}
-                    className="w-full h-[420px] lg:h-[600px] object-cover"
+                    className="w-full h-[480px] lg:h-[720px] object-cover"
                     loading="lazy"
                     width={1280}
                     height={720}

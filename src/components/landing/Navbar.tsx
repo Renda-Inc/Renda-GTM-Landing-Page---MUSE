@@ -247,7 +247,7 @@ export default function Navbar() {
           <a
             href="#"
             className={`text-[15px] font-medium transition-colors duration-200 ${
-              scrolled ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
+              scrolled || activeDropdown ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
             }`}
           >
             Sign In
@@ -255,7 +255,7 @@ export default function Navbar() {
           <a
             href="#waitlist"
             className={`group h-10 px-6 inline-flex items-center gap-2 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all duration-200 ${
-              scrolled
+              scrolled || activeDropdown
                 ? "bg-foreground text-background hover:bg-foreground/90"
                 : "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20"
             }`}
@@ -267,7 +267,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className={`lg:hidden p-2 transition-colors ${scrolled ? "text-foreground" : "text-white"}`}
+          className={`lg:hidden p-2 transition-colors ${scrolled || activeDropdown ? "text-foreground" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >

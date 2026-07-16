@@ -171,7 +171,7 @@ export default function Navbar() {
               </button>
 
               {isActive && (
-                <div className="absolute top-full left-0 right-0 pointer-events-none z-50">
+                <div className="fixed top-[100px] left-0 right-0 pointer-events-none z-50">
                   <div className="max-w-7xl mx-auto px-6 md:px-10">
                     <div className="pointer-events-auto bg-background rounded-b-2xl shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)] animate-fade-in">
                       <div className="px-8 py-8">

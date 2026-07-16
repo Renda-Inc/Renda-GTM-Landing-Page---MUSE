@@ -313,8 +313,8 @@ export default function About() {
       <Divider />
 
       {/* ── Leadership ────────────────────────────────────── */}
-      <section className="py-16 lg:py-20 bg-foreground">
-        <Fade className="max-w-7xl mx-auto px-6">
+      <section className="py-24 lg:py-32 bg-foreground">
+        <Fade className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background leading-tight">

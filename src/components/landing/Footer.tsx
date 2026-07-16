@@ -118,7 +118,7 @@ export default function Footer() {
                       <li key={link.label}>
                         <a
                           href={link.href}
-                          className="hover:text-background transition-colors duration-200"
+                          className="hover:text-background hover:font-semibold transition-all duration-200"
                         >
                           {link.label}
                         </a>

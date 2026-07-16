@@ -114,10 +114,16 @@ export default function Navbar() {
   return (
     <>
       <AnnouncementBar />
+      {/* Backdrop when dropdown open */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
+          activeDropdown ? "opacity-100 pointer-events-none" : "opacity-0 pointer-events-none"
+        }`}
+      />
       <nav
         className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm"
+          scrolled || activeDropdown
+            ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -125,7 +131,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
-            src={scrolled ? rendaLogoBlack : rendaLogoWhite}
+            src={scrolled || activeDropdown ? rendaLogoBlack : rendaLogoWhite}
             alt="Renda"
             className="h-7 w-auto transition-opacity duration-300"
           />
@@ -133,7 +139,12 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-1">
-          {navDropdowns.map((dropdown) => (
+          {navDropdowns.map((dropdown) => {
+            const isActive = activeDropdown === dropdown.label;
+            const isDimmed = activeDropdown && !isActive;
+            const hasChevron = dropdown.columns.length > 0;
+            const darkMode = scrolled || activeDropdown;
+            return (
             <div
               key={dropdown.label}
               className="relative"
@@ -141,20 +152,37 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`px-4 py-2 text-[15px] font-medium transition-colors duration-200 ${
-                  scrolled
-                    ? "text-foreground/60 hover:text-foreground"
-                    : "text-white/70 hover:text-white"
+                className={`px-4 py-2 text-[15px] font-medium transition-colors duration-200 inline-flex items-center gap-1 ${
+                  darkMode
+                    ? isActive
+                      ? "text-foreground"
+                      : isDimmed
+                      ? "text-foreground/40 hover:text-foreground"
+                      : "text-foreground hover:text-foreground"
+                    : "text-white/80 hover:text-white"
                 }`}
               >
                 {dropdown.label}
+                {hasChevron && (
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${isActive ? "rotate-180" : ""}`}
+                  />
+                )}
               </button>
 
-              {activeDropdown === dropdown.label && (
-                <div className="fixed top-[100px] left-0 right-0 animate-fade-in">
-                  <div className="bg-background shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+              {isActive && (
+                <div className="fixed top-[100px] left-0 right-0 animate-fade-in z-50">
+                  <div className="bg-background shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
                     <div className="max-w-7xl mx-auto px-10 py-10">
-                      <div className={`grid ${dropdown.columns.length > 1 ? "grid-cols-3 gap-x-16 gap-y-2" : "grid-cols-1"} ${dropdown.columns.length === 1 ? "max-w-xs" : ""}`}>
+                      <div
+                        className={`grid gap-x-12 gap-y-2 ${
+                          dropdown.featured
+                            ? "grid-cols-[1fr_1fr_1fr_1.1fr]"
+                            : dropdown.columns.length > 1
+                            ? "grid-cols-3"
+                            : "grid-cols-1 max-w-xs"
+                        }`}
+                      >
                         {dropdown.columns.map((col, ci) => (
                           <div key={ci} className="flex flex-col gap-2">
                             {col.title && (
@@ -166,7 +194,7 @@ export default function Navbar() {
                               <a
                                 key={item.label}
                                 href={item.href}
-                                className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/80 hover:text-foreground transition-colors duration-150 whitespace-nowrap"
+                                className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground hover:text-foreground hover:font-semibold transition-all duration-150 whitespace-nowrap"
                               >
                                 {item.label}
                                 {"soon" in item && item.soon && (
@@ -178,14 +206,41 @@ export default function Navbar() {
                             ))}
                           </div>
                         ))}
+                        {dropdown.featured && (
+                          <a
+                            href={dropdown.featured.href}
+                            className="block group rounded-2xl overflow-hidden bg-secondary/60 hover:bg-secondary transition-colors"
+                          >
+                            <div className="aspect-[16/10] overflow-hidden">
+                              <img
+                                src={dropdown.featured.image}
+                                alt={dropdown.featured.title}
+                                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                              />
+                            </div>
+                            <div className="p-4">
+                              <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45">
+                                {dropdown.featured.eyebrow}
+                              </span>
+                              <p className="mt-2 text-[15px] font-semibold text-foreground leading-snug">
+                                {dropdown.featured.title}
+                              </p>
+                              <p className="mt-1 text-[13px] text-foreground/60 leading-snug">
+                                {dropdown.featured.desc}
+                              </p>
+                            </div>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
                 </div>
               )}
             </div>
-          ))}
+            );
+          })}
         </div>
+
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">

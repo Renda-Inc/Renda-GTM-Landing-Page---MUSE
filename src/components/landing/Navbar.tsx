@@ -38,6 +38,13 @@ const navDropdowns = [
         ],
       },
     ],
+    featured: {
+      eyebrow: "FEATURED",
+      image: featuredAlfie,
+      title: "Meet Alfie, your AI financial assistant",
+      desc: "The intelligence layer built into every part of Renda banking.",
+      href: "/why-renda#belief",
+    },
   },
   {
     label: "Why Renda",

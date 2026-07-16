@@ -171,66 +171,68 @@ export default function Navbar() {
               </button>
 
               {isActive && (
-                <div className="fixed top-[100px] left-0 right-0 animate-fade-in z-50">
-                  <div className="bg-background shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
-                    <div className="max-w-7xl mx-auto px-10 py-10">
-                      <div
-                        className={`grid gap-x-12 gap-y-2 ${
-                          dropdown.featured
-                            ? "grid-cols-[1fr_1fr_1fr_1.1fr]"
-                            : dropdown.columns.length > 1
-                            ? "grid-cols-3"
-                            : "grid-cols-1 max-w-xs"
-                        }`}
-                      >
-                        {dropdown.columns.map((col, ci) => (
-                          <div key={ci} className="flex flex-col gap-2">
-                            {col.title && (
-                              <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45 mb-2">
-                                {col.title}
-                              </span>
-                            )}
-                            {col.items.map((item) => (
-                              <a
-                                key={item.label}
-                                href={item.href}
-                                className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground hover:text-foreground hover:font-semibold transition-all duration-150 whitespace-nowrap"
-                              >
-                                {item.label}
-                                {"soon" in item && item.soon && (
-                                  <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
-                                    SOON
-                                  </span>
-                                )}
-                              </a>
-                            ))}
-                          </div>
-                        ))}
-                        {dropdown.featured && (
-                          <a
-                            href={dropdown.featured.href}
-                            className="block group rounded-2xl overflow-hidden bg-secondary/60 hover:bg-secondary transition-colors"
-                          >
-                            <div className="aspect-[16/10] overflow-hidden">
-                              <img
-                                src={dropdown.featured.image}
-                                alt={dropdown.featured.title}
-                                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                              />
+                <div className="absolute top-full left-0 right-0 pointer-events-none z-50">
+                  <div className="max-w-7xl mx-auto px-6 md:px-10">
+                    <div className="pointer-events-auto bg-background rounded-b-2xl shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)] animate-fade-in">
+                      <div className="px-8 py-8">
+                        <div
+                          className={`grid gap-x-12 gap-y-2 ${
+                            dropdown.featured
+                              ? "grid-cols-[1fr_1fr_1fr_1.1fr]"
+                              : dropdown.columns.length > 1
+                              ? "grid-cols-3"
+                              : "grid-cols-1 max-w-xs"
+                          }`}
+                        >
+                          {dropdown.columns.map((col, ci) => (
+                            <div key={ci} className="flex flex-col gap-2">
+                              {col.title && (
+                                <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45 mb-2">
+                                  {col.title}
+                                </span>
+                              )}
+                              {col.items.map((item) => (
+                                <a
+                                  key={item.label}
+                                  href={item.href}
+                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground hover:text-foreground hover:font-semibold transition-all duration-150 whitespace-nowrap"
+                                >
+                                  {item.label}
+                                  {"soon" in item && item.soon && (
+                                    <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
+                                      SOON
+                                    </span>
+                                  )}
+                                </a>
+                              ))}
                             </div>
-                            <div className="p-4">
-                              <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45">
-                                {dropdown.featured.eyebrow}
-                              </span>
-                              <p className="mt-2 text-[15px] font-semibold text-foreground leading-snug">
-                                {dropdown.featured.title}
-                              </p>
-                              <p className="mt-1 text-[13px] text-foreground/60 leading-snug">
-                                {dropdown.featured.desc}
-                              </p>
-                            </div>
-                          </a>
-                        )}
+                          ))}
+                          {dropdown.featured && (
+                            <a
+                              href={dropdown.featured.href}
+                              className="block group rounded-2xl overflow-hidden bg-secondary/60 hover:bg-secondary transition-colors"
+                            >
+                              <div className="aspect-[16/10] overflow-hidden">
+                                <img
+                                  src={dropdown.featured.image}
+                                  alt={dropdown.featured.title}
+                                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45">
+                                  {dropdown.featured.eyebrow}
+                                </span>
+                                <p className="mt-2 text-[15px] font-semibold text-foreground leading-snug">
+                                  {dropdown.featured.title}
+                                </p>
+                                <p className="mt-1 text-[13px] text-foreground/60 leading-snug">
+                                  {dropdown.featured.desc}
+                                </p>
+                              </div>
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -3,9 +3,30 @@ import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import rendaLogoBlack from "@/assets/renda-logo-black.png";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
 import featuredAlfie from "@/assets/about-alfie.jpg";
+import featuredBelief from "@/assets/about-belief.jpg";
+import featuredPlatform from "@/assets/timeline-alfie.jpg";
+import featuredCompany from "@/assets/about-overhead.jpg";
 import AnnouncementBar from "./AnnouncementBar";
 
-const navDropdowns = [
+const SF_PRO =
+  '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';
+
+type FeaturedItem = {
+  eyebrow: string;
+  image: string;
+  title: string;
+  desc: string;
+  href: string;
+};
+
+type Dropdown = {
+  label: string;
+  href: string;
+  columns: { title?: string; items: { label: string; href: string; soon?: boolean }[] }[];
+  featured?: FeaturedItem;
+};
+
+const navDropdowns: Dropdown[] = [
   {
     label: "Product",
     href: "/personal-banking",
@@ -59,6 +80,13 @@ const navDropdowns = [
         ],
       },
     ],
+    featured: {
+      eyebrow: "FEATURED",
+      image: featuredBelief,
+      title: "Finance should empower, not overwhelm",
+      desc: "Read the founding conviction behind Renda's approach to modern money.",
+      href: "/why-renda#philosophy",
+    },
   },
   {
     label: "Platform",
@@ -72,6 +100,13 @@ const navDropdowns = [
         ],
       },
     ],
+    featured: {
+      eyebrow: "FEATURED",
+      image: featuredPlatform,
+      title: "Alfie as financial infrastructure",
+      desc: "How the reasoning engine powers fintechs, platforms, and partners.",
+      href: "#infrastructure",
+    },
   },
   {
     label: "Company",
@@ -82,10 +117,18 @@ const navDropdowns = [
           { label: "About Us", href: "/about" },
           { label: "Careers", href: "/careers" },
           { label: "Blog & Insights", href: "/blog" },
+          { label: "Our Investors", href: "/investors" },
           { label: "Help Centre", href: "/help" },
         ],
       },
     ],
+    featured: {
+      eyebrow: "FEATURED",
+      image: featuredCompany,
+      title: "Building an intelligence layer for finance",
+      desc: "Meet the team, the mission, and the long-term institution we're building.",
+      href: "/about",
+    },
   },
 ];
 
@@ -116,11 +159,12 @@ export default function Navbar() {
       <AnnouncementBar />
       {/* Backdrop when dropdown open */}
       <div
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
-          activeDropdown ? "opacity-100 pointer-events-none" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 pointer-events-none ${
+          activeDropdown ? "opacity-100" : "opacity-0"
         }`}
       />
       <nav
+        style={{ fontFamily: SF_PRO }}
         className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled || activeDropdown
             ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
@@ -144,6 +188,7 @@ export default function Navbar() {
             const isDimmed = activeDropdown && !isActive;
             const hasChevron = dropdown.columns.length > 0;
             const darkMode = scrolled || activeDropdown;
+            const isSingleColumn = dropdown.columns.length === 1;
             return (
             <div
               key={dropdown.label}
@@ -171,13 +216,20 @@ export default function Navbar() {
               </button>
 
               {isActive && (
-                <div className="fixed top-[100px] left-0 right-0 pointer-events-none z-50">
+                <div className="fixed top-[96px] left-0 right-0 pointer-events-none z-50">
                   <div className="max-w-7xl mx-auto px-6 md:px-10">
-                    <div className="pointer-events-auto bg-background rounded-b-2xl shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)] animate-fade-in">
+                    <div
+                      className={`pointer-events-auto bg-background rounded-2xl shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)] animate-fade-in ${
+                        isSingleColumn ? "max-w-xl" : ""
+                      }`}
+                      style={{ fontFamily: SF_PRO }}
+                    >
                       <div className="px-8 py-8">
                         <div
                           className={`grid gap-x-12 gap-y-2 ${
-                            dropdown.featured
+                            isSingleColumn && dropdown.featured
+                              ? "grid-cols-[1fr_1.2fr]"
+                              : dropdown.featured
                               ? "grid-cols-[1fr_1fr_1fr_1.1fr]"
                               : dropdown.columns.length > 1
                               ? "grid-cols-3"
@@ -195,10 +247,10 @@ export default function Navbar() {
                                 <a
                                   key={item.label}
                                   href={item.href}
-                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground hover:text-foreground hover:font-semibold transition-all duration-150 whitespace-nowrap"
+                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground hover:font-semibold transition-all duration-150 whitespace-nowrap"
                                 >
                                   {item.label}
-                                  {"soon" in item && item.soon && (
+                                  {item.soon && (
                                     <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
                                       SOON
                                     </span>
@@ -279,7 +331,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border">
+        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border" style={{ fontFamily: SF_PRO }}>
           <div className="px-6 py-4 space-y-1">
             {navDropdowns.map((dropdown) => (
               <div key={dropdown.label}>
@@ -307,7 +359,7 @@ export default function Navbar() {
                             onClick={() => setMobileOpen(false)}
                           >
                             {item.label}
-                            {"soon" in item && item.soon && (
+                            {item.soon && (
                               <span className="text-[10px] font-semibold tracking-wider bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
                                 SOON
                               </span>

@@ -78,8 +78,8 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* Board */}
-      <section className="py-20 lg:py-28 bg-foreground relative overflow-hidden">
+      {/* Board + Contact — single continuous dark section flowing into footer */}
+      <section className="pt-20 lg:pt-28 pb-20 lg:pb-28 bg-foreground relative overflow-hidden transition-colors duration-500">
         <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{
           backgroundImage: "radial-gradient(hsl(var(--background)) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
@@ -91,7 +91,7 @@ export default function Investors() {
           }`}
         >
           <div className="mb-12 max-w-2xl">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-3">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-background/60 mb-3">
               Board of Directors
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
@@ -113,43 +113,42 @@ export default function Investors() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Contact */}
-      <section className="py-16 lg:py-24 bg-secondary/40 border-t border-border">
-        <div
-          ref={contact.ref}
-          className={`max-w-4xl mx-auto px-6 transition-all duration-700 ${
-            contact.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-3">
-                Get in touch
+          {/* Get in touch — continuous dark */}
+          <div
+            ref={contact.ref}
+            className={`mt-24 lg:mt-32 pt-16 border-t border-background/15 transition-all duration-700 ${
+              contact.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              <div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-background/60 mb-3">
+                  Get in touch
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
+                  Investor Relations
+                </h2>
+                <p className="text-base text-background/70 leading-relaxed">
+                  For general enquiries, partnership opportunities, or to request access to confidential investor materials, please reach out to our investor relations team.
+                </p>
               </div>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-4">
-                Investor Relations
-              </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                For general enquiries, partnership opportunities, or to request access to confidential investor materials, please reach out to our investor relations team.
-              </p>
-            </div>
 
-            <div className="rounded-2xl bg-background border border-border p-8">
-              <Mail className="w-6 h-6 text-primary mb-4" />
-              <p className="text-sm text-muted-foreground mb-2">Email</p>
-              <a
-                href="mailto:investors@renda.com"
-                className="text-lg font-semibold text-foreground hover:text-primary transition-colors break-all"
-              >
-                investors@renda.com
-              </a>
+              <div className="rounded-2xl bg-background/[0.06] border border-background/10 p-8">
+                <Mail className="w-6 h-6 text-background/80 mb-4" />
+                <p className="text-sm text-background/60 mb-2">Email</p>
+                <a
+                  href="mailto:investors@renda.com"
+                  className="text-lg font-semibold text-background hover:text-background/80 transition-colors break-all"
+                >
+                  investors@renda.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
 
       <Footer />
     </div>

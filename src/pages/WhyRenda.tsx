@@ -25,7 +25,7 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 
 function Divider() {
   return (
-    <div className="max-w-6xl mx-auto px-6">
+    <div className="max-w-7xl mx-auto px-6">
       <div className="border-t border-border/70" />
     </div>
   );
@@ -77,8 +77,8 @@ export default function WhyRenda() {
       <Navbar />
 
       {/* ── Why Renda Exists (split: text left, image right) ── */}
-      <section id="exists" className="scroll-mt-20 pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="exists" className="scroll-mt-20 pt-24 pb-16 lg:pt-32 lg:pb-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <Eyebrow>Why Renda</Eyebrow>
@@ -99,7 +99,7 @@ export default function WhyRenda() {
               <img
                 src={heroLifestyle}
                 alt="A quiet moment of clarity"
-                className="w-full h-[420px] lg:h-[600px] object-cover"
+                className="w-full h-[480px] lg:h-[720px] object-cover"
                 loading="lazy"
               />
             </div>
@@ -111,8 +111,8 @@ export default function WhyRenda() {
       <Divider />
 
       {/* ── Our Philosophy ─────────────────────────────────── */}
-      <section id="philosophy" className="scroll-mt-20 py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="philosophy" className="scroll-mt-20 py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <Eyebrow>Our Philosophy</Eyebrow>
@@ -125,7 +125,7 @@ export default function WhyRenda() {
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutBelief} alt="Conversations about clarity" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
+              <img src={aboutBelief} alt="Conversations about clarity" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
           </div>
 
@@ -146,11 +146,11 @@ export default function WhyRenda() {
       <Divider />
 
       {/* ── Signal over Noise ──────────────────────────────── */}
-      <section id="signals" className="scroll-mt-20 py-24 lg:py-32 bg-secondary/40">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="signals" className="scroll-mt-20 py-16 lg:py-20 bg-secondary/40">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
-              <img src={lifestyleCafe} alt="Quiet focus" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
+              <img src={lifestyleCafe} alt="Quiet focus" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
             <div className="order-1 lg:order-2">
               <Eyebrow>Signal Over Noise</Eyebrow>
@@ -181,8 +181,8 @@ export default function WhyRenda() {
       <Divider />
 
       {/* ── AI-Native Banking ──────────────────────────────── */}
-      <section id="belief" className="scroll-mt-20 py-24 lg:py-32">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="belief" className="scroll-mt-20 py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <Eyebrow>Intelligence at the Core</Eyebrow>
@@ -200,7 +200,7 @@ export default function WhyRenda() {
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutAlfie} alt="Alfie intelligence layer" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
+              <img src={aboutAlfie} alt="Alfie intelligence layer" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
           </div>
         </Fade>
@@ -209,11 +209,11 @@ export default function WhyRenda() {
       <Divider />
 
       {/* ── Trust & Responsibility ─────────────────────────── */}
-      <section id="trust" className="scroll-mt-20 py-24 lg:py-32 bg-secondary/40">
-        <Fade className="max-w-6xl mx-auto px-6">
+      <section id="trust" className="scroll-mt-20 py-16 lg:py-20 bg-secondary/40">
+        <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
-              <img src={aboutValues} alt="Trust by design" className="w-full h-[420px] lg:h-[600px] object-cover" loading="lazy" />
+              <img src={aboutValues} alt="Trust by design" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
             <div className="order-1 lg:order-2">
               <Eyebrow>Trust & Responsibility</Eyebrow>
@@ -236,7 +236,7 @@ export default function WhyRenda() {
       </section>
 
       {/* ── Closing CTA ────────────────────────────────────── */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 lg:py-20">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
           <h2
             className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 leading-tight"

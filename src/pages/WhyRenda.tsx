@@ -76,45 +76,37 @@ export default function WhyRenda() {
     <main className="min-h-screen bg-background" style={{ fontFamily: SF_FONT }}>
       <Navbar />
 
-      {/* ── Hero with overhead image ───────────────────────── */}
-      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroLifestyle}
-            alt="A quiet moment of clarity"
-            className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-24 md:pb-32 pt-32 w-full">
-          <Fade>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
-              <span className="text-sm font-medium text-white/90">Why Renda</span>
+      {/* ── Why Renda Exists (split: text left, image right) ── */}
+      <section id="exists" className="scroll-mt-20 pt-32 pb-16 lg:pt-40 lg:pb-24">
+        <Fade className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <Eyebrow>Why Renda</Eyebrow>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black/80">
+                Why Renda Exists
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-black/60 font-medium leading-relaxed">
+                Banking has become more digital, but it hasn't become more intelligent.
+              </p>
+              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+                Most apps still show the same things banks have shown for decades, transactions, balances, and charts, and expect people to figure out the rest.
+              </p>
+              <p className="mt-6 text-lg md:text-xl text-black/80 font-semibold leading-snug">
+                We believe your bank should do more than record what happened.
+              </p>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-3xl">
-              Why Renda Exists
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed font-medium">
-              Banking has become more digital, but it hasn't become more intelligent.
-            </p>
-          </Fade>
-        </div>
-      </section>
-
-      {/* ── Opening statement ──────────────────────────────── */}
-      <section className="py-24 lg:py-32">
-        <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-base md:text-lg text-black/60 font-medium leading-relaxed">
-            Most apps still show the same things banks have shown for decades, transactions, balances, and charts, and expect people to figure out the rest.
-          </p>
-          <p className="mt-6 text-xl md:text-2xl text-black/80 font-semibold leading-snug">
-            We believe your bank should do more than record what happened.
-          </p>
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src={heroLifestyle}
+                alt="A quiet moment of clarity"
+                className="w-full h-[420px] lg:h-[600px] object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </Fade>
       </section>
+
 
       <Divider />
 
@@ -164,7 +156,7 @@ export default function WhyRenda() {
               <Eyebrow>Signal Over Noise</Eyebrow>
               <H2>Signal over noise.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Most banks flood you with data, transaction lists, endless notifications, dashboards full of charts you never asked for. But more information doesn't create clarity.
+                Most financial institutions flood you with data, transaction lists, endless notifications, dashboards full of charts you never asked for. But more information doesn't create clarity.
               </p>
               <p className="mt-6 text-base md:text-lg text-black/80 font-semibold leading-relaxed">
                 Renda is designed to surface what's relevant; quietly, clearly, and only when it matters.
@@ -193,7 +185,7 @@ export default function WhyRenda() {
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <Eyebrow>AI-Native Banking</Eyebrow>
+              <Eyebrow>Intelligence at the Core</Eyebrow>
               <H2>Intelligence, not features.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 Most financial apps treat artificial intelligence like a feature, a chatbot in the corner, a budgeting tool, a recommendation engine layered on top. We believe intelligence should be part of the foundation.

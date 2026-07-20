@@ -310,10 +310,11 @@ export default function About() {
         </Fade>
       </section>
 
-      <Divider />
+      {/* Scroll transition into dark Leadership */}
+      <div aria-hidden className="h-32 md:h-48 bg-gradient-to-b from-background via-background to-foreground" />
 
       {/* ── Leadership ────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-foreground transition-colors duration-500">
+      <section className="py-24 lg:py-32 bg-foreground">
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
@@ -338,7 +339,9 @@ export default function About() {
         </Fade>
       </section>
 
-      <Divider />
+      {/* Scroll transition out of dark Leadership into Global Vision */}
+      <div aria-hidden className="h-32 md:h-48 bg-gradient-to-b from-foreground via-background to-secondary/40" />
+
 
       {/* ── Built in Canada / Global Vision (image LEFT, text RIGHT) ── */}
       <section className="py-16 lg:py-20 bg-secondary/40">

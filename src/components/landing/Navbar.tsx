@@ -73,9 +73,10 @@ const navDropdowns: Dropdown[] = [
     columns: [
       {
         items: [
+          { label: "Why Renda Exists", href: "/why-renda#exists" },
           { label: "Our Philosophy", href: "/why-renda#philosophy" },
           { label: "Signal Over Noise", href: "/why-renda#signals" },
-          { label: "AI-Native Banking", href: "/why-renda#belief" },
+          { label: "Intelligence at the Core", href: "/why-renda#belief" },
           { label: "Trust & Responsibility", href: "/why-renda#trust" },
         ],
       },

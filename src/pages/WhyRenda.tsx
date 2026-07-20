@@ -185,7 +185,7 @@ export default function WhyRenda() {
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <Eyebrow>AI-Native Banking</Eyebrow>
+              <Eyebrow>Intelligence at the Core</Eyebrow>
               <H2>Intelligence, not features.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 Most financial apps treat artificial intelligence like a feature, a chatbot in the corner, a budgeting tool, a recommendation engine layered on top. We believe intelligence should be part of the foundation.

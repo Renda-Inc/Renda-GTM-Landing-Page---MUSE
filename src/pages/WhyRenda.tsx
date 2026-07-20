@@ -156,7 +156,7 @@ export default function WhyRenda() {
               <Eyebrow>Signal Over Noise</Eyebrow>
               <H2>Signal over noise.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Most banks flood you with data, transaction lists, endless notifications, dashboards full of charts you never asked for. But more information doesn't create clarity.
+                Most financial institutions flood you with data, transaction lists, endless notifications, dashboards full of charts you never asked for. But more information doesn't create clarity.
               </p>
               <p className="mt-6 text-base md:text-lg text-black/80 font-semibold leading-relaxed">
                 Renda is designed to surface what's relevant; quietly, clearly, and only when it matters.

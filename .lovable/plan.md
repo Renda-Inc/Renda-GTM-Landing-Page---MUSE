@@ -1,103 +1,83 @@
+## Scope
 
-
-# Renda — AI-Native Neobank Landing Page
-
-## Overview
-A single-page, editorial-style landing page for Renda, a Canadian AI-native neobank. The design will be minimal, premium, and confidence-driven — inspired by the credibility of Revolut and Wealthsimple, with Inter typography (matching aisance.io's style).
-
-## Design System
-- **Typography**: Inter (Google Fonts) — clean weights for headlines (700), body (400), and accent text (500)
-- **Color palette**: Near-black backgrounds for key sections, off-white/cream for alternating sections, with a single subtle accent color (muted teal or warm gold) used sparingly for CTAs and highlights
-- **Spacing**: Generous vertical padding (120px+ between sections), max-width content containers for readability
-- **No illustrations, no gradients, no gimmicks** — just typography, whitespace, and structure
+Two areas: Footer spacing/hover, and a full redesign of the Careers "Culture & Values / What we believe" section into a vertical image accordion.
 
 ---
 
-## Page Sections (in exact order)
+## 1. Footer (`src/components/landing/Footer.tsx`)
 
-### 1. Navigation Bar
-- Renda wordmark/logo (left)
-- Minimal nav links: Alfie, Company, Vision
-- CTA button: "Join the Waitlist" (right)
-- Sticky, clean, transparent-to-solid on scroll
+**Column spacing**
+- Increase the horizontal gap in the columns grid from `gap-x-8` to a larger value (`gap-x-14 lg:gap-x-20`) so headings like "Personal Banking" / "Business Banking" stay on one line.
+- Keep vertical spacing (`gap-y-10`) and per-link spacing (`space-y-2`) untouched.
+- Consider widening the container from `max-w-6xl` to `max-w-7xl` to accommodate the wider gaps without squeezing columns.
 
-### 2. Hero
-- Large headline: **"Meet the bank built around intelligence."**
-- Supporting line: "Banking that actually helps you."
-- Subheadline paragraph introducing Renda and Alfie
-- Primary CTA button: "Join the Waitlist"
-- Clean, centered layout with dramatic whitespace
-
-### 3. Core Belief
-- Belief-driven editorial section about money and life being dynamic
-- Short, impactful paragraphs emphasizing that Renda started with intelligence, not dashboards
-- Left-aligned or centered text block with strong typographic hierarchy
-
-### 4. Alfie Introduction (Light Tease)
-- Emotional, curiosity-driven introduction to Alfie
-- Subtle visual element (e.g., a minimal glow or abstract shape suggesting intelligence)
-- Short copy that makes users want to learn more — not a feature dump
-
-### 5. Problem: What's Broken
-- Section explaining banking hasn't evolved
-- 2-3 pointed observations about lack of guidance, context, and understanding
-- Can use a clean card or column layout for the pain points
-
-### 6. Philosophy
-- "Signal over noise" messaging
-- Emphasis on respect for user attention
-- Short, punchy editorial copy — feels like a manifesto
-
-### 7. Alfie (Core Moat)
-- Deeper explanation of Alfie as a financial intelligence layer
-- Differentiated from chatbots — it reasons, understands context, supports decisions
-- Clean layout with text and possibly subtle iconography or abstract visual cues
-
-### 8. Signals Over Noise (Key Section)
-- The most visually impactful section at this scroll depth
-- Emphasizes Alfie surfacing what matters, when it matters
-- Could use a dark background with high-contrast typography to create visual weight
-- No dashboards, no alert overload — calm, purposeful intelligence
-
-### 9. Product Capabilities
-- High-level presentation of banking foundations: accounts, cards, payments
-- Each presented with a one-liner showing how intelligence makes them smarter
-- Clean grid or minimal card layout — no feature bloat
-
-### 10. Trust & Responsibility
-- Serious tone about AI + money responsibility
-- Emphasis on user control, transparency, and ethical AI
-- Could include trust-related commitments as short statements
-
-### 11. Future-Facing Vision
-- Growth narrative without overpromising
-- Alfie starts with individuals, grows to businesses and broader decision-making
-- Forward-looking but grounded copy
-
-### 12. Alfie as Infrastructure
-- Positions Alfie as a modular intelligence system
-- Signals platform depth and long-term strategic vision
-- Short, confident, architectural language
-
-### 13. Belief-Driven Close
-- Emotional, mission-reaffirming close
-- Final CTA: "Join the Waitlist"
-- Clean, minimal, powerful
-
-### 14. Footer
-- Three column groups:
-  - **Alfie AI**: Individuals / Businesses / Platform
-  - **Company**: About / Careers / Press
-  - **Legal**: Privacy / Terms / Security
-- Renda wordmark and copyright
-- Minimal, well-spaced
+**Hover state**
+- Remove the current `hover:font-semibold` / weight-and-size shift on links and headings.
+- New behavior: links default to `text-background` (white). On hover of the columns area, non-hovered links dim to `text-background/60`; the hovered link stays fully white. Implement with a `group` on the columns wrapper and `group-hover:text-background/60 hover:!text-background` on each link. No font-weight or size change.
+- Headings remain unchanged (bold white, static).
 
 ---
 
-## Technical Approach
-- Single-page React app with smooth scroll navigation
-- Inter font loaded via Google Fonts
-- Fully responsive (mobile-first)
-- No backend needed — this is a static landing page
-- Subtle scroll-triggered fade-in animations for polish
+## 2. Culture & Values redesign (`src/components/careers/CultureValues.tsx`)
 
+Replace the current sticky-scroll stacked-cards layout with a horizontal row of six vertical image accordion panels, styled after the editorial overlay from `WorkingPrinciples`.
+
+**Layout**
+- Section keeps the "Culture & Values" eyebrow and "What we believe." heading above the accordion (static, left-aligned, matching current typography).
+- Below the heading: one row containing six vertical panels inside a `max-w-7xl` container.
+- Panel row height: `h-[520px] lg:h-[640px]`, `rounded-2xl overflow-hidden`, `gap-3`, `flex w-full`.
+- Panels use `flex-grow` transitions:
+  - Active panel: large flex value (e.g. `flex: 6`).
+  - Collapsed panels: small flex value (e.g. `flex: 1`), rendering as narrow vertical strips (~80–110px wide depending on viewport).
+- Smooth width transitions: `transition-[flex-grow] duration-700 ease-in-out` (use inline `style={{ flexGrow }}` since Tailwind can't animate arbitrary flex values reliably; combine with `transition-all duration-700 ease-in-out`).
+
+**Panel content — active state**
+- Full background image of the value's theme (see image list below).
+- Dark editorial gradient overlay: `bg-gradient-to-br from-black/70 via-black/35 to-transparent`, matching the "How we work" hero.
+- Overlay content anchored top-left with padding `p-8 lg:p-12`:
+  - Value title in white, SF Pro Medium, `text-3xl md:text-4xl lg:text-5xl`, tight leading.
+  - Supporting description below, white/85, `text-base md:text-lg`, `max-w-md`, comfortable leading.
+  - Short horizontal accent line: `h-[3px] w-16 rounded-full` with inline `backgroundColor: "#EB8F00"`.
+- Fade content in with `opacity` transition tied to active state.
+
+**Panel content — collapsed state**
+- Solid `bg-[#111111]` (image hidden behind it, or image swapped for a flat dark layer via `opacity-0` on the img plus the dark base).
+- Only the title is visible, rotated vertically: `writing-mode: vertical-rl; transform: rotate(180deg)` (achieved via inline style), white SF Pro Medium, centered along the strip, small size (`text-sm md:text-base`, tracking-wide).
+- Optional small icon at the top (skip if it clutters — plan will use title only for a cleaner look).
+- Cursor pointer to signal interactivity.
+
+**Auto-rotation**
+- `setInterval` advances the active index every 4000ms, looping 0→5→0.
+- Interval is cleared and restarted 6s after any manual click (pause-then-resume).
+- Cleanup on unmount.
+
+**Manual interaction**
+- Clicking any panel sets it active immediately; previous panel collapses via the same transition.
+
+**Navigation dots**
+- Move from the right-middle to bottom-center: a `flex justify-center gap-2 mt-8` row directly under the accordion.
+- Preserve current styling (`w-2 h-2` inactive with `bg-black/25`, active becomes `w-6 h-2 bg-foreground rounded-full`, `transition-all duration-300`).
+- Clicking a dot also switches the active panel (same handler as panel click).
+
+**Values → imagery mapping** (reuse existing careers imagery to avoid new asset generation; if a value has no obvious fit, use the nearest team photo already in `src/assets/careers/`):
+- Intelligence Over Activity → `team-1.jpg`
+- Responsibility at Scale → `team-2.jpg`
+- Long-Term Over Short-Term → `team-3.jpg`
+- Ownership Without Ego → `team-4.jpg`
+- Clarity is Kindness → `team-5.jpg`
+- Inclusion Improves Intelligence → `team-6.jpg`
+
+(If any of those files don't exist, fall back to the ones referenced today — `team-1.jpg` and `team-5.jpg` — and reuse across missing slots. I'll confirm which files exist during implementation and adjust.)
+
+**Removed**
+- Sticky-scroll wrapper, per-scroll active calculation, side dots, the left static image column, and the stacked absolute-positioned value cards.
+- The tall `${values.length * 60 + 100}vh` scroll spacer.
+
+---
+
+## Technical notes
+
+- All colors stay in tokens or the two explicit hexes already used elsewhere: `#111111` for collapsed panels, `#EB8F00` for the accent line.
+- Typography stays SF Pro via the ancestor `font-family` inherited from the Careers page wrapper.
+- Section vertical spacing (`py-16 lg:py-20`) and the surrounding `Divider`s in `src/pages/Careers.tsx` are untouched.
+- No other files change beyond `Footer.tsx` and `CultureValues.tsx`.

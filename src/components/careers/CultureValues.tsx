@@ -1,122 +1,121 @@
 import { useEffect, useRef, useState } from "react";
-import { useFadeIn } from "@/hooks/use-fade-in";
+import team1 from "@/assets/careers/team-1.jpg";
+import team2 from "@/assets/careers/team-2.jpg";
+import team3 from "@/assets/careers/team-3.jpg";
+import team4 from "@/assets/careers/team-4.jpg";
 import team5 from "@/assets/careers/team-5.jpg";
-
-function Fade({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const { ref, isVisible } = useFadeIn();
-  return (
-    <div ref={ref} className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${className}`}>
-      {children}
-    </div>
-  );
-}
+import team6 from "@/assets/careers/team-6.jpg";
 
 const values = [
-  { title: "Intelligence Over Activity", desc: "We measure impact, not hours. Thoughtful work beats busy work." },
-  { title: "Responsibility at Scale", desc: "We build systems that touch people's financial lives. That demands rigor and humility." },
-  { title: "Long-Term Over Short-Term", desc: "Short-term hacks create long-term debt; in code, in culture, and in trust." },
-  { title: "Ownership Without Ego", desc: "Take full responsibility for your work. The best idea wins, regardless of who proposed it." },
-  { title: "Clarity is Kindness", desc: "We communicate with precision and honesty because people deserve to know where they stand." },
-  { title: "Inclusion Improves Intelligence", desc: "Diverse perspectives make better products. We actively build a team that reflects the global population we serve." },
+  { title: "Intelligence Over Activity", desc: "We measure impact, not hours. Thoughtful work beats busy work.", image: team1 },
+  { title: "Responsibility at Scale", desc: "We build systems that touch people's financial lives. That demands rigor and humility.", image: team2 },
+  { title: "Long-Term Over Short-Term", desc: "Short-term hacks create long-term debt; in code, in culture, and in trust.", image: team3 },
+  { title: "Ownership Without Ego", desc: "Take full responsibility for your work. The best idea wins, regardless of who proposed it.", image: team4 },
+  { title: "Clarity is Kindness", desc: "We communicate with precision and honesty because people deserve to know where they stand.", image: team5 },
+  { title: "Inclusion Improves Intelligence", desc: "Diverse perspectives make better products. We actively build a team that reflects the global population we serve.", image: team6 },
 ];
 
+const ROTATE_MS = 4000;
+const RESUME_DELAY_MS = 6000;
+
 export default function CultureValues() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  const pausedUntilRef = useRef<number>(0);
 
   useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const handle = () => {
-      const rect = el.getBoundingClientRect();
-      const viewportH = window.innerHeight;
-      // Active section height equals viewportH per value
-      const start = rect.top;
-      const totalScroll = rect.height - viewportH;
-      const scrolled = Math.min(Math.max(-start, 0), totalScroll);
-      const progress = totalScroll > 0 ? scrolled / totalScroll : 0;
-      const idx = Math.min(values.length - 1, Math.floor(progress * values.length));
-      setActive(idx);
-    };
-    handle();
-    window.addEventListener("scroll", handle, { passive: true });
-    window.addEventListener("resize", handle);
-    return () => {
-      window.removeEventListener("scroll", handle);
-      window.removeEventListener("resize", handle);
-    };
+    const id = window.setInterval(() => {
+      if (Date.now() < pausedUntilRef.current) return;
+      setActive((i) => (i + 1) % values.length);
+    }, ROTATE_MS);
+    return () => window.clearInterval(id);
   }, []);
+
+  const handleSelect = (i: number) => {
+    setActive(i);
+    pausedUntilRef.current = Date.now() + RESUME_DELAY_MS;
+  };
 
   return (
     <section className="py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">Culture & Values</p>
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
+          What we believe.
+        </h2>
 
+        <div className="flex w-full gap-3 h-[520px] lg:h-[640px]">
+          {values.map((v, i) => {
+            const isActive = i === active;
+            return (
+              <button
+                key={v.title}
+                type="button"
+                onClick={() => handleSelect(i)}
+                aria-label={v.title}
+                aria-expanded={isActive}
+                className="relative rounded-2xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
+              >
+                {/* Image */}
+                <img
+                  src={v.image}
+                  alt={v.title}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`}
+                  loading="lazy"
+                />
+                {/* Collapsed dark base */}
+                <div
+                  className={`absolute inset-0 bg-[#111111] transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-100"}`}
+                />
+                {/* Editorial gradient overlay (active) */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br from-black/70 via-black/35 to-transparent transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`}
+                />
 
-        <div ref={scrollerRef} className="relative" style={{ height: `${values.length * 60 + 100}vh` }}>
-          <div className="sticky top-0 h-screen flex items-center">
-            <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
-              {/* Image left */}
-              <div className="rounded-2xl overflow-hidden">
-                <img src={team5} alt="Team celebration" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
-              </div>
-
-              {/* Right column: eyebrow + static heading + values stack */}
-              <div className="flex flex-col">
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">Culture & Values</p>
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
-                  What we believe.
-                </h2>
-                <div className="relative h-[440px] flex items-center justify-center overflow-hidden">
-                  {values.map((v, i) => {
-                    const offset = i - active;
-                    const abs = Math.abs(offset);
-                    const isActive = offset === 0;
-                    const visible = abs <= 2;
-                    const translateY = offset * 140;
-                    const scale = isActive ? 1 : abs === 1 ? 0.82 : 0.68;
-                    const opacity = isActive ? 1 : abs === 1 ? 0.35 : abs === 2 ? 0.12 : 0;
-                    const blur = isActive ? 0 : abs === 1 ? 1.5 : 3;
-                    return (
-                      <div
-                        key={v.title}
-                        className="absolute left-0 right-0 transition-all duration-500 ease-out will-change-transform"
-                        style={{
-                          transform: `translateY(${translateY}px) scale(${scale})`,
-                          opacity,
-                          filter: `blur(${blur}px)`,
-                          pointerEvents: visible ? "auto" : "none",
-                        }}
-                      >
-                        <div className={`border-l-2 pl-6 ${isActive ? "border-primary" : "border-primary/30"}`}>
-                          <h3 className={`font-semibold text-foreground transition-all duration-500 ${isActive ? "text-2xl md:text-3xl" : "text-lg"}`}>
-                            {v.title}
-                          </h3>
-                          <p className={`mt-3 text-black/60 font-medium leading-relaxed transition-all duration-500 ${isActive ? "text-base md:text-lg" : "text-sm"}`}>
-                            {v.desc}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-
-                  {/* Pagination dots */}
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-2">
-                    {values.map((_, i) => (
-                      <span
-                        key={i}
-                        className={`rounded-full transition-all duration-300 ${
-                          i === active ? "w-2 h-6 bg-foreground" : "w-2 h-2 bg-black/25"
-                        }`}
-                      />
-                    ))}
-                  </div>
+                {/* Active content */}
+                <div
+                  className={`relative h-full flex flex-col justify-start p-8 lg:p-12 text-left transition-opacity duration-500 ${isActive ? "opacity-100 delay-200" : "opacity-0 pointer-events-none"}`}
+                >
+                  <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] tracking-tight max-w-md">
+                    {v.title}
+                  </h3>
+                  <p className="mt-6 text-white/85 text-base md:text-lg font-medium leading-relaxed max-w-md">
+                    {v.desc}
+                  </p>
+                  <div className="mt-6 h-[3px] w-16 rounded-full" style={{ backgroundColor: "#EB8F00" }} />
                 </div>
-              </div>
-            </div>
-          </div>
+
+                {/* Collapsed vertical title */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isActive ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+                >
+                  <span
+                    className="text-white text-sm md:text-base font-medium tracking-wide whitespace-nowrap"
+                    style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+                  >
+                    {v.title}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Bottom-centered pagination dots */}
+        <div className="flex justify-center gap-2 mt-8">
+          {values.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => handleSelect(i)}
+              aria-label={`Show value ${i + 1}`}
+              className={`rounded-full transition-all duration-300 ${
+                i === active ? "w-6 h-2 bg-foreground" : "w-2 h-2 bg-black/25"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 }
-

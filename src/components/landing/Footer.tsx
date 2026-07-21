@@ -131,19 +131,19 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-14 lg:gap-x-20 gap-y-10 group/cols">
             {footerColumns.map((col) => (
               <div key={col.heading}>
-                <p className="text-sm font-bold uppercase tracking-[0.15em] text-background mb-4">
+                <p className="text-sm font-bold uppercase tracking-[0.15em] text-background mb-4 whitespace-nowrap">
                   {col.heading}
                 </p>
                 {col.links.length > 0 && (
-                  <ul className="space-y-2 text-base text-background">
+                  <ul className="space-y-2 text-base">
                     {col.links.map((link) => (
                       <li key={link.label}>
                         <a
                           href={link.href}
-                          className="hover:font-semibold transition-all duration-200"
+                          className="text-background transition-colors duration-200 group-hover/cols:text-background/60 hover:!text-background"
                         >
                           {link.label}
                         </a>

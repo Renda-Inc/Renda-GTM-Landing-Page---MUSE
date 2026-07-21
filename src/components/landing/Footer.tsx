@@ -86,8 +86,8 @@ export default function Footer() {
       className="bg-foreground text-background py-16 lg:py-20"
       style={{ fontFamily: SF_PRO }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-14 lg:gap-20">
+      <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 2xl:px-32">
+        <div className="flex flex-col lg:flex-row gap-14 lg:gap-28 xl:gap-40">
           <div className="lg:w-1/3 shrink-0">
             <a href="/">
               <img src={rendaLogoWhite} alt="Renda" className="h-8 w-auto" />

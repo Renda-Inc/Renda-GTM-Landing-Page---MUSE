@@ -86,8 +86,8 @@ export default function Footer() {
       className="bg-foreground text-background py-16 lg:py-20"
       style={{ fontFamily: SF_PRO }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-14 lg:gap-20">
+      <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 2xl:px-32">
+        <div className="flex flex-col lg:flex-row gap-14 lg:gap-28 xl:gap-40">
           <div className="lg:w-1/3 shrink-0">
             <a href="/">
               <img src={rendaLogoWhite} alt="Renda" className="h-8 w-auto" />
@@ -131,7 +131,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-20 lg:gap-x-32 gap-y-10 group/cols">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-10 group/cols">
             {footerColumns.map((col) => (
               <div key={col.heading}>
                 <p className="text-sm font-bold uppercase tracking-[0.15em] text-background mb-4 whitespace-nowrap">

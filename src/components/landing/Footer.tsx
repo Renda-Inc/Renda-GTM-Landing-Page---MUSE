@@ -86,7 +86,7 @@ export default function Footer() {
       className="bg-foreground text-background py-16 lg:py-20"
       style={{ fontFamily: SF_PRO }}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-14 lg:gap-20">
           <div className="lg:w-1/3 shrink-0">
             <a href="/">

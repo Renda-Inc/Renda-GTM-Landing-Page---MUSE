@@ -82,9 +82,8 @@ export default function WhyRenda() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <Eyebrow>Why Renda</Eyebrow>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black/80">
-                Why Renda Exists
-              </h1>
+              <H2>Why Renda Exists</H2>
+
               <p className="mt-6 text-lg md:text-xl text-black/60 font-medium leading-relaxed">
                 Banking has become more digital, but it hasn't become more intelligent.
               </p>

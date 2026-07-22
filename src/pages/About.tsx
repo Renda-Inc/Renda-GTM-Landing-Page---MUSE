@@ -44,10 +44,10 @@ const beliefs = [
 ];
 
 const values = [
-  { icon: Shield, title: "Responsible AI", desc: "We hold ourselves to the highest standards of safety, fairness, and accountability in every system we build." },
-  { icon: Users, title: "Radical inclusion", desc: "Financial intelligence should be accessible to everyone, regardless of income, background, or expertise." },
-  { icon: Scale, title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made; always." },
-  { icon: Building2, title: "Long-term institution", desc: "We're not building for a quick exit. We're building a financial institution designed to endure." },
+  { icon: Shield, title: "Responsible AI", desc: "We hold ourselves to the highest standards of safety, fairness, and accountability in every system we build.", image: valueImg1 },
+  { icon: Users, title: "Radical inclusion", desc: "Financial intelligence should be accessible to everyone, regardless of income, background, or expertise.", image: valueImg2 },
+  { icon: Scale, title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made; always.", image: valueImg3 },
+  { icon: Building2, title: "Long-term institution", desc: "We're not building for a quick exit. We're building a financial institution designed to endure.", image: valueImg4 },
 ];
 
 const timeline = [

@@ -378,17 +378,7 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="mt-14 grid sm:grid-cols-2 gap-5">
-            {values.map((v) => (
-              <div key={v.title} className="bg-background rounded-2xl p-8 border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <v.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{v.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
-          </div>
+          <ValuesAccordion />
         </Fade>
       </section>
 

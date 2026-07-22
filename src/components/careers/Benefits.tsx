@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import equitySalary from "@/assets/benefits/equity-salary.jpg";
 import health from "@/assets/benefits/health.jpg";
@@ -28,36 +29,106 @@ const benefits = [
   { image: mentalHealth, label: "Mental Health Support", desc: "Therapy and wellness benefits because sustainable work starts with wellbeing." },
 ];
 
+const ROTATE_MS = 4000;
+const RESUME_DELAY_MS = 6000;
+
 export default function Benefits() {
+  const [active, setActive] = useState(0);
+  const pausedUntilRef = useRef<number>(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      if (Date.now() < pausedUntilRef.current) return;
+      setActive((i) => (i + 1) % benefits.length);
+    }, ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const handleSelect = (i: number) => {
+    setActive(i);
+    pausedUntilRef.current = Date.now() + RESUME_DELAY_MS;
+  };
+
   return (
     <section className="py-16 lg:py-20 bg-secondary/40">
       <div className="max-w-7xl mx-auto px-6">
         <Fade>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Benefits</p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-14">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">Benefits</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
             Built for people who do their best work.
           </h2>
         </Fade>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((b) => (
-            <Fade key={b.label}>
-              <div className="group h-full flex flex-col">
-                <div className="overflow-hidden rounded-2xl aspect-[4/3] bg-background">
-                  <img
-                    src={b.image}
-                    alt={b.label}
-                    loading="lazy"
-                    width={1024}
-                    height={768}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="pt-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug">{b.label}</h3>
-                  <p className="text-[15px] text-black/60 font-medium leading-relaxed">{b.desc}</p>
-                </div>
-              </div>
-            </Fade>
+
+        <div className="grid lg:grid-cols-[45fr_55fr] gap-8 lg:gap-12 items-stretch">
+          {/* Left: dynamic image */}
+          <div className="relative rounded-2xl overflow-hidden h-[420px] lg:h-auto lg:min-h-[640px] bg-black">
+            {benefits.map((b, i) => (
+              <img
+                key={b.label}
+                src={b.image}
+                alt={b.label}
+                loading="lazy"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === active ? "opacity-100" : "opacity-0"}`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+          </div>
+
+          {/* Right: benefits list */}
+          <ul className="flex flex-col">
+            {benefits.map((b, i) => {
+              const isActive = i === active;
+              return (
+                <li key={b.label}>
+                  <button
+                    type="button"
+                    onClick={() => handleSelect(i)}
+                    aria-pressed={isActive}
+                    className={`w-full text-left flex gap-5 py-5 px-5 rounded-xl transition-all duration-300 ${
+                      isActive ? "bg-black/[0.035]" : "hover:bg-black/[0.02]"
+                    }`}
+                  >
+                    <div
+                      className="w-[3px] rounded-full shrink-0 transition-all duration-300"
+                      style={{
+                        backgroundColor: isActive ? "#EB8F00" : "transparent",
+                      }}
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h3
+                        className={`text-lg md:text-xl leading-snug tracking-tight transition-all duration-300 ${
+                          isActive ? "font-semibold text-foreground" : "font-medium text-black/80"
+                        }`}
+                      >
+                        {b.label}
+                      </h3>
+                      <p
+                        className={`mt-2 text-[15px] leading-relaxed transition-all duration-300 ${
+                          isActive ? "text-black/70 font-medium" : "text-black/55 font-medium"
+                        }`}
+                      >
+                        {b.desc}
+                      </p>
+                    </div>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        {/* Pagination dots */}
+        <div className="flex justify-center gap-2 mt-10">
+          {benefits.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => handleSelect(i)}
+              aria-label={`Show benefit ${i + 1}`}
+              className={`rounded-full transition-all duration-300 ${
+                i === active ? "w-6 h-2 bg-foreground" : "w-2 h-2 bg-black/25"
+              }`}
+            />
           ))}
         </div>
       </div>

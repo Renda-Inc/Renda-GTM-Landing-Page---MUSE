@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
@@ -12,6 +12,10 @@ import aboutAlfie from "@/assets/about-alfie.jpg";
 import aboutCanada from "@/assets/about-canada.jpg";
 import aboutBelief from "@/assets/about-belief.jpg";
 import aboutValues from "@/assets/about-values.jpg";
+import valueImg1 from "@/assets/careers/team-2.jpg";
+import valueImg2 from "@/assets/careers/team-4.jpg";
+import valueImg3 from "@/assets/careers/team-6.jpg";
+import valueImg4 from "@/assets/careers/team-8.jpg";
 import timelineFounded from "@/assets/timeline-founded.jpg";
 import timelineAlfie from "@/assets/timeline-alfie.jpg";
 import timelineBeta from "@/assets/timeline-beta.jpg";
@@ -40,10 +44,10 @@ const beliefs = [
 ];
 
 const values = [
-  { icon: Shield, title: "Responsible AI", desc: "We hold ourselves to the highest standards of safety, fairness, and accountability in every system we build." },
-  { icon: Users, title: "Radical inclusion", desc: "Financial intelligence should be accessible to everyone, regardless of income, background, or expertise." },
-  { icon: Scale, title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made; always." },
-  { icon: Building2, title: "Long-term institution", desc: "We're not building for a quick exit. We're building a financial institution designed to endure." },
+  { icon: Shield, title: "Responsible AI", desc: "We hold ourselves to the highest standards of safety, fairness, and accountability in every system we build.", image: valueImg1 },
+  { icon: Users, title: "Radical inclusion", desc: "Financial intelligence should be accessible to everyone, regardless of income, background, or expertise.", image: valueImg2 },
+  { icon: Scale, title: "Transparency", desc: "We explain what our systems do, why they do it, and how decisions are made; always.", image: valueImg3 },
+  { icon: Building2, title: "Long-term institution", desc: "We're not building for a quick exit. We're building a financial institution designed to endure.", image: valueImg4 },
 ];
 
 const timeline = [
@@ -168,6 +172,91 @@ function Timeline() {
   );
 }
 
+/* ── Values Accordion (vertical image accordion) ─────────── */
+const VALUES_ROTATE_MS = 4000;
+const VALUES_RESUME_MS = 6000;
+
+function ValuesAccordion() {
+  const [active, setActive] = useState(0);
+  const pausedUntilRef = useRef<number>(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      if (Date.now() < pausedUntilRef.current) return;
+      setActive((i) => (i + 1) % values.length);
+    }, VALUES_ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const handleSelect = (i: number) => {
+    setActive(i);
+    pausedUntilRef.current = Date.now() + VALUES_RESUME_MS;
+  };
+
+  return (
+    <>
+      <div className="mt-14 flex w-full gap-3 h-[520px] lg:h-[640px]">
+        {values.map((v, i) => {
+          const isActive = i === active;
+          return (
+            <button
+              key={v.title}
+              type="button"
+              onClick={() => handleSelect(i)}
+              aria-label={v.title}
+              aria-expanded={isActive}
+              className="relative rounded-2xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
+            >
+              <img
+                src={v.image}
+                alt={v.title}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`}
+                loading="lazy"
+              />
+              <div className={`absolute inset-0 bg-[#111111] transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-100"}`} />
+              <div className={`absolute inset-0 bg-gradient-to-br from-black/70 via-black/35 to-transparent transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`} />
+
+              <div className={`relative h-full flex flex-col justify-start p-8 lg:p-12 text-left transition-opacity duration-500 ${isActive ? "opacity-100 delay-200" : "opacity-0 pointer-events-none"}`}>
+                <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] tracking-tight max-w-md">
+                  {v.title}
+                </h3>
+                <p className="mt-6 text-white/85 text-base md:text-lg font-medium leading-relaxed max-w-md">
+                  {v.desc}
+                </p>
+                <div className="mt-6 h-[3px] w-16 rounded-full" style={{ backgroundColor: "#EB8F00" }} />
+              </div>
+
+              <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isActive ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+                <span
+                  className="text-white text-sm md:text-base font-medium tracking-wide whitespace-nowrap"
+                  style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+                >
+                  {v.title}
+                </span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="flex justify-center gap-2 mt-8">
+        {values.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => handleSelect(i)}
+            aria-label={`Show value ${i + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              i === active ? "w-6 h-2 bg-foreground" : "w-2 h-2 bg-black/25"
+            }`}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
 /* ── Page ──────────────────────────────────────────────────── */
 export default function About() {
   return (
@@ -289,17 +378,7 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="mt-14 grid sm:grid-cols-2 gap-5">
-            {values.map((v) => (
-              <div key={v.title} className="bg-background rounded-2xl p-8 border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <v.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{v.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
-          </div>
+          <ValuesAccordion />
         </Fade>
       </section>
 
@@ -310,11 +389,8 @@ export default function About() {
         </Fade>
       </section>
 
-      {/* Scroll transition into dark Leadership */}
-      <div aria-hidden className="h-32 md:h-48 bg-gradient-to-b from-background via-background to-foreground" />
-
       {/* ── Leadership ────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-foreground">
+      <section className="py-24 lg:py-32" style={{ backgroundColor: "#111111" }}>
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
@@ -339,8 +415,6 @@ export default function About() {
         </Fade>
       </section>
 
-      {/* Scroll transition out of dark Leadership into Global Vision */}
-      <div aria-hidden className="h-32 md:h-48 bg-gradient-to-b from-foreground via-background to-secondary/40" />
 
 
       {/* ── Built in Canada / Global Vision (image LEFT, text RIGHT) ── */}

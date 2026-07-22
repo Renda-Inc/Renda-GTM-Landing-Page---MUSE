@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
@@ -12,6 +12,10 @@ import aboutAlfie from "@/assets/about-alfie.jpg";
 import aboutCanada from "@/assets/about-canada.jpg";
 import aboutBelief from "@/assets/about-belief.jpg";
 import aboutValues from "@/assets/about-values.jpg";
+import valueImg1 from "@/assets/careers/team-2.jpg";
+import valueImg2 from "@/assets/careers/team-4.jpg";
+import valueImg3 from "@/assets/careers/team-6.jpg";
+import valueImg4 from "@/assets/careers/team-8.jpg";
 import timelineFounded from "@/assets/timeline-founded.jpg";
 import timelineAlfie from "@/assets/timeline-alfie.jpg";
 import timelineBeta from "@/assets/timeline-beta.jpg";

@@ -131,14 +131,24 @@ export default function WhyRenda() {
             </div>
           </div>
 
-          <div className="mt-14 grid sm:grid-cols-3 gap-5">
-            {philosophyCards.map((c) => (
-              <div key={c.title} className="bg-[#F6F5F2] rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <c.icon className="w-7 h-7 text-primary" />
+          <div className="mt-14 grid sm:grid-cols-3 gap-5 items-center">
+            {philosophyCards.map((c, i) => (
+              <div
+                key={c.title}
+                className={`group relative rounded-2xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.2)] hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-500 ${
+                  i === 1 ? "h-[460px] sm:h-[520px]" : "h-[420px] sm:h-[460px]"
+                }`}
+              >
+                <img src={c.image} alt={c.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/25 to-black/50" />
+                <div className="relative h-full p-7 flex flex-col">
+                  <h3 className="text-white text-2xl md:text-[26px] font-medium leading-snug tracking-tight max-w-[90%]" style={{ fontFamily: SF_FONT }}>
+                    {c.title}
+                  </h3>
+                  <p className="mt-3 text-white/80 text-[15px] font-medium leading-relaxed max-w-[92%]">
+                    {c.desc}
+                  </p>
                 </div>
-                <h3 className="text-base font-semibold text-black/80 mb-2">{c.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>

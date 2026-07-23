@@ -1,7 +1,8 @@
+import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { Search, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import heroLifestyle from "@/assets/hero-lifestyle.jpg";
 import aboutBelief from "@/assets/about-belief.jpg";
 import aboutAlfie from "@/assets/about-alfie.jpg";
@@ -10,6 +11,9 @@ import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import lifestyleCreativeHobby from "@/assets/lifestyle-creative-hobby.jpg";
 import lifestyleDreamJob from "@/assets/lifestyle-dream-job.jpg";
+import lifestyleBeach from "@/assets/lifestyle-beach.jpg";
+import lifestyleFriends from "@/assets/lifestyle-friends-cooking.jpg";
+import lifestyleHike from "@/assets/lifestyle-adventure-hike.jpg";
 
 const SF_FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';
@@ -34,18 +38,20 @@ function Divider() {
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">
+    <p className={`text-sm font-medium uppercase tracking-[0.2em] mb-8 ${light ? "text-white/60" : "text-muted-foreground"}`}>
       {children}
     </p>
   );
 }
 
-function H2({ children }: { children: React.ReactNode }) {
+function H2({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
     <h2
-      className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight"
+      className={`text-3xl md:text-4xl font-semibold tracking-tight transition-colors duration-300 leading-tight ${
+        light ? "text-white/90 hover:text-white" : "text-black/80 hover:text-black"
+      }`}
       style={{ fontFamily: SF_FONT }}
     >
       {children}
@@ -69,46 +75,139 @@ const philosophyCards = [
 ];
 
 const signalCards = [
-  { title: "Your attention is sacred.", desc: "We don't waste it on noise or vanity metrics." },
-  { title: "Right insight, right moment.", desc: "Context-aware guidance that arrives when it counts." },
-  { title: "Quiet by design.", desc: "Intelligence that speaks only when it matters." },
+  {
+    image: lifestyleBeach,
+    title: "Your attention is sacred.",
+    desc: "We don't waste it on noise or vanity metrics.",
+  },
+  {
+    image: lifestyleFriends,
+    title: "Right insight, right moment.",
+    desc: "Context-aware guidance that arrives when it counts.",
+  },
+  {
+    image: lifestyleHike,
+    title: "Quiet by design.",
+    desc: "Intelligence that speaks only when it matters.",
+  },
 ];
+
+/* ── Signal accordion (mirrors ValuesAccordion) ────────── */
+const ROTATE_MS = 4000;
+const RESUME_MS = 6000;
+
+function SignalAccordion() {
+  const [active, setActive] = useState(0);
+  const pausedUntilRef = useRef<number>(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      if (Date.now() < pausedUntilRef.current) return;
+      setActive((i) => (i + 1) % signalCards.length);
+    }, ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const handleSelect = (i: number) => {
+    setActive(i);
+    pausedUntilRef.current = Date.now() + RESUME_MS;
+  };
+
+  return (
+    <>
+      <div className="mt-14 flex w-full gap-3 h-[520px] lg:h-[640px]">
+        {signalCards.map((c, i) => {
+          const isActive = i === active;
+          return (
+            <button
+              key={c.title}
+              type="button"
+              onClick={() => handleSelect(i)}
+              aria-label={c.title}
+              aria-expanded={isActive}
+              className="relative rounded-2xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
+            >
+              <img
+                src={c.image}
+                alt={c.title}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`}
+                loading="lazy"
+              />
+              <div className={`absolute inset-0 bg-[#111111] transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-100"}`} />
+              <div className={`absolute inset-0 bg-gradient-to-br from-black/70 via-black/35 to-transparent transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`} />
+
+              <div className={`relative h-full flex flex-col justify-start p-8 lg:p-12 text-left transition-opacity duration-500 ${isActive ? "opacity-100 delay-200" : "opacity-0 pointer-events-none"}`}>
+                <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] tracking-tight max-w-md" style={{ fontFamily: SF_FONT }}>
+                  {c.title}
+                </h3>
+                <p className="mt-6 text-white/85 text-base md:text-lg font-medium leading-relaxed max-w-md">
+                  {c.desc}
+                </p>
+                <div className="mt-6 h-[3px] w-16 rounded-full" style={{ backgroundColor: "#EB8F00" }} />
+              </div>
+
+              <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isActive ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+                <span
+                  className="text-white text-sm md:text-base font-medium tracking-wide whitespace-nowrap"
+                  style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+                >
+                  {c.title}
+                </span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="flex justify-center gap-2 mt-8">
+        {signalCards.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => handleSelect(i)}
+            aria-label={`Show ${i + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              i === active ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/30"
+            }`}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
 
 export default function WhyRenda() {
   return (
     <main className="min-h-screen bg-background" style={{ fontFamily: SF_FONT }}>
       <Navbar />
 
-      {/* ── Why Renda Exists (split: text left, image right) ── */}
+      {/* ── Why Renda Exists (centered text, image below) ── */}
       <section id="exists" className="scroll-mt-20 pt-24 pb-16 lg:pt-32 lg:pb-20">
         <Fade className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <Eyebrow>Why Renda</Eyebrow>
-              <H2>Why Renda Exists</H2>
-
-              <p className="mt-6 text-lg md:text-xl text-black/60 font-medium leading-relaxed">
-                Banking has become more digital, but it hasn't become more intelligent.
-              </p>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Most apps still show the same things banks have shown for decades, transactions, balances, and charts, and expect people to figure out the rest.
-              </p>
-              <p className="mt-6 text-lg md:text-xl text-black/80 font-semibold leading-snug">
-                We believe your bank should do more than record what happened.
-              </p>
-            </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img
-                src={heroLifestyle}
-                alt="A quiet moment of clarity"
-                className="w-full h-[480px] lg:h-[720px] object-cover"
-                loading="lazy"
-              />
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <Eyebrow>Why Renda</Eyebrow>
+            <H2>Why Renda Exists</H2>
+            <p className="mt-6 text-lg md:text-xl text-black/60 font-medium leading-relaxed">
+              Banking has become more digital, but it hasn't become more intelligent.
+            </p>
+            <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              Most apps still show the same things banks have shown for decades, transactions, balances, and charts, and expect people to figure out the rest.
+            </p>
+            <p className="mt-6 text-lg md:text-xl text-black/80 font-semibold leading-snug">
+              We believe your bank should do more than record what happened.
+            </p>
+          </div>
+          <div className="mt-14 rounded-2xl overflow-hidden">
+            <img
+              src={heroLifestyle}
+              alt="A quiet moment of clarity"
+              className="w-full h-[480px] lg:h-[720px] object-cover"
+              loading="lazy"
+            />
           </div>
         </Fade>
       </section>
-
 
       <Divider />
 
@@ -157,42 +256,30 @@ export default function WhyRenda() {
 
       <Divider />
 
-      {/* ── Signal over Noise ──────────────────────────────── */}
-      <section id="signals" className="scroll-mt-20 py-16 lg:py-20 bg-secondary/40">
+      {/* ── Signal over Noise (dark bg + accordion) ────────── */}
+      <section id="signals" className="scroll-mt-20 py-16 lg:py-20" style={{ backgroundColor: "#111111" }}>
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
               <img src={lifestyleCafe} alt="Quiet focus" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
             <div className="order-1 lg:order-2">
-              <Eyebrow>Signal Over Noise</Eyebrow>
-              <H2>Signal over noise.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <Eyebrow light>Signal Over Noise</Eyebrow>
+              <H2 light>Signal over noise.</H2>
+              <p className="mt-6 text-base md:text-lg text-white/70 font-medium leading-relaxed">
                 Most financial institutions flood you with data, transaction lists, endless notifications, dashboards full of charts you never asked for. But more information doesn't create clarity.
               </p>
-              <p className="mt-6 text-base md:text-lg text-black/80 font-semibold leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-white/90 font-semibold leading-relaxed">
                 Renda is designed to surface what's relevant; quietly, clearly, and only when it matters.
               </p>
             </div>
           </div>
 
-          <div className="mt-14 grid sm:grid-cols-3 gap-5">
-            {signalCards.map((c) => (
-              <div key={c.title} className="bg-background rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-                  <Search className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-base font-semibold text-black/80 mb-2">{c.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{c.desc}</p>
-              </div>
-            ))}
-          </div>
+          <SignalAccordion />
         </Fade>
       </section>
 
-      <Divider />
-
-      {/* ── AI-Native Banking ──────────────────────────────── */}
+      {/* ── Intelligence at the Core ───────────────────────── */}
       <section id="belief" className="scroll-mt-20 py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">

@@ -211,7 +211,7 @@ export default function PersonalBanking() {
       {/* ════════════ CARDS & PAYMENTS ════════════ */}
       <section id="cards-payments" className="scroll-mt-20 py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mx-auto mb-16 text-center">
             <Eyebrow>Cards & Payments</Eyebrow>
             <H2>A card that learns. Payments that just work.</H2>
           </div>

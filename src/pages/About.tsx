@@ -93,7 +93,7 @@ function Timeline() {
       {/* Left: year, description, tracker */}
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-10">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight mb-10">
           From conviction to product.
         </h2>
 
@@ -287,7 +287,7 @@ export default function About() {
               <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
               <span className="text-sm font-medium text-white/90">About Renda</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white max-w-3xl">
               Building the Intelligence Layer for Modern Finance.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
@@ -306,7 +306,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Finance should empower, not overwhelm.
               </h2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -351,7 +351,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -384,7 +384,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built to endure.
               </h2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -408,7 +408,7 @@ export default function About() {
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background leading-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background leading-tight">
               The people behind Renda.
             </h2>
           </div>
@@ -440,7 +440,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -461,7 +461,7 @@ export default function About() {
       <section className="py-16 lg:py-20">
         <Fade className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Partners & Backers</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             Backed by those who believe.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
@@ -486,7 +486,7 @@ export default function About() {
       {/* ── Closing CTA ───────────────────────────────────── */}
       <section className="py-16 lg:py-20">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             The future of finance isn't louder. It's smarter.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">

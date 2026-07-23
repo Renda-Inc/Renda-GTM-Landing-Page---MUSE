@@ -123,7 +123,7 @@ export default function Help() {
         <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
         <Fade className="relative max-w-3xl mx-auto px-6 text-center">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">Help Centre</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black/80">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-black/80">
             How can we help you?
           </h1>
           <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-2xl mx-auto">

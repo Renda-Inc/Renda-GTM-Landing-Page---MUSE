@@ -63,9 +63,9 @@ function Bullet({ children }: { children: React.ReactNode }) {
 }
 
 const philosophyCards = [
-  { icon: Eye, title: "Interpret, don't just display.", desc: "Read meaning from financial activity, not just list it." },
-  { icon: Sparkles, title: "Surface meaning from patterns.", desc: "Find what matters in the data you already have." },
-  { icon: Brain, title: "Act with confidence.", desc: "Move forward with clarity, not confusion." },
+  { image: lifestyleStudying, title: "Interpret, don't just display.", desc: "Read meaning from financial activity, not just list it." },
+  { image: lifestyleCreativeHobby, title: "Surface meaning from patterns.", desc: "Find what matters in the data you already have." },
+  { image: lifestyleDreamJob, title: "Act with confidence.", desc: "Move forward with clarity, not confusion." },
 ];
 
 const signalCards = [

@@ -1,12 +1,15 @@
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { Eye, Search, Brain, ShieldCheck, Sparkles } from "lucide-react";
+import { Search, ShieldCheck } from "lucide-react";
 import heroLifestyle from "@/assets/hero-lifestyle.jpg";
 import aboutBelief from "@/assets/about-belief.jpg";
 import aboutAlfie from "@/assets/about-alfie.jpg";
 import aboutValues from "@/assets/about-values.jpg";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
+import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
+import lifestyleCreativeHobby from "@/assets/lifestyle-creative-hobby.jpg";
+import lifestyleDreamJob from "@/assets/lifestyle-dream-job.jpg";
 
 const SF_FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';

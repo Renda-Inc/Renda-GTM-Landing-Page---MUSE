@@ -56,7 +56,7 @@ export default function TermsPolicy() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">
             {parentSection.title}
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-black/80">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-black/80">
             {policy.label}
           </h1>
           <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">

@@ -93,7 +93,7 @@ function Timeline() {
       {/* Left: year, description, tracker */}
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-10">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight mb-10">
           From conviction to product.
         </h2>
 
@@ -287,7 +287,7 @@ export default function About() {
               <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
               <span className="text-sm font-medium text-white/90">About Renda</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white max-w-3xl">
               Building the Intelligence Layer for Modern Finance.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
@@ -306,7 +306,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Finance should empower, not overwhelm.
               </h2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -314,16 +314,30 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="mt-14 grid sm:grid-cols-2 gap-5">
-            {beliefs.map((b) => (
-              <div key={b.title} className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <b.icon className="w-7 h-7 text-primary" />
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-center">
+            {beliefs.map((b, i) => {
+              const image = [valueImg1, valueImg2, valueImg3, valueImg4][i];
+              const taller = i === 1 || i === 2;
+              return (
+                <div
+                  key={b.title}
+                  className={`group relative rounded-2xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.2)] hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-500 ${
+                    taller ? "h-[480px] sm:h-[540px]" : "h-[440px] sm:h-[480px]"
+                  }`}
+                >
+                  <img src={image} alt={b.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/25 to-black/55" />
+                  <div className="relative h-full p-7 flex flex-col">
+                    <h3 className="text-white text-2xl md:text-[26px] font-medium leading-snug tracking-tight max-w-[92%]">
+                      {b.title}
+                    </h3>
+                    <p className="mt-3 text-white/80 text-[15px] font-medium leading-relaxed max-w-[92%]">
+                      {b.desc}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{b.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </Fade>
       </section>
@@ -337,7 +351,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -370,7 +384,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built to endure.
               </h2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -394,7 +408,7 @@ export default function About() {
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-background leading-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background leading-tight">
               The people behind Renda.
             </h2>
           </div>
@@ -426,7 +440,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
@@ -447,7 +461,7 @@ export default function About() {
       <section className="py-16 lg:py-20">
         <Fade className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Partners & Backers</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             Backed by those who believe.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
@@ -472,7 +486,7 @@ export default function About() {
       {/* ── Closing CTA ───────────────────────────────────── */}
       <section className="py-16 lg:py-20">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             The future of finance isn't louder. It's smarter.
           </h2>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">

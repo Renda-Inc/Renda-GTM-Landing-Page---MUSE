@@ -101,7 +101,7 @@ export default function PrivacyPolicy() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">
             Legal Center
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
             Privacy Policy
           </h1>
           <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
         <div className="max-w-4xl mx-auto space-y-14">
           {policyBlocks.map((block) => (
             <section key={block.title}>
-              <h2 className="text-xl font-bold tracking-tight mb-4">
+              <h2 className="text-xl font-semibold tracking-tight mb-4">
                 {block.title}
               </h2>
               <div className="space-y-4">

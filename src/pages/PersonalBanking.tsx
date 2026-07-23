@@ -103,7 +103,7 @@ export default function PersonalBanking() {
             Personal Banking
           </p>
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black/80 hover:text-black transition-colors duration-300"
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-black/80 hover:text-black transition-colors duration-300"
             style={{ fontFamily: SF_FONT }}
           >
             Banking that thinks ahead.
@@ -211,7 +211,7 @@ export default function PersonalBanking() {
       {/* ════════════ CARDS & PAYMENTS ════════════ */}
       <section id="cards-payments" className="scroll-mt-20 py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mx-auto mb-16 text-center">
             <Eyebrow>Cards & Payments</Eyebrow>
             <H2>A card that learns. Payments that just work.</H2>
           </div>
@@ -496,7 +496,7 @@ export default function PersonalBanking() {
         </div>
         <Fade className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <h2
-            className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white"
+            className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white"
             style={{ fontFamily: SF_FONT }}
           >
             One intelligent system. Total financial clarity.

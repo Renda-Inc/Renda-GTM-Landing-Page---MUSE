@@ -182,31 +182,32 @@ export default function WhyRenda() {
     <main className="min-h-screen bg-background" style={{ fontFamily: SF_FONT }}>
       <Navbar />
 
-      {/* ── Why Renda Exists (centered text, image below) ── */}
-      <section id="exists" className="scroll-mt-20 pt-24 pb-16 lg:pt-32 lg:pb-20">
-        <Fade className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <Eyebrow>Why Renda</Eyebrow>
-            <H2>Why Renda Exists</H2>
-            <p className="mt-6 text-lg md:text-xl text-black/60 font-medium leading-relaxed">
-              Banking has become more digital, but it hasn't become more intelligent.
+      {/* ── Why Renda Exists (full-bleed hero, matching About) ── */}
+      <section id="exists" className="relative min-h-screen flex items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroLifestyle}
+            alt="A quiet moment of clarity"
+            className="w-full h-full object-cover object-top"
+            width={1920}
+            height={800}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-32 md:pb-48 pt-32 w-full">
+          <Fade>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
+              <span className="text-sm font-medium text-white/90">Why Renda</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white max-w-3xl">
+              Why Renda Exists.
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
+              Banking has become more digital, but it hasn't become more intelligent. We believe your bank should do more than record what happened.
             </p>
-            <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-              Most apps still show the same things banks have shown for decades, transactions, balances, and charts, and expect people to figure out the rest.
-            </p>
-            <p className="mt-6 text-lg md:text-xl text-black/80 font-semibold leading-snug">
-              We believe your bank should do more than record what happened.
-            </p>
-          </div>
-          <div className="mt-14 rounded-2xl overflow-hidden">
-            <img
-              src={heroLifestyle}
-              alt="A quiet moment of clarity"
-              className="w-full h-[480px] lg:h-[720px] object-cover"
-              loading="lazy"
-            />
-          </div>
-        </Fade>
+          </Fade>
+        </div>
       </section>
 
       <Divider />

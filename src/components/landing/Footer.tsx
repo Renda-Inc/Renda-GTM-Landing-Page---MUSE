@@ -18,7 +18,7 @@ const footerColumns = [
   {
     heading: "Personal Banking",
     links: [
-      { label: "Smart Accounts", href: "/personal-banking#smart-accounts" },
+      { label: "Smart Accounts", href: "/personal-banking" },
       { label: "Cards & Payments", href: "/personal-banking#cards-payments" },
       { label: "Peer-to-Peer Payments", href: "/personal-banking#p2p" },
       { label: "Savings & Goals", href: "/personal-banking#savings-goals" },

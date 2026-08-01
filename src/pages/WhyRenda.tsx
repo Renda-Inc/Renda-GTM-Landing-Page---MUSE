@@ -135,7 +135,7 @@ function SignalAccordion() {
                 loading="lazy"
               />
               <div className={`absolute inset-0 bg-[#111111] transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-100"}`} />
-              <div className={`absolute inset-0 bg-gradient-to-br from-black/70 via-black/35 to-transparent transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`} />
+              <div className={`absolute inset-0 bg-gradient-to-br from-black/45 via-black/15 to-transparent transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`} />
 
               <div className={`relative h-full flex flex-col justify-start p-8 lg:p-12 text-left transition-opacity duration-500 ${isActive ? "opacity-100 delay-200" : "opacity-0 pointer-events-none"}`}>
                 <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] tracking-tight max-w-md" style={{ fontFamily: SF_FONT }}>

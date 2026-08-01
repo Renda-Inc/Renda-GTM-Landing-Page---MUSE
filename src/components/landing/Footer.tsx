@@ -115,13 +115,13 @@ export default function Footer() {
               </div>
 
               {/* QR Code — download the app */}
-              <div className="bg-background p-2 rounded-xl w-full">
+              <div className="bg-background p-2 rounded-xl w-32 h-32 self-start">
                 <img
                   src="/qr-download.svg"
                   alt="QR code to download the Renda app"
-                  className="w-full h-auto"
-                  width={164}
-                  height={164}
+                  className="w-full h-full"
+                  width={128}
+                  height={128}
                 />
               </div>
               <div>
@@ -131,7 +131,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-10 group/cols max-w-4xl">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-6 group/cols max-w-4xl">
             {footerColumns.map((col) => (
               <div key={col.heading}>
                 <p className="text-sm font-bold uppercase tracking-[0.15em] text-background mb-4 whitespace-nowrap">

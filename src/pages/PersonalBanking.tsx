@@ -25,6 +25,7 @@ import lifestyleFriends from "@/assets/lifestyle-friends-cooking.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import cardFront from "@/assets/card-front.png";
+import { RotatingCards, CardShowcaseBanner } from "@/components/landing/CardShowcase";
 
 const SF_FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';
@@ -214,6 +215,7 @@ export default function PersonalBanking() {
           <div className="max-w-3xl mx-auto mb-16 text-center">
             <Eyebrow>Cards & Payments</Eyebrow>
             <H2>A card that learns. Payments that just work.</H2>
+            <RotatingCards />
           </div>
 
           {/* Component A — Smart Card */}
@@ -247,9 +249,15 @@ export default function PersonalBanking() {
               />
             </div>
           </div>
+        </Fade>
+      </section>
 
+      <CardShowcaseBanner />
+
+      <section className="py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
           {/* Component B — Payments */}
-          <div className="mt-32 grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 rounded-2xl overflow-hidden">
               <img
                 src={lifestyleCafe}

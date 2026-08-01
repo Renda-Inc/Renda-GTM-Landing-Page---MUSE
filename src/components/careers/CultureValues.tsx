@@ -38,7 +38,7 @@ export default function CultureValues() {
   return (
     <section className="py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">Culture & Values</p>
+        <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-4">Culture & Values</p>
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
           What we believe.
         </h2>

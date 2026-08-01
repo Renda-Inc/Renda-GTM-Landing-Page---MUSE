@@ -92,7 +92,7 @@ function Timeline() {
     <div className="grid lg:grid-cols-2 gap-12 items-center">
       {/* Left: year, description, tracker */}
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Journey</p>
+        <p className="text-sm font-semibold tracking-[0.08em] text-muted-foreground mb-8">Our Journey</p>
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight mb-10">
           From conviction to product.
         </h2>
@@ -305,7 +305,7 @@ export default function About() {
               <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Our Belief</p>
+              <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">Our Belief</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Finance should empower, not overwhelm.
               </h2>
@@ -350,7 +350,7 @@ export default function About() {
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">What We're Building</p>
+              <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">What We're Building</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
@@ -383,7 +383,7 @@ export default function About() {
               <img src={aboutValues} alt="Team working in modern office" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">The Company We Aim to Be</p>
+              <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">The Company We Aim to Be</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built to endure.
               </h2>
@@ -407,7 +407,7 @@ export default function About() {
       <section className="py-24 lg:py-32" style={{ backgroundColor: "#111111" }}>
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/50 mb-4">Leadership</p>
+            <p className="text-sm font-semibold tracking-[0.08em] text-background/50 mb-4">Leadership</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background leading-tight">
               The people behind Renda.
             </h2>
@@ -439,7 +439,7 @@ export default function About() {
               <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Global Vision</p>
+              <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">Global Vision</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
@@ -460,7 +460,7 @@ export default function About() {
       {/* ── Partners & Backers ────────────────────────────── */}
       <section className="py-16 lg:py-20">
         <Fade className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">Partners & Backers</p>
+          <p className="text-sm font-semibold tracking-[0.08em] text-muted-foreground mb-8">Partners & Backers</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             Backed by those who believe.
           </h2>

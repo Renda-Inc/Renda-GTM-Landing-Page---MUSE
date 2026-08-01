@@ -87,41 +87,41 @@ export default function Footer() {
       style={{ fontFamily: SF_PRO }}
     >
       <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 2xl:px-32">
-        <div className="flex flex-col lg:flex-row gap-14 lg:gap-28 xl:gap-40">
-          <div className="lg:w-1/3 shrink-0">
+        <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 xl:gap-24 justify-center">
+          <div className="lg:max-w-xs shrink-0">
             <a href="/">
               <img src={rendaLogoWhite} alt="Renda" className="h-8 w-auto" />
             </a>
             <p className="mt-3 text-base text-background/80 max-w-xs leading-relaxed">
               The AI-native bank. Intelligence-first financial infrastructure for individuals and businesses.
             </p>
-            <div className="flex items-center gap-4 mt-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-background/70 hover:text-background transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-background/70 hover:text-background transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
-              </a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-background/70 hover:text-background transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-background/70 hover:text-background transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-background/70 hover:text-background transition-colors">
-                <Facebook size={20} />
-              </a>
-            </div>
+            <div className="mt-6 flex flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-background/70 hover:text-background transition-colors">
+                  <Instagram size={20} />
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-background/70 hover:text-background transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-background/70 hover:text-background transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-background/70 hover:text-background transition-colors">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-background/70 hover:text-background transition-colors">
+                  <Facebook size={20} />
+                </a>
+              </div>
 
-            {/* QR Code — download the app */}
-            <div className="mt-8 flex items-center gap-4">
-              <div className="bg-background p-2 rounded-xl shrink-0">
+              {/* QR Code — download the app */}
+              <div className="bg-background p-2 rounded-xl w-full">
                 <img
                   src="/qr-download.svg"
                   alt="QR code to download the Renda app"
-                  className="w-20 h-20"
-                  width={80}
-                  height={80}
+                  className="w-full h-auto"
+                  width={164}
+                  height={164}
                 />
               </div>
               <div>
@@ -131,7 +131,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-10 group/cols">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-10 group/cols max-w-4xl">
             {footerColumns.map((col) => (
               <div key={col.heading}>
                 <p className="text-sm font-bold uppercase tracking-[0.15em] text-background mb-4 whitespace-nowrap">

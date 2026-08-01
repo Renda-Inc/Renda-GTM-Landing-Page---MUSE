@@ -131,7 +131,7 @@ export function CardShowcaseBanner() {
           Four cards. One intelligence layer.
         </h2>
 
-        <div className="mt-16 flex items-center justify-center gap-4 sm:gap-8 flex-wrap">
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-center">
           {cardVariants.map((v, i) => {
             const isActive = i === active;
             return (
@@ -140,7 +140,7 @@ export function CardShowcaseBanner() {
                 type="button"
                 onClick={() => setActive(i)}
                 aria-label={v.name}
-                className="transition-all duration-700 ease-out focus:outline-none w-[220px] sm:w-[260px] lg:w-[300px]"
+                className="transition-all duration-700 ease-out focus:outline-none w-full"
                 style={{
                   transform: isActive ? "translateY(-18px) scale(1.06)" : "translateY(0) scale(0.95)",
                   opacity: isActive ? 1 : 0.55,

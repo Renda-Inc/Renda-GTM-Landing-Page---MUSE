@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -25,6 +25,10 @@ import lifestyleFriends from "@/assets/lifestyle-friends-cooking.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import cardInHand from "@/assets/card-in-hand.png.asset.json";
+import interacEtransfer from "@/assets/interac-etransfer.jpg";
+import interacAutodeposit from "@/assets/interac-autodeposit.jpg";
+import interacSecurity from "@/assets/interac-security.jpg";
+import interacTagging from "@/assets/interac-tagging.jpg";
 import { RotatingCards } from "@/components/landing/CardShowcase";
 
 
@@ -73,6 +77,76 @@ function H2({ children }: { children: React.ReactNode }) {
     </h2>
   );
 }
+
+/* ─── Interac rotating photo panel ─── */
+const interacSlides = [
+  { image: interacEtransfer, title: "e-Transfer", desc: "Send to other Canadian bank accounts in seconds." },
+  { image: interacAutodeposit, title: "Auto-deposit", desc: "Funds land instantly, no security questions." },
+  { image: interacTagging, title: "Smart categorization", desc: "Alfie tags and explains every transfer." },
+  { image: interacSecurity, title: "Fraud protection", desc: "Built-in monitoring on every transaction." },
+];
+
+function InteracShowcase() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % interacSlides.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <div>
+      <div className="relative rounded-2xl overflow-hidden h-[480px] lg:h-[720px] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
+        {interacSlides.map((s, i) => (
+          <div
+            key={s.title}
+            className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"}`}
+          >
+            <img
+              src={s.image}
+              alt={s.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width={1024}
+              height={1280}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/20 to-black/40" />
+            <div className="relative h-full p-8 lg:p-10 flex flex-col">
+              <h3
+                className="text-white text-2xl md:text-3xl font-medium leading-snug tracking-tight max-w-[85%]"
+                style={{ fontFamily: SF_FONT }}
+              >
+                {s.title}
+              </h3>
+              <p className="mt-3 text-white/85 text-[15px] md:text-base font-medium leading-relaxed max-w-[85%]">
+                {s.desc}
+              </p>
+              <div className="mt-6 h-[3px] w-16 rounded-full" style={{ backgroundColor: "#EB8F00" }} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center gap-2 mt-6">
+        {interacSlides.map((s, i) => (
+          <button
+            key={s.title}
+            type="button"
+            onClick={() => setActive(i)}
+            aria-label={`Show ${s.title}`}
+            className={`rounded-full transition-all duration-300 ${
+              i === active ? "w-6 h-2 bg-black/70" : "w-2 h-2 bg-black/20"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
 
 /* ─── Bullet ─── */
 function Bullet({ children }: { children: React.ReactNode }) {
@@ -152,15 +226,10 @@ export default function PersonalBanking() {
               <Eyebrow>Smart Accounts</Eyebrow>
               <H2>Your money shouldn't just sit there. It should think.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Meet SmartSpend and SenseSave, accounts monitored by Alfie to give you
-                clarity, insights, and proactive guidance.
+                Meet SmartSpend and SenseSave, intelligent accounts monitored by Alfie to
+                deliver meaningful insights and help you make more confident financial
+                decisions.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Understand where your money is really going.</Bullet>
-                <Bullet>Spot waste before it compounds.</Bullet>
-                <Bullet>Adjust spending in real time.</Bullet>
-                <Bullet>Make informed decisions with confidence.</Bullet>
-              </ul>
             </div>
 
             {/* Alfie Insight mockup */}
@@ -238,16 +307,10 @@ export default function PersonalBanking() {
                   Your financial operating system, in your wallet.
                 </h3>
                 <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
-                  Your Renda Smart Card is connected directly to Alfie. It adapts to your
-                  spending, provides real-time intelligence, and puts you in seamless control,
-                  all from your app.
+                  Your Renda Smart Card is more than a payment card. Connected directly to
+                  Alfie, it understands every purchase, surfaces meaningful insights in real
+                  time, and gives you effortless control from wherever you are.
                 </p>
-                <ul className="mt-8 space-y-3 text-white/70">
-                  <Bullet>Real-time transaction intelligence</Bullet>
-                  <Bullet>Smart alerts before problems happen</Bullet>
-                  <Bullet>Context-aware insights at the point of spend</Bullet>
-                  <Bullet>Seamless control from your app</Bullet>
-                </ul>
               </div>
 
               <div className="rounded-2xl overflow-hidden">
@@ -409,16 +472,10 @@ export default function PersonalBanking() {
               <Eyebrow>Savings & Goals</Eyebrow>
               <H2>Savings that adapt to your life.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Most banks automate savings blindly. Renda builds a strategy around you.
-                Alfie monitors your real-time financial position and helps you make progress
-                toward goals that actually matter.
+                Saving shouldn't follow a fixed rule. Alfie continuously adapts your savings
+                strategy to your financial situation, helping you build toward your goals
+                while knowing when to save more, save less, or simply stay the course.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Set personalized savings goals</Bullet>
-                <Bullet>Adjust contributions based on income and spending shifts</Bullet>
-                <Bullet>Avoid over-saving during tight months</Bullet>
-                <Bullet>Accelerate when you're ahead</Bullet>
-              </ul>
             </div>
           </div>
 
@@ -464,37 +521,14 @@ export default function PersonalBanking() {
               <Eyebrow>Interac</Eyebrow>
               <H2>Built for the way Canada pays.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Send and receive Interac e-Transfers from any Canadian bank, right inside your
-                Renda app. Familiar, instant, and now smarter with Alfie's context layered on
-                every transfer.
+                Send and receive Interac e-Transfers just as you always have, now enhanced by
+                Alfie with intelligent categorization, proactive reminders, seamless
+                Auto-deposit, and built-in fraud protection.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Send Interac e-Transfers to any Canadian bank</Bullet>
-                <Bullet>Auto-deposit, no security questions required</Bullet>
-                <Bullet>Automatic categorization and reminders</Bullet>
-                <Bullet>Bank-grade security and fraud monitoring</Bullet>
-              </ul>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
-              {[
-                { icon: Banknote, title: "e-Transfer", desc: "Send to any Canadian bank in seconds." },
-                { icon: Bell, title: "Auto-Deposit", desc: "Funds land instantly, no questions." },
-                { icon: ShieldCheck, title: "Secure by default", desc: "Encrypted and fraud-monitored." },
-                { icon: Tag, title: "Smart Tagging", desc: "Alfie categorizes every transfer." },
-              ].map((f) => (
-                <div
-                  key={f.title}
-                  className="bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group"
-                >
-                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                    <f.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-[15px] font-semibold text-black/80 mb-1">{f.title}</h3>
-                  <p className="text-[14px] text-black/60 font-medium leading-relaxed">{f.desc}</p>
-                </div>
-              ))}
-            </div>
+            <InteracShowcase />
+
           </div>
         </Fade>
       </section>

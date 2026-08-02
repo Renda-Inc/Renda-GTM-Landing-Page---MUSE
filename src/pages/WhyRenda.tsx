@@ -288,15 +288,7 @@ export default function WhyRenda() {
               <Eyebrow>Intelligence at the Core</Eyebrow>
               <H2>Intelligence, not features.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Most financial apps treat artificial intelligence like a feature, a chatbot in the corner, a budgeting tool, a recommendation engine layered on top. We believe intelligence should be part of the foundation.
-              </p>
-              <ul className="mt-8 space-y-3">
-                <Bullet>Alfie is an intelligence layer built directly into the platform.</Bullet>
-                <Bullet>Continuously understands patterns and detects unusual activity.</Bullet>
-                <Bullet>Surfaces meaningful guidance, not because you asked, but because it matters.</Bullet>
-              </ul>
-              <p className="mt-8 text-base md:text-lg text-black/80 font-semibold leading-relaxed">
-                Renda is powered by Alfie; intelligence woven into every layer of the bank.
+                Most financial apps add artificial intelligence after the fact. Renda is built differently. Alfie is woven into the foundation of the platform, continuously understanding financial patterns, identifying what matters, and providing meaningful guidance before you even think to ask.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden">
@@ -319,13 +311,8 @@ export default function WhyRenda() {
               <Eyebrow>Trust & Responsibility</Eyebrow>
               <H2>Trust by design.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                A bank powered by intelligence must also be built on responsibility. Financial guidance carries real consequences, it requires transparency, restraint, and user control.
+                Financial intelligence should never come at the expense of trust. Every insight is transparent, every automation remains optional, and every recommendation is designed to support your decisions, not replace them.
               </p>
-              <ul className="mt-8 space-y-3">
-                <Bullet>Insights are always explainable and transparent.</Bullet>
-                <Bullet>Automation is optional, you stay in control.</Bullet>
-                <Bullet>Technology supports your judgment, never replaces it.</Bullet>
-              </ul>
               <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-full bg-background border border-border">
                 <ShieldCheck className="w-5 h-5 text-primary" />
                 <span className="text-sm font-semibold text-black/80">People should always remain in charge of their financial decisions.</span>

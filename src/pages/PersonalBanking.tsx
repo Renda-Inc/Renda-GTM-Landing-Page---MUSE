@@ -24,8 +24,9 @@ import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleFriends from "@/assets/lifestyle-friends-cooking.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
-import cardFront from "@/assets/card-front.png";
-import { RotatingCards, CardShowcaseBanner } from "@/components/landing/CardShowcase";
+import cardInHand from "@/assets/card-in-hand.png.asset.json";
+import { RotatingCards } from "@/components/landing/CardShowcase";
+
 
 const SF_FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';

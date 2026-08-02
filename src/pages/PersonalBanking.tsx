@@ -447,37 +447,14 @@ export default function PersonalBanking() {
               <Eyebrow>Interac</Eyebrow>
               <H2>Built for the way Canada pays.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Send and receive Interac e-Transfers from any Canadian bank, right inside your
-                Renda app. Familiar, instant, and now smarter with Alfie's context layered on
-                every transfer.
+                Send and receive Interac e-Transfers just as you always have, now enhanced by
+                Alfie with intelligent categorization, proactive reminders, seamless
+                Auto-deposit, and built-in fraud protection.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Send Interac e-Transfers to any Canadian bank</Bullet>
-                <Bullet>Auto-deposit, no security questions required</Bullet>
-                <Bullet>Automatic categorization and reminders</Bullet>
-                <Bullet>Bank-grade security and fraud monitoring</Bullet>
-              </ul>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
-              {[
-                { icon: Banknote, title: "e-Transfer", desc: "Send to any Canadian bank in seconds." },
-                { icon: Bell, title: "Auto-Deposit", desc: "Funds land instantly, no questions." },
-                { icon: ShieldCheck, title: "Secure by default", desc: "Encrypted and fraud-monitored." },
-                { icon: Tag, title: "Smart Tagging", desc: "Alfie categorizes every transfer." },
-              ].map((f) => (
-                <div
-                  key={f.title}
-                  className="bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group"
-                >
-                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                    <f.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-[15px] font-semibold text-black/80 mb-1">{f.title}</h3>
-                  <p className="text-[14px] text-black/60 font-medium leading-relaxed">{f.desc}</p>
-                </div>
-              ))}
-            </div>
+            <InteracShowcase />
+
           </div>
         </Fade>
       </section>

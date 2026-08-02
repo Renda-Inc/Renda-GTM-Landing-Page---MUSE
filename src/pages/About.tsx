@@ -92,7 +92,7 @@ function Timeline() {
     <div className="grid lg:grid-cols-2 gap-12 items-center">
       {/* Left: year, description, tracker */}
       <div>
-        <p className="text-sm font-semibold tracking-[0.08em] text-muted-foreground mb-8">Our Journey</p>
+        <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">Our Journey</p>
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight mb-10">
           From conviction to product.
         </h2>
@@ -407,7 +407,7 @@ export default function About() {
       <section className="py-24 lg:py-32" style={{ backgroundColor: "#111111" }}>
         <Fade className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
-            <p className="text-sm font-semibold tracking-[0.08em] text-background/50 mb-4">Leadership</p>
+            <p className="text-sm font-medium tracking-[0.08em] text-background/50 mb-4">Leadership</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background leading-tight">
               The people behind Renda.
             </h2>
@@ -460,7 +460,7 @@ export default function About() {
       {/* ── Partners & Backers ────────────────────────────── */}
       <section className="py-16 lg:py-20">
         <Fade className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-sm font-semibold tracking-[0.08em] text-muted-foreground mb-8">Partners & Backers</p>
+          <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">Partners & Backers</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             Backed by those who believe.
           </h2>

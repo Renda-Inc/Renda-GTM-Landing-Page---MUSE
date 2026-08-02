@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -25,6 +25,10 @@ import lifestyleFriends from "@/assets/lifestyle-friends-cooking.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import cardInHand from "@/assets/card-in-hand.png.asset.json";
+import interacEtransfer from "@/assets/interac-etransfer.jpg";
+import interacAutodeposit from "@/assets/interac-autodeposit.jpg";
+import interacSecurity from "@/assets/interac-security.jpg";
+import interacTagging from "@/assets/interac-tagging.jpg";
 import { RotatingCards } from "@/components/landing/CardShowcase";
 
 

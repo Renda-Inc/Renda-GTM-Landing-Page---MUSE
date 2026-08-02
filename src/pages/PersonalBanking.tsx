@@ -152,15 +152,10 @@ export default function PersonalBanking() {
               <Eyebrow>Smart Accounts</Eyebrow>
               <H2>Your money shouldn't just sit there. It should think.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Meet SmartSpend and SenseSave, accounts monitored by Alfie to give you
-                clarity, insights, and proactive guidance.
+                Meet SmartSpend and SenseSave, intelligent accounts monitored by Alfie to
+                deliver meaningful insights and help you make more confident financial
+                decisions.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Understand where your money is really going.</Bullet>
-                <Bullet>Spot waste before it compounds.</Bullet>
-                <Bullet>Adjust spending in real time.</Bullet>
-                <Bullet>Make informed decisions with confidence.</Bullet>
-              </ul>
             </div>
 
             {/* Alfie Insight mockup */}
@@ -238,16 +233,10 @@ export default function PersonalBanking() {
                   Your financial operating system, in your wallet.
                 </h3>
                 <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
-                  Your Renda Smart Card is connected directly to Alfie. It adapts to your
-                  spending, provides real-time intelligence, and puts you in seamless control,
-                  all from your app.
+                  Your Renda Smart Card is more than a payment card. Connected directly to
+                  Alfie, it understands every purchase, surfaces meaningful insights in real
+                  time, and gives you effortless control from wherever you are.
                 </p>
-                <ul className="mt-8 space-y-3 text-white/70">
-                  <Bullet>Real-time transaction intelligence</Bullet>
-                  <Bullet>Smart alerts before problems happen</Bullet>
-                  <Bullet>Context-aware insights at the point of spend</Bullet>
-                  <Bullet>Seamless control from your app</Bullet>
-                </ul>
               </div>
 
               <div className="rounded-2xl overflow-hidden">
@@ -409,16 +398,10 @@ export default function PersonalBanking() {
               <Eyebrow>Savings & Goals</Eyebrow>
               <H2>Savings that adapt to your life.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Most banks automate savings blindly. Renda builds a strategy around you.
-                Alfie monitors your real-time financial position and helps you make progress
-                toward goals that actually matter.
+                Saving shouldn't follow a fixed rule. Alfie continuously adapts your savings
+                strategy to your financial situation, helping you build toward your goals
+                while knowing when to save more, save less, or simply stay the course.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Set personalized savings goals</Bullet>
-                <Bullet>Adjust contributions based on income and spending shifts</Bullet>
-                <Bullet>Avoid over-saving during tight months</Bullet>
-                <Bullet>Accelerate when you're ahead</Bullet>
-              </ul>
             </div>
           </div>
 

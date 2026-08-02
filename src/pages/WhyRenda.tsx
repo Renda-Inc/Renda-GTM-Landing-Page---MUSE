@@ -288,15 +288,7 @@ export default function WhyRenda() {
               <Eyebrow>Intelligence at the Core</Eyebrow>
               <H2>Intelligence, not features.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Most financial apps treat artificial intelligence like a feature, a chatbot in the corner, a budgeting tool, a recommendation engine layered on top. We believe intelligence should be part of the foundation.
-              </p>
-              <ul className="mt-8 space-y-3">
-                <Bullet>Alfie is an intelligence layer built directly into the platform.</Bullet>
-                <Bullet>Continuously understands patterns and detects unusual activity.</Bullet>
-                <Bullet>Surfaces meaningful guidance, not because you asked, but because it matters.</Bullet>
-              </ul>
-              <p className="mt-8 text-base md:text-lg text-black/80 font-semibold leading-relaxed">
-                Renda is powered by Alfie; intelligence woven into every layer of the bank.
+                Most financial apps add artificial intelligence after the fact. Renda is built differently. Alfie is woven into the foundation of the platform, continuously understanding financial patterns, identifying what matters, and providing meaningful guidance before you even think to ask.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden">

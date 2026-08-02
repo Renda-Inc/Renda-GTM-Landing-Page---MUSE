@@ -210,109 +210,118 @@ export default function PersonalBanking() {
 
       <Divider />
 
-      {/* ════════════ CARDS & PAYMENTS ════════════ */}
-      <section id="cards-payments" className="scroll-mt-20 py-16 lg:py-20">
-        <Fade className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto mb-16 text-center">
-            <Eyebrow>Cards & Payments</Eyebrow>
-            <H2>A card that learns. Payments that just work.</H2>
+      {/* ════════════ CARDS & PAYMENTS (dark) ════════════ */}
+      <div style={{ backgroundColor: "#111111" }}>
+        <section id="cards-payments" className="scroll-mt-20 py-16 lg:py-20">
+          <Fade className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl mx-auto mb-4 text-center">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/50 mb-8">
+                Cards & Payments
+              </p>
+              <h2
+                className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white/90 leading-tight tracking-tight"
+                style={{ fontFamily: SF_FONT }}
+              >
+                A card that learns. Payments that just work.
+              </h2>
+            </div>
+
             <RotatingCards />
-          </div>
 
-          {/* Component A — Smart Card */}
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <h3
-                className="text-2xl md:text-3xl font-semibold text-black/80 leading-tight tracking-tight"
-                style={{ fontFamily: SF_FONT }}
-              >
-                Your financial operating system, in your wallet.
-              </h3>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Your Renda Smart Card is connected directly to Alfie. It adapts to your
-                spending, provides real-time intelligence, and puts you in seamless control,
-                all from your app.
-              </p>
-              <ul className="mt-8 space-y-3">
-                <Bullet>Real-time transaction intelligence</Bullet>
-                <Bullet>Smart alerts before problems happen</Bullet>
-                <Bullet>Context-aware insights at the point of spend</Bullet>
-                <Bullet>Seamless control from your app</Bullet>
-              </ul>
-            </div>
+            {/* Component A — Smart Card */}
+            <div className="mt-20 grid lg:grid-cols-2 gap-20 items-center">
+              <div>
+                <h3
+                  className="text-2xl md:text-3xl font-semibold text-white/90 leading-tight tracking-tight"
+                  style={{ fontFamily: SF_FONT }}
+                >
+                  Your financial operating system, in your wallet.
+                </h3>
+                <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
+                  Your Renda Smart Card is connected directly to Alfie. It adapts to your
+                  spending, provides real-time intelligence, and puts you in seamless control,
+                  all from your app.
+                </p>
+                <ul className="mt-8 space-y-3 text-white/70">
+                  <Bullet>Real-time transaction intelligence</Bullet>
+                  <Bullet>Smart alerts before problems happen</Bullet>
+                  <Bullet>Context-aware insights at the point of spend</Bullet>
+                  <Bullet>Seamless control from your app</Bullet>
+                </ul>
+              </div>
 
-            <div className="relative flex justify-center items-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-3xl" />
-              <img
-                src={cardFront}
-                alt="Renda Smart Card"
-                className="relative w-full max-w-md drop-shadow-2xl rotate-[-6deg] hover:rotate-0 transition-transform duration-500"
-              />
-            </div>
-          </div>
-        </Fade>
-      </section>
-
-      <CardShowcaseBanner />
-
-      <section className="py-16 lg:py-20">
-        <Fade className="max-w-7xl mx-auto px-6">
-          {/* Component B — Payments */}
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1 rounded-2xl overflow-hidden">
-              <img
-                src={lifestyleCafe}
-                alt="Tapping to pay at a cafe"
-                className="w-full h-[480px] lg:h-[720px] object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="order-1 lg:order-2">
-              <h3
-                className="text-2xl md:text-3xl font-semibold text-black/80 leading-tight tracking-tight"
-                style={{ fontFamily: SF_FONT }}
-              >
-                Tap. Pay. Understand.
-              </h3>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Every time you use your Renda Smart Card, Alfie captures the moment, not just
-                the transaction. You get real-time context, instant categorization, and
-                intelligent feedback that helps you spend smarter.
-              </p>
-
-              <div className="mt-8 space-y-5">
-                {[
-                  {
-                    icon: Zap,
-                    title: "Instant Recognition",
-                    desc: "Alfie identifies where you're paying, down to the merchant, category, and your usual pattern at that location.",
-                  },
-                  {
-                    icon: Tag,
-                    title: "Smart Categorization",
-                    desc: "Your payment is automatically tagged (Groceries, Dining, Transport) and factored into your live budget and goals.",
-                  },
-                  {
-                    icon: Eye,
-                    title: "Contextual Insights",
-                    desc: "Before you tap, Alfie can warn you. After you tap, Alfie can guide you.",
-                  },
-                ].map((f) => (
-                  <div key={f.title} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <f.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="text-base font-semibold text-black/80">{f.title}</h4>
-                      <p className="text-[15px] text-black/60 font-medium leading-relaxed mt-1">{f.desc}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={cardInHand.url}
+                  alt="Hand holding a Renda Smart Card"
+                  className="w-full h-[480px] lg:h-[720px] object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
-          </div>
-        </Fade>
-      </section>
+          </Fade>
+        </section>
+
+        <section className="pb-16 lg:pb-24">
+          <Fade className="max-w-7xl mx-auto px-6">
+            {/* Component B — Payments */}
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              <div className="order-2 lg:order-1 rounded-2xl overflow-hidden">
+                <img
+                  src={lifestyleCafe}
+                  alt="Tapping to pay at a cafe"
+                  className="w-full h-[480px] lg:h-[720px] object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="order-1 lg:order-2">
+                <h3
+                  className="text-2xl md:text-3xl font-semibold text-white/90 leading-tight tracking-tight"
+                  style={{ fontFamily: SF_FONT }}
+                >
+                  Tap. Pay. Understand.
+                </h3>
+                <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
+                  Every time you use your Renda Smart Card, Alfie captures the moment, not just
+                  the transaction. You get real-time context, instant categorization, and
+                  intelligent feedback that helps you spend smarter.
+                </p>
+
+                <div className="mt-8 space-y-5">
+                  {[
+                    {
+                      icon: Zap,
+                      title: "Instant Recognition",
+                      desc: "Alfie identifies where you're paying, down to the merchant, category, and your usual pattern at that location.",
+                    },
+                    {
+                      icon: Tag,
+                      title: "Smart Categorization",
+                      desc: "Your payment is automatically tagged (Groceries, Dining, Transport) and factored into your live budget and goals.",
+                    },
+                    {
+                      icon: Eye,
+                      title: "Contextual Insights",
+                      desc: "Before you tap, Alfie can warn you. After you tap, Alfie can guide you.",
+                    },
+                  ].map((f) => (
+                    <div key={f.title} className="flex gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                        <f.icon className="w-5 h-5 text-[#EB8F00]" />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-semibold text-white/90">{f.title}</h4>
+                        <p className="text-[15px] text-white/60 font-medium leading-relaxed mt-1">{f.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Fade>
+        </section>
+      </div>
+
 
       <Divider />
 

@@ -77,7 +77,7 @@ function H2({ children }: { children: React.ReactNode }) {
 /* ─── Bullet ─── */
 function Bullet({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-3 text-black/70 font-medium text-[15px] md:text-base leading-relaxed">
+    <li className="flex items-start gap-3 font-medium text-[15px] md:text-base leading-relaxed">
       <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
       <span>{children}</span>
     </li>
@@ -155,7 +155,7 @@ export default function PersonalBanking() {
                 Meet SmartSpend and SenseSave, accounts monitored by Alfie to give you
                 clarity, insights, and proactive guidance.
               </p>
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-3 text-black/70">
                 <Bullet>Understand where your money is really going.</Bullet>
                 <Bullet>Spot waste before it compounds.</Bullet>
                 <Bullet>Adjust spending in real time.</Bullet>
@@ -338,7 +338,7 @@ export default function PersonalBanking() {
                 their QR code, they instantly appear as a contact. Money moves immediately.
                 No delays. No friction.
               </p>
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-3 text-black/70">
                 <Bullet>Instant transfers within the Renda network</Bullet>
                 <Bullet>Add contacts by Renda ID or QR code scan</Bullet>
                 <Bullet>No transaction delays, money moves when you need it to</Bullet>
@@ -413,7 +413,7 @@ export default function PersonalBanking() {
                 Alfie monitors your real-time financial position and helps you make progress
                 toward goals that actually matter.
               </p>
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-3 text-black/70">
                 <Bullet>Set personalized savings goals</Bullet>
                 <Bullet>Adjust contributions based on income and spending shifts</Bullet>
                 <Bullet>Avoid over-saving during tight months</Bullet>
@@ -468,7 +468,7 @@ export default function PersonalBanking() {
                 Renda app. Familiar, instant, and now smarter with Alfie's context layered on
                 every transfer.
               </p>
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-3 text-black/70">
                 <Bullet>Send Interac e-Transfers to any Canadian bank</Bullet>
                 <Bullet>Auto-deposit, no security questions required</Bullet>
                 <Bullet>Automatic categorization and reminders</Bullet>

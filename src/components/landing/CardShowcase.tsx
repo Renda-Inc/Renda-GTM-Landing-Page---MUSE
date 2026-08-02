@@ -40,51 +40,60 @@ export const cardVariants: CardVariant[] = [
 function CardFace({ variant, className = "" }: { variant: CardVariant; className?: string }) {
   return (
     <div
-      className={`rounded-2xl overflow-hidden shadow-[0_30px_60px_-20px_rgba(0,0,0,0.55)] ${className}`}
+      className={`rounded-3xl overflow-hidden shadow-[0_50px_90px_-30px_rgba(0,0,0,0.75)] ${className}`}
       style={{ background: variant.bg, aspectRatio: "1.586 / 1", fontFamily: SF_FONT }}
     >
-      <div className="h-full w-full p-6 md:p-7 flex flex-col justify-between" style={{ color: variant.text }}>
+      <div className="h-full w-full p-7 md:p-9 flex flex-col justify-between" style={{ color: variant.text }}>
         <div className="flex items-start justify-between">
-          <span className="text-base md:text-lg font-semibold tracking-tight">renda</span>
-          <span className="text-[11px] md:text-xs font-medium opacity-70">{variant.name}</span>
+          <span className="text-lg md:text-2xl font-semibold tracking-tight">renda</span>
+          <span className="text-xs md:text-sm font-medium opacity-70">{variant.name}</span>
         </div>
-        <div className="w-10 h-7 md:w-11 md:h-8 rounded-md" style={{ background: variant.chip }} />
+        <div className="w-12 h-9 md:w-14 md:h-10 rounded-md" style={{ background: variant.chip }} />
         <div className="flex items-end justify-between">
-          <span className="text-sm md:text-base font-medium tracking-[0.18em] opacity-80">
-            •••• 4291
-          </span>
-          <span className="text-[11px] md:text-xs font-medium opacity-70">Smart Card</span>
+          <span className="text-base md:text-xl font-medium tracking-[0.18em] opacity-80">•••• 4291</span>
+          <span className="text-xs md:text-sm font-medium opacity-70">Smart Card</span>
         </div>
       </div>
     </div>
   );
 }
 
-/* Small rotating stack of the four cards */
+/* Large 3D coverflow carousel of the four cards */
 export function RotatingCards() {
   const [active, setActive] = useState(0);
+  const total = cardVariants.length;
 
   useEffect(() => {
-    const id = window.setInterval(() => setActive((i) => (i + 1) % cardVariants.length), 2600);
+    const id = window.setInterval(() => setActive((i) => (i + 1) % total), 3200);
     return () => window.clearInterval(id);
-  }, []);
+  }, [total]);
 
   return (
-    <div className="mt-12 flex flex-col items-center">
-      <div className="relative w-[300px] sm:w-[360px] h-[210px] sm:h-[250px]">
+    <div className="mt-14 flex flex-col items-center select-none">
+      <div
+        className="relative w-full max-w-[900px] h-[300px] sm:h-[380px] lg:h-[440px]"
+        style={{ perspective: "1600px" }}
+      >
         {cardVariants.map((v, i) => {
-          const offset = (i - active + cardVariants.length) % cardVariants.length;
+          let offset = i - active;
+          if (offset > total / 2) offset -= total;
+          if (offset < -total / 2) offset += total;
+          const abs = Math.abs(offset);
+
           return (
             <button
               key={v.name}
               type="button"
               onClick={() => setActive(i)}
               aria-label={v.name}
-              className="absolute inset-0 transition-all duration-700 ease-out focus:outline-none"
+              className="absolute left-1/2 top-1/2 w-[280px] sm:w-[400px] lg:w-[520px] focus:outline-none"
               style={{
-                transform: `translateY(${offset * 14}px) translateX(${offset * 10}px) scale(${1 - offset * 0.05}) rotate(${offset * -3}deg)`,
-                zIndex: cardVariants.length - offset,
-                opacity: offset > 2 ? 0 : 1,
+                transform: `translate(-50%, -50%) translateX(${offset * 34}%) translateZ(${-abs * 160}px) rotateY(${offset * -26}deg) scale(${1 - abs * 0.05})`,
+                transformStyle: "preserve-3d",
+                transition: "transform 900ms cubic-bezier(0.22, 1, 0.36, 1), opacity 900ms ease",
+                zIndex: total - abs,
+                opacity: abs > 2 ? 0 : 1 - abs * 0.18,
+                filter: abs === 0 ? "none" : `brightness(${1 - abs * 0.18})`,
               }}
             >
               <CardFace variant={v} className="w-full" />
@@ -92,7 +101,8 @@ export function RotatingCards() {
           );
         })}
       </div>
-      <div className="flex justify-center gap-2 mt-8">
+
+      <div className="flex justify-center gap-2 mt-10">
         {cardVariants.map((v, i) => (
           <button
             key={v.name}
@@ -100,72 +110,11 @@ export function RotatingCards() {
             onClick={() => setActive(i)}
             aria-label={`Show ${v.name}`}
             className={`rounded-full transition-all duration-300 ${
-              i === active ? "w-6 h-2 bg-black/70" : "w-2 h-2 bg-black/20"
+              i === active ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/30"
             }`}
           />
         ))}
       </div>
     </div>
-  );
-}
-
-/* Large dark showcase with all four cards floating */
-export function CardShowcaseBanner() {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const id = window.setInterval(() => setActive((i) => (i + 1) % cardVariants.length), 3000);
-    return () => window.clearInterval(id);
-  }, []);
-
-  return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: "#111111" }}>
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <p className="text-sm font-medium tracking-[0.08em] text-white/50 mb-6" style={{ fontFamily: SF_FONT }}>
-          The Renda card family
-        </p>
-        <h2
-          className="text-3xl md:text-4xl font-semibold tracking-tight text-white/90 leading-tight"
-          style={{ fontFamily: SF_FONT }}
-        >
-          Four cards. One intelligence layer.
-        </h2>
-
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-center">
-          {cardVariants.map((v, i) => {
-            const isActive = i === active;
-            return (
-              <button
-                key={v.name}
-                type="button"
-                onClick={() => setActive(i)}
-                aria-label={v.name}
-                className="transition-all duration-700 ease-out focus:outline-none w-full"
-                style={{
-                  transform: isActive ? "translateY(-18px) scale(1.06)" : "translateY(0) scale(0.95)",
-                  opacity: isActive ? 1 : 0.55,
-                }}
-              >
-                <CardFace variant={v} className="w-full" />
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="flex justify-center gap-2 mt-14">
-          {cardVariants.map((v, i) => (
-            <button
-              key={v.name}
-              type="button"
-              onClick={() => setActive(i)}
-              aria-label={`Show ${v.name}`}
-              className={`rounded-full transition-all duration-300 ${
-                i === active ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/30"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }

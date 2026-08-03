@@ -148,15 +148,6 @@ function InteracShowcase() {
 
 
 
-/* ─── Bullet ─── */
-function Bullet({ children }: { children: React.ReactNode }) {
-  return (
-    <li className="flex items-start gap-3 font-medium text-[15px] md:text-base leading-relaxed">
-      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-      <span>{children}</span>
-    </li>
-  );
-}
 
 export default function PersonalBanking() {
   const { hash } = useLocation();

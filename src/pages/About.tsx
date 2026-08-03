@@ -352,12 +352,11 @@ export default function About() {
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 <p>
-                  Alfie isn't a chatbot or a dashboard overlay. It's a modular intelligence engine built into every layer of the Renda experience, from individual insights to cross-account reasoning, from real-time signals to long-term financial modeling.
+                  Alfie isn't a chatbot layered onto banking. It's the intelligence engine at the core of Renda, continuously understanding context, recognizing patterns, and surfacing the insights that matter most.
                 </p>
-                <p>
-                  Where traditional banks process transactions, Alfie processes meaning. It understands the context behind your money - why things happened, what's changing, and what deserves your attention.
-                </p>
-                <p className="text-black/80 font-semibold">
+              </div>
+              <div className="mt-8 inline-block rounded-full bg-[#F6F5F2] px-6 py-3">
+                <p className="text-base md:text-lg text-black/80 font-semibold">
                   We didn't bolt AI onto banking. We built banking on top of intelligence.
                 </p>
               </div>

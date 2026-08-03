@@ -220,7 +220,7 @@ export default function WhyRenda() {
               </p>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <img src={aboutBelief} alt="Conversations about clarity" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
+              <img src={aboutBelief} alt="Conversations about clarity" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" />
             </div>
           </div>
 
@@ -255,7 +255,7 @@ export default function WhyRenda() {
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-xl overflow-hidden order-2 lg:order-1">
-              <img src={lifestyleCafe} alt="Quiet focus" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
+              <img src={lifestyleCafe} alt="Quiet focus" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" />
             </div>
             <div className="order-1 lg:order-2">
               <Eyebrow light>Signal Over Noise</Eyebrow>

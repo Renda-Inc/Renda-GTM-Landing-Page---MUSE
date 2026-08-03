@@ -34,7 +34,7 @@ export default function WorkingPrinciples() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left: editorial image with overlay */}
           <Fade>
-            <div className="relative rounded-2xl overflow-hidden h-[480px] lg:h-[720px]">
+            <div className="relative rounded-xl overflow-hidden h-[480px] lg:h-[720px]">
               <img
                 src={workspaceImg}
                 alt="Team collaborating in a bright workspace"

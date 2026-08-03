@@ -40,7 +40,7 @@ export const cardVariants: CardVariant[] = [
 function CardFace({ variant, className = "" }: { variant: CardVariant; className?: string }) {
   return (
     <div
-      className={`rounded-3xl overflow-hidden shadow-[0_50px_90px_-30px_rgba(0,0,0,0.75)] ${className}`}
+      className={`rounded-xl overflow-hidden shadow-[0_50px_90px_-30px_rgba(0,0,0,0.75)] ${className}`}
       style={{ background: variant.bg, aspectRatio: "1.586 / 1", fontFamily: SF_FONT }}
     >
       <div className="h-full w-full p-7 md:p-9 flex flex-col justify-between" style={{ color: variant.text }}>

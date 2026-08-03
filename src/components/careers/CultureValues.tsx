@@ -53,7 +53,7 @@ export default function CultureValues() {
                 onClick={() => handleSelect(i)}
                 aria-label={v.title}
                 aria-expanded={isActive}
-                className="relative rounded-2xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="relative rounded-xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
               >
                 {/* Image */}

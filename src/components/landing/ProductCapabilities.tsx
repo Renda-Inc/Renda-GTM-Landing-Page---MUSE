@@ -62,7 +62,7 @@ export default function ProductCapabilities() {
             ))}
           </div>
 
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-xl h-[400px] lg:h-auto group">
+          <div className="lg:col-span-5 relative rounded-xl overflow-hidden shadow-xl h-[400px] lg:h-auto group">
             <img src={lifestyleFriendsCooking} alt="Friends cooking together" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>

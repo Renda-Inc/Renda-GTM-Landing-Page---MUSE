@@ -40,7 +40,7 @@ export default function BlogArticle() {
       {/* ── Full-width hero image ── */}
       <section className="w-full">
         <div className="max-w-[1200px] mx-auto px-6 pt-24 md:pt-28">
-          <div className="w-full aspect-[4/3] md:aspect-[16/9] rounded-2xl overflow-hidden bg-muted">
+          <div className="w-full aspect-[4/3] md:aspect-[16/9] rounded-xl overflow-hidden bg-muted">
             <img
               src={article.image}
               alt={article.title}

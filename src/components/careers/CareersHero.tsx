@@ -37,19 +37,19 @@ export default function CareersHero() {
       {/* Photo collage — Stripe/Revolut inspired */}
       <Fade className="mt-16 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 grid-rows-2 gap-3 h-[320px] md:h-[420px]">
-          <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden">
+          <div className="col-span-2 row-span-2 rounded-xl overflow-hidden">
             <img src={heroImg} alt="Team collaborating" className="w-full h-full object-cover" width={1280} height={720} />
           </div>
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden">
             <img src={team1} alt="Engineer at work" className="w-full h-full object-cover" loading="lazy" width={640} height={640} />
           </div>
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden">
             <img src={team3} alt="Whiteboard session" className="w-full h-full object-cover" loading="lazy" width={640} height={640} />
           </div>
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden">
             <img src={team4} alt="Working at cafe" className="w-full h-full object-cover" loading="lazy" width={640} height={800} />
           </div>
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden">
             <img src={team2} alt="Brainstorming" className="w-full h-full object-cover" loading="lazy" width={640} height={800} />
           </div>
         </div>

@@ -99,7 +99,7 @@ function InteracShowcase() {
 
   return (
     <div>
-      <div className="relative rounded-2xl overflow-hidden h-[480px] lg:h-[720px] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
+      <div className="relative rounded-xl overflow-hidden h-[480px] lg:h-[720px] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
         {interacSlides.map((s, i) => (
           <div
             key={s.title}
@@ -206,7 +206,7 @@ export default function PersonalBanking() {
         </Fade>
 
         <Fade className="mt-16 max-w-7xl mx-auto px-6">
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden">
             <img
               src={heroLifestyle}
               alt="Person using Renda app"
@@ -314,7 +314,7 @@ export default function PersonalBanking() {
                 </p>
               </div>
 
-              <div className="rounded-2xl overflow-hidden">
+              <div className="rounded-xl overflow-hidden">
                 <img
                   src={cardInHand.url}
                   alt="Hand holding a Renda Smart Card"
@@ -330,7 +330,7 @@ export default function PersonalBanking() {
           <Fade className="max-w-7xl mx-auto px-6">
             {/* Component B — Payments */}
             <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div className="order-2 lg:order-1 rounded-2xl overflow-hidden">
+              <div className="order-2 lg:order-1 rounded-xl overflow-hidden">
                 <img
                   src={lifestyleCafe}
                   alt="Tapping to pay at a cafe"
@@ -427,7 +427,7 @@ export default function PersonalBanking() {
             </div>
 
             <div className="space-y-5">
-              <div className="rounded-2xl overflow-hidden">
+              <div className="rounded-xl overflow-hidden">
                 <img
                   src={lifestyleGathering}
                   alt="Friends splitting a bill"
@@ -461,7 +461,7 @@ export default function PersonalBanking() {
       <section id="savings-goals" className="scroll-mt-20 py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
+            <div className="rounded-xl overflow-hidden order-2 lg:order-1">
               <img
                 src={lifestyleStudying}
                 alt="Planning savings goals"

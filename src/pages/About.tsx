@@ -298,7 +298,7 @@ export default function About() {
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-xl overflow-hidden">
-              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
+              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
               <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">Our Belief</p>
@@ -363,7 +363,7 @@ export default function About() {
               </div>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
+              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-[312px] lg:h-[468px] object-cover" loading="lazy" />
             </div>
           </div>
         </Fade>
@@ -376,7 +376,7 @@ export default function About() {
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-xl overflow-hidden">
-              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
+              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
               <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">The Company We Aim to Be</p>

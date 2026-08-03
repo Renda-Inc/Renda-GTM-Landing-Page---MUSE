@@ -537,16 +537,7 @@ export default function PersonalBanking() {
       <Divider />
 
       {/* ════════════ CLOSING CTA ════════════ */}
-      <section className="py-16 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={lifestyleFriends}
-            alt=""
-            className="w-full h-full object-cover"
-            aria-hidden
-          />
-          <div className="absolute inset-0 bg-black/65" />
-        </div>
+      <section className="py-16 lg:py-20 relative overflow-hidden" style={{ backgroundColor: "#111111" }}>
         <Fade className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <h2
             className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white"

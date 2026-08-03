@@ -158,7 +158,7 @@ function Timeline() {
       </div>
 
       {/* Right: image */}
-      <div className="rounded-2xl overflow-hidden">
+      <div className="rounded-xl overflow-hidden">
         <img
           src={current.image}
           alt={current.title}
@@ -205,7 +205,7 @@ function ValuesAccordion() {
               onClick={() => handleSelect(i)}
               aria-label={v.title}
               aria-expanded={isActive}
-              className="relative rounded-2xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="relative rounded-xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
             >
               <img
@@ -297,8 +297,8 @@ export default function About() {
       <section className="py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden">
-              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
+            <div className="rounded-xl overflow-hidden">
+              <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
               <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">Our Belief</p>
@@ -317,7 +317,7 @@ export default function About() {
               return (
                 <div
                   key={b.title}
-                  className={`group relative rounded-2xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.2)] hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-500 ${
+                  className={`group relative rounded-xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.2)] hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-500 ${
                     taller ? "h-[480px] sm:h-[540px]" : "h-[440px] sm:h-[480px]"
                   }`}
                 >
@@ -352,18 +352,17 @@ export default function About() {
               </h2>
               <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
                 <p>
-                  Alfie isn't a chatbot or a dashboard overlay. It's a modular intelligence engine built into every layer of the Renda experience, from individual insights to cross-account reasoning, from real-time signals to long-term financial modeling.
+                  Alfie isn't a chatbot layered onto banking. It's the intelligence engine at the core of Renda, continuously understanding context, recognizing patterns, and surfacing the insights that matter most.
                 </p>
-                <p>
-                  Where traditional banks process transactions, Alfie processes meaning. It understands the context behind your money - why things happened, what's changing, and what deserves your attention.
-                </p>
-                <p className="text-black/80 font-semibold">
+              </div>
+              <div className="mt-8 inline-block rounded-full bg-[#F6F5F2] px-6 py-3">
+                <p className="text-base md:text-lg text-black/80 font-semibold">
                   We didn't bolt AI onto banking. We built banking on top of intelligence.
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
+            <div className="rounded-xl overflow-hidden">
+              <img src={aboutAlfie} alt="Alfie AI reasoning engine" className="w-full h-[312px] lg:h-[468px] object-cover" loading="lazy" />
             </div>
           </div>
         </Fade>
@@ -375,8 +374,8 @@ export default function About() {
       <section className="py-16 lg:py-20 bg-secondary/40">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden">
-              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
+            <div className="rounded-xl overflow-hidden">
+              <img src={aboutValues} alt="Team working in modern office" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
               <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">The Company We Aim to Be</p>
@@ -431,7 +430,7 @@ export default function About() {
       <section className="py-16 lg:py-20 bg-secondary/40">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-xl overflow-hidden">
               <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
             <div>

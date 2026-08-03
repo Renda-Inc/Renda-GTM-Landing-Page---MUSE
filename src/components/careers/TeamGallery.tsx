@@ -78,7 +78,7 @@ export default function TeamGallery() {
 
         {/* One-by-one slider with autoplay */}
         <Fade>
-          <div className="relative rounded-2xl overflow-hidden bg-background">
+          <div className="relative rounded-xl overflow-hidden bg-background">
             <div
               className="flex transition-transform duration-700 ease-out"
               style={{ transform: `translateX(-${index * 100}%)` }}

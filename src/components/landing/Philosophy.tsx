@@ -37,7 +37,7 @@ export default function Philosophy() {
           </div>
 
           {/* Replace stat cards with lifestyle image */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[450px] group">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[450px] group">
             <img src={lifestyleCreativeHobby} alt="Creative hobby at home" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
             {/* Overlay stats */}

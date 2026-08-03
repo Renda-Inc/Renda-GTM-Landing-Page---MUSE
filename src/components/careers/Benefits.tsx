@@ -61,7 +61,7 @@ export default function Benefits() {
 
         <div className="grid lg:grid-cols-[45fr_55fr] gap-8 lg:gap-12 items-stretch">
           {/* Left: dynamic image */}
-          <div className="relative rounded-2xl overflow-hidden h-[420px] lg:h-auto lg:min-h-[640px] bg-black">
+          <div className="relative rounded-xl overflow-hidden h-[420px] lg:h-auto lg:min-h-[640px] bg-black">
             {benefits.map((b, i) => (
               <img
                 key={b.label}

@@ -22,7 +22,6 @@ import {
 } from "lucide-react";
 import heroLifestyle from "@/assets/hero-lifestyle.jpg";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
-import lifestyleFriends from "@/assets/lifestyle-friends-cooking.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import cardInHand from "@/assets/card-in-hand.png.asset.json";
@@ -99,7 +98,7 @@ function InteracShowcase() {
 
   return (
     <div>
-      <div className="relative rounded-2xl overflow-hidden h-[480px] lg:h-[720px] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
+      <div className="relative rounded-xl overflow-hidden h-[264px] lg:h-[396px] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
         {interacSlides.map((s, i) => (
           <div
             key={s.title}
@@ -149,15 +148,6 @@ function InteracShowcase() {
 
 
 
-/* ─── Bullet ─── */
-function Bullet({ children }: { children: React.ReactNode }) {
-  return (
-    <li className="flex items-start gap-3 font-medium text-[15px] md:text-base leading-relaxed">
-      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-      <span>{children}</span>
-    </li>
-  );
-}
 
 export default function PersonalBanking() {
   const { hash } = useLocation();
@@ -206,7 +196,7 @@ export default function PersonalBanking() {
         </Fade>
 
         <Fade className="mt-16 max-w-7xl mx-auto px-6">
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden">
             <img
               src={heroLifestyle}
               alt="Person using Renda app"
@@ -314,7 +304,7 @@ export default function PersonalBanking() {
                 </p>
               </div>
 
-              <div className="rounded-2xl overflow-hidden">
+              <div className="rounded-xl overflow-hidden">
                 <img
                   src={cardInHand.url}
                   alt="Hand holding a Renda Smart Card"
@@ -330,7 +320,7 @@ export default function PersonalBanking() {
           <Fade className="max-w-7xl mx-auto px-6">
             {/* Component B — Payments */}
             <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div className="order-2 lg:order-1 rounded-2xl overflow-hidden">
+              <div className="order-2 lg:order-1 rounded-xl overflow-hidden">
                 <img
                   src={lifestyleCafe}
                   alt="Tapping to pay at a cafe"
@@ -397,16 +387,11 @@ export default function PersonalBanking() {
               <Eyebrow>Move Money Your Way</Eyebrow>
               <H2>Instant transfers. Real network.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Renda Peer-to-Peer is the fastest way to send money to friends, family, or
-                anyone in the Renda network. Add someone by their Renda ID or by scanning
-                their QR code, they instantly appear as a contact. Money moves immediately.
-                No delays. No friction.
+                Send money instantly to anyone in the Renda network. Add contacts using a
+                Renda ID or QR code, then move money immediately, without delays, friction,
+                or unnecessary steps.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Instant transfers within the Renda network</Bullet>
-                <Bullet>Add contacts by Renda ID or QR code scan</Bullet>
-                <Bullet>No transaction delays, money moves when you need it to</Bullet>
-              </ul>
+
 
               <div className="mt-10 grid sm:grid-cols-2 gap-4">
                 {[
@@ -427,7 +412,7 @@ export default function PersonalBanking() {
             </div>
 
             <div className="space-y-5">
-              <div className="rounded-2xl overflow-hidden">
+              <div className="rounded-xl overflow-hidden">
                 <img
                   src={lifestyleGathering}
                   alt="Friends splitting a bill"
@@ -461,7 +446,7 @@ export default function PersonalBanking() {
       <section id="savings-goals" className="scroll-mt-20 py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
+            <div className="rounded-xl overflow-hidden order-2 lg:order-1">
               <img
                 src={lifestyleStudying}
                 alt="Planning savings goals"
@@ -537,16 +522,7 @@ export default function PersonalBanking() {
       <Divider />
 
       {/* ════════════ CLOSING CTA ════════════ */}
-      <section className="py-16 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={lifestyleFriends}
-            alt=""
-            className="w-full h-full object-cover"
-            aria-hidden
-          />
-          <div className="absolute inset-0 bg-black/65" />
-        </div>
+      <section className="py-16 lg:py-20 relative overflow-hidden" style={{ backgroundColor: "#111111" }}>
         <Fade className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <h2
             className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white"

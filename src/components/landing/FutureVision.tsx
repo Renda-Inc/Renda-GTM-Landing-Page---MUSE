@@ -14,7 +14,7 @@ export default function FutureVision() {
       >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[450px] group">
+          <div className="relative rounded-xl overflow-hidden shadow-2xl h-[450px] group">
             <img src={lifestyleCafeLaptop} alt="Working at cafe" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>

@@ -47,7 +47,7 @@ export default function CoreBelief() {
         {/* Image mosaic + cards */}
         <div className="grid lg:grid-cols-12 gap-6">
           {/* Left image - dream job */}
-          <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
+          <div className="lg:col-span-4 relative rounded-2xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
             <img src={lifestyleDreamJob} alt="Person working at a job they love" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>
@@ -70,7 +70,7 @@ export default function CoreBelief() {
           </div>
 
           {/* Right image - adventure hike */}
-          <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
+          <div className="lg:col-span-4 relative rounded-2xl overflow-hidden shadow-xl h-[350px] lg:h-auto group">
             <img src={lifestyleAdventureHike} alt="Person hiking on a mountain adventure" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
           </div>

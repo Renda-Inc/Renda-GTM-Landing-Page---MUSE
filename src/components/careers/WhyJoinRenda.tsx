@@ -32,7 +32,7 @@ export default function WhyJoinRenda() {
               </p>
             </div>
           </div>
-          <div className="order-first lg:order-last rounded-2xl overflow-hidden">
+          <div className="order-first lg:order-last rounded-xl overflow-hidden">
             <img src={officeImg} alt="Renda office space" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
           </div>
         </div>

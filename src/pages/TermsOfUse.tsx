@@ -181,7 +181,7 @@ export default function TermsOfUse() {
                 {section.description}
               </p>
 
-              <div className="rounded-2xl overflow-hidden divide-y divide-black/10 bg-[#F6F5F2]">
+              <div className="rounded-xl overflow-hidden divide-y divide-black/10 bg-[#F6F5F2]">
                 {section.policies.map((policy) => (
                   <Link
                     key={policy.slug}

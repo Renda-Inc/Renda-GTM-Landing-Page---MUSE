@@ -125,7 +125,7 @@ function SignalAccordion() {
               onClick={() => handleSelect(i)}
               aria-label={c.title}
               aria-expanded={isActive}
-              className="relative rounded-2xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="relative rounded-xl overflow-hidden transition-all duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
             >
               <img
@@ -219,8 +219,8 @@ export default function WhyRenda() {
                 Financial data is only useful when it creates understanding. Renda turns everyday activity into clear insights that help you make better financial decisions.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={aboutBelief} alt="Conversations about clarity" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
+            <div className="rounded-xl overflow-hidden">
+              <img src={aboutBelief} alt="Conversations about clarity" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" />
             </div>
           </div>
 
@@ -228,7 +228,7 @@ export default function WhyRenda() {
             {philosophyCards.map((c, i) => (
               <div
                 key={c.title}
-                className={`group relative rounded-2xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.2)] hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-500 ${
+                className={`group relative rounded-xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.2)] hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-500 ${
                   i === 1 ? "h-[460px] sm:h-[520px]" : "h-[420px] sm:h-[460px]"
                 }`}
               >
@@ -254,8 +254,8 @@ export default function WhyRenda() {
       <section id="signals" className="scroll-mt-20 py-16 lg:py-20" style={{ backgroundColor: "#111111" }}>
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
-              <img src={lifestyleCafe} alt="Quiet focus" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
+            <div className="rounded-xl overflow-hidden order-2 lg:order-1">
+              <img src={lifestyleCafe} alt="Quiet focus" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" />
             </div>
             <div className="order-1 lg:order-2">
               <Eyebrow light>Signal Over Noise</Eyebrow>
@@ -281,7 +281,7 @@ export default function WhyRenda() {
                 Most financial apps add artificial intelligence after the fact. Renda is built differently. Alfie is woven into the foundation of the platform, continuously understanding financial patterns, identifying what matters, and providing meaningful guidance before you even think to ask.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-xl overflow-hidden">
               <img src={aboutAlfie} alt="Alfie intelligence layer" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
           </div>
@@ -294,7 +294,7 @@ export default function WhyRenda() {
       <section id="trust" className="scroll-mt-20 py-16 lg:py-20 bg-secondary/40">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
+            <div className="rounded-xl overflow-hidden order-2 lg:order-1">
               <img src={aboutValues} alt="Trust by design" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
             </div>
             <div className="order-1 lg:order-2">

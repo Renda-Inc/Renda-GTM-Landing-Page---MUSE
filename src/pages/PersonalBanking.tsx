@@ -22,7 +22,6 @@ import {
 } from "lucide-react";
 import heroLifestyle from "@/assets/hero-lifestyle.jpg";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
-import lifestyleFriends from "@/assets/lifestyle-friends-cooking.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import cardInHand from "@/assets/card-in-hand.png.asset.json";

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import AlfieSystemDiagram from "@/components/landing/AlfieSystemDiagram";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import {
   Wallet,
@@ -546,7 +547,7 @@ export default function PersonalBanking() {
           />
           <div className="absolute inset-0 bg-black/65" />
         </div>
-        <Fade className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <Fade className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <h2
             className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white"
             style={{ fontFamily: SF_FONT }}

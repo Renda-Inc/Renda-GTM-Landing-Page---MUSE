@@ -28,12 +28,6 @@ export default function BlogHero({ heroImage }: Props) {
         }`}
       >
         <div className="max-w-3xl">
-          {/* Badge — mirrors homepage early-access badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
-            <span className="text-sm font-medium text-white/90">Blog & Insights</span>
-          </div>
-
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] text-white">
             Ideas shaping
             <br />

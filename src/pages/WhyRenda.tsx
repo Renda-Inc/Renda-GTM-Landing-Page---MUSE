@@ -183,7 +183,7 @@ export default function WhyRenda() {
       <Navbar />
 
       {/* ── Why Renda Exists (full-bleed hero, matching About) ── */}
-      <section id="exists" className="relative min-h-screen flex items-end overflow-hidden">
+      <section id="exists" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroLifestyle}
@@ -194,12 +194,8 @@ export default function WhyRenda() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-32 md:pb-48 pt-32 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-24 w-full">
           <Fade>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
-              <span className="text-sm font-medium text-white/90">Why Renda</span>
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white max-w-3xl">
               Why Renda Exists.
             </h1>
@@ -220,10 +216,7 @@ export default function WhyRenda() {
               <Eyebrow>Our Philosophy</Eyebrow>
               <H2>Understanding over reporting.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                For decades, banks have focused on recording financial activity, balances, transactions, statements. But simply reporting information does not help people make better financial decisions.
-              </p>
-              <p className="mt-6 text-base md:text-lg text-black/80 font-semibold leading-relaxed">
-                Renda is designed to turn financial information into clear understanding, not just records.
+                Financial data is only useful when it creates understanding. Renda turns everyday activity into clear insights that help you make better financial decisions.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden">
@@ -268,10 +261,7 @@ export default function WhyRenda() {
               <Eyebrow light>Signal Over Noise</Eyebrow>
               <H2 light>Signal over noise.</H2>
               <p className="mt-6 text-base md:text-lg text-white/70 font-medium leading-relaxed">
-                Most financial institutions flood you with data, transaction lists, endless notifications, dashboards full of charts you never asked for. But more information doesn't create clarity.
-              </p>
-              <p className="mt-6 text-base md:text-lg text-white/90 font-semibold leading-relaxed">
-                Renda is designed to surface what's relevant; quietly, clearly, and only when it matters.
+                Most financial institutions overwhelm you with transactions, notifications, and dashboards. Renda filters out the noise, surfacing only the insights that matter; quietly, clearly, and when they're most useful.
               </p>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import AlfieSystemDiagram from "@/components/landing/AlfieSystemDiagram";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import {
   Wallet,
@@ -546,23 +547,20 @@ export default function PersonalBanking() {
           />
           <div className="absolute inset-0 bg-black/65" />
         </div>
-        <Fade className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <Fade className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <h2
             className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white"
             style={{ fontFamily: SF_FONT }}
           >
             One intelligent system. Total financial clarity.
           </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-x-4 gap-y-2 text-base font-medium text-white/80">
-            <span>Smart Accounts</span>
-            <span className="text-white/30">·</span>
-            <span>Adaptive Card</span>
-            <span className="text-white/30">·</span>
-            <span>Seamless Payments</span>
-            <span className="text-white/30">·</span>
-            <span>Personalized Savings</span>
-          </div>
-          <p className="mt-4 text-base text-white/90 font-medium">All powered by Alfie.</p>
+
+          <AlfieSystemDiagram />
+
+          <p className="mt-12 text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-2xl mx-auto">
+            Every Renda experience is connected through Alfie, giving you one intelligent system
+            that understands your finances and helps you make better decisions, wherever money moves.
+          </p>
           <div className="mt-10">
             <a
               href="#waitlist"

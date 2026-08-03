@@ -397,16 +397,11 @@ export default function PersonalBanking() {
               <Eyebrow>Move Money Your Way</Eyebrow>
               <H2>Instant transfers. Real network.</H2>
               <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
-                Renda Peer-to-Peer is the fastest way to send money to friends, family, or
-                anyone in the Renda network. Add someone by their Renda ID or by scanning
-                their QR code, they instantly appear as a contact. Money moves immediately.
-                No delays. No friction.
+                Send money instantly to anyone in the Renda network. Add contacts using a
+                Renda ID or QR code, then move money immediately, without delays, friction,
+                or unnecessary steps.
               </p>
-              <ul className="mt-8 space-y-3 text-black/70">
-                <Bullet>Instant transfers within the Renda network</Bullet>
-                <Bullet>Add contacts by Renda ID or QR code scan</Bullet>
-                <Bullet>No transaction delays, money moves when you need it to</Bullet>
-              </ul>
+
 
               <div className="mt-10 grid sm:grid-cols-2 gap-4">
                 {[

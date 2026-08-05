@@ -38,7 +38,7 @@ export default function AlfieInfrastructure() {
         }`}
       >
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">
             Platform depth
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-foreground">

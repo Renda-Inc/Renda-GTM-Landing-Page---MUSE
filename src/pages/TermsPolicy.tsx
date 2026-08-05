@@ -53,7 +53,7 @@ export default function TermsPolicy() {
             <ChevronRight className="w-3.5 h-3.5 text-black/40" />
             <span className="text-foreground">{parentSection.title}</span>
           </nav>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">
             {parentSection.title}
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-black/80">

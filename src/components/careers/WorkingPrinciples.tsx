@@ -25,7 +25,7 @@ export default function WorkingPrinciples() {
     <section className="py-16 lg:py-20 bg-[#F6F5F2]">
       <div className="max-w-7xl mx-auto px-6">
         <Fade>
-          <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-4">Working at Renda</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Working at Renda</p>
           <p className="text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-2xl mb-12">
             We're building the future of banking with a team that cares deeply and moves with purpose.
           </p>

@@ -18,7 +18,7 @@ export default function CareersHero() {
   return (
     <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">
       <Fade className="max-w-4xl mx-auto px-6 text-center">
-        <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-6">Careers</p>
+        <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">Careers</p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black/80 hover:text-black transition-colors duration-300">
           Join us in building the intelligence layer for finance.
         </h1>

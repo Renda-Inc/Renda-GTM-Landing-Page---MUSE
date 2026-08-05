@@ -14,7 +14,7 @@ export default function Philosophy() {
       >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-6">
+            <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">
               Our philosophy
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">

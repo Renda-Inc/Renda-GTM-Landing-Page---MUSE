@@ -6,7 +6,6 @@ import featuredAlfie from "@/assets/about-alfie.jpg";
 import featuredBelief from "@/assets/about-belief.jpg";
 import featuredPlatform from "@/assets/timeline-alfie.jpg";
 import featuredCompany from "@/assets/about-overhead.jpg";
-import AnnouncementBar from "./AnnouncementBar";
 
 const SF_PRO =
   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';
@@ -157,7 +156,7 @@ export default function Navbar() {
 
   return (
     <>
-      <AnnouncementBar />
+
       {/* Backdrop when dropdown open */}
       <div
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 pointer-events-none ${
@@ -166,7 +165,7 @@ export default function Navbar() {
       />
       <nav
         style={{ fontFamily: SF_PRO }}
-        className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled || activeDropdown
             ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
             : "bg-transparent"
@@ -217,7 +216,7 @@ export default function Navbar() {
               </button>
 
               {isActive && (
-                <div className="fixed top-[96px] left-0 right-0 pointer-events-none z-50">
+                <div className="fixed top-[64px] left-0 right-0 pointer-events-none z-50">
                   <div className="max-w-7xl mx-auto px-6 md:px-10">
                     <div
                       className={`pointer-events-auto bg-background rounded-2xl shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)] animate-fade-in ${

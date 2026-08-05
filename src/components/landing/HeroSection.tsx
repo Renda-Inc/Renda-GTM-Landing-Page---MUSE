@@ -41,8 +41,9 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-6 text-base md:text-lg text-white/80 max-w-lg leading-relaxed">
-            Renda is an AI-native bank powered by Alfie — a financial AI that helps you understand, manage, and move your money with clarity.
+            Powered by Alfie, the intelligent financial operating system, that helps you understand, plan, and move your money with confidence.
           </p>
+
 
           {/* CTAs */}
           <div className="mt-8 flex flex-wrap items-center gap-3">

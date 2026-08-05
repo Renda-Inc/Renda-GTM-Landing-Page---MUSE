@@ -16,7 +16,7 @@ export default function WhyJoinRenda() {
       <Fade className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <p className="text-sm font-medium tracking-[0.08em] text-muted-foreground mb-8">Why Join Renda</p>
+            <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Why Join Renda</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
               The rare chance to build from zero.
             </h2>

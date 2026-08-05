@@ -65,7 +65,7 @@ export default function ProblemSection() {
         }`}
       >
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-peach mb-4">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">
             The problem
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-background">

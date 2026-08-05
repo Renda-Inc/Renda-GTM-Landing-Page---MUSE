@@ -1,36 +1,51 @@
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
-import InvestorNotice from "@/components/landing/InvestorNotice";
-import CoreBelief from "@/components/landing/CoreBelief";
-import FloatingCards from "@/components/landing/FloatingCards";
-import ProblemSection from "@/components/landing/ProblemSection";
-import AlfieIntro from "@/components/landing/AlfieIntro";
-import AlfieMockups from "@/components/landing/AlfieMockups";
-import ProductCapabilities from "@/components/landing/ProductCapabilities";
-import VideoBanner from "@/components/landing/VideoBanner";
-import TrustSection from "@/components/landing/TrustSection";
+import Footer from "@/components/landing/Footer";
 import FAQ from "@/components/landing/FAQ";
 import PartnersMarquee from "@/components/landing/PartnersMarquee";
-import BeliefClose from "@/components/landing/BeliefClose";
-import Footer from "@/components/landing/Footer";
+import {
+  Divider,
+  SmartAccounts,
+  CardSection,
+  SavingGoals,
+  SendMoney,
+  ThinkAhead,
+  MeetAlfie,
+  DailyMoney,
+  ComingSoon,
+  HomeCTA,
+  Pricing,
+} from "@/components/home/HomeSections";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <main
+      className="min-h-screen bg-background"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
+      }}
+    >
       <Navbar />
       <HeroSection />
-      <InvestorNotice />
-      <CoreBelief />
-      <FloatingCards />
-      <ProblemSection />
-      <AlfieIntro />
-      <AlfieMockups />
-      <ProductCapabilities />
-      <VideoBanner />
-      <TrustSection />
+      <SmartAccounts />
+      <CardSection />
+      <SavingGoals />
+      <Divider />
+      <SendMoney />
+      <Divider />
+      <ThinkAhead />
+      <Divider />
+      <MeetAlfie />
+      <Divider />
+      <DailyMoney />
+      <Divider />
+      <ComingSoon />
+      <Divider />
       <FAQ />
-      <BeliefClose />
       <PartnersMarquee />
+      <HomeCTA />
+      <Pricing />
       <Footer />
     </main>
   );

@@ -40,7 +40,7 @@ function Divider() {
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className={`text-sm font-medium uppercase tracking-[0.2em] mb-8 ${light ? "text-white/60" : "text-muted-foreground"}`}>
+    <p className={`text-[15px] font-semibold tracking-[0.08em] mb-8 ${light ? "text-white" : "text-black"}`}>
       {children}
     </p>
   );

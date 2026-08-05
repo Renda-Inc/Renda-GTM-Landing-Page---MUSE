@@ -28,7 +28,7 @@ export default function BlogHero({ heroImage }: Props) {
         }`}
       >
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.95] text-white">
             Ideas shaping
             <br />
             intelligent finance.

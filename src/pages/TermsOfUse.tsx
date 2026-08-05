@@ -155,7 +155,7 @@ export default function TermsOfUse() {
       {/* Hero */}
       <header className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">
             Legal Center
           </p>
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-black/80">

@@ -122,7 +122,7 @@ export default function Help() {
       >
         <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
         <Fade className="relative max-w-3xl mx-auto px-6 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">Help Centre</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">Help Centre</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-black/80">
             How can we help you?
           </h1>
@@ -179,7 +179,7 @@ export default function Help() {
       {/* Contact section */}
       <section id="contact" className="py-24 lg:py-32">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Contact Us</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Contact Us</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
             Still need help?
           </h2>
@@ -200,7 +200,7 @@ export default function Help() {
       {/* Refer a Friend */}
       <section id="refer" className="py-24 lg:py-32 bg-[#F6F5F2]">
         <Fade className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">Refer a Friend</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Refer a Friend</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
             Share Renda. Earn rewards.
           </h2>

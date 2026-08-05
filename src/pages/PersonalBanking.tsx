@@ -60,7 +60,7 @@ function Divider() {
 /* ─── Section eyebrow ─── */
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-8">
+    <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">
       {children}
     </p>
   );
@@ -166,7 +166,7 @@ export default function PersonalBanking() {
       {/* ════════════ HERO ════════════ */}
       <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">
         <Fade className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">
             Personal Banking
           </p>
           <h1
@@ -275,7 +275,7 @@ export default function PersonalBanking() {
         <section id="cards-payments" className="scroll-mt-20 py-16 lg:py-20">
           <Fade className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl mx-auto mb-4 text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/50 mb-8">
+              <p className="text-[15px] font-semibold tracking-[0.08em] text-white mb-8">
                 Cards & Payments
               </p>
               <h2

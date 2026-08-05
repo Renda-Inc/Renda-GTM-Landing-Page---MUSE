@@ -21,7 +21,7 @@ export default function BlogFeatured({ articles, visible }: Props) {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-10">
+        <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-10">
           Featured
         </p>
 

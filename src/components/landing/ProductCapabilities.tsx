@@ -37,7 +37,7 @@ export default function ProductCapabilities() {
         }`}
       >
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-4">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">
             Product
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground">

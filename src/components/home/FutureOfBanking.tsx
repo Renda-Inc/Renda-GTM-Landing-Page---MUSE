@@ -25,9 +25,9 @@ const topPieces: Piece[] = [
 
 const bottomPieces: Piece[] = [
   { src: newPhone, alt: "Checking a banking app on the move", cls: "absolute left-[4%] bottom-[8%] w-[14%] max-w-[175px] rotate-[3deg]" },
-  { src: lifestyleGathering, alt: "Friends splitting a bill", cls: "absolute left-[23%] bottom-[46%] w-[16%] max-w-[200px] rotate-[-3deg]" },
+  { src: lifestyleGathering, alt: "Friends splitting a bill", cls: "absolute left-[23%] bottom-[38%] w-[16%] max-w-[200px] rotate-[-3deg]" },
   { src: newUi, alt: "A clean financial interface", cls: "absolute left-[45%] bottom-[4%] w-[13%] max-w-[160px] rotate-[-2deg]" },
-  { src: newTap, alt: "Paying by phone at a cafe", cls: "absolute right-[18%] bottom-[44%] w-[18%] max-w-[225px] rotate-[4deg]" },
+  { src: newTap, alt: "Paying by phone at a cafe", cls: "absolute right-[18%] bottom-[36%] w-[18%] max-w-[225px] rotate-[4deg]" },
   { src: lifestyleCafe, alt: "Managing money from a laptop", cls: "absolute right-[3%] bottom-[7%] w-[14%] max-w-[175px] rotate-[-4deg]" },
 ];
 

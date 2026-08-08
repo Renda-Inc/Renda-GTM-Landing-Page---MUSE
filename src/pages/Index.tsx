@@ -3,6 +3,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import Footer from "@/components/landing/Footer";
 import FAQ from "@/components/landing/FAQ";
 import PartnersMarquee from "@/components/landing/PartnersMarquee";
+import FutureOfBanking from "@/components/home/FutureOfBanking";
 import {
   Divider,
   SmartAccounts,
@@ -28,6 +29,7 @@ const Index = () => {
     >
       <Navbar />
       <HeroSection />
+      <FutureOfBanking />
       <SmartAccounts />
       <CardSection />
       <SavingGoals />

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { Plus, Minus } from "lucide-react";
+import { Plus, X } from "lucide-react";
+
+const SF_FONT =
+  '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';
 
 const faqs = [
   {
@@ -32,75 +35,71 @@ const faqs = [
 
 export default function FAQ() {
   const { ref, isVisible } = useFadeIn();
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 lg:py-20 bg-background">
+    <section className="py-16 lg:py-20 bg-background" style={{ fontFamily: SF_FONT }}>
       <div
         ref={ref}
-        className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${
+        className={`max-w-4xl mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        {/* Two-column layout: heading left, questions right */}
-        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20">
-          {/* Left column — sticky heading */}
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
-              FAQ
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
-              Questions you
-              <br />
-              might have
-            </h2>
-            <p className="mt-4 text-base text-muted-foreground max-w-sm leading-relaxed">
-              Everything you need to know about Renda, Alfie, and how we're rethinking banking from the ground up.
-            </p>
-          </div>
+        <div className="mb-10 lg:mb-12">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">FAQ</p>
+          <h2
+            className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-black/80"
+            style={{ fontFamily: SF_FONT }}
+          >
+            Questions you might have
+          </h2>
+          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black/60 max-w-2xl">
+            Everything you need to know about Renda, Alfie, and how we're rethinking banking from
+            the ground up.
+          </p>
+        </div>
 
-          {/* Right column — FAQ items */}
-          <div className="space-y-0">
-            {faqs.map((faq, i) => {
-              const isOpen = openIndex === i;
-              return (
-                <div
-                  key={i}
-                  className="border-b border-border"
+        <div className="space-y-4">
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div
+                key={i}
+                className={`bg-[#F6F5F2] transition-all duration-500 ease-in-out ${
+                  isOpen ? "rounded-[32px]" : "rounded-full"
+                }`}
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-start justify-between gap-6 text-left px-7 md:px-10 py-6 md:py-7 group"
                 >
-                  <button
-                    onClick={() => setOpenIndex(isOpen ? null : i)}
-                    className="w-full flex items-start justify-between gap-6 py-6 text-left group"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="text-xs font-mono text-muted-foreground/50 mt-1 tabular-nums">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-200">
-                        {faq.question}
-                      </span>
-                    </div>
-                    <div className="mt-1 shrink-0 w-6 h-6 rounded-full border border-border flex items-center justify-center transition-colors duration-200 group-hover:border-primary">
-                      {isOpen ? (
-                        <Minus className="w-3.5 h-3.5 text-primary" />
-                      ) : (
-                        <Plus className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
-                      )}
-                    </div>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isOpen ? "max-h-60 opacity-100 pb-6" : "max-h-0 opacity-0"
+                  <span className="text-base md:text-xl font-semibold text-black/80 group-hover:text-black transition-colors duration-300 leading-snug">
+                    {faq.question}
+                  </span>
+                  <span
+                    className={`shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${
+                      isOpen ? "bg-black text-white" : "bg-white text-black/70 group-hover:text-black"
                     }`}
                   >
-                    <p className="pl-10 text-base text-muted-foreground leading-relaxed max-w-lg">
+                    {isOpen ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  </span>
+                </button>
+
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-7 md:px-10 pb-7 md:pb-9 pr-14 md:pr-24 text-base md:text-lg font-medium leading-relaxed text-black/60">
                       {faq.answer}
                     </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

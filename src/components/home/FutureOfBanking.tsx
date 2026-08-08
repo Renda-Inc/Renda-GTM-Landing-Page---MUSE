@@ -62,11 +62,11 @@ export default function FutureOfBanking() {
     <section className="relative w-full overflow-hidden py-16 lg:py-24" style={{ fontFamily: SF_FONT }}>
       {/* Desktop / tablet collage composition */}
       <div className="hidden md:block relative w-full h-[880px] lg:h-[960px]">
-        <div className="absolute inset-x-0 top-0 h-[38%]">
+        <div className="absolute inset-x-0 top-0 h-[34%]">
           <Collage pieces={topPieces} />
         </div>
 
-        <div className="absolute inset-x-0 top-[38%] h-[24%] flex flex-col items-center justify-center text-center px-6">
+        <div className="absolute inset-x-0 top-[34%] h-[32%] flex flex-col items-center justify-center text-center px-6">
           <div className="relative w-full h-8 mb-10">
             {eras.map((era, i) => (
               <span
@@ -87,7 +87,7 @@ export default function FutureOfBanking() {
           </p>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-[38%]">
+        <div className="absolute inset-x-0 bottom-0 h-[34%]">
           <Collage pieces={bottomPieces} />
         </div>
       </div>

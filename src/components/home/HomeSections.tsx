@@ -10,6 +10,8 @@ import lifestyleCooking from "@/assets/lifestyle-friends-cooking.jpg";
 import lifestyleHike from "@/assets/lifestyle-adventure-hike.jpg";
 import lifestyleBeach from "@/assets/lifestyle-beach.jpg";
 import lifestyleDreamJob from "@/assets/lifestyle-dream-job.jpg";
+import planEveryday from "@/assets/plan-everyday.jpg";
+import planPlus from "@/assets/plan-plus.jpg";
 
 export const SF_FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';
@@ -64,41 +66,64 @@ function Body({ children, light = false }: { children: React.ReactNode; light?: 
 }
 
 /* ─── 1. Smart Accounts ─── */
+const accountCards = [
+  {
+    name: "SmartSpend",
+    desc: "Your everyday account, with spending that explains itself.",
+    img: lifestyleCafe,
+  },
+  {
+    name: "SenseSave",
+    desc: "Savings that move on their own, guided by what you can actually spare.",
+    img: lifestyleStudying,
+  },
+];
+
 export function SmartAccounts() {
   return (
     <section className="py-16 lg:py-20">
       <Fade className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <Eyebrow>Smart Accounts</Eyebrow>
-            <H2>Your money shouldn't just sit there.</H2>
-            <Body>
-              SmartSpend and SenseSave help you understand where your money is going, surface
-              meaningful insights, and support better financial decisions.
-            </Body>
+        <div className="text-center max-w-3xl mx-auto">
+          <Eyebrow>Smart Accounts</Eyebrow>
+          <H2>Your money shouldn't just sit there.</H2>
+          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black/60">
+            SmartSpend and SenseSave help you understand where your money is going, surface
+            meaningful insights, and support better financial decisions.
+          </p>
 
-            <div className="mt-8 flex items-start gap-3 rounded-xl bg-[#F6F5F2] px-5 py-4">
-              <ShieldCheck className="w-5 h-5 text-black/70 mt-0.5 shrink-0" />
-              <p className="text-sm text-black/70 font-medium leading-relaxed">
-                Your money is protected. CDIC-eligible deposit protection through our sponsor bank,
-                regulated FINTRAC MSB, SOC 2 compliant security.
-              </p>
+          <div className="mt-8 inline-flex items-start gap-3 rounded-xl bg-[#F6F5F2] px-5 py-4 text-left">
+            <ShieldCheck className="w-5 h-5 text-black/70 mt-0.5 shrink-0" />
+            <p className="text-sm text-black/70 font-medium leading-relaxed">
+              Your money is protected. CDIC-eligible deposit protection through our sponsor bank,
+              regulated FINTRAC MSB, SOC 2 compliant security.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
+          {accountCards.map((a) => (
+            <div key={a.name} className="relative rounded-xl overflow-hidden group">
+              <img
+                src={a.img}
+                alt={`${a.name} account`}
+                className="w-full h-[340px] lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-transparent" />
+              <div className="absolute top-0 left-0 p-7 lg:p-9 max-w-[85%]">
+                <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-white">
+                  {a.name}
+                </h3>
+                <p className="mt-3 text-base font-medium leading-relaxed text-white/80">{a.desc}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="rounded-xl overflow-hidden">
-            <img
-              src={lifestyleCafe}
-              alt="SmartSpend and SenseSave accounts in the Renda app"
-              className="w-full h-[264px] lg:h-[396px] object-cover"
-              loading="lazy"
-            />
-          </div>
+          ))}
         </div>
       </Fade>
     </section>
   );
 }
+
 
 /* ─── 2. Card ─── */
 export function CardSection() {
@@ -490,74 +515,57 @@ export function HomeCTA() {
   );
 }
 
-/* ─── 10. Pricing (flows into footer) ─── */
+/* ─── 10. Plans (flows into footer) ─── */
 const plans = [
   {
-    name: "Renda Everyday",
+    name: "Everyday",
     price: "$0",
     cadence: "CAD / month",
-    desc: "Everything you need for daily banking, with Alfie's core intelligence built in.",
-    features: ["SmartSpend & SenseSave accounts", "Renda Smart Card", "Interac e-Transfer & P2P", "Core Alfie insights"],
+    line: "Smart banking for everyday life.",
+    img: planEveryday,
   },
   {
-    name: "Renda Plus",
+    name: "Plus",
     price: "$9.96",
     cadence: "CAD / month",
-    desc: "Deeper intelligence and automation for people who want Alfie running the details.",
-    features: ["Everything in Everyday", "Advanced Alfie automation", "Smart salary sorting & cash-flow forecasting", "Priority support and early features"],
-    highlight: true,
+    line: "Banking with intelligence.",
+    img: planPlus,
   },
 ];
 
 export function Pricing() {
   return (
     <section className="pt-20 lg:pt-28 pb-20 lg:pb-24 bg-[#111111]" style={{ fontFamily: SF_FONT }}>
-      <Fade className="max-w-7xl mx-auto px-6">
-        <Eyebrow light>Pricing</Eyebrow>
+      <Fade className="max-w-5xl mx-auto px-6 text-center">
+        <Eyebrow light>Plans</Eyebrow>
         <H2 light>Pick the plan that fits your life.</H2>
-        <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed max-w-2xl">
+        <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed max-w-2xl mx-auto">
           Start free and upgrade whenever you want more of Alfie working in the background. No
           hidden fees, cancel any time.
         </p>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
           {plans.map((p) => (
-            <div
-              key={p.name}
-              className={`rounded-xl p-8 lg:p-10 border transition-all duration-300 hover:-translate-y-1 ${
-                p.highlight ? "bg-white/[0.07] border-[#EB8F00]/50" : "bg-white/[0.03] border-white/10"
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <h3 className="text-xl font-semibold text-white">{p.name}</h3>
-                {p.highlight && (
-                  <span className="text-[11px] font-semibold tracking-wide text-[#EB8F00] border border-[#EB8F00]/40 rounded-full px-2.5 py-1">
-                    Most popular
+            <div key={p.name} className="relative rounded-xl overflow-hidden group text-left">
+              <img
+                src={p.img}
+                alt={`Renda ${p.name} plan`}
+                className="w-full h-[380px] lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/20" />
+              <div className="absolute inset-x-0 bottom-0 p-7 lg:p-8">
+                <h3 className="text-xl lg:text-2xl font-semibold tracking-tight text-white">
+                  {p.name}
+                </h3>
+                <div className="mt-2 flex items-end gap-2">
+                  <span className="text-3xl lg:text-4xl font-semibold text-white tracking-tight">
+                    {p.price}
                   </span>
-                )}
+                  <span className="text-sm text-white/60 font-medium mb-1">{p.cadence}</span>
+                </div>
+                <p className="mt-3 text-base font-medium text-white/75 leading-relaxed">{p.line}</p>
               </div>
-              <div className="mt-6 flex items-end gap-2">
-                <span className="text-5xl font-semibold text-white tracking-tight">{p.price}</span>
-                <span className="text-sm text-white/50 font-medium mb-2">{p.cadence}</span>
-              </div>
-              <p className="mt-5 text-base text-white/60 font-medium leading-relaxed">{p.desc}</p>
-              <ul className="mt-7 space-y-3">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm md:text-base text-white/75 font-medium">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#EB8F00] shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#waitlist"
-                className={`mt-9 inline-flex items-center gap-2 h-12 px-7 rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 ${
-                  p.highlight ? "bg-[#EB8F00] text-white hover:bg-[#d48200]" : "bg-white text-[#111111] hover:bg-white/90"
-                }`}
-              >
-                Get started
-                <ArrowRight className="w-4 h-4" />
-              </a>
             </div>
           ))}
         </div>
@@ -565,3 +573,4 @@ export function Pricing() {
     </section>
   );
 }
+

@@ -64,41 +64,64 @@ function Body({ children, light = false }: { children: React.ReactNode; light?: 
 }
 
 /* ─── 1. Smart Accounts ─── */
+const accountCards = [
+  {
+    name: "SmartSpend",
+    desc: "Your everyday account, with spending that explains itself.",
+    img: lifestyleCafe,
+  },
+  {
+    name: "SenseSave",
+    desc: "Savings that move on their own, guided by what you can actually spare.",
+    img: lifestyleStudying,
+  },
+];
+
 export function SmartAccounts() {
   return (
     <section className="py-16 lg:py-20">
       <Fade className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <Eyebrow>Smart Accounts</Eyebrow>
-            <H2>Your money shouldn't just sit there.</H2>
-            <Body>
-              SmartSpend and SenseSave help you understand where your money is going, surface
-              meaningful insights, and support better financial decisions.
-            </Body>
+        <div className="text-center max-w-3xl mx-auto">
+          <Eyebrow>Smart Accounts</Eyebrow>
+          <H2>Your money shouldn't just sit there.</H2>
+          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black/60">
+            SmartSpend and SenseSave help you understand where your money is going, surface
+            meaningful insights, and support better financial decisions.
+          </p>
 
-            <div className="mt-8 flex items-start gap-3 rounded-xl bg-[#F6F5F2] px-5 py-4">
-              <ShieldCheck className="w-5 h-5 text-black/70 mt-0.5 shrink-0" />
-              <p className="text-sm text-black/70 font-medium leading-relaxed">
-                Your money is protected. CDIC-eligible deposit protection through our sponsor bank,
-                regulated FINTRAC MSB, SOC 2 compliant security.
-              </p>
+          <div className="mt-8 inline-flex items-start gap-3 rounded-xl bg-[#F6F5F2] px-5 py-4 text-left">
+            <ShieldCheck className="w-5 h-5 text-black/70 mt-0.5 shrink-0" />
+            <p className="text-sm text-black/70 font-medium leading-relaxed">
+              Your money is protected. CDIC-eligible deposit protection through our sponsor bank,
+              regulated FINTRAC MSB, SOC 2 compliant security.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
+          {accountCards.map((a) => (
+            <div key={a.name} className="relative rounded-xl overflow-hidden group">
+              <img
+                src={a.img}
+                alt={`${a.name} account`}
+                className="w-full h-[340px] lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-transparent" />
+              <div className="absolute top-0 left-0 p-7 lg:p-9 max-w-[85%]">
+                <h3 className="text-2xl lg:text-3xl font-semibold tracking-tight text-white">
+                  {a.name}
+                </h3>
+                <p className="mt-3 text-base font-medium leading-relaxed text-white/80">{a.desc}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="rounded-xl overflow-hidden">
-            <img
-              src={lifestyleCafe}
-              alt="SmartSpend and SenseSave accounts in the Renda app"
-              className="w-full h-[264px] lg:h-[396px] object-cover"
-              loading="lazy"
-            />
-          </div>
+          ))}
         </div>
       </Fade>
     </section>
   );
 }
+
 
 /* ─── 2. Card ─── */
 export function CardSection() {

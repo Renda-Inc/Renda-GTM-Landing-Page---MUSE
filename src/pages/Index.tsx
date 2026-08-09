@@ -2,14 +2,12 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import Footer from "@/components/landing/Footer";
 import FAQ from "@/components/landing/FAQ";
-import PartnersMarquee from "@/components/landing/PartnersMarquee";
 import FutureOfBanking from "@/components/home/FutureOfBanking";
+import ProductShowcase from "@/components/home/ProductShowcase";
+import BlogShowcase from "@/components/home/BlogShowcase";
 import {
   Divider,
   SmartAccounts,
-  CardSection,
-  SavingGoals,
-  SendMoney,
   ThinkAhead,
   MeetAlfie,
   DailyMoney,
@@ -31,21 +29,18 @@ const Index = () => {
       <HeroSection />
       <FutureOfBanking />
       <SmartAccounts />
-      <CardSection />
-      <SavingGoals />
-      <Divider />
-      <SendMoney />
-      <Divider />
+      <ProductShowcase />
       <ThinkAhead />
       <Divider />
       <MeetAlfie />
       <Divider />
       <DailyMoney />
       <Divider />
+      <BlogShowcase />
+      <Divider />
       <ComingSoon />
       <Divider />
       <FAQ />
-      <PartnersMarquee />
       <HomeCTA />
       <Pricing />
       <Footer />

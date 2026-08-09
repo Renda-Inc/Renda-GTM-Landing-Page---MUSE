@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, ShieldCheck, QrCode, IdCard, Sparkles } from "lucide-react";
+import { ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { RotatingCards } from "@/components/landing/CardShowcase";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
@@ -137,106 +137,6 @@ export function CardSection() {
           insights, and give you complete control from your app.
         </p>
         <RotatingCards />
-      </Fade>
-    </section>
-  );
-}
-
-/* ─── 3. Savings ─── */
-const goalCards = [
-  { label: "Emergency fund", amount: "$4,200 / $6,000", pct: 70 },
-  { label: "Trip to Lisbon", amount: "$1,850 / $3,000", pct: 62 },
-  { label: "New laptop", amount: "$980 / $2,400", pct: 41 },
-];
-
-export function SavingGoals() {
-  return (
-    <section className="py-16 lg:py-20">
-      <Fade className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="order-last lg:order-first relative rounded-xl overflow-hidden h-[264px] lg:h-[396px]">
-            <img src={lifestyleStudying} alt="Planning savings goals" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-            <div className="absolute inset-0 bg-black/45" />
-            <div className="relative h-full p-6 lg:p-8 flex flex-col justify-center gap-3">
-              {goalCards.map((g) => (
-                <div key={g.label} className="rounded-xl bg-white/90 backdrop-blur px-5 py-4 shadow-lg">
-                  <div className="flex items-baseline justify-between">
-                    <p className="text-sm font-semibold text-black/80">{g.label}</p>
-                    <p className="text-xs font-medium text-black/50">{g.amount}</p>
-                  </div>
-                  <div className="mt-3 h-1.5 rounded-full bg-black/10 overflow-hidden">
-                    <div className="h-full rounded-full bg-[#EB8F00]" style={{ width: `${g.pct}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <Eyebrow>Saving with purpose</Eyebrow>
-            <H2>Build toward what matters.</H2>
-            <Body>
-              Create personalized Savings Goals with Alfie and adapt automatically as your finances
-              change.
-            </Body>
-          </div>
-        </div>
-      </Fade>
-    </section>
-  );
-}
-
-/* ─── 4. Send money instantly ─── */
-export function SendMoney() {
-  const [step, setStep] = useState(0);
-  useEffect(() => {
-    const id = window.setInterval(() => setStep((s) => (s + 1) % 3), 2200);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const steps = [
-    { icon: IdCard, title: "Add by Renda ID", desc: "@claudine" },
-    { icon: QrCode, title: "Or scan a QR code", desc: "Instant contact" },
-    { icon: ArrowRight, title: "Money moves", desc: "$100.00 sent" },
-  ];
-
-  return (
-    <section className="py-16 lg:py-20">
-      <Fade className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <Eyebrow>Peer-to-peer</Eyebrow>
-            <H2>Send money instantly.</H2>
-            <Body>
-              Move money across the Renda network in seconds using a Renda ID or QR code.
-            </Body>
-          </div>
-
-          <div className="rounded-xl bg-[#F6F5F2] p-8 lg:p-12">
-            <div className="space-y-4">
-              {steps.map((s, i) => {
-                const Icon = s.icon;
-                const on = i <= step;
-                return (
-                  <div
-                    key={s.title}
-                    className={`flex items-center gap-4 rounded-xl bg-white px-5 py-5 transition-all duration-500 ${
-                      on ? "opacity-100 translate-x-0 shadow-md" : "opacity-40 translate-x-2"
-                    }`}
-                  >
-                    <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-colors duration-500 ${on ? "bg-[#EB8F00]/15" : "bg-black/5"}`}>
-                      <Icon className={`w-5 h-5 ${on ? "text-[#EB8F00]" : "text-black/40"}`} />
-                    </div>
-                    <div>
-                      <p className="text-base font-semibold text-black/80">{s.title}</p>
-                      <p className="text-sm text-black/50 font-medium">{s.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
       </Fade>
     </section>
   );

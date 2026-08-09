@@ -38,10 +38,12 @@ export default function CultureValues() {
   return (
     <section className="py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Culture & Values</p>
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
-          What we believe.
-        </h2>
+        <div className="text-center max-w-3xl mx-auto">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Culture & Values</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
+            What we believe.
+          </h2>
+        </div>
 
         <div className="flex w-full gap-3 h-[520px] lg:h-[640px]">
           {values.map((v, i) => {

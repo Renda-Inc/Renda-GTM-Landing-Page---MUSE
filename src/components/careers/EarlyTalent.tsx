@@ -75,32 +75,32 @@ export default function EarlyTalent() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First name *</Label>
-                      <Input id="firstName" required placeholder="Jane" />
+                      <Input className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus:border-black/20" id="firstName" required placeholder="Jane" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last name *</Label>
-                      <Input id="lastName" required placeholder="Doe" />
+                      <Input className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus:border-black/20" id="lastName" required placeholder="Doe" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" required placeholder="jane@university.edu" />
+                    <Input className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus:border-black/20" id="email" type="email" required placeholder="jane@university.edu" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="school">School / University</Label>
-                    <Input id="school" placeholder="University of Toronto" />
+                    <Input className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus:border-black/20" id="school" placeholder="University of Toronto" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="interest">Area of interest</Label>
-                    <Input id="interest" placeholder="e.g. Engineering, Product Design, Data" />
+                    <Input className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus:border-black/20" id="interest" placeholder="e.g. Engineering, Product Design, Data" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="linkedin">LinkedIn or portfolio URL</Label>
-                    <Input id="linkedin" type="url" placeholder="https://linkedin.com/in/..." />
+                    <Input className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus:border-black/20" id="linkedin" type="url" placeholder="https://linkedin.com/in/..." />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">Tell us about yourself</Label>
-                    <Textarea id="message" rows={4} placeholder="What are you passionate about? What do you want to build?" />
+                    <Textarea className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none focus:border-black/20" id="message" rows={4} placeholder="What are you passionate about? What do you want to build?" />
                   </div>
                   <button
                     type="submit"

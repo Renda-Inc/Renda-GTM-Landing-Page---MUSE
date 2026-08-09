@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, ShieldCheck, QrCode, IdCard, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { RotatingCards } from "@/components/landing/CardShowcase";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
@@ -125,123 +124,6 @@ export function SmartAccounts() {
 }
 
 
-/* ─── 2. Card ─── */
-export function CardSection() {
-  return (
-    <section className="py-20 lg:py-28 bg-[#111111]">
-      <Fade className="max-w-7xl mx-auto px-6 text-center">
-        <Eyebrow light>Renda Card</Eyebrow>
-        <H2 light>Your card, made smarter.</H2>
-        <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed max-w-2xl mx-auto">
-          Your Renda Card works with Alfie to understand every purchase, provide intelligent
-          insights, and give you complete control from your app.
-        </p>
-        <RotatingCards />
-      </Fade>
-    </section>
-  );
-}
-
-/* ─── 3. Savings ─── */
-const goalCards = [
-  { label: "Emergency fund", amount: "$4,200 / $6,000", pct: 70 },
-  { label: "Trip to Lisbon", amount: "$1,850 / $3,000", pct: 62 },
-  { label: "New laptop", amount: "$980 / $2,400", pct: 41 },
-];
-
-export function SavingGoals() {
-  return (
-    <section className="py-16 lg:py-20">
-      <Fade className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="order-last lg:order-first relative rounded-xl overflow-hidden h-[264px] lg:h-[396px]">
-            <img src={lifestyleStudying} alt="Planning savings goals" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-            <div className="absolute inset-0 bg-black/45" />
-            <div className="relative h-full p-6 lg:p-8 flex flex-col justify-center gap-3">
-              {goalCards.map((g) => (
-                <div key={g.label} className="rounded-xl bg-white/90 backdrop-blur px-5 py-4 shadow-lg">
-                  <div className="flex items-baseline justify-between">
-                    <p className="text-sm font-semibold text-black/80">{g.label}</p>
-                    <p className="text-xs font-medium text-black/50">{g.amount}</p>
-                  </div>
-                  <div className="mt-3 h-1.5 rounded-full bg-black/10 overflow-hidden">
-                    <div className="h-full rounded-full bg-[#EB8F00]" style={{ width: `${g.pct}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <Eyebrow>Saving with purpose</Eyebrow>
-            <H2>Build toward what matters.</H2>
-            <Body>
-              Create personalized Savings Goals with Alfie and adapt automatically as your finances
-              change.
-            </Body>
-          </div>
-        </div>
-      </Fade>
-    </section>
-  );
-}
-
-/* ─── 4. Send money instantly ─── */
-export function SendMoney() {
-  const [step, setStep] = useState(0);
-  useEffect(() => {
-    const id = window.setInterval(() => setStep((s) => (s + 1) % 3), 2200);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const steps = [
-    { icon: IdCard, title: "Add by Renda ID", desc: "@claudine" },
-    { icon: QrCode, title: "Or scan a QR code", desc: "Instant contact" },
-    { icon: ArrowRight, title: "Money moves", desc: "$100.00 sent" },
-  ];
-
-  return (
-    <section className="py-16 lg:py-20">
-      <Fade className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <Eyebrow>Peer-to-peer</Eyebrow>
-            <H2>Send money instantly.</H2>
-            <Body>
-              Move money across the Renda network in seconds using a Renda ID or QR code.
-            </Body>
-          </div>
-
-          <div className="rounded-xl bg-[#F6F5F2] p-8 lg:p-12">
-            <div className="space-y-4">
-              {steps.map((s, i) => {
-                const Icon = s.icon;
-                const on = i <= step;
-                return (
-                  <div
-                    key={s.title}
-                    className={`flex items-center gap-4 rounded-xl bg-white px-5 py-5 transition-all duration-500 ${
-                      on ? "opacity-100 translate-x-0 shadow-md" : "opacity-40 translate-x-2"
-                    }`}
-                  >
-                    <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-colors duration-500 ${on ? "bg-[#EB8F00]/15" : "bg-black/5"}`}>
-                      <Icon className={`w-5 h-5 ${on ? "text-[#EB8F00]" : "text-black/40"}`} />
-                    </div>
-                    <div>
-                      <p className="text-base font-semibold text-black/80">{s.title}</p>
-                      <p className="text-sm text-black/50 font-medium">{s.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </Fade>
-    </section>
-  );
-}
-
 /* ─── 5. Banking that thinks ahead (conversation UI) ─── */
 const chat = [
   { from: "alfie", text: "Heads up: your Fizz bill of $68 lands Thursday, two days before payday." },
@@ -317,12 +199,14 @@ export function MeetAlfie() {
   return (
     <section className="py-16 lg:py-20">
       <Fade className="max-w-7xl mx-auto px-6">
-        <Eyebrow>Meet Alfie</Eyebrow>
-        <H2>Ask anything. Automate everything.</H2>
-        <Body>
-          Alfie isn't a customer service chatbot, it's a reasoning engine built directly into your
-          bank account.
-        </Body>
+        <div className="text-center max-w-3xl mx-auto">
+          <Eyebrow>Meet Alfie</Eyebrow>
+          <H2>Ask anything. Automate everything.</H2>
+          <Body>
+            Alfie isn't a customer service chatbot, it's a reasoning engine built directly into your
+            bank account.
+          </Body>
+        </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-6 items-center">
           {alfiePanels.map((p) => (
@@ -460,10 +344,10 @@ export function DailyMoney() {
 
 /* ─── 8. Coming soon ─── */
 const soon = [
-  { title: "Investing", desc: "Grow long-term wealth with Alfie's context on your whole financial picture." },
-  { title: "Credit", desc: "Borrowing that understands your cash flow, not just your score." },
-  { title: "International payments", desc: "Move money across borders with clarity on every fee." },
-  { title: "More, powered by Alfie", desc: "Every new Renda product is built on the same intelligence layer." },
+  { icon: TrendingUp, title: "Investing", desc: "Grow long-term wealth with Alfie's context on your whole financial picture." },
+  { icon: CreditCard, title: "Credit", desc: "Borrowing that understands your cash flow, not just your score." },
+  { icon: Globe2, title: "International payments", desc: "Move money across borders with clarity on every fee." },
+  { icon: Sparkle, title: "More, powered by Alfie", desc: "Every new Renda product is built on the same intelligence layer." },
 ];
 
 export function ComingSoon() {
@@ -473,16 +357,19 @@ export function ComingSoon() {
         <Eyebrow>Coming soon</Eyebrow>
         <H2>What we're building next.</H2>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {soon.map((s) => (
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {soon.map((f) => (
             <div
-              key={s.title}
-              className="rounded-xl bg-[#F6F5F2] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]"
+              key={f.title}
+              className="bg-[#F6F5F2] rounded-2xl p-9 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group min-h-[260px]"
             >
-              <h3 className="text-xl font-semibold text-black/80" style={{ fontFamily: SF_FONT }}>
-                {s.title}
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                <f.icon className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
+                {f.title}
               </h3>
-              <p className="mt-3 text-sm md:text-base text-black/60 font-medium leading-relaxed">{s.desc}</p>
+              <p className="text-base text-black/60 font-medium leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

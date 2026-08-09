@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { RotatingCards } from "@/components/landing/CardShowcase";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
@@ -125,23 +124,6 @@ export function SmartAccounts() {
 }
 
 
-/* ─── 2. Card ─── */
-export function CardSection() {
-  return (
-    <section className="py-20 lg:py-28 bg-[#111111]">
-      <Fade className="max-w-7xl mx-auto px-6 text-center">
-        <Eyebrow light>Renda Card</Eyebrow>
-        <H2 light>Your card, made smarter.</H2>
-        <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed max-w-2xl mx-auto">
-          Your Renda Card works with Alfie to understand every purchase, provide intelligent
-          insights, and give you complete control from your app.
-        </p>
-        <RotatingCards />
-      </Fade>
-    </section>
-  );
-}
-
 /* ─── 5. Banking that thinks ahead (conversation UI) ─── */
 const chat = [
   { from: "alfie", text: "Heads up: your Fizz bill of $68 lands Thursday, two days before payday." },
@@ -217,12 +199,14 @@ export function MeetAlfie() {
   return (
     <section className="py-16 lg:py-20">
       <Fade className="max-w-7xl mx-auto px-6">
-        <Eyebrow>Meet Alfie</Eyebrow>
-        <H2>Ask anything. Automate everything.</H2>
-        <Body>
-          Alfie isn't a customer service chatbot, it's a reasoning engine built directly into your
-          bank account.
-        </Body>
+        <div className="text-center max-w-3xl mx-auto">
+          <Eyebrow>Meet Alfie</Eyebrow>
+          <H2>Ask anything. Automate everything.</H2>
+          <Body>
+            Alfie isn't a customer service chatbot, it's a reasoning engine built directly into your
+            bank account.
+          </Body>
+        </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-6 items-center">
           {alfiePanels.map((p) => (
@@ -360,10 +344,10 @@ export function DailyMoney() {
 
 /* ─── 8. Coming soon ─── */
 const soon = [
-  { title: "Investing", desc: "Grow long-term wealth with Alfie's context on your whole financial picture." },
-  { title: "Credit", desc: "Borrowing that understands your cash flow, not just your score." },
-  { title: "International payments", desc: "Move money across borders with clarity on every fee." },
-  { title: "More, powered by Alfie", desc: "Every new Renda product is built on the same intelligence layer." },
+  { icon: TrendingUp, title: "Investing", desc: "Grow long-term wealth with Alfie's context on your whole financial picture." },
+  { icon: CreditCard, title: "Credit", desc: "Borrowing that understands your cash flow, not just your score." },
+  { icon: Globe2, title: "International payments", desc: "Move money across borders with clarity on every fee." },
+  { icon: Sparkle, title: "More, powered by Alfie", desc: "Every new Renda product is built on the same intelligence layer." },
 ];
 
 export function ComingSoon() {
@@ -373,16 +357,19 @@ export function ComingSoon() {
         <Eyebrow>Coming soon</Eyebrow>
         <H2>What we're building next.</H2>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {soon.map((s) => (
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {soon.map((f) => (
             <div
-              key={s.title}
-              className="rounded-xl bg-[#F6F5F2] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]"
+              key={f.title}
+              className="bg-[#F6F5F2] rounded-2xl p-9 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group min-h-[260px]"
             >
-              <h3 className="text-xl font-semibold text-black/80" style={{ fontFamily: SF_FONT }}>
-                {s.title}
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                <f.icon className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
+                {f.title}
               </h3>
-              <p className="mt-3 text-sm md:text-base text-black/60 font-medium leading-relaxed">{s.desc}</p>
+              <p className="text-base text-black/60 font-medium leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

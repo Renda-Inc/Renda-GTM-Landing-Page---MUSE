@@ -83,7 +83,7 @@ export default function BlogShowcase() {
           </div>
 
           {/* Carousel */}
-          <div className="relative lg:mr-[calc(-50vw+50%-1.5rem)]">
+          <div className="relative lg:mr-[calc(-50vw+50%+5rem)]">
             <div
               ref={trackRef}
               onMouseDown={onDown}

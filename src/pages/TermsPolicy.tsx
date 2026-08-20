@@ -46,7 +46,7 @@ export default function TermsPolicy() {
 
       <section className="pt-32 lg:pt-40 pb-10 px-6">
         <div className="max-w-4xl mx-auto">
-          <nav className="flex items-center gap-2 text-sm font-medium text-black/60 mb-6">
+          <nav className="flex items-center gap-2 text-sm font-medium text-black mb-6">
             <Link to="/terms" className="hover:text-foreground transition-colors">
               Terms of Use
             </Link>
@@ -59,7 +59,7 @@ export default function TermsPolicy() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-black/80">
             {policy.label}
           </h1>
-          <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+          <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
             {policy.summary}
           </p>
         </div>

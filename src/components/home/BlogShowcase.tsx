@@ -69,7 +69,7 @@ export default function BlogShowcase() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-black/80 hover:text-black transition-colors duration-300">
               Stay up to date with the latest news.
             </h2>
-            <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+            <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
               We're constantly evolving; from new products and ideas to company milestones and
               insights. Follow along with the latest from Renda.
             </p>
@@ -122,7 +122,7 @@ export default function BlogShowcase() {
                   <h3 className="mt-6 text-xl lg:text-2xl font-semibold tracking-tight text-black/80 leading-snug">
                     {a.title}
                   </h3>
-                  <span className="mt-4 inline-flex items-center gap-2 text-base font-medium text-black/60 group-hover:text-black transition-colors">
+                  <span className="mt-4 inline-flex items-center gap-2 text-base font-medium text-black group-hover:text-black transition-colors">
                     Read more
                     <ArrowRight className="w-4 h-4" />
                   </span>

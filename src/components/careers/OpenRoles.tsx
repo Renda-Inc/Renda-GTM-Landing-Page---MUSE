@@ -46,7 +46,7 @@ export default function OpenRoles() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
             Current openings. Start building early.
           </h2>
-          <p className="text-base text-black/60 font-medium mb-14">
+          <p className="text-base text-black font-medium mb-14">
             93 open positions across {teamCount} teams.
           </p>
         </Fade>
@@ -68,7 +68,7 @@ export default function OpenRoles() {
                       {role.title}
                     </h3>
                     <div className="flex flex-wrap items-center gap-4 mt-3">
-                      <span className="flex items-center gap-1.5 text-sm text-black/60 font-medium">
+                      <span className="flex items-center gap-1.5 text-sm text-black font-medium">
                         <MapPin className="w-3.5 h-3.5" />
                         {role.location}
                       </span>
@@ -79,10 +79,10 @@ export default function OpenRoles() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-sm font-medium text-black/60">
+                    <span className="text-sm font-medium text-black">
                       View
                     </span>
-                    <ArrowUpRight className="w-4 h-4 text-black/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-4 h-4 text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
                 </a>
               </Fade>

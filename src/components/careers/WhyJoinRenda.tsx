@@ -20,7 +20,7 @@ export default function WhyJoinRenda() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
               The rare chance to build from zero.
             </h2>
-            <div className="mt-8 space-y-5 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+            <div className="mt-8 space-y-5 text-base md:text-lg text-black font-medium leading-relaxed">
               <p>
                 Most fintech jobs are about optimizing what already exists. At Renda, you'll build AI-native financial infrastructure from scratch; the kind of systems that define how the next generation interacts with money.
               </p>

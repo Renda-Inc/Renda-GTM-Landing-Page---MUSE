@@ -51,7 +51,7 @@ export default function HelpCategory() {
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 leading-tight">
             {category.title}
           </h1>
-          <nav className="mt-4 flex items-center gap-2 text-sm font-medium text-black/60">
+          <nav className="mt-4 flex items-center gap-2 text-sm font-medium text-black">
             <Link to="/help" className="hover:text-foreground transition-colors">
               Help
             </Link>
@@ -91,7 +91,7 @@ export default function HelpCategory() {
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground leading-tight">
                 {activeTopic.title}
               </h2>
-              <p className="mt-4 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-4 text-base md:text-lg text-black font-medium leading-relaxed">
                 {activeTopic.summary}
               </p>
               {activeTopic.content && (
@@ -101,7 +101,7 @@ export default function HelpCategory() {
               )}
 
               <div className="mt-12 pt-8 border-t border-black/10">
-                <p className="text-sm font-medium text-black/60 mb-3">Was this article helpful?</p>
+                <p className="text-sm font-medium text-black mb-3">Was this article helpful?</p>
                 <div className="flex gap-3">
                   <button className="px-5 h-10 rounded-full border border-black/15 text-sm font-medium hover:bg-[#F6F5F2] transition-colors">
                     Yes

@@ -58,7 +58,7 @@ function H2({ children, light = false }: { children: React.ReactNode; light?: bo
 
 function Body({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className={`mt-6 text-base md:text-lg font-medium leading-relaxed ${light ? "text-white/60" : "text-black/60"}`}>
+    <p className={`mt-6 text-base md:text-lg font-medium leading-relaxed ${light ? "text-white/60" : "text-black"}`}>
       {children}
     </p>
   );
@@ -85,7 +85,7 @@ export function SmartAccounts() {
         <div className="text-center max-w-3xl mx-auto">
           <Eyebrow>Smart Accounts</Eyebrow>
           <H2>Your money shouldn't just sit there.</H2>
-          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black/60">
+          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black">
             SmartSpend and SenseSave help you understand where your money is going, surface
             meaningful insights, and support better financial decisions.
           </p>
@@ -369,7 +369,7 @@ export function ComingSoon() {
               <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
                 {f.title}
               </h3>
-              <p className="text-base text-black/60 font-medium leading-relaxed">{f.desc}</p>
+              <p className="text-base text-black font-medium leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

@@ -26,7 +26,7 @@ export default function WorkingPrinciples() {
       <div className="max-w-7xl mx-auto px-6">
         <Fade>
           <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Working at Renda</p>
-          <p className="text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-2xl mb-12">
+          <p className="text-base md:text-lg text-black font-medium leading-relaxed max-w-2xl mb-12">
             We're building the future of banking with a team that cares deeply and moves with purpose.
           </p>
         </Fade>
@@ -65,7 +65,7 @@ export default function WorkingPrinciples() {
                     <p.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-base font-semibold text-foreground mb-2">{p.title}</h3>
-                  <p className="text-[15px] text-black/60 font-medium leading-relaxed">{p.desc}</p>
+                  <p className="text-[15px] text-black font-medium leading-relaxed">{p.desc}</p>
                 </div>
               </Fade>
             ))}
@@ -75,7 +75,7 @@ export default function WorkingPrinciples() {
                   <wide.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-base font-semibold text-foreground mb-2">{wide.title}</h3>
-                <p className="text-[15px] text-black/60 font-medium leading-relaxed max-w-2xl">{wide.desc}</p>
+                <p className="text-[15px] text-black font-medium leading-relaxed max-w-2xl">{wide.desc}</p>
               </div>
             </Fade>
           </div>

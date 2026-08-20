@@ -305,7 +305,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Finance should empower, not overwhelm.
               </h2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 We believe the financial system fails most people, not because of lack of tools, but because of lack of understanding. Renda exists to close that gap.
               </p>
             </div>
@@ -350,7 +350,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
-              <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <div className="mt-10 space-y-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 <p>
                   Alfie isn't a chatbot layered onto banking. It's the intelligence engine at the core of Renda, continuously understanding context, recognizing patterns, and surfacing the insights that matter most.
                 </p>
@@ -382,7 +382,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built to endure.
               </h2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 We're not optimizing for speed-to-market. We're building a financial institution with the seriousness, rigor, and long-term thinking that money demands.
               </p>
             </div>
@@ -438,7 +438,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
-              <div className="mt-10 space-y-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <div className="mt-10 space-y-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 <p>
                   Renda is headquartered in Toronto, built on Canadian values of stability, inclusion, and responsible innovation. But our ambition extends far beyond borders.
                 </p>

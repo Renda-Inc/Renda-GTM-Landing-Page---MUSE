@@ -105,7 +105,7 @@ export function SmartAccounts() {
               <img
                 src={a.img}
                 alt={`${a.name} account`}
-                className="w-full h-[340px] lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="w-full h-[408px] lg:h-[528px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-transparent" />

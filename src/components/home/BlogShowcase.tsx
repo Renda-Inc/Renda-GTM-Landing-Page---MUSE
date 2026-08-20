@@ -62,7 +62,7 @@ export default function BlogShowcase() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="grid lg:grid-cols-[340px_1fr] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-14 items-center">
           {/* Intro */}
           <div>
             <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Insights</p>

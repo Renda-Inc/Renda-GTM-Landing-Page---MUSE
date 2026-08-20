@@ -25,10 +25,6 @@ export default function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          {/* Large bold headline */}
-
-
-          {/* Large bold headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-white">
             Meet the bank
             <br />

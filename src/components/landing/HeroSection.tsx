@@ -25,11 +25,8 @@ export default function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          {/* Early access badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-accent-peach animate-pulse" />
-            <span className="text-sm font-medium text-white/90">Early access — now open</span>
-          </div>
+          {/* Large bold headline */}
+
 
           {/* Large bold headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-white">

@@ -22,7 +22,7 @@ export default function CareersHero() {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-black/80 hover:text-black transition-colors duration-300">
           Join us in building the intelligence layer for finance.
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-black/60 font-medium max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-6 text-lg md:text-xl text-black font-medium max-w-2xl mx-auto leading-relaxed">
           Join a growing, ambitious team shaping the future of AI-native banking. We're building something foundational, and we need exceptional people to do it.
         </p>
 

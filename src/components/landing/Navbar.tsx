@@ -43,9 +43,10 @@ const navDropdowns: Dropdown[] = [
       {
         title: "BUSINESS BANKING",
         items: [
-          { label: "Business Accounts", href: "#", soon: true },
-          { label: "Expense Tracking", href: "#", soon: true },
-          { label: "Bookkeeping & Tax Support", href: "#", soon: true },
+          { label: "Renda Business", href: "/business-banking" },
+          { label: "Business Accounts", href: "/business-banking", soon: true },
+          { label: "Expense Tracking", href: "/business-banking", soon: true },
+          { label: "Bookkeeping & Tax Support", href: "/business-banking", soon: true },
         ],
       },
       {
@@ -53,7 +54,7 @@ const navDropdowns: Dropdown[] = [
         items: [
           { label: "How Alfie Works", href: "/why-renda#belief" },
           { label: "Alfie for Individuals", href: "/personal-banking" },
-          { label: "Alfie for Businesses", href: "#" },
+          { label: "Alfie for Businesses", href: "/business-banking" },
           { label: "Alfie Platform", href: "#infrastructure" },
         ],
       },

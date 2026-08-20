@@ -175,7 +175,7 @@ export default function PersonalBanking() {
           >
             Banking that thinks ahead.
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-black/60 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg md:text-xl text-black font-medium max-w-2xl mx-auto leading-relaxed">
             Renda combines intelligent accounts, an adaptive card, instant payments, and
             goal-based savings; all guided by Alfie, your personal AI financial assistant.
           </p>
@@ -216,7 +216,7 @@ export default function PersonalBanking() {
             <div>
               <Eyebrow>Smart Accounts</Eyebrow>
               <H2>Your money shouldn't just sit there. It should think.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Meet SmartSpend and SenseSave, intelligent accounts monitored by Alfie to
                 deliver meaningful insights and help you make more confident financial
                 decisions.
@@ -239,7 +239,7 @@ export default function PersonalBanking() {
                   "I moved $120 to SenseSave. Your groceries came in under pattern this week."
                 </div>
               </div>
-              <p className="text-sm text-black/60 font-medium">
+              <p className="text-sm text-black font-medium">
                 Conversations that move you forward, instead of charts you never check.
               </p>
             </div>
@@ -261,7 +261,7 @@ export default function PersonalBanking() {
                   <f.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-black/80 mb-3">{f.title}</h3>
-                <p className="text-base text-black/60 font-medium leading-relaxed">{f.desc}</p>
+                <p className="text-base text-black font-medium leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -386,7 +386,7 @@ export default function PersonalBanking() {
             <div>
               <Eyebrow>Move Money Your Way</Eyebrow>
               <H2>Instant transfers. Real network.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Send money instantly to anyone in the Renda network. Add contacts using a
                 Renda ID or QR code, then move money immediately, without delays, friction,
                 or unnecessary steps.
@@ -432,7 +432,7 @@ export default function PersonalBanking() {
                   apply it to your SenseSave goal?"
                 </p>
               </div>
-              <p className="text-sm text-black/60 font-medium italic">
+              <p className="text-sm text-black font-medium italic">
                 When both sides use intelligent banking, payments feel invisible.
               </p>
             </div>
@@ -457,7 +457,7 @@ export default function PersonalBanking() {
             <div className="order-1 lg:order-2">
               <Eyebrow>Savings & Goals</Eyebrow>
               <H2>Savings that adapt to your life.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Saving shouldn't follow a fixed rule. Alfie continuously adapts your savings
                 strategy to your financial situation, helping you build toward your goals
                 while knowing when to save more, save less, or simply stay the course.
@@ -482,7 +482,7 @@ export default function PersonalBanking() {
                 <div key={g.name}>
                   <div className="flex justify-between text-sm mb-2">
                     <span className="text-black/80 font-semibold">{g.name}</span>
-                    <span className="text-black/60 font-medium">{g.current} / {g.target}</span>
+                    <span className="text-black font-medium">{g.current} / {g.target}</span>
                   </div>
                   <div className="h-2 bg-white rounded-full overflow-hidden">
                     <div className="h-full rounded-full bg-primary transition-all duration-700" style={{ width: `${g.pct}%` }} />
@@ -506,7 +506,7 @@ export default function PersonalBanking() {
             <div>
               <Eyebrow>Interac</Eyebrow>
               <H2>Built for the way Canada pays.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Send and receive Interac e-Transfers just as you always have, now enhanced by
                 Alfie with intelligent categorization, proactive reminders, seamless
                 Auto-deposit, and built-in fraud protection.

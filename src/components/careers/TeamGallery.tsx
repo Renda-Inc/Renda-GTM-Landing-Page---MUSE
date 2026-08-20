@@ -71,7 +71,7 @@ export default function TeamGallery() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
             The people behind the product.
           </h2>
-          <p className="text-base text-black/60 font-medium mb-14 max-w-2xl">
+          <p className="text-base text-black font-medium mb-14 max-w-2xl">
             A distributed team of builders, thinkers, and operators across Toronto, Vancouver, and New York.
           </p>
         </Fade>
@@ -142,7 +142,7 @@ export default function TeamGallery() {
                     />
                     <div>
                       <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                      <p className="text-xs text-black/60 font-medium">{t.role}</p>
+                      <p className="text-xs text-black font-medium">{t.role}</p>
                     </div>
                   </div>
                 </div>

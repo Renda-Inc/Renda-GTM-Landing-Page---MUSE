@@ -161,7 +161,7 @@ export default function TermsOfUse() {
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-black/80">
             Terms of Use
           </h1>
-          <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-2xl">
+          <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed max-w-2xl">
             This page contains the agreements, policies, and disclosures that
             govern the use of the Renda platform and its financial services.
             Please review these documents carefully before using our services.
@@ -177,7 +177,7 @@ export default function TermsOfUse() {
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-black/80 mb-3">
                 {section.title}
               </h2>
-              <p className="text-base md:text-lg text-black/60 font-medium leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-black font-medium leading-relaxed mb-8">
                 {section.description}
               </p>
 
@@ -188,12 +188,12 @@ export default function TermsOfUse() {
                     to={`/terms/${policy.slug}`}
                     className="flex items-start gap-5 px-7 py-6 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:bg-[#EFEDE7] group"
                   >
-                    <FileText className="w-6 h-6 text-black/60 mt-0.5 shrink-0" />
+                    <FileText className="w-6 h-6 text-black mt-0.5 shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p className="text-base md:text-lg font-semibold text-black/80">
                         {policy.label}
                       </p>
-                      <p className="text-[15px] md:text-base text-black/60 font-medium mt-1 leading-relaxed">
+                      <p className="text-[15px] md:text-base text-black font-medium mt-1 leading-relaxed">
                         {policy.summary}
                       </p>
                     </div>

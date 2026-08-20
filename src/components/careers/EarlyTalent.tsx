@@ -40,7 +40,7 @@ export default function EarlyTalent() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
               Start building early.
             </h2>
-            <div className="mt-8 space-y-5 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+            <div className="mt-8 space-y-5 text-base md:text-lg text-black font-medium leading-relaxed">
               <p>
                 We welcome interns, co-ops, and early-career builders who want to do meaningful work from day one. At Renda, junior doesn't mean sidelined; it means mentored, challenged, and trusted.
               </p>
@@ -57,7 +57,7 @@ export default function EarlyTalent() {
           <Fade>
             <div className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent sticky top-32">
               <h3 className="text-xl font-semibold text-foreground mb-2">Send us your resume</h3>
-              <p className="text-sm text-black/60 font-medium mb-8">
+              <p className="text-sm text-black font-medium mb-8">
                 Tell us about yourself and we'll be in touch if there's a fit.
               </p>
 

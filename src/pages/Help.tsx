@@ -126,7 +126,7 @@ export default function Help() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-black/80">
             How can we help you?
           </h1>
-          <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed max-w-2xl mx-auto">
             Find answers to common questions, explore topic guides, and get the support you need.
           </p>
         </Fade>
@@ -148,7 +148,7 @@ export default function Help() {
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
                     <h2 className="text-lg font-semibold text-foreground mb-2">{cat.title}</h2>
-                    <p className="text-[16px] text-black/60 font-medium leading-relaxed">{cat.description}</p>
+                    <p className="text-[16px] text-black font-medium leading-relaxed">{cat.description}</p>
 
                     <ul className="mt-5 space-y-2 flex-1">
                       {previewTopics.map((t) => (
@@ -183,7 +183,7 @@ export default function Help() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
             Still need help?
           </h2>
-          <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed max-w-xl mx-auto">
             Our support team is available Monday to Friday, 9 AM to 6 PM ET. Reach out and we'll get back to you within 24 hours.
           </p>
           <a
@@ -204,7 +204,7 @@ export default function Help() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
             Share Renda. Earn rewards.
           </h2>
-          <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed max-w-xl mx-auto">
             Invite friends to Renda and you'll both receive a bonus when they open and fund their account. The more you share, the more you earn.
           </p>
           <a

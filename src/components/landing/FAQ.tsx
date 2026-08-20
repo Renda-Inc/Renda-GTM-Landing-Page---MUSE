@@ -53,7 +53,7 @@ export default function FAQ() {
           >
             Questions you might have
           </h2>
-          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black/60 max-w-2xl">
+          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black max-w-2xl">
             Everything you need to know about Renda, Alfie, and how we're rethinking banking from
             the ground up.
           </p>
@@ -92,7 +92,7 @@ export default function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-7 md:px-10 pb-7 md:pb-9 pr-14 md:pr-24 text-base md:text-lg font-medium leading-relaxed text-black/60">
+                    <p className="px-7 md:px-10 pb-7 md:pb-9 pr-14 md:pr-24 text-base md:text-lg font-medium leading-relaxed text-black">
                       {faq.answer}
                     </p>
                   </div>

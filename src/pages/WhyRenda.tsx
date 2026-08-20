@@ -215,7 +215,7 @@ export default function WhyRenda() {
             <div>
               <Eyebrow>Our Philosophy</Eyebrow>
               <H2>Understanding over reporting.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Financial data is only useful when it creates understanding. Renda turns everyday activity into clear insights that help you make better financial decisions.
               </p>
             </div>
@@ -277,7 +277,7 @@ export default function WhyRenda() {
             <div>
               <Eyebrow>Intelligence at the Core</Eyebrow>
               <H2>Intelligence, not features.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Most financial apps add artificial intelligence after the fact. Renda is built differently. Alfie is woven into the foundation of the platform, continuously understanding financial patterns, identifying what matters, and providing meaningful guidance before you even think to ask.
               </p>
             </div>
@@ -300,7 +300,7 @@ export default function WhyRenda() {
             <div className="order-1 lg:order-2">
               <Eyebrow>Trust & Responsibility</Eyebrow>
               <H2>Trust by design.</H2>
-              <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Financial intelligence should never come at the expense of trust. Every insight is transparent, every automation remains optional, and every recommendation is designed to support your decisions, not replace them.
               </p>
               <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-full bg-background border border-border">
@@ -321,7 +321,7 @@ export default function WhyRenda() {
           >
             Banking built on a different premise.
           </h2>
-          <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed max-w-xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed max-w-xl mx-auto">
             Not more data. Not more notifications. Just the clarity you need to move forward.
           </p>
           <a

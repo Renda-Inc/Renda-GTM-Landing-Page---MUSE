@@ -62,14 +62,14 @@ export default function BlogShowcase() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="grid lg:grid-cols-[340px_1fr] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-14 items-center">
           {/* Intro */}
           <div>
             <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Insights</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-black/80 hover:text-black transition-colors duration-300">
               Stay up to date with the latest news.
             </h2>
-            <p className="mt-6 text-base md:text-lg text-black/60 font-medium leading-relaxed">
+            <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
               We're constantly evolving; from new products and ideas to company milestones and
               insights. Follow along with the latest from Renda.
             </p>
@@ -83,7 +83,7 @@ export default function BlogShowcase() {
           </div>
 
           {/* Carousel */}
-          <div className="relative lg:mr-[calc(-50vw+50%-1.5rem)]">
+          <div className="relative lg:mr-[calc(-50vw+50%+5rem)]">
             <div
               ref={trackRef}
               onMouseDown={onDown}
@@ -122,7 +122,7 @@ export default function BlogShowcase() {
                   <h3 className="mt-6 text-xl lg:text-2xl font-semibold tracking-tight text-black/80 leading-snug">
                     {a.title}
                   </h3>
-                  <span className="mt-4 inline-flex items-center gap-2 text-base font-medium text-black/60 group-hover:text-black transition-colors">
+                  <span className="mt-4 inline-flex items-center gap-2 text-base font-medium text-black group-hover:text-black transition-colors">
                     Read more
                     <ArrowRight className="w-4 h-4" />
                   </span>

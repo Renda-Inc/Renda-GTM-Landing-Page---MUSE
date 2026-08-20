@@ -211,9 +211,9 @@ export default function ProductShowcase() {
         </div>
 
         {/* Story stage */}
-        <div className="mt-14 lg:mt-20">
+        <div className="mt-14 lg:mt-20 flex items-center min-h-[760px] lg:min-h-[820px]">
           <div
-            className={`transition-all duration-500 ease-out ${
+            className={`w-full transition-all duration-500 ease-out ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
             }`}
           >

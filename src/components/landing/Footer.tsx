@@ -28,11 +28,12 @@ const footerColumns = [
   {
     heading: "Business Banking",
     links: [
-      { label: "Business Accounts", href: "#" },
-      { label: "Expense Tracking", href: "#" },
-      { label: "Bookkeeping Support", href: "#" },
-      { label: "Tax Readiness", href: "#" },
-      { label: "Financial Insights", href: "#" },
+      { label: "Renda Business", href: "/business-banking" },
+      { label: "Business Accounts", href: "/business-banking" },
+      { label: "Expense Tracking", href: "/business-banking" },
+      { label: "Bookkeeping Support", href: "/business-banking" },
+      { label: "Tax Readiness", href: "/business-banking" },
+      { label: "Financial Insights", href: "/business-banking" },
     ],
   },
   {

@@ -38,6 +38,7 @@ const App = () => (
           <Route path="/business-banking" element={<BusinessBanking />} />
           <Route path="/why-renda" element={<WhyRenda />} />
           <Route path="/investors" element={<Investors />} />
+          <Route path="/alfie-platform" element={<AlfiePlatform />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
           <Route path="/help" element={<Help />} />

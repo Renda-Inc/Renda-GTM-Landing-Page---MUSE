@@ -6,13 +6,12 @@ const SF_PRO =
 
 const footerColumns = [
   {
-    heading: "Alfie AI",
+    heading: "Alfie",
     links: [
       { label: "How Alfie Works", href: "#alfie" },
       { label: "Alfie for Individuals", href: "#" },
       { label: "Alfie for Businesses", href: "#" },
       { label: "Alfie for Fintechs & Platforms", href: "#" },
-      { label: "Alfie Platform", href: "#" },
     ],
   },
   {

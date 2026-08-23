@@ -50,12 +50,11 @@ const navDropdowns: Dropdown[] = [
         ],
       },
       {
-        title: "ALFIE AI",
+        title: "ALFIE",
         items: [
           { label: "How Alfie Works", href: "/why-renda#belief" },
           { label: "Alfie for Individuals", href: "/personal-banking" },
           { label: "Alfie for Businesses", href: "/business-banking" },
-          { label: "Alfie Platform", href: "#infrastructure" },
         ],
       },
     ],

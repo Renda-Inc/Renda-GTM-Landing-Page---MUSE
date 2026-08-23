@@ -50,12 +50,11 @@ const navDropdowns: Dropdown[] = [
         ],
       },
       {
-        title: "ALFIE AI",
+        title: "ALFIE",
         items: [
           { label: "How Alfie Works", href: "/why-renda#belief" },
           { label: "Alfie for Individuals", href: "/personal-banking" },
           { label: "Alfie for Businesses", href: "/business-banking" },
-          { label: "Alfie Platform", href: "#infrastructure" },
         ],
       },
     ],
@@ -95,6 +94,7 @@ const navDropdowns: Dropdown[] = [
     columns: [
       {
         items: [
+          { label: "Alfie Platform", href: "/alfie-platform" },
           { label: "Alfie as Infrastructure", href: "#infrastructure" },
           { label: "Developer & Integration", href: "#" },
           { label: "Security & Compliance", href: "#" },

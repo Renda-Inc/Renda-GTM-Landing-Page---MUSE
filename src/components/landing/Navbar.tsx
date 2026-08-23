@@ -94,6 +94,7 @@ const navDropdowns: Dropdown[] = [
     columns: [
       {
         items: [
+          { label: "Alfie Platform", href: "/alfie-platform" },
           { label: "Alfie as Infrastructure", href: "#infrastructure" },
           { label: "Developer & Integration", href: "#" },
           { label: "Security & Compliance", href: "#" },

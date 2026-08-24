@@ -133,7 +133,7 @@ const navDropdowns: Dropdown[] = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar({ variant = "default" }: { variant?: "default" | "solid" }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -167,7 +167,7 @@ export default function Navbar() {
       <nav
         style={{ fontFamily: SF_PRO }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || activeDropdown
+          scrolled || activeDropdown || variant === "solid"
             ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
             : "bg-transparent"
         }`}
@@ -176,7 +176,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
-            src={scrolled || activeDropdown ? rendaLogoBlack : rendaLogoWhite}
+            src={scrolled || activeDropdown || variant === "solid" ? rendaLogoBlack : rendaLogoWhite}
             alt="Renda"
             className="h-7 w-auto transition-opacity duration-300"
           />
@@ -188,7 +188,7 @@ export default function Navbar() {
             const isActive = activeDropdown === dropdown.label;
             const isDimmed = activeDropdown && !isActive;
             const hasChevron = dropdown.columns.length > 0;
-            const darkMode = scrolled || activeDropdown;
+            const darkMode = scrolled || activeDropdown || variant === "solid";
             const isSingleColumn = dropdown.columns.length === 1;
             return (
             <div
@@ -302,7 +302,7 @@ export default function Navbar() {
           <a
             href="#"
             className={`text-[15px] font-medium transition-colors duration-200 ${
-              scrolled || activeDropdown ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
+              scrolled || activeDropdown || variant === "solid" ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
             }`}
           >
             Sign In
@@ -310,7 +310,7 @@ export default function Navbar() {
           <a
             href="#waitlist"
             className={`group h-10 px-6 inline-flex items-center gap-2 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all duration-200 ${
-              scrolled || activeDropdown
+              scrolled || activeDropdown || variant === "solid"
                 ? "bg-foreground text-background hover:bg-foreground/90"
                 : "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20"
             }`}
@@ -322,7 +322,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className={`lg:hidden p-2 transition-colors ${scrolled || activeDropdown ? "text-foreground" : "text-white"}`}
+          className={`lg:hidden p-2 transition-colors ${scrolled || activeDropdown || variant === "solid" ? "text-foreground" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >

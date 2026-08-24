@@ -18,6 +18,7 @@ import TermsPolicy from "./pages/TermsPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import WhyRenda from "./pages/WhyRenda";
 import Investors from "./pages/Investors";
+import Leadership from "./pages/Leadership";
 import AlfiePlatform from "./pages/AlfiePlatform";
 import NotFound from "./pages/NotFound";
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/business-banking" element={<BusinessBanking />} />
           <Route path="/why-renda" element={<WhyRenda />} />
           <Route path="/investors" element={<Investors />} />
+          <Route path="/leadership" element={<Leadership />} />
           <Route path="/alfie-platform" element={<AlfiePlatform />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />

@@ -2,16 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import { Eye, Zap, Brain, Users, Shield, Scale, Building2, Search, ChevronLeft, ChevronRight } from "lucide-react";
-import headshotAlexandre from "@/assets/headshot-alexandre.jpg";
-import headshotSofia from "@/assets/headshot-sofia.jpg";
-import headshotMarcus from "@/assets/headshot-marcus.jpg";
-import headshotPriya from "@/assets/headshot-priya.jpg";
+import { Eye, Zap, Brain, Users, Shield, Scale, Building2, Search, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import aboutOverhead from "@/assets/about-overhead.jpg";
 import aboutAlfie from "@/assets/about-alfie.jpg";
 import aboutCanada from "@/assets/about-canada.jpg";
 import aboutBelief from "@/assets/about-belief.jpg";
 import aboutValues from "@/assets/about-values.jpg";
+import aboutBoardMeeting from "@/assets/about-board-meeting.jpg";
 import valueImg1 from "@/assets/careers/team-2.jpg";
 import valueImg2 from "@/assets/careers/team-4.jpg";
 import valueImg3 from "@/assets/careers/team-6.jpg";
@@ -58,19 +55,6 @@ const timeline = [
   { year: "2026+", title: "Platform & global expansion", desc: "Alfie as infrastructure for fintechs and platforms. Expansion beyond Canada.", image: timelineGlobal },
 ];
 
-const leaders = [
-  { name: "Alexandre Dumont", role: "Co-Founder & CEO", photo: headshotAlexandre },
-  { name: "Sofia Chen", role: "Chief Technology Officer", photo: headshotSofia },
-  { name: "Marcus Williams", role: "Chief Operating Officer", photo: headshotMarcus },
-  { name: "Priya Sharma", role: "Head of Product", photo: headshotPriya },
-  { name: "Daniel Okafor", role: "Chief Financial Officer", photo: headshotMarcus },
-  { name: "Isabelle Tremblay", role: "Chief Compliance & Risk Officer", photo: headshotSofia },
-  { name: "Liam Carter", role: "Head of Branding, Growth & Marketing", photo: headshotAlexandre },
-  { name: "Anika Patel", role: "Head of Data & AI", photo: headshotPriya },
-  { name: "Rachel Nguyen", role: "VP, People & Culture", photo: headshotSofia },
-  { name: "James Thornton", role: "General Counsel", photo: headshotMarcus },
-  { name: "Kofi Asante", role: "Head of Banking Platforms", photo: headshotAlexandre },
-];
 
 const vcPartners = [
   { name: "Y Combinator", logo: "YC" },
@@ -398,28 +382,36 @@ export default function About() {
         </Fade>
       </section>
 
-      {/* ── Leadership ────────────────────────────────────── */}
-      <section className="py-24 lg:py-32" style={{ backgroundColor: "#111111" }}>
-        <Fade className="max-w-6xl mx-auto px-6">
-          <div className="mb-16">
-            <p className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">Leadership</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background leading-tight">
-              The people behind Renda.
-            </h2>
-          </div>
-
-          {/* First row: CEO + COO — two large */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            {leaders.slice(0, 2).map((l) => (
-              <LeaderCard key={l.name} leader={l} large />
-            ))}
-          </div>
-
-          {/* Remaining: rows of three, aligned to the same edges */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {leaders.slice(2).map((l) => (
-              <LeaderCard key={l.name} leader={l} />
-            ))}
+      {/* ── Leadership (black section, text left / image right) ── */}
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#111111" }}>
+        <Fade className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <p className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">Leadership</p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight mb-6">
+                The people behind Renda.
+              </h2>
+              <p className="text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-xl">
+                Meet the people leading the efforts for a new kind of financial experience — bringing together financial infrastructure, intelligent technology, and the products that will shape the future of finance.
+              </p>
+              <a
+                href="/leadership"
+                className="mt-8 inline-flex h-12 px-8 items-center gap-2 rounded-full bg-white text-[#111111] text-base font-semibold hover:bg-white/90 transition-colors"
+              >
+                Meet the team
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+            <div className="rounded-xl overflow-hidden">
+              <img
+                src={aboutBoardMeeting}
+                alt="Renda leadership meeting around a boardroom table"
+                className="w-full h-[264px] lg:h-[396px] object-cover"
+                loading="lazy"
+                width={1280}
+                height={720}
+              />
+            </div>
           </div>
         </Fade>
       </section>
@@ -506,38 +498,3 @@ function Divider() {
   return <div className="max-w-4xl mx-auto px-6"><div className="h-[2px] bg-black/15 rounded-full" /></div>;
 }
 
-/* ── Leader card ──────────────────────────────────────────── */
-function LeaderCard({
-  leader,
-  large = false,
-}: {
-  leader: { name: string; role: string; photo: string };
-  large?: boolean;
-}) {
-  return (
-    <div className="group pb-12 md:pb-16">
-      <div className="mb-5">
-        <p className="text-xs md:text-sm text-background/50 mb-1">{leader.role}</p>
-        <h3
-          className={`font-serif text-background leading-tight ${
-            large ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"
-          }`}
-        >
-          {leader.name}
-        </h3>
-      </div>
-      <div
-        className={`relative w-full overflow-hidden rounded-2xl bg-background/5 ${
-          large ? "aspect-[4/3]" : "aspect-[4/5]"
-        }`}
-      >
-        <img
-          src={leader.photo}
-          alt={leader.name}
-          className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.02]"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  );
-}

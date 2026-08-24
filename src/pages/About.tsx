@@ -55,19 +55,6 @@ const timeline = [
   { year: "2026+", title: "Platform & global expansion", desc: "Alfie as infrastructure for fintechs and platforms. Expansion beyond Canada.", image: timelineGlobal },
 ];
 
-const leaders = [
-  { name: "Alexandre Dumont", role: "Co-Founder & CEO", photo: headshotAlexandre },
-  { name: "Sofia Chen", role: "Chief Technology Officer", photo: headshotSofia },
-  { name: "Marcus Williams", role: "Chief Operating Officer", photo: headshotMarcus },
-  { name: "Priya Sharma", role: "Head of Product", photo: headshotPriya },
-  { name: "Daniel Okafor", role: "Chief Financial Officer", photo: headshotMarcus },
-  { name: "Isabelle Tremblay", role: "Chief Compliance & Risk Officer", photo: headshotSofia },
-  { name: "Liam Carter", role: "Head of Branding, Growth & Marketing", photo: headshotAlexandre },
-  { name: "Anika Patel", role: "Head of Data & AI", photo: headshotPriya },
-  { name: "Rachel Nguyen", role: "VP, People & Culture", photo: headshotSofia },
-  { name: "James Thornton", role: "General Counsel", photo: headshotMarcus },
-  { name: "Kofi Asante", role: "Head of Banking Platforms", photo: headshotAlexandre },
-];
 
 const vcPartners = [
   { name: "Y Combinator", logo: "YC" },

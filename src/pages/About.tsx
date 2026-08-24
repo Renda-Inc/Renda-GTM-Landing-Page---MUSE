@@ -399,28 +399,36 @@ export default function About() {
         </Fade>
       </section>
 
-      {/* ── Leadership ────────────────────────────────────── */}
-      <section className="py-24 lg:py-32" style={{ backgroundColor: "#111111" }}>
-        <Fade className="max-w-6xl mx-auto px-6">
-          <div className="mb-16">
-            <p className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">Leadership</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background leading-tight">
-              The people behind Renda.
-            </h2>
-          </div>
-
-          {/* First row: CEO + COO — two large */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            {leaders.slice(0, 2).map((l) => (
-              <LeaderCard key={l.name} leader={l} large />
-            ))}
-          </div>
-
-          {/* Remaining: rows of three, aligned to the same edges */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {leaders.slice(2).map((l) => (
-              <LeaderCard key={l.name} leader={l} />
-            ))}
+      {/* ── Leadership (black section, text left / image right) ── */}
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "#111111" }}>
+        <Fade className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <p className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">Leadership</p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight mb-6">
+                The people behind Renda.
+              </h2>
+              <p className="text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-xl">
+                Meet the people leading the efforts for a new kind of financial experience — bringing together financial infrastructure, intelligent technology, and the products that will shape the future of finance.
+              </p>
+              <a
+                href="/leadership"
+                className="mt-8 inline-flex h-12 px-8 items-center gap-2 rounded-full bg-white text-[#111111] text-base font-semibold hover:bg-white/90 transition-colors"
+              >
+                Meet the team
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+            <div className="rounded-xl overflow-hidden">
+              <img
+                src={aboutBoardMeeting}
+                alt="Renda leadership meeting around a boardroom table"
+                className="w-full h-[264px] lg:h-[396px] object-cover"
+                loading="lazy"
+                width={1280}
+                height={720}
+              />
+            </div>
           </div>
         </Fade>
       </section>

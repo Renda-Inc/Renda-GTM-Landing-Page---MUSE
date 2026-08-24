@@ -18,6 +18,7 @@ import TermsPolicy from "./pages/TermsPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import WhyRenda from "./pages/WhyRenda";
 import Investors from "./pages/Investors";
+import Leadership from "./pages/Leadership";
 import AlfiePlatform from "./pages/AlfiePlatform";
 import NotFound from "./pages/NotFound";
 

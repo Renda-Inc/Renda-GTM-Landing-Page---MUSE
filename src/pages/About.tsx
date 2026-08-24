@@ -382,10 +382,20 @@ export default function About() {
         </Fade>
       </section>
 
-      {/* ── Leadership (black section, text left / image right) ── */}
+      {/* ── Leadership (black section, image left / text right) ── */}
       <section className="py-16 lg:py-20" style={{ backgroundColor: "#111111" }}>
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="rounded-xl overflow-hidden">
+              <img
+                src={aboutBoardMeeting}
+                alt="Renda leadership meeting around a boardroom table"
+                className="w-full h-[312px] lg:h-[468px] object-cover"
+                loading="lazy"
+                width={1280}
+                height={720}
+              />
+            </div>
             <div>
               <p className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">Leadership</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight mb-6">
@@ -402,19 +412,10 @@ export default function About() {
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <div className="rounded-xl overflow-hidden">
-              <img
-                src={aboutBoardMeeting}
-                alt="Renda leadership meeting around a boardroom table"
-                className="w-full h-[264px] lg:h-[396px] object-cover"
-                loading="lazy"
-                width={1280}
-                height={720}
-              />
-            </div>
           </div>
         </Fade>
       </section>
+
 
 
 

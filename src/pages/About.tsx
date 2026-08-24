@@ -419,13 +419,10 @@ export default function About() {
 
 
 
-      {/* ── Built in Canada / Global Vision (image LEFT, text RIGHT) ── */}
+      {/* ── Built in Canada / Global Vision (text LEFT, image RIGHT) ── */}
       <section className="py-16 lg:py-20 bg-secondary/40">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-xl overflow-hidden">
-              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
-            </div>
             <div>
               <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Global Vision</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
@@ -440,9 +437,13 @@ export default function About() {
                 </p>
               </div>
             </div>
+            <div className="rounded-xl overflow-hidden">
+              <img src={aboutCanada} alt="Toronto skyline" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" />
+            </div>
           </div>
         </Fade>
       </section>
+
 
 
       {/* ── Partners & Backers ────────────────────────────── */}

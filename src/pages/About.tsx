@@ -498,38 +498,3 @@ function Divider() {
   return <div className="max-w-4xl mx-auto px-6"><div className="h-[2px] bg-black/15 rounded-full" /></div>;
 }
 
-/* ── Leader card ──────────────────────────────────────────── */
-function LeaderCard({
-  leader,
-  large = false,
-}: {
-  leader: { name: string; role: string; photo: string };
-  large?: boolean;
-}) {
-  return (
-    <div className="group pb-12 md:pb-16">
-      <div className="mb-5">
-        <p className="text-xs md:text-sm text-background/50 mb-1">{leader.role}</p>
-        <h3
-          className={`font-serif text-background leading-tight ${
-            large ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"
-          }`}
-        >
-          {leader.name}
-        </h3>
-      </div>
-      <div
-        className={`relative w-full overflow-hidden rounded-2xl bg-background/5 ${
-          large ? "aspect-[4/3]" : "aspect-[4/5]"
-        }`}
-      >
-        <img
-          src={leader.photo}
-          alt={leader.name}
-          className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.02]"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  );
-}

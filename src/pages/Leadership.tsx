@@ -61,7 +61,7 @@ export default function Leadership() {
       className="min-h-screen bg-background"
       style={{ fontFamily: SF_PRO }}
     >
-      <Navbar />
+      <Navbar variant="solid" />
 
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6 md:px-10">

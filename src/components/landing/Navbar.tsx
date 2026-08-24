@@ -133,7 +133,7 @@ const navDropdowns: Dropdown[] = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar({ variant = "default" }: { variant?: "default" | "solid" }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);

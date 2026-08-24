@@ -64,15 +64,15 @@ export default function Leadership() {
       <Navbar variant="solid" />
 
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <Fade>
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16">
+          <Fade className="text-center">
             <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Leadership</p>
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-black leading-tight">
               The people behind Renda.
             </h1>
           </Fade>
 
-          <div className="mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 lg:gap-x-8 lg:gap-y-16">
+          <div className="mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14 lg:gap-x-10 lg:gap-y-16">
             {leaders.map((leader) => (
               <Fade key={leader.name}>
                 <LeaderCard leader={leader} />
@@ -81,6 +81,7 @@ export default function Leadership() {
           </div>
         </div>
       </section>
+
 
       <Footer />
     </main>

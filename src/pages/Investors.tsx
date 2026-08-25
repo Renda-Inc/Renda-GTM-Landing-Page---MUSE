@@ -47,14 +47,14 @@ export default function Investors() {
           <div className="rounded-3xl bg-background border border-border shadow-[0_20px_60px_-20px_hsl(var(--foreground)/0.18)] p-8 md:p-14 relative">
             {/* paper edge accent */}
             <div className="absolute left-0 top-10 bottom-10 w-1 rounded-r-full bg-primary/70" />
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary mb-4">
+            <div className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">
               From the desk of the CEO
             </div>
-            <h1 className="text-2xl md:text-3xl font-semibold text-foreground mb-10 tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-10 tracking-tight leading-tight">
               A note to those who believed in us.
             </h1>
 
-            <div className="space-y-6 text-[17px] leading-[1.85] text-foreground/80">
+            <div className="space-y-6 text-[17px] leading-[1.85] text-black font-medium">
               <p>Dear Investor,</p>
               <p>
                 Banking hasn't truly evolved in decades. The interfaces changed, the apps got prettier, but the underlying experience, fragmented, reactive, and impersonal, stayed the same. We're building Renda to change that.
@@ -71,7 +71,7 @@ export default function Investors() {
               <p className="pt-4">With gratitude,</p>
               <div>
                 <p className="font-semibold text-foreground">The Renda Founding Team</p>
-                <p className="text-sm text-muted-foreground">Renda Financial Technologies Inc.</p>
+                <p className="text-sm text-black/60 font-medium">Renda Financial Technologies Inc.</p>
               </div>
             </div>
           </div>
@@ -91,25 +91,22 @@ export default function Investors() {
           }`}
         >
           <div className="mb-12 max-w-2xl">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-background/60 mb-3">
+            <div className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">
               Board of Directors
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
               Stewards of the company.
             </h2>
-            <p className="text-base text-background/70 leading-relaxed">
+            <p className="text-base text-background/70 font-medium leading-relaxed">
               Our board brings decades of experience across banking, regulation, technology, and consumer products.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-background/10 rounded-xl overflow-hidden border border-background/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
             {board.map((m) => (
-              <div
-                key={m.name}
-                className="bg-foreground p-8 hover:bg-background/[0.04] transition-colors"
-              >
-                <p className="text-lg font-semibold text-background mb-1">{m.name}</p>
-                <p className="text-sm text-background/60">{m.title}</p>
+              <div key={m.name}>
+                <p className="text-xl font-medium text-background mb-1">{m.name}</p>
+                <p className="text-lg text-background/70">{m.title}</p>
               </div>
             ))}
           </div>
@@ -123,13 +120,13 @@ export default function Investors() {
           >
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-background/60 mb-3">
+                <div className="text-[15px] font-semibold tracking-[0.08em] text-white mb-4">
                   Get in touch
                 </div>
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
                   Investor Relations
                 </h2>
-                <p className="text-base text-background/70 leading-relaxed">
+                <p className="text-base text-background/70 font-medium leading-relaxed">
                   For general enquiries, partnership opportunities, or to request access to confidential investor materials, please reach out to our investor relations team.
                 </p>
               </div>

@@ -28,7 +28,7 @@ export default function Investors() {
           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
       }}
     >
-      <Navbar />
+      <Navbar variant="solid" />
 
       {/* CEO Letter */}
       <section className="pt-36 pb-20 lg:pt-44 lg:pb-28 relative overflow-hidden">

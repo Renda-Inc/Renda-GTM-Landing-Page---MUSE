@@ -135,7 +135,7 @@ export default function Footer() {
           <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-6 group/cols max-w-4xl">
             {footerColumns.map((col) => (
               <div key={col.heading}>
-                <p className="text-sm font-bold uppercase tracking-[0.15em] text-background mb-4 whitespace-nowrap">
+                <p className="text-base font-semibold text-background mb-4 whitespace-nowrap">
                   {col.heading}
                 </p>
                 {col.links.length > 0 && (

@@ -12,8 +12,11 @@ const SF_PRO =
 
 const leaders = [
   { name: "Alexandre Dumont", role: "Co-Founder & CEO", photo: headshotAlexandre },
+  { name: "Olivia Grant", role: "CEO, Alfie Platforms", photo: headshotPriya },
   { name: "Sofia Chen", role: "Chief Technology Officer", photo: headshotSofia },
+  { name: "Yusuf Rahman", role: "Chief Infrastructure Officer", photo: headshotMarcus },
   { name: "Marcus Williams", role: "Chief Operating Officer", photo: headshotMarcus },
+  { name: "Claire Bouchard", role: "Chief Revenue Officer", photo: headshotSofia },
   { name: "Priya Sharma", role: "Head of Product", photo: headshotPriya },
   { name: "Daniel Okafor", role: "Chief Financial Officer", photo: headshotMarcus },
   { name: "Isabelle Tremblay", role: "Chief Compliance & Risk Officer", photo: headshotSofia },
@@ -39,7 +42,7 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 function LeaderCard({ leader }: { leader: { name: string; role: string; photo: string } }) {
   return (
     <div>
-      <div className="relative w-full overflow-hidden rounded-xl bg-black/5 aspect-[4/5]">
+      <div className="relative w-full overflow-hidden rounded-2xl bg-black/5 aspect-[4/5]">
         <img
           src={leader.photo}
           alt={leader.name}
@@ -48,8 +51,8 @@ function LeaderCard({ leader }: { leader: { name: string; role: string; photo: s
         />
       </div>
       <div className="mt-4">
-        <p className="text-base text-black font-medium">{leader.name}</p>
-        <p className="text-base text-black/70 font-normal mt-0.5">{leader.role}</p>
+        <p className="text-xl text-black font-medium">{leader.name}</p>
+        <p className="text-lg text-black font-normal mt-0.5">{leader.role}</p>
       </div>
     </div>
   );

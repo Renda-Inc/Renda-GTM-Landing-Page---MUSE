@@ -108,7 +108,7 @@ export default function TeamGallery() {
                   aria-label={`Go to slide ${i + 1}`}
                   className={`rounded-full transition-all duration-300 ${
                     i === index
-                      ? "w-2.5 h-2.5 bg-foreground"
+                      ? "w-6 h-2 bg-foreground"
                       : "w-2 h-2 bg-black/25 hover:bg-black/50"
                   }`}
                 />

@@ -3,8 +3,6 @@ import { useFadeIn } from "@/hooks/use-fade-in";
 import equitySalary from "@/assets/benefits/equity-salary.jpg";
 import health from "@/assets/benefits/health.jpg";
 import remote from "@/assets/benefits/remote.jpg";
-import learning from "@/assets/benefits/learning.jpg";
-import homeOffice from "@/assets/benefits/home-office.jpg";
 import parental from "@/assets/benefits/parental.jpg";
 import retreats from "@/assets/benefits/retreats.jpg";
 import mentalHealth from "@/assets/benefits/mental-health.jpg";
@@ -22,8 +20,6 @@ const benefits = [
   { image: equitySalary, label: "Competitive Equity & Salary", desc: "Market-rate compensation with meaningful equity so you share in what we build." },
   { image: health, label: "Health, Dental & Vision", desc: "Comprehensive coverage for you and your family from day one." },
   { image: remote, label: "Flexible Remote Work", desc: "Work from anywhere with a remote-first culture built for deep focus." },
-  { image: learning, label: "Learning Budget", desc: "Annual stipend for courses, conferences, and books to keep growing." },
-  { image: homeOffice, label: "Home Office Stipend", desc: "One-time setup budget plus monthly allowance for your workspace." },
   { image: parental, label: "Generous Parental Leave", desc: "Extended paid leave for all new parents, with a phased return." },
   { image: retreats, label: "Annual Team Retreats", desc: "In-person offsites to connect, celebrate, and plan what's next." },
   { image: mentalHealth, label: "Mental Health Support", desc: "Therapy and wellness benefits because sustainable work starts with wellbeing." },
@@ -59,9 +55,9 @@ export default function Benefits() {
           </h2>
         </Fade>
 
-        <div className="grid lg:grid-cols-[45fr_55fr] gap-8 lg:gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-stretch">
           {/* Left: dynamic image */}
-          <div className="relative rounded-xl overflow-hidden h-[420px] lg:h-auto lg:min-h-[640px] bg-black">
+          <div className="relative rounded-xl overflow-hidden h-[420px] lg:h-auto bg-black">
             {benefits.map((b, i) => (
               <img
                 key={b.label}

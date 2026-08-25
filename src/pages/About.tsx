@@ -478,7 +478,7 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             The future of finance isn't louder. It's smarter.
           </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed max-w-xl mx-auto">
             We're building for a world where your bank understands you, not the other way around.
           </p>
           <a

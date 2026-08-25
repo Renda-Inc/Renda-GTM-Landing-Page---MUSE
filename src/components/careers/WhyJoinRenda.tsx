@@ -22,10 +22,10 @@ export default function WhyJoinRenda() {
             </h2>
             <div className="mt-8 space-y-5 text-base md:text-lg text-black font-medium leading-relaxed">
               <p>
-                Most fintech jobs are about optimizing what already exists. At Renda, you'll build AI-native financial infrastructure from scratch; the kind of systems that define how the next generation interacts with money.
+                Most jobs are about optimizing what already exists. At Renda, you'll build AI-native financial infrastructure from scratch - systems that will shape how the next generation interacts with money.
               </p>
               <p>
-                This isn't incremental improvement. It's foundational work. You'll have real ownership over hard problems, direct access to leadership, and the autonomy to make consequential decisions every day.
+                This is foundational work. You'll own hard problems, work directly with leadership, and have the autonomy to make consequential decisions.
               </p>
               <p className="text-black/80 font-semibold">
                 We're not looking for people who want a job. We're looking for people who want to build an institution.
@@ -33,7 +33,7 @@ export default function WhyJoinRenda() {
             </div>
           </div>
           <div className="order-first lg:order-last rounded-xl overflow-hidden">
-            <img src={officeImg} alt="Renda office space" className="w-full h-[480px] lg:h-[720px] object-cover" loading="lazy" width={1280} height={720} />
+            <img src={officeImg} alt="Renda office space" className="w-full h-[312px] lg:h-[468px] object-cover" loading="lazy" width={1280} height={720} />
           </div>
         </div>
       </Fade>

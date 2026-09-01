@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { ArrowRight, Check, Landmark, CreditCard, FileText, LineChart, Sparkles } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import businessHero from "@/assets/business-hero.jpg";
-import businessVision from "@/assets/business-vision.jpg";
 import businessAlfie from "@/assets/business-alfie.jpg";
 import businessAccess from "@/assets/business-access.jpg";
 
@@ -50,6 +49,104 @@ function H2({ children, light = false }: { children: React.ReactNode; light?: bo
     >
       {children}
     </h2>
+  );
+}
+
+const heroMessages = [
+  <>
+    Business banking,
+    <br />
+    built differently.
+  </>,
+  <>
+    Your business,
+    <br />
+    in one financial system.
+  </>,
+  <>The intelligence behind your business.</>,
+];
+
+function ScrollHero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const update = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const distance = section.offsetHeight - window.innerHeight;
+      const nextProgress = distance > 0 ? Math.min(1, Math.max(0, -rect.top / distance)) : 0;
+      setProgress(nextProgress);
+    };
+
+    const onScroll = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  const position = progress * (heroMessages.length - 1);
+  const active = Math.min(heroMessages.length - 1, Math.round(position));
+
+  return (
+    <section ref={sectionRef} className="relative h-[300svh] bg-foreground">
+      <div className="sticky top-0 h-[100svh] min-h-[620px] overflow-hidden">
+        <img
+          src={businessHero}
+          alt="A business owner working in her studio"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          width={1920}
+          height={1088}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/25 to-foreground/20" />
+
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-16 pt-32 md:px-10 md:pb-24">
+          <h1 className="relative h-[4.4em] w-full max-w-5xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl lg:text-8xl">
+            {heroMessages.map((message, index) => {
+              const distance = Math.abs(position - index);
+              const opacity = Math.max(0, 1 - distance * 1.8);
+              const translateY = (index - position) * 36;
+              const scale = 1 - Math.min(distance, 1) * 0.025;
+
+              return (
+                <span
+                  key={index}
+                  className="absolute inset-x-0 bottom-0 transition-[opacity,transform] duration-300 ease-out"
+                  style={{ opacity, transform: `translateY(${translateY}px) scale(${scale})` }}
+                  aria-hidden={active !== index}
+                >
+                  {message}
+                </span>
+              );
+            })}
+          </h1>
+        </div>
+
+        <div className="absolute right-6 top-1/2 z-20 flex -translate-y-1/2 flex-col items-center gap-2 md:right-10" aria-hidden="true">
+          {heroMessages.map((_, index) => (
+            <span
+              key={index}
+              className={`w-2 rounded-full transition-all duration-300 ${
+                active === index ? "h-6 bg-white" : "h-2 bg-white/40"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -312,76 +409,21 @@ export default function BusinessBanking() {
     <main className="min-h-screen bg-background" style={{ fontFamily: SF_FONT }}>
       <Navbar />
 
-      {/* ── 1. Hero ── */}
-      <section className="relative overflow-hidden bg-[#111111] pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <div className="absolute inset-0">
-          <img
-            src={businessHero}
-            alt="A business owner in her studio"
-            className="w-full h-full object-cover object-center opacity-40"
-            width={1920}
-            height={1088}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/85 to-[#111111]/55" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-            <Fade>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white/90">
-                <span className="w-2 h-2 rounded-full bg-[#EB8F00]" />
-                Renda Business — coming soon
-              </span>
-              <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white">
-                Business banking, built differently.
-              </h1>
-              <p className="mt-6 text-lg md:text-xl text-white/70 font-medium leading-relaxed max-w-xl">
-                We're building a smarter financial operating system for businesses, bringing banking
-                and financial operations together with Alfie.
-              </p>
-              <a
-                href="#business-early-access"
-                className="mt-9 inline-flex items-center gap-2 h-14 px-8 rounded-full bg-white text-[#111111] text-base font-semibold hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300"
-              >
-                Join the early access list
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </Fade>
-
-            <Fade>
-              <HeroPanel />
-            </Fade>
-          </div>
-        </div>
-      </section>
+      {/* ── 1. One continuous, scroll-driven hero ── */}
+      <ScrollHero />
 
       {/* ── 2. Vision ── */}
       <section className="py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div>
-              <Eyebrow>The vision</Eyebrow>
-              <H2>Your business, in one financial system.</H2>
+              <H2>A smarter financial operating system for your business</H2>
               <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black">
-                Running a business means holding the whole financial picture in your head; money
-                coming in, money going out, what's owed, and what's next. Renda Business is being
-                built to bring that entire side of your business into one connected experience.
-              </p>
-              <p className="mt-5 text-base md:text-lg font-medium leading-relaxed text-black">
-                Banking, financial operations, and intelligence in the same place, so the numbers
-                stay current and the decisions get easier.
+                Banking and financial operations come together in one intelligent platform, with
+                Alfie connecting the numbers, activity, and decisions behind your business.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img
-                src={businessVision}
-                alt="Business partners reviewing their finances together"
-                className="w-full h-[320px] lg:h-[440px] object-cover"
-                loading="lazy"
-                width={1440}
-                height={1088}
-              />
-            </div>
+            <HeroPanel />
           </div>
         </Fade>
       </section>

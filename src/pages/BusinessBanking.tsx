@@ -7,6 +7,8 @@ import { useFadeIn } from "@/hooks/use-fade-in";
 import businessHero from "@/assets/business-hero.jpg";
 import businessAlfie from "@/assets/business-alfie.jpg";
 import businessAccess from "@/assets/business-access.jpg";
+import businessVision from "@/assets/business-vision.jpg";
+import businessDashboard from "@/assets/business-dashboard.jpg";
 
 const SF_FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';

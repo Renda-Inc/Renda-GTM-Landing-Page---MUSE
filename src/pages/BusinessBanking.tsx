@@ -116,11 +116,11 @@ function ScrollHero() {
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/25 to-foreground/20" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-16 pt-32 md:px-10 md:pb-24">
-          <h1 className="relative h-[4.4em] w-full max-w-5xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl lg:text-8xl">
+          <h1 className="relative h-[2.6em] w-full max-w-3xl text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white">
             {heroMessages.map((message, index) => {
               const distance = Math.abs(position - index);
               const opacity = Math.max(0, 1 - distance * 1.8);
-              const translateY = (index - position) * 36;
+              const translateY = (index - position) * 28;
               const scale = 1 - Math.min(distance, 1) * 0.025;
 
               return (
@@ -407,18 +407,49 @@ export default function BusinessBanking() {
       {/* ── 1. One continuous, scroll-driven hero ── */}
       <ScrollHero />
 
-      {/* ── 2. Vision ── */}
+      {/* ── 2. The vision ── */}
       <section className="py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div>
-              <H2>A smarter financial operating system for your business</H2>
+              <Eyebrow>The vision</Eyebrow>
+              <H2>Your business, in one financial system.</H2>
               <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black">
-                Banking and financial operations come together in one intelligent platform, with
-                Alfie connecting the numbers, activity, and decisions behind your business.
+                Running a business means holding the whole financial picture in your head; money coming in, money going out, what's owed, and what's next. Renda brings that entire side of your business into one connected experience.
               </p>
             </div>
-            <HeroPanel />
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src={businessVision}
+                alt="A business owner reviewing financials"
+                className="w-full h-[312px] lg:h-[468px] object-cover"
+                loading="lazy"
+                width={1440}
+                height={1088}
+              />
+            </div>
+          </div>
+        </Fade>
+      </section>
+
+      {/* ── 3. A smarter financial operating system ── */}
+      <section className="py-16 lg:py-20">
+        <Fade className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto">
+            <H2>A smarter financial operating system for your business.</H2>
+            <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black">
+              Banking and financial operations come together in one intelligent platform, with Alfie connecting the numbers, activity, and decisions behind your business.
+            </p>
+          </div>
+          <div className="mt-12 rounded-2xl overflow-hidden">
+            <img
+              src={businessDashboard}
+              alt="Renda Business dashboard showing accounts, spend, and tax estimates"
+              className="w-full h-[320px] lg:h-[520px] object-cover"
+              loading="lazy"
+              width={1920}
+              height={1080}
+            />
           </div>
         </Fade>
       </section>
@@ -444,23 +475,8 @@ export default function BusinessBanking() {
               <Eyebrow>Powered by Alfie</Eyebrow>
               <H2>Intelligence across your business finances.</H2>
               <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-black">
-                Alfie doesn't just display business transactions. It reads the financial activity
-                happening across your business and turns it into something you can act on.
+                Alfie doesn't just display business transactions. It reads and connects the financial activities happening across your business and reveals what's happening, what's changing, and what needs your attention.
               </p>
-              <ul className="mt-8 space-y-4">
-                {[
-                  "Understand where money is actually going",
-                  "Identify the financial patterns that matter",
-                  "Monitor cash flow as it changes",
-                  "Prepare for upcoming obligations",
-                  "Make better financial decisions, sooner",
-                ].map((l) => (
-                  <li key={l} className="flex items-start gap-3 text-[15px] md:text-base font-medium leading-relaxed text-black">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    <span>{l}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </Fade>

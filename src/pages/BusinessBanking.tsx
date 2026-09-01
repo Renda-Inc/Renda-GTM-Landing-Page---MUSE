@@ -160,14 +160,7 @@ const heroRows = [
 function HeroPanel() {
   return (
     <div className="rounded-2xl bg-white/[0.07] border border-white/15 backdrop-blur-xl p-6 lg:p-8 shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)]">
-      <div className="flex items-center justify-between">
-        <p className="text-sm font-semibold tracking-[0.08em] text-white/70">RENDA BUSINESS</p>
-        <span className="text-xs font-semibold text-white/70 px-3 py-1 rounded-full bg-white/10 border border-white/15">
-          Coming soon
-        </span>
-      </div>
-
-      <div className="mt-6 space-y-3">
+      <div className="space-y-3">
         {heroRows.map((r) => (
           <div
             key={r.label}

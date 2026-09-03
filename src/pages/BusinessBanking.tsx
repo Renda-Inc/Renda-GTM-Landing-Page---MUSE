@@ -100,7 +100,7 @@ function ScrollHero() {
     };
   }, []);
 
-  const active = Math.min(heroMessages.length - 1, Math.floor(progress * heroMessages.length));
+  const active = progress < 0.28 ? 0 : progress < 0.62 ? 1 : 2;
 
   return (
     <section ref={sectionRef} className="relative h-[240svh] bg-foreground">
@@ -115,7 +115,7 @@ function ScrollHero() {
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/25 to-foreground/20" />
 
         <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center px-6 pt-24 md:px-10">
-          <h1 className="relative h-[2.6em] w-full max-w-3xl text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white">
+          <h1 className="relative h-[2.6em] w-full max-w-3xl -translate-y-5 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white">
             {heroMessages.map((message, index) => {
               return (
                 <span

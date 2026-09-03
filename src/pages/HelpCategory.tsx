@@ -9,6 +9,7 @@ export default function HelpCategory() {
   const { slug } = useParams<{ slug: string }>();
   const category = helpCategories.find((c) => c.slug === slug);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [feedback, setFeedback] = useState<"yes" | "no" | null>(null);
 
   if (!category) {
     return (
@@ -103,13 +104,32 @@ export default function HelpCategory() {
               <div className="mt-12 pt-8 border-t border-black/10">
                 <p className="text-sm font-medium text-black mb-3">Was this article helpful?</p>
                 <div className="flex gap-3">
-                  <button className="px-5 h-10 rounded-full border border-black/15 text-sm font-medium hover:bg-[#F6F5F2] transition-colors">
+                   <button
+                     type="button"
+                     onClick={() => setFeedback("yes")}
+                     aria-pressed={feedback === "yes"}
+                     className={`px-5 h-11 rounded-full border text-sm font-medium transition-colors ${
+                       feedback === "yes" ? "border-foreground bg-foreground text-background" : "border-border hover:bg-secondary"
+                     }`}
+                   >
                     Yes
                   </button>
-                  <button className="px-5 h-10 rounded-full border border-black/15 text-sm font-medium hover:bg-[#F6F5F2] transition-colors">
+                   <button
+                     type="button"
+                     onClick={() => setFeedback("no")}
+                     aria-pressed={feedback === "no"}
+                     className={`px-5 h-11 rounded-full border text-sm font-medium transition-colors ${
+                       feedback === "no" ? "border-foreground bg-foreground text-background" : "border-border hover:bg-secondary"
+                     }`}
+                   >
                     No
                   </button>
                 </div>
+                 {feedback && (
+                   <p className="mt-3 text-sm font-medium text-muted-foreground" role="status">
+                     Thanks for your feedback.
+                   </p>
+                 )}
               </div>
             </article>
           </div>

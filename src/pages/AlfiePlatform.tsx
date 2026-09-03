@@ -246,7 +246,7 @@ function AlfieChat() {
           />
           <button
             type="button"
-            className="flex h-9 shrink-0 items-center gap-2 rounded-xl bg-white px-4 text-sm font-medium text-[#0D0D0D] transition-transform hover:scale-[1.03]"
+            className="flex h-9 shrink-0 items-center gap-2 rounded-xl bg-white px-4 text-sm font-medium text-foreground transition-transform hover:scale-[1.03]"
           >
             Talk to us <ArrowRight className="h-4 w-4" />
           </button>
@@ -578,8 +578,8 @@ function MarqueeStrip() {
           </span>
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0D0D0D] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0D0D0D] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-foreground to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-foreground to-transparent" />
     </div>
   );
 }
@@ -667,7 +667,7 @@ export default function AlfiePlatform() {
   return (
     <div
       className="min-h-screen flex flex-col text-white"
-      style={{ backgroundColor: "#0D0D0D", fontFamily: SF_PRO }}
+      style={{ backgroundColor: "#111111", fontFamily: SF_PRO }}
     >
       <style>{`
         @keyframes alfie-msg-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
@@ -675,7 +675,7 @@ export default function AlfiePlatform() {
       `}</style>
 
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full border-b border-white/[0.06] backdrop-blur-xl" style={{ backgroundColor: "rgba(13,13,13,0.72)" }}>
+      <header className="sticky top-0 z-40 w-full border-b border-white/[0.06] bg-foreground/70 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
           <Link to="/" className="text-lg font-semibold tracking-tight text-white">
             Alfie
@@ -745,7 +745,7 @@ export default function AlfiePlatform() {
             <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-4">
               {layers.map((l, i) => (
                 <Reveal key={l.n} delay={i * 90}>
-                  <div className="h-full bg-[#0D0D0D] p-7">
+                  <div className="h-full bg-foreground p-7">
                     <span className="text-xs tracking-[0.2em] text-white/40">{l.n}</span>
                     <p className="mt-6 text-lg font-semibold tracking-tight text-white">{l.name}</p>
                     <p className="mt-2 text-sm leading-relaxed" style={{ color: "#E0E0E0" }}>
@@ -804,7 +804,7 @@ export default function AlfiePlatform() {
                   />
                   <button
                     type="button"
-                    className="flex h-9 shrink-0 items-center gap-2 rounded-xl bg-white px-4 text-sm font-medium text-[#0D0D0D] transition-transform hover:scale-[1.03]"
+                    className="flex h-9 shrink-0 items-center gap-2 rounded-xl bg-white px-4 text-sm font-medium text-foreground transition-transform hover:scale-[1.03]"
                   >
                     Talk to us <ArrowRight className="h-4 w-4" />
                   </button>

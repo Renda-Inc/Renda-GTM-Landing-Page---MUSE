@@ -100,11 +100,10 @@ function ScrollHero() {
     };
   }, []);
 
-  const position = progress * (heroMessages.length - 1);
-  const active = Math.min(heroMessages.length - 1, Math.round(position));
+  const active = Math.min(heroMessages.length - 1, Math.floor(progress * heroMessages.length));
 
   return (
-    <section ref={sectionRef} className="relative h-[300svh] bg-foreground">
+    <section ref={sectionRef} className="relative h-[240svh] bg-foreground">
       <div className="sticky top-0 h-[100svh] min-h-[620px] overflow-hidden">
         <img
           src={businessHero}
@@ -115,19 +114,19 @@ function ScrollHero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/25 to-foreground/20" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-16 pt-32 md:px-10 md:pb-24">
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center px-6 pt-24 md:px-10">
           <h1 className="relative h-[2.6em] w-full max-w-3xl text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white">
             {heroMessages.map((message, index) => {
-              const distance = Math.abs(position - index);
-              const opacity = Math.max(0, 1 - distance * 1.8);
-              const translateY = (index - position) * 28;
-              const scale = 1 - Math.min(distance, 1) * 0.025;
-
               return (
                 <span
                   key={index}
-                  className="absolute inset-x-0 bottom-0 transition-[opacity,transform] duration-300 ease-out"
-                  style={{ opacity, transform: `translateY(${translateY}px) scale(${scale})` }}
+                  className={`absolute inset-x-0 top-0 transition-[opacity,transform] duration-150 ease-out ${
+                    active === index
+                      ? "translate-y-0 scale-100 opacity-100"
+                      : index < active
+                        ? "-translate-y-3 scale-[0.99] opacity-0"
+                        : "translate-y-3 scale-[0.99] opacity-0"
+                  }`}
                   aria-hidden={active !== index}
                 >
                   {message}
@@ -141,7 +140,7 @@ function ScrollHero() {
           {heroMessages.map((_, index) => (
             <span
               key={index}
-              className={`w-2 rounded-full transition-all duration-300 ${
+              className={`w-2 rounded-full transition-all duration-150 ${
                 active === index ? "h-6 bg-white" : "h-2 bg-white/40"
               }`}
             />

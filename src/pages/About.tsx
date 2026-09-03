@@ -92,6 +92,8 @@ function Timeline() {
         <div className="flex items-center gap-0 relative">
           {/* Arrows */}
           <button
+            type="button"
+            aria-label="Previous journey milestone"
             onClick={() => setActive(Math.max(0, active - 1))}
             disabled={active === 0}
             className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground disabled:opacity-30 transition-colors mr-4"
@@ -105,6 +107,8 @@ function Timeline() {
 
             {timeline.map((t, i) => (
               <button
+                type="button"
+                aria-label={`Show ${t.year}: ${t.title}`}
                 key={i}
                 onClick={() => setActive(i)}
                 className="flex-1 flex flex-col items-center relative z-10 group"
@@ -132,6 +136,8 @@ function Timeline() {
           </div>
 
           <button
+            type="button"
+            aria-label="Next journey milestone"
             onClick={() => setActive(Math.min(timeline.length - 1, active + 1))}
             disabled={active === timeline.length - 1}
             className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground disabled:opacity-30 transition-colors ml-4"

@@ -190,40 +190,78 @@ function HeroPanel() {
 const stages = [
   {
     stage: "Bank",
-    icon: Landmark,
     title: "Business Account",
     desc: "The foundation. Where business money lives and moves.",
+    image: businessHero,
   },
   {
     stage: "Spend",
-    icon: CreditCard,
     title: "Expense Management",
     desc: "Company spending captured and explained as it happens.",
+    image: businessAlfie,
   },
   {
     stage: "Manage",
-    icon: FileText,
     title: "Bookkeeping & Tax Readiness",
     desc: "Records and obligations kept in order, not rebuilt at year end.",
+    image: businessVision,
   },
   {
     stage: "Understand",
-    icon: LineChart,
     title: "Financial Insights",
     desc: "A clear read on performance, cash flow, and what comes next.",
+    image: businessAccess,
   },
 ];
 
+const STEP = 360 / stages.length;
+
 function ConnectedSystem() {
-  const [active, setActive] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const dragRef = useRef<{ startX: number; startOffset: number; moved: boolean } | null>(null);
+
+  const active =
+    ((Math.round(-(rotation + dragOffset) / STEP) % stages.length) + stages.length) % stages.length;
 
   useEffect(() => {
-    const id = window.setInterval(() => setActive((i) => (i + 1) % stages.length), 3000);
+    if (dragging) return;
+    const id = window.setInterval(() => setRotation((r) => r - STEP), 4000);
     return () => window.clearInterval(id);
-  }, []);
+  }, [dragging]);
+
+  const snap = (offset: number) => {
+    const delta = Math.round(offset / STEP) * STEP;
+    setRotation((r) => r + delta);
+    setDragOffset(0);
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    dragRef.current = { startX: e.clientX, startOffset: dragOffset, moved: false };
+    setDragging(true);
+    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    const drag = dragRef.current;
+    if (!drag) return;
+    const delta = e.clientX - drag.startX;
+    if (Math.abs(delta) > 6) drag.moved = true;
+    setDragOffset(drag.startOffset + delta * 0.4);
+  };
+
+  const onPointerUp = () => {
+    if (!dragRef.current) return;
+    snap(dragOffset);
+    dragRef.current = null;
+    setDragging(false);
+  };
+
+  const total = rotation + dragOffset;
 
   return (
-    <section className="bg-[#111111] py-16 lg:py-24" style={{ fontFamily: SF_FONT }}>
+    <section className="bg-[#111111] py-16 lg:py-24 overflow-hidden" style={{ fontFamily: SF_FONT }}>
       <Fade className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
           <Eyebrow light>One connected system</Eyebrow>
@@ -234,47 +272,81 @@ function ConnectedSystem() {
           </p>
         </div>
 
-        {/* Connected rail */}
-        <div className="mt-16 relative">
-          <div className="absolute left-0 right-0 top-[26px] h-[2px] bg-white/10 hidden lg:block" />
+        {/* Perspective carousel */}
+        <div
+          className="mt-16 relative h-[420px] md:h-[480px] select-none cursor-grab active:cursor-grabbing"
+          style={{ perspective: "1400px" }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+          onPointerLeave={onPointerUp}
+        >
           <div
-            className="absolute left-0 top-[26px] h-[2px] bg-[#EB8F00] hidden lg:block transition-all duration-700 ease-out"
-            style={{ width: `${((active + 1) / stages.length) * 100}%` }}
-          />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            className="absolute inset-0"
+            style={{
+              transformStyle: "preserve-3d",
+              transform: `translateZ(-360px) rotateY(${total}deg)`,
+              transition: dragging ? "none" : "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1)",
+            }}
+          >
             {stages.map((s, i) => {
-              const on = i <= active;
-              const Icon = s.icon;
+              const angle = i * STEP;
+              const isActive = i === active;
               return (
-                <button
+                <div
                   key={s.stage}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  className="relative text-left focus:outline-none group"
+                  className="absolute left-1/2 top-0 w-[300px] md:w-[360px] -ml-[150px] md:-ml-[180px]"
+                  style={{
+                    transform: `rotateY(${angle}deg) translateZ(360px)`,
+                    transformStyle: "preserve-3d",
+                    transition: "opacity 0.5s ease",
+                    opacity: isActive ? 1 : 0.45,
+                  }}
                 >
-                  <div
-                    className={`w-[54px] h-[54px] rounded-full flex items-center justify-center border transition-all duration-500 ${
-                      on
-                        ? "bg-[#EB8F00]/15 border-[#EB8F00]/50"
-                        : "bg-white/[0.06] border-white/15"
-                    }`}
-                  >
-                    <Icon className={`w-6 h-6 transition-colors duration-500 ${on ? "text-[#EB8F00]" : "text-white/40"}`} />
+                  <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/[0.04] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)]">
+                    <div className="relative h-[200px] md:h-[240px]">
+                      <img
+                        src={s.image}
+                        alt={s.title}
+                        className="h-full w-full object-cover"
+                        draggable={false}
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/20 to-transparent" />
+                      <p className="absolute top-4 left-5 text-xs font-semibold tracking-[0.14em] text-[#EB8F00]">
+                        {s.stage.toUpperCase()}
+                      </p>
+                    </div>
+                    <div className="p-5 md:p-6">
+                      <h3 className="text-lg md:text-xl font-medium tracking-tight text-white leading-snug">
+                        {s.title}
+                      </h3>
+                      <p className="mt-2 text-sm font-medium leading-relaxed text-white/60">
+                        {s.desc}
+                      </p>
+                    </div>
                   </div>
-                  <p className="mt-6 text-sm font-semibold tracking-[0.08em] text-white/50">
-                    {s.stage.toUpperCase()}
-                  </p>
-                  <h3 className="mt-3 text-xl lg:text-2xl font-medium tracking-tight text-white leading-snug">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-[15px] font-medium leading-relaxed text-white/60">
-                    {s.desc}
-                  </p>
-                </button>
+                </div>
               );
             })}
           </div>
+        </div>
+
+        {/* Dots */}
+        <div className="mt-10 flex justify-center gap-2" role="tablist" aria-label="Connected system stages">
+          {stages.map((s, i) => (
+            <button
+              key={s.stage}
+              type="button"
+              aria-label={s.title}
+              aria-selected={i === active}
+              onClick={() => setRotation(-i * STEP)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === active ? "w-6 bg-[#EB8F00]" : "w-2 bg-white/30 hover:bg-white/50"
+              }`}
+            />
+          ))}
         </div>
 
         <p className="mt-14 text-center text-sm font-medium text-white/40">

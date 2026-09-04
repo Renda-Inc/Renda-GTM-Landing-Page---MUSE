@@ -299,7 +299,8 @@ function ConnectedSystem() {
                   className="absolute left-1/2 top-0 w-[300px] md:w-[360px] -ml-[150px] md:-ml-[180px]"
                   style={{
                     transform: `rotateY(${angle}deg) translateZ(360px)`,
-                    transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden",
                     transition: "opacity 0.5s ease",
                     opacity: isActive ? 1 : 0.45,
                   }}

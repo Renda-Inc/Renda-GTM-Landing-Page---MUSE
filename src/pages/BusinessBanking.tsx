@@ -253,7 +253,12 @@ function ConnectedSystem() {
 
   const onPointerUp = () => {
     if (!dragRef.current) return;
-    snap(dragOffset);
+    if (Math.abs(dragOffset) > 36) {
+      setRotation((r) => r + (dragOffset > 0 ? STEP : -STEP));
+      setDragOffset(0);
+    } else {
+      snap(dragOffset);
+    }
     dragRef.current = null;
     setDragging(false);
   };
@@ -265,17 +270,34 @@ function ConnectedSystem() {
       <Fade className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
           <Eyebrow light>One connected system</Eyebrow>
-          <H2 light>Bank. Spend. Manage. Understand.</H2>
+          <H2 light>Every part of your business finances, connected.</H2>
           <p className="mt-6 text-base md:text-lg text-white/70 font-medium leading-relaxed">
             Not five separate tools to switch between. One financial system, connected through
             Renda's banking infrastructure and Alfie.
           </p>
         </div>
 
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3" role="tablist" aria-label="Connected system stages">
+          {stages.map((stage, index) => (
+            <button
+              key={stage.stage}
+              type="button"
+              role="tab"
+              aria-selected={index === active}
+              onClick={() => setRotation(-index * STEP)}
+              className={`border-b py-2 text-sm md:text-base font-semibold transition-colors duration-300 ${
+                index === active ? "border-primary text-white" : "border-transparent text-white/40 hover:text-white/70"
+              }`}
+            >
+              {stage.stage}
+            </button>
+          ))}
+        </div>
+
         {/* Perspective carousel */}
         <div
-          className="mt-16 relative h-[420px] md:h-[480px] select-none cursor-grab active:cursor-grabbing"
-          style={{ perspective: "1400px" }}
+          className="mt-8 relative h-[520px] lg:h-[640px] select-none cursor-grab active:cursor-grabbing touch-pan-y"
+          style={{ perspective: "1800px" }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
@@ -286,7 +308,7 @@ function ConnectedSystem() {
             className="absolute inset-0"
             style={{
               transformStyle: "preserve-3d",
-              transform: `translateZ(-360px) rotateY(${total}deg)`,
+              transform: `translateZ(-720px) rotateY(${total}deg)`,
               transition: dragging ? "none" : "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
@@ -296,36 +318,33 @@ function ConnectedSystem() {
               return (
                 <div
                   key={s.stage}
-                  className="absolute left-1/2 top-0 w-[300px] md:w-[360px] -ml-[150px] md:-ml-[180px]"
+                  className="absolute left-1/2 top-0 h-[520px] w-[82vw] max-w-[780px] -translate-x-1/2 lg:h-[640px]"
                   style={{
-                    transform: `rotateY(${angle}deg) translateZ(360px)`,
+                    transform: `rotateY(${angle}deg) translateZ(720px)`,
                     backfaceVisibility: "hidden",
                     WebkitBackfaceVisibility: "hidden",
-                    transition: "opacity 0.5s ease",
-                    opacity: isActive ? 1 : 0.45,
+                    transition: "opacity 0.5s ease, filter 0.5s ease",
+                    opacity: isActive ? 1 : 0.55,
+                    filter: isActive ? "brightness(1)" : "brightness(0.62)",
                   }}
                 >
-                  <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/[0.04] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)]">
-                    <div className="relative h-[200px] md:h-[240px]">
-                      <img
-                        src={s.image}
-                        alt={s.title}
-                        className="h-full w-full object-cover"
-                        draggable={false}
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/20 to-transparent" />
-                      <p className="absolute top-4 left-5 text-xs font-semibold tracking-[0.14em] text-[#EB8F00]">
-                        {s.stage.toUpperCase()}
-                      </p>
-                    </div>
-                    <div className="p-5 md:p-6">
-                      <h3 className="text-lg md:text-xl font-medium tracking-tight text-white leading-snug">
+                  <div className="relative h-full overflow-hidden rounded-xl border border-white/15 bg-foreground shadow-2xl">
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      draggable={false}
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-foreground/80 via-foreground/35 to-transparent" />
+                    <div className="relative flex h-full flex-col items-start p-8 text-left lg:p-12">
+                      <h3 className="max-w-lg text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-[1.15]">
                         {s.title}
                       </h3>
-                      <p className="mt-2 text-sm font-medium leading-relaxed text-white/60">
+                      <p className="mt-6 max-w-md text-base md:text-lg font-medium leading-relaxed text-white/85">
                         {s.desc}
                       </p>
+                      <div className="mt-6 h-[3px] w-16 rounded-full bg-primary" />
                     </div>
                   </div>
                 </div>
@@ -335,16 +354,15 @@ function ConnectedSystem() {
         </div>
 
         {/* Dots */}
-        <div className="mt-10 flex justify-center gap-2" role="tablist" aria-label="Connected system stages">
+        <div className="mt-8 flex justify-center gap-2" aria-label="Carousel position">
           {stages.map((s, i) => (
             <button
               key={s.stage}
               type="button"
               aria-label={s.title}
-              aria-selected={i === active}
               onClick={() => setRotation(-i * STEP)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === active ? "w-6 bg-[#EB8F00]" : "w-2 bg-white/30 hover:bg-white/50"
+                i === active ? "w-6 bg-primary" : "w-2 bg-white/30 hover:bg-white/50"
               }`}
             />
           ))}

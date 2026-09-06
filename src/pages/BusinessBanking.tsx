@@ -264,6 +264,7 @@ function ConnectedSystem() {
   };
 
   const total = rotation + dragOffset;
+  const virtualIndex = -total / STEP;
 
   return (
     <section className="bg-[#111111] py-16 lg:py-24 overflow-hidden" style={{ fontFamily: SF_FONT }}>
@@ -308,24 +309,25 @@ function ConnectedSystem() {
             className="absolute inset-0"
             style={{
               transformStyle: "preserve-3d",
-              transform: `translateZ(-720px) rotateY(${total}deg)`,
-              transition: dragging ? "none" : "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             {stages.map((s, i) => {
-              const angle = i * STEP;
+              let distance = i - virtualIndex;
+              while (distance > stages.length / 2) distance -= stages.length;
+              while (distance < -stages.length / 2) distance += stages.length;
               const isActive = i === active;
               return (
                 <div
                   key={s.stage}
-                  className="absolute left-1/2 top-0 h-[520px] w-[82vw] max-w-[780px] -translate-x-1/2 lg:h-[640px]"
+                  className="absolute left-1/2 top-0 h-[520px] w-[82vw] max-w-[640px] lg:h-[640px]"
                   style={{
-                    transform: `rotateY(${angle}deg) translateZ(720px)`,
+                    transform: `translateX(-50%) translateX(${distance * 58}%) translateZ(${-Math.abs(distance) * 150}px) rotateY(${distance * -24}deg) scale(${1 - Math.min(Math.abs(distance) * 0.12, 0.24)})`,
                     backfaceVisibility: "hidden",
                     WebkitBackfaceVisibility: "hidden",
-                    transition: "opacity 0.5s ease, filter 0.5s ease",
-                    opacity: isActive ? 1 : 0.55,
+                    transition: dragging ? "none" : "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease, filter 0.5s ease",
+                    opacity: isActive ? 1 : Math.abs(distance) < 1.6 ? 0.62 : 0,
                     filter: isActive ? "brightness(1)" : "brightness(0.62)",
+                    zIndex: 10 - Math.round(Math.abs(distance) * 2),
                   }}
                 >
                   <div className="relative h-full overflow-hidden rounded-xl border border-white/15 bg-foreground shadow-2xl">

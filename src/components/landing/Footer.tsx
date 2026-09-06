@@ -8,11 +8,11 @@ const footerColumns = [
   {
     heading: "Alfie",
     links: [
-      { label: "How Alfie Works", href: "/alfie#how-it-works" },
-      { label: "Alfie for Individuals", href: "/alfie#individuals" },
-      { label: "Alfie for Business", href: "/alfie#business" },
-      { label: "Alfie for Enterprise & Government", href: "/alfie#enterprise-government" },
-      { label: "Alfie Agents", href: "/alfie#agents" },
+      { label: "How Alfie Works", href: "/#alfie" },
+      { label: "Alfie for Individuals", href: "/personal-banking#alfie" },
+      { label: "Alfie for Business", href: "/business-banking#alfie" },
+      { label: "Alfie for Enterprise & Government", href: "/#alfie" },
+      { label: "Alfie Agents", href: "/#alfie" },
     ],
   },
   {

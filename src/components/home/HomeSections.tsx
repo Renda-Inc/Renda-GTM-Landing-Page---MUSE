@@ -197,7 +197,7 @@ const alfiePanels = [
 
 export function MeetAlfie() {
   return (
-    <section className="py-16 lg:py-20">
+    <section id="alfie" className="py-16 lg:py-20">
       <Fade className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
           <Eyebrow>Meet Alfie</Eyebrow>

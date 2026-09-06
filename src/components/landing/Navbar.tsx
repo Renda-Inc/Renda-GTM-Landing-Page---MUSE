@@ -65,7 +65,7 @@ const navDropdowns: Dropdown[] = [
       image: featuredAlfie,
       title: "Meet Alfie, your AI financial assistant",
       desc: "The intelligence layer built into every part of Renda banking.",
-      href: "/alfie",
+      href: "/#alfie",
     },
   },
   {

@@ -179,7 +179,7 @@ function Hero() {
   );
 }
 
-export default function AlfiePlatform() {
+export default function Alfie() {
   return (
     <main className="min-h-screen bg-background" style={{ fontFamily: SF_PRO }}>
       <Navbar />

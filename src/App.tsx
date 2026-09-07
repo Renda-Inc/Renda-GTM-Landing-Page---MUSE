@@ -20,6 +20,7 @@ import WhyRenda from "./pages/WhyRenda";
 import Investors from "./pages/Investors";
 import Leadership from "./pages/Leadership";
 import AlfiePlatform from "./pages/AlfiePlatform";
+import Alfie from "./pages/Alfie";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/investors" element={<Investors />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/alfie-platform" element={<AlfiePlatform />} />
+          <Route path="/alfie" element={<Alfie />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
           <Route path="/help" element={<Help />} />

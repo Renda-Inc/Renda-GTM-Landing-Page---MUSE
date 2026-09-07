@@ -20,6 +20,7 @@ import WhyRenda from "./pages/WhyRenda";
 import Investors from "./pages/Investors";
 import Leadership from "./pages/Leadership";
 import AlfiePlatform from "./pages/AlfiePlatform";
+import Alfie from "./pages/Alfie";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

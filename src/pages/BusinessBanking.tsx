@@ -364,13 +364,13 @@ function ConnectedSystem() {
               aria-label={s.title}
               onClick={() => setRotation(-i * STEP)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === active ? "w-6 bg-primary" : "w-2 bg-white/30 hover:bg-white/50"
+                i === active ? "w-6 bg-white" : "w-2 bg-white/30 hover:bg-white/50"
               }`}
             />
           ))}
         </div>
 
-        <p className="mt-14 text-center text-sm font-medium text-white/40">
+        <p className="mt-14 text-center text-sm font-medium text-white">
           Capabilities shown are part of the Renda Business roadmap and not yet available.
         </p>
       </Fade>

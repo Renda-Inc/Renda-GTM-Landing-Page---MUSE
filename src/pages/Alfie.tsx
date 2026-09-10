@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Network, Sparkles } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { ArrowRight, Brain, Lightbulb, Link2, Network, Sparkles, Zap } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
@@ -38,65 +38,54 @@ function SectionHeading({ children, light = false }: { children: React.ReactNode
 }
 
 const stages = [
-  { name: "Connect", text: "Bring together the financial data, systems, documents, and information Alfie needs." },
-  { name: "Understand", text: "Alfie builds context across financial activity, recognizing relationships, patterns, obligations, risks, and opportunities." },
-  { name: "Reason", text: "Analyze information, investigate questions, understand scenarios, and determine what matters." },
-  { name: "Act", text: "Turn intelligence into recommendations, workflows, reports, and authorized actions." },
+  { name: "Connect", desc: "Bring together the financial data, systems, documents, and information Alfie needs.", icon: Link2 },
+  { name: "Understand", desc: "Alfie builds context across financial activity, recognizing relationships, patterns, obligations, risks, and opportunities.", icon: Brain },
+  { name: "Reason", desc: "Analyze information, investigate questions, understand scenarios, and determine what matters.", icon: Lightbulb },
+  { name: "Act", desc: "Turn intelligence into recommendation.", icon: Zap },
 ];
 
 function HowItWorks() {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => setActive((value) => (value + 1) % stages.length), 4000);
-    return () => window.clearInterval(timer);
-  }, []);
-
   return (
     <section id="how-it-works" className="scroll-mt-16 bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
-          <Reveal>
-            <Eyebrow>How it works</Eyebrow>
-            <SectionHeading>Connect. Understand. Reason. Act.</SectionHeading>
-            <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-foreground md:text-lg">
-              Alfie connects financial information to a shared layer of context and reasoning, then turns what it understands into useful work.
-            </p>
-            <div className="mt-10 grid grid-cols-2 gap-3">
-              {stages.map((stage, index) => (
-                <Button
-                  key={stage.name}
-                  type="button"
-                  variant="outline"
-                  onClick={() => setActive(index)}
-                  className={`h-28 justify-start rounded-lg border px-5 text-left transition-colors md:h-32 ${active === index ? "border-foreground bg-foreground text-background hover:bg-foreground/90 hover:text-background" : "border-border bg-background text-foreground hover:bg-secondary"}`}
-                >
-                  <span className="flex h-full flex-col items-start justify-between py-1">
-                    <span className={`text-xs font-semibold ${active === index ? "text-primary" : "text-muted-foreground"}`}>0{index + 1}</span>
-                    <span className="text-lg font-semibold md:text-xl">{stage.name}</span>
-                  </span>
-                </Button>
-              ))}
-            </div>
-          </Reveal>
-          <Reveal className="relative min-h-[420px] overflow-hidden rounded-xl bg-foreground md:min-h-[560px]">
-            <div className="absolute inset-0 opacity-45">
-              <img src={heroImage} alt="Financial systems connected through Alfie" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground/75 to-transparent" />
-            </div>
-            {stages.map((stage, index) => (
+        <Reveal className="text-center max-w-3xl mx-auto">
+          <Eyebrow>How it works</Eyebrow>
+          <SectionHeading>Connect. Understand. Reason. Act.</SectionHeading>
+          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-foreground">
+            Alfie connects financial information to a shared layer of context and reasoning, then turns what it understands into useful work.
+          </p>
+        </Reveal>
+
+        <Reveal className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stages.map((stage) => {
+            const Icon = stage.icon;
+            return (
               <div
                 key={stage.name}
-                className={`absolute inset-8 flex max-w-xl flex-col justify-end transition-all duration-500 md:inset-12 ${active === index ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}
-                aria-hidden={active !== index}
+                className="bg-[#F6F5F2] rounded-2xl p-9 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group min-h-[260px]"
               >
-                <p className="text-4xl font-medium text-background md:text-5xl">{stage.name}</p>
-                <p className="mt-5 text-base font-medium leading-relaxed text-background/80 md:text-lg">{stage.text}</p>
-                <div className="mt-6 h-[3px] w-16 rounded-full bg-primary" />
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <Icon className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_PRO }}>
+                  {stage.name}
+                </h3>
+                <p className="text-base text-black font-medium leading-relaxed">
+                  {stage.desc}
+                </p>
               </div>
-            ))}
-          </Reveal>
-        </div>
+            );
+          })}
+        </Reveal>
+
+        <Reveal className="mt-14 rounded-xl overflow-hidden">
+          <img
+            src={heroImage}
+            alt="Alfie connecting financial systems"
+            className="w-full h-[264px] lg:h-[396px] object-cover"
+            loading="lazy"
+          />
+        </Reveal>
       </div>
     </section>
   );

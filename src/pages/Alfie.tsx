@@ -78,7 +78,6 @@ function HowItWorks() {
                 </Button>
               ))}
             </div>
-          </div>
           </Reveal>
           <Reveal className="relative min-h-[420px] overflow-hidden rounded-xl bg-foreground md:min-h-[560px]">
             <div className="absolute inset-0 opacity-45">

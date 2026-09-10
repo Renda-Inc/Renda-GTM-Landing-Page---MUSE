@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Building2, Landmark, Network, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Network, Sparkles } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
@@ -55,30 +55,32 @@ function HowItWorks() {
   return (
     <section id="how-it-works" className="scroll-mt-16 bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <Reveal className="max-w-3xl">
-          <Eyebrow>How it works</Eyebrow>
-          <SectionHeading>Connect. Understand. Reason. Act.</SectionHeading>
-          <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-foreground md:text-lg">
-            Alfie connects financial information to a shared layer of context and reasoning, then turns what it understands into useful work.
-          </p>
-        </Reveal>
-
-        <div className="mt-12 grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
-          <div className="border-t border-border">
-            {stages.map((stage, index) => (
-              <Button
-                key={stage.name}
-                type="button"
-                variant="ghost"
-                onClick={() => setActive(index)}
-                className={`h-auto w-full justify-start rounded-none border-b border-border px-0 py-6 text-left hover:bg-transparent ${active === index ? "text-foreground" : "text-muted-foreground"}`}
-              >
-                <span className="mr-5 text-xs font-semibold text-primary">0{index + 1}</span>
-                <span className="text-xl font-semibold md:text-2xl">{stage.name}</span>
-              </Button>
-            ))}
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+          <Reveal>
+            <Eyebrow>How it works</Eyebrow>
+            <SectionHeading>Connect. Understand. Reason. Act.</SectionHeading>
+            <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-foreground md:text-lg">
+              Alfie connects financial information to a shared layer of context and reasoning, then turns what it understands into useful work.
+            </p>
+            <div className="mt-10 grid grid-cols-2 gap-3">
+              {stages.map((stage, index) => (
+                <Button
+                  key={stage.name}
+                  type="button"
+                  variant="outline"
+                  onClick={() => setActive(index)}
+                  className={`h-28 justify-start rounded-lg border px-5 text-left transition-colors md:h-32 ${active === index ? "border-foreground bg-foreground text-background hover:bg-foreground/90 hover:text-background" : "border-border bg-background text-foreground hover:bg-secondary"}`}
+                >
+                  <span className="flex h-full flex-col items-start justify-between py-1">
+                    <span className={`text-xs font-semibold ${active === index ? "text-primary" : "text-muted-foreground"}`}>0{index + 1}</span>
+                    <span className="text-lg font-semibold md:text-xl">{stage.name}</span>
+                  </span>
+                </Button>
+              ))}
+            </div>
           </div>
-          <div className="relative min-h-[380px] overflow-hidden rounded-xl bg-foreground p-8 md:min-h-[480px] md:p-12">
+          </Reveal>
+          <Reveal className="relative min-h-[420px] overflow-hidden rounded-xl bg-foreground md:min-h-[560px]">
             <div className="absolute inset-0 opacity-45">
               <img src={heroImage} alt="Financial systems connected through Alfie" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground/75 to-transparent" />
@@ -94,7 +96,7 @@ function HowItWorks() {
                 <div className="mt-6 h-[3px] w-16 rounded-full bg-primary" />
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -153,10 +155,10 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-[88svh] items-center overflow-hidden bg-foreground pt-16 text-background">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-foreground text-background">
       <img ref={imageRef} src={heroImage} alt="Alfie financial intelligence platform" className="absolute inset-0 h-full w-full object-cover transition-transform duration-200" />
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/70 to-foreground/25" />
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
+      <div className="relative mx-auto w-full max-w-7xl px-6 pt-24 md:px-10">
         <div className="max-w-4xl">
           <p className="text-[15px] font-semibold tracking-[0.08em] text-background">Alfie</p>
           <h1 className="mt-6 text-4xl font-semibold leading-[1.08] tracking-normal md:text-5xl lg:text-6xl">
@@ -165,14 +167,6 @@ function Hero() {
           <p className="mt-7 max-w-2xl text-base font-medium leading-relaxed text-background/80 md:text-lg">
             Alfie connects financial data, context, reasoning, workflows, and authorized actions. Conversation is simply one way to work with the intelligence.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Button asChild className="h-12 rounded-full bg-background px-6 text-foreground hover:bg-background/90">
-              <a href="#how-it-works">See how Alfie works <ArrowRight /></a>
-            </Button>
-            <Button asChild variant="outline" className="h-12 rounded-full border-background/25 bg-transparent px-6 text-background hover:bg-background/10 hover:text-background">
-              <a href="#contact">Talk to our team</a>
-            </Button>
-          </div>
         </div>
       </div>
     </section>
@@ -200,13 +194,6 @@ export default function Alfie() {
               Alfie brings your financial life together to help you understand where you stand, what’s changing, and what to do next.
             </p>
             <div className="mt-8"><QuestionList questions={individualQuestions} /></div>
-            <h3 className="mt-9 text-xl font-semibold text-foreground">Built into Renda.</h3>
-            <p className="mt-3 text-base font-medium leading-relaxed text-foreground">
-              Alfie is the intelligence behind Renda — connecting banking, payments, saving, and financial context into one experience.
-            </p>
-            <Button asChild className="mt-7 h-12 rounded-full bg-foreground px-6 text-background hover:bg-foreground/90">
-              <a href="/#waitlist">Sign up <ArrowRight /></a>
-            </Button>
           </div>
         </Reveal>
       </section>
@@ -240,12 +227,10 @@ export default function Alfie() {
 
       <section id="enterprise-government" className="scroll-mt-16 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <Reveal className="grid gap-12 lg:grid-cols-2 lg:items-end lg:gap-20">
-            <div>
-              <Eyebrow>Enterprise & Government</Eyebrow>
-              <SectionHeading>Intelligence for the financial systems that matter.</SectionHeading>
-            </div>
-            <p className="text-base font-medium leading-relaxed text-foreground md:text-lg">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <Eyebrow>Enterprise & Government</Eyebrow>
+            <SectionHeading>Intelligence for the financial systems that matter.</SectionHeading>
+            <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-foreground md:text-lg">
               Alfie gives enterprises and government organizations the ability to reason across complex financial information, systems, regulations, and workflows — securely and at scale.
             </p>
           </Reveal>
@@ -291,9 +276,6 @@ export default function Alfie() {
 
       <section id="contact" className="scroll-mt-16 bg-foreground py-20 text-background lg:py-28">
         <Reveal className="mx-auto max-w-4xl px-6 text-center">
-          <div className="mx-auto mb-8 flex w-fit items-center gap-4 text-background/55">
-            <Building2 className="h-5 w-5" /><ShieldCheck className="h-5 w-5" /><Landmark className="h-5 w-5" />
-          </div>
           <SectionHeading light>Financial intelligence for the work that matters.</SectionHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-background/75 md:text-lg">
             From personal finances to the world's most complex financial organizations, Alfie is designed to turn financial information into intelligence — and intelligence into action.

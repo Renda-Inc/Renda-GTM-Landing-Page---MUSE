@@ -6,16 +6,6 @@ const SF_PRO =
 
 const footerColumns = [
   {
-    heading: "Alfie",
-    links: [
-      { label: "How Alfie Works", href: "/alfie#how-it-works" },
-      { label: "Alfie for Individuals", href: "/alfie#individuals" },
-      { label: "Alfie for Business", href: "/alfie#business" },
-      { label: "Alfie for Enterprise & Government", href: "/alfie#enterprise-government" },
-      { label: "Alfie Agents", href: "/alfie#agents" },
-    ],
-  },
-  {
     heading: "Personal Banking",
     links: [
       { label: "Smart Accounts", href: "/personal-banking" },
@@ -37,6 +27,25 @@ const footerColumns = [
     ],
   },
   {
+    heading: "Platform",
+    links: [
+      { label: "Alfie Platform", href: "/alfie-platform" },
+      { label: "Alfie as Infrastructure", href: "#infrastructure" },
+      { label: "Developer & Integration", href: "#" },
+      { label: "Security & Compliance", href: "#" },
+    ],
+  },
+  {
+    heading: "Alfie",
+    links: [
+      { label: "How Alfie Works", href: "/alfie#how-it-works" },
+      { label: "Alfie for Individuals", href: "/alfie#individuals" },
+      { label: "Alfie for Business", href: "/alfie#business" },
+      { label: "Alfie for Enterprise & Government", href: "/alfie#enterprise-government" },
+      { label: "Alfie Agents", href: "/alfie#agents" },
+    ],
+  },
+  {
     heading: "Why Renda",
     links: [
       { label: "Why Renda Exists", href: "/why-renda#exists" },
@@ -44,15 +53,6 @@ const footerColumns = [
       { label: "Signal Over Noise", href: "/why-renda#signals" },
       { label: "Intelligence at the Core", href: "/why-renda#belief" },
       { label: "Trust & Responsibility", href: "/why-renda#trust" },
-    ],
-  },
-  {
-    heading: "Platform",
-    links: [
-      { label: "Alfie Platform", href: "/alfie-platform" },
-      { label: "Alfie as Infrastructure", href: "#infrastructure" },
-      { label: "Developer & Integration", href: "#" },
-      { label: "Security & Compliance", href: "#" },
     ],
   },
   {

@@ -208,7 +208,7 @@ function Hero() {
 
   return (
     <section className="pt-36 md:pt-44">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto flex max-w-7xl flex-col items-center px-6 text-center">
         <RollingHeadline text="The intelligence layer for financial systems." />
         <Reveal delay={200}>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#E0E0E0]">
@@ -216,7 +216,7 @@ function Hero() {
             context, and turn intelligence into action.
           </p>
         </Reveal>
-        <Reveal delay={320} className="mt-10">
+        <Reveal delay={320} className="mt-10 w-full max-w-2xl">
           <ChatDemo />
         </Reveal>
         <Reveal delay={420}>

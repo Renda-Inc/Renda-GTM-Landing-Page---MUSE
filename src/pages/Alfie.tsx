@@ -147,8 +147,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/70 to-foreground/25" />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-24 md:px-10">
         <div className="max-w-3xl">
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-background">Alfie</p>
-          <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
             Financial intelligence.<br />Not just conversation.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-background/70 md:text-xl">

@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
-import { ArrowRight, Brain, Lightbulb, Link2, Network, Sparkles, Zap } from "lucide-react";
+import { Brain, Lightbulb, Link2, Network, Sparkles, Zap } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import heroImage from "@/assets/alfie-hero.jpg";
 import individualImage from "@/assets/alfie-cap-assistant.jpg";
@@ -31,7 +30,7 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 
 function SectionHeading({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <h2 className={`text-3xl font-semibold leading-tight tracking-normal md:text-4xl lg:text-5xl ${light ? "text-background" : "text-foreground"}`}>
+    <h2 className={`text-3xl font-semibold leading-tight tracking-tight md:text-4xl ${light ? "text-background" : "text-foreground"}`}>
       {children}
     </h2>
   );
@@ -82,7 +81,7 @@ function HowItWorks() {
           <img
             src={heroImage}
             alt="Alfie connecting financial systems"
-            className="w-full h-[264px] lg:h-[396px] object-cover"
+            className="h-[300px] w-full object-cover lg:h-[440px]"
             loading="lazy"
           />
         </Reveal>
@@ -146,13 +145,12 @@ function Hero() {
     <section className="relative flex min-h-screen items-center overflow-hidden bg-foreground text-background">
       <img ref={imageRef} src={heroImage} alt="Alfie financial intelligence platform" className="absolute inset-0 h-full w-full object-cover transition-transform duration-200" />
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/70 to-foreground/25" />
-      <div className="relative mx-auto w-full max-w-7xl px-6 pt-24 md:px-10">
-        <div className="max-w-4xl">
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-background">Alfie</p>
-          <h1 className="mt-6 text-4xl font-semibold leading-[1.08] tracking-normal md:text-5xl lg:text-6xl">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-24 md:px-10">
+        <div className="max-w-3xl">
+          <h1 className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
             Financial intelligence.<br />Not just conversation.
           </h1>
-          <p className="mt-7 max-w-2xl text-base font-medium leading-relaxed text-background/80 md:text-lg">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-background/70 md:text-xl">
             Alfie connects financial data, context, reasoning, workflows, and authorized actions. Conversation is simply one way to work with the intelligence.
           </p>
         </div>
@@ -268,9 +266,6 @@ export default function Alfie() {
           <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-background/75 md:text-lg">
             From personal finances to the world's most complex financial organizations, Alfie is designed to turn financial information into intelligence — and intelligence into action.
           </p>
-          <Button asChild className="mt-9 h-14 rounded-full bg-background px-8 text-base text-foreground hover:bg-background/90">
-            <a href="mailto:hello@renda.ca">Talk to our team <ArrowRight /></a>
-          </Button>
         </Reveal>
       </section>
 

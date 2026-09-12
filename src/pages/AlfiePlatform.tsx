@@ -318,9 +318,12 @@ function Capabilities() {
     <section id="capabilities" className="scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">Build with Alfie.</h2>
-          <p className="mt-5 max-w-xl text-lg text-[#A0A0A0]">
-            Intelligence for your products. Infrastructure for your teams.
+          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            Alfie: One layer. Four ways to build with it.
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg text-[#A0A0A0]">
+            Intelligence for your products. Infrastructure for your teams. Every capability shares the same financial
+            understanding underneath.
           </p>
         </Reveal>
 

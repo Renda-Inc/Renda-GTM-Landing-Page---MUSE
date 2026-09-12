@@ -624,7 +624,9 @@ export default function AlfiePlatform() {
       <Hero />
       <Marquee />
       <Capabilities />
+      <DataToDecisions />
       <Organizations />
+      <BuildWithAlfieCTA />
       <AlfieFooter />
     </main>
   );

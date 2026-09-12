@@ -469,7 +469,7 @@ function Organizations() {
       <div ref={ref} className="mx-auto max-w-7xl px-6">
         <div className="overflow-hidden">
           <h2
-            className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white transition-all duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:text-5xl"
+            className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white transition-all duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:text-4xl"
             style={{
               transform: inView ? "translateX(0)" : "translateX(-8%)",
               opacity: inView ? 1 : 0,
@@ -479,6 +479,11 @@ function Organizations() {
             Built for organizations that operate on financial complexity.
           </h2>
         </div>
+        <Reveal delay={200}>
+          <p className="mt-5 max-w-xl text-lg text-[#A0A0A0]">
+            Select an organization to see how the intelligence layer applies.
+          </p>
+        </Reveal>
 
         {expanded === null ? (
           <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">

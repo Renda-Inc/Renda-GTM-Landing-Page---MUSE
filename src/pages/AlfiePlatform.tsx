@@ -318,9 +318,12 @@ function Capabilities() {
     <section id="capabilities" className="scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">Build with Alfie.</h2>
-          <p className="mt-5 max-w-xl text-lg text-[#A0A0A0]">
-            Intelligence for your products. Infrastructure for your teams.
+          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            Alfie: One layer. Four ways to build with it.
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg text-[#A0A0A0]">
+            Intelligence for your products. Infrastructure for your teams. Every capability shares the same financial
+            understanding underneath.
           </p>
         </Reveal>
 
@@ -357,6 +360,57 @@ function Capabilities() {
             >
               {cap.title}
             </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- data to decisions ---------------- */
+
+const dataSteps = [
+  {
+    num: "01",
+    title: "Connect",
+    text: "Accounts, ledgers, documents and systems of record come in through one interface.",
+  },
+  {
+    num: "02",
+    title: "Understand",
+    text: "Alfie resolves, classifies and models financial activity into structured meaning.",
+  },
+  {
+    num: "03",
+    title: "Reason",
+    text: "Context is combined into analysis, forecasting and explanations you can defend.",
+  },
+  {
+    num: "04",
+    title: "Act",
+    text: "Intelligence connects to authorized workflows with permissions and audit trails.",
+  },
+];
+
+function DataToDecisions() {
+  return (
+    <section className="scroll-mt-20 border-t border-white/[0.07] py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <Reveal>
+          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            From raw financial data to defensible decisions.
+          </h2>
+        </Reveal>
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {dataSteps.map((step) => (
+            <div
+              key={step.title}
+              className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 transition-colors hover:border-white/[0.12] hover:bg-white/[0.05]"
+            >
+              <p className="text-[13px] font-medium tracking-wide text-[#7BE0A5]">{step.num}</p>
+              <p className="mt-4 text-xl font-medium text-white">{step.title}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-[#A0A0A0]">{step.text}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -415,7 +469,7 @@ function Organizations() {
       <div ref={ref} className="mx-auto max-w-7xl px-6">
         <div className="overflow-hidden">
           <h2
-            className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white transition-all duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:text-5xl"
+            className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white transition-all duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:text-4xl"
             style={{
               transform: inView ? "translateX(0)" : "translateX(-8%)",
               opacity: inView ? 1 : 0,
@@ -425,6 +479,11 @@ function Organizations() {
             Built for organizations that operate on financial complexity.
           </h2>
         </div>
+        <Reveal delay={200}>
+          <p className="mt-5 max-w-xl text-lg text-[#A0A0A0]">
+            Select an organization to see how the intelligence layer applies.
+          </p>
+        </Reveal>
 
         {expanded === null ? (
           <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
@@ -487,6 +546,38 @@ function Organizations() {
   );
 }
 
+/* ---------------- build with alfie cta ---------------- */
+
+function BuildWithAlfieCTA() {
+  return (
+    <section className="border-t border-white/[0.07] py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <Reveal>
+          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">Build with Alfie.</h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#A0A0A0]">
+            APIs, SDKs and deployment models designed for regulated environments — with the controls, residency options
+            and audit trails financial teams are held to.
+          </p>
+        </Reveal>
+        <Reveal delay={150} className="mt-14">
+          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-8 md:p-10">
+            <p className="text-xl font-medium text-white">Tell us what you are building.</p>
+            <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#A0A0A0]">
+              We are working with a small group of organizations ahead of launch.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <span className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-5 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/[0.08]">
+                Talk to us
+              </span>
+              <span className="text-[13px] text-[#A0A0A0]">Coming soon.</span>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- footer ---------------- */
 
 const footerCols = [
@@ -533,7 +624,9 @@ export default function AlfiePlatform() {
       <Hero />
       <Marquee />
       <Capabilities />
+      <DataToDecisions />
       <Organizations />
+      <BuildWithAlfieCTA />
       <AlfieFooter />
     </main>
   );

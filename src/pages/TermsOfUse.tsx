@@ -181,12 +181,12 @@ export default function TermsOfUse() {
                 {section.description}
               </p>
 
-              <div className="rounded-xl overflow-hidden divide-y divide-black/10 bg-[#F6F5F2]">
+              <div className="space-y-3">
                 {section.policies.map((policy) => (
                   <Link
                     key={policy.slug}
                     to={`/terms/${policy.slug}`}
-                    className="flex items-start gap-5 px-7 py-6 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:bg-[#EFEDE7] group"
+                    className="group flex items-start gap-5 p-6 sm:p-7 rounded-2xl bg-[#F6F5F2] border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]"
                   >
                     <FileText className="w-6 h-6 text-black mt-0.5 shrink-0" />
                     <div className="flex-1 min-w-0">

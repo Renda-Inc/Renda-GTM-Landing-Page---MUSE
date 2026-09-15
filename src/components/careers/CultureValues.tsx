@@ -40,10 +40,14 @@ export default function CultureValues() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Culture & Values</p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
             What we believe.
           </h2>
+          <p className="mt-6 text-base md:text-lg font-medium leading-relaxed text-foreground">
+            Our values shape how we work, make decisions, and build for the long run.
+          </p>
         </div>
+
 
         <div className="flex w-full gap-3 h-[520px] lg:h-[640px]">
           {values.map((v, i) => {

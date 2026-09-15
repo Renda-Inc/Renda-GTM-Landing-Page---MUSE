@@ -32,11 +32,11 @@ export default function Careers() {
       <CareersHero />
       <WhyJoinRenda />
       <Divider />
-      <WorkingPrinciples />
+      <CultureValues />
       <Divider />
       <TeamGallery />
       <Divider />
-      <CultureValues />
+      <WorkingPrinciples />
       <Divider />
       <DiversitySection />
       <Divider />

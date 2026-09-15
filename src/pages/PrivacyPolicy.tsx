@@ -92,42 +92,48 @@ const policyBlocks: PolicyBlock[] = [
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <main
+      className="min-h-screen bg-background text-foreground"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
+      }}
+    >
       <Navbar />
 
       {/* Hero */}
       <header className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">
             Legal Center
           </p>
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-black/80">
             Privacy Policy
           </h1>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="mt-6 text-lg md:text-xl text-black font-medium leading-relaxed max-w-2xl">
             This policy describes how Renda collects, uses, and protects your
             personal information when you use our platform and financial
             services.
           </p>
-          <p className="mt-4 text-sm text-muted-foreground">
+          <p className="mt-4 text-sm text-black/60 font-medium">
             Last updated: {lastUpdated}
           </p>
         </div>
       </header>
 
       {/* Policy Content */}
-      <main className="pb-24 px-6">
+      <section className="pb-24 px-6">
         <div className="max-w-4xl mx-auto space-y-14">
           {policyBlocks.map((block) => (
             <section key={block.title}>
-              <h2 className="text-xl font-semibold tracking-tight mb-4">
+              <h2 className="text-2xl font-semibold tracking-tight text-black/80 mb-4">
                 {block.title}
               </h2>
               <div className="space-y-4">
                 {block.content.map((paragraph, i) => (
                   <p
                     key={i}
-                    className="text-base text-muted-foreground leading-relaxed"
+                    className="text-base text-black font-medium leading-relaxed"
                   >
                     {paragraph}
                   </p>
@@ -136,9 +142,9 @@ export default function PrivacyPolicy() {
             </section>
           ))}
         </div>
-      </main>
+      </section>
 
       <Footer />
-    </div>
+    </main>
   );
 }

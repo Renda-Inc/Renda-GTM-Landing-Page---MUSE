@@ -108,7 +108,7 @@ export const articles: Article[] = [
   },
 ];
 
-const categories: Category[] = ["All", "AI & Finance", "Product", "Industry", "Company"];
+export const categories: Category[] = ["All", "AI & Finance", "Product", "Industry", "Company"];
 
 export function categoryColor(cat: Exclude<Category, "All">) {
   switch (cat) {

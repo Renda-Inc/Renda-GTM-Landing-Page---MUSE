@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { useInView, Reveal } from "./Reveal";
+import { Reveal } from "./Reveal";
+import { useInView } from "@/hooks/use-in-view";
 import orgFinancial from "@/assets/alfie-org-financial.jpg";
 import orgFintech from "@/assets/alfie-org-fintech.jpg";
 import orgInsurance from "@/assets/alfie-org-insurance.jpg";

@@ -1,4 +1,4 @@
-import type { Category } from "@/pages/Blog";
+import type { Category } from "@/data/blog";
 
 interface Props {
   categories: Category[];

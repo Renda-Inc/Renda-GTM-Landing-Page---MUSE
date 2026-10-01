@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { ArrowLeft } from "lucide-react";
-import { articles, categoryColor } from "@/pages/Blog";
+import { articles, categoryColor } from "@/data/blog";
 import articleContent from "@/data/blogArticleContent";
 
 export default function BlogArticle() {

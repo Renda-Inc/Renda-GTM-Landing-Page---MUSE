@@ -1,4 +1,4 @@
-import { useInView } from "./Reveal";
+import { useInView } from "@/hooks/use-in-view";
 
 /* ---------------- rolling headline ---------------- */
 

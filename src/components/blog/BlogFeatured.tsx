@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useFadeIn } from "@/hooks/use-fade-in";
-import type { Article } from "@/pages/Blog";
-import { categoryColor } from "@/pages/Blog";
+import type { Article } from "@/data/blog";
+import { categoryColor } from "@/data/blog";
 
 interface Props {
   articles: Article[];

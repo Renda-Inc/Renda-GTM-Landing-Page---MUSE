@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import { helpCategories } from "./Help";
+import { helpCategories } from "@/data/help";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 
 export default function HelpCategory() {

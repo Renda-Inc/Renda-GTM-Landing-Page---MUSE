@@ -1,4 +1,4 @@
-import type { Category } from "@/pages/Blog";
+import type { Category } from "@/data/blog";
 
 interface Props {
   categories: Category[];
@@ -15,6 +15,8 @@ export default function BlogFilterBar({ categories, active, onSelect }: Props) {
             {categories.map((cat) => (
               <button
                 key={cat}
+                type="button"
+                aria-pressed={active === cat}
                 onClick={() => onSelect(cat)}
                 className={`px-5 py-3 text-base font-medium whitespace-nowrap border-b-2 transition-colors ${
                   active === cat

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/alfie-hero.jpg";
 import RollingHeadline from "./RollingHeadline";
+import ChatDemo from "./ChatDemo";
 import { Reveal } from "./Reveal";
 
 /* ---------------- hero ---------------- */

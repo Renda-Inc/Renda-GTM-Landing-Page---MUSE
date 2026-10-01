@@ -10,6 +10,7 @@ export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = articles.find((a) => a.slug === slug);
   const content = slug ? articleContent[slug] : undefined;
+  const { ref, isVisible } = useFadeIn();
 
   if (!article) {
     return (
@@ -25,8 +26,6 @@ export default function BlogArticle() {
       </main>
     );
   }
-
-  const { ref, isVisible } = useFadeIn();
 
   /* Find related articles (same category, different slug) */
   const related = articles

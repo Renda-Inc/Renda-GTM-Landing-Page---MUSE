@@ -475,7 +475,7 @@ function EarlyAccessForm() {
         </select>
       </div>
 
-      {error && <p className="mt-4 text-sm font-medium text-destructive">{error}</p>}
+       {error && <p role="alert" className="mt-4 text-sm font-medium text-destructive">{error}</p>}
 
       <button
         type="submit"

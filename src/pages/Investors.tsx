@@ -21,7 +21,7 @@ export default function Investors() {
   const contact = useFadeIn();
 
   return (
-    <div
+    <main
       className="min-h-screen bg-secondary/40"
       style={{
         fontFamily:
@@ -148,6 +148,6 @@ export default function Investors() {
 
 
       <Footer />
-    </div>
+    </main>
   );
 }

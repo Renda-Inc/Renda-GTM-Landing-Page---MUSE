@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowLeft, ChevronRight } from "lucide-react";
-import { termsSections } from "./TermsOfUse";
+import { termsSections } from "@/data/terms";
 
 export default function TermsPolicy() {
   const { slug } = useParams<{ slug: string }>();

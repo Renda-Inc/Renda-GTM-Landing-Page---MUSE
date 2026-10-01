@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import { useFadeIn } from "@/hooks/use-fade-in";
-import { ArrowRight } from "lucide-react";
 
 import blogHeroLifestyle from "@/assets/blog-hero-lifestyle.jpg";
 import BlogHero from "@/components/blog/BlogHero";

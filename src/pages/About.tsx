@@ -2,7 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { ArrowRight } from "lucide-react";
-import { beliefs, vcPartners } from "@/components/about/content";
+import { beliefs, values, vcPartners } from "@/components/about/content";
 import Timeline from "@/components/about/Timeline";
 import ValuesAccordion from "@/components/about/ValuesAccordion";
 import aboutOverhead from "@/assets/about-overhead.jpg";
@@ -80,7 +80,7 @@ export default function About() {
           </div>
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-center">
             {beliefs.map((b, i) => {
-              const image = [valueImg1, valueImg2, valueImg3, valueImg4][i];
+              const image = values[i].image;
               const taller = i === 1 || i === 2;
               return (
                 <div

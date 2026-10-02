@@ -10,7 +10,7 @@ type CardVariant = {
   chip: string;
 };
 
-export const cardVariants: CardVariant[] = [
+const cardVariants: CardVariant[] = [
   {
     name: "Renda Blue",
     bg: "linear-gradient(140deg, #1B3A6B 0%, #2E5FA3 55%, #17325C 100%)",
@@ -69,7 +69,7 @@ export function RotatingCards() {
   }, [total]);
 
   return (
-    <div className="mt-14 flex flex-col items-center select-none">
+    <div className="mt-14 flex flex-col items-center select-none overflow-hidden">
       <div
         className="relative w-full max-w-[900px] h-[300px] sm:h-[380px] lg:h-[440px]"
         style={{ perspective: "1600px" }}

@@ -65,7 +65,7 @@ export default function TeamGallery() {
     <section className="py-16 lg:py-20 bg-[#F6F5F2]">
       <div className="max-w-7xl mx-auto px-6">
         <Fade>
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">
             Our Team
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
@@ -120,7 +120,7 @@ export default function TeamGallery() {
         {/* Testimonials */}
         <div className="mt-20">
           <Fade>
-            <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-10">
+            <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-10">
               What Our Team Says
             </p>
           </Fade>

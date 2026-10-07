@@ -250,7 +250,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                                 <a
                                   key={item.label}
                                   href={item.href}
-                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground transition-colors duration-200 group-hover/cols:text-foreground/60 hover:!text-foreground whitespace-nowrap"
+                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/90 transition-colors duration-200 group-hover/cols:text-foreground/60 hover:!text-foreground/90 whitespace-nowrap"
                                 >
                                   {item.label}
                                   {item.soon && (
@@ -278,7 +278,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                                 <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45">
                                   {dropdown.featured.eyebrow}
                                 </span>
-                                <p className="mt-2 text-[15px] font-semibold text-foreground leading-snug">
+                                <p className="mt-2 text-[15px] font-semibold text-foreground/90 leading-snug">
                                   {dropdown.featured.title}
                                 </p>
                                 <p className="mt-1 text-[13px] text-foreground/60 leading-snug">

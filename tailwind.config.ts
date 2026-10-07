@@ -87,6 +87,8 @@ export default {
   		'surface-elevated': 'hsl(var(--surface-elevated))',
   		'accent-peach': 'hsl(var(--accent-peach))',
   		'accent-blue': 'hsl(var(--accent-blue))',
+  		'brand-orange': 'hsl(var(--brand-orange))',
+
   		'hero-gradient': {
   			start: 'hsl(var(--hero-gradient-start))',
   			mid: 'hsl(var(--hero-gradient-mid))',

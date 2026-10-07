@@ -133,7 +133,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-6 group/cols max-w-4xl">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 xl:gap-x-16 gap-y-16 group/cols max-w-4xl">
             {footerColumns.map((col) => (
               <div key={col.heading}>
                 <p className="text-base font-semibold text-background mb-4 whitespace-nowrap">

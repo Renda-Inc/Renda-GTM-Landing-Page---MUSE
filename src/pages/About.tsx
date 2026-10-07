@@ -69,7 +69,7 @@ export default function About() {
               <img src={aboutBelief} alt="Team discussing financial inclusion" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
-              <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Our Belief</p>
+              <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">Our Belief</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Finance should empower, not overwhelm.
               </h2>
@@ -114,7 +114,7 @@ export default function About() {
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">What We're Building</p>
+              <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">What We're Building</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Alfie: a financial reasoning system.
               </h2>
@@ -146,7 +146,7 @@ export default function About() {
               <img src={aboutValues} alt="Team working in modern office" className="w-full h-[264px] lg:h-[396px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
             <div>
-              <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">The Company We Aim to Be</p>
+              <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">The Company We Aim to Be</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built to endure.
               </h2>
@@ -208,7 +208,7 @@ export default function About() {
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Global Vision</p>
+              <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">Global Vision</p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight">
                 Built in Canada. Designed for the world.
               </h2>
@@ -233,7 +233,7 @@ export default function About() {
       {/* ── Partners & Backers ────────────────────────────── */}
       <section className="py-16 lg:py-20">
         <Fade className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Partners & Backers</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">Partners & Backers</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             Backed by those who believe.
           </h2>

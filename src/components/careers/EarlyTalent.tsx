@@ -48,7 +48,7 @@ export default function EarlyTalent() {
                 If you're a student or recent graduate with a passion for finance, AI, or product design, we'd love to hear from you.
               </p>
             </div>
-            <div className="mt-10 rounded-2xl overflow-hidden">
+            <div className="mt-10 rounded-3xl overflow-hidden">
               <img src={earlyTalentImg} alt="Mentor and intern working together" className="w-full h-[420px] lg:h-[500px] object-cover" loading="lazy" width={1280} height={720} />
             </div>
           </Fade>

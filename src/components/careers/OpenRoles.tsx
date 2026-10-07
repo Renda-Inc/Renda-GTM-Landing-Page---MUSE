@@ -42,7 +42,7 @@ export default function OpenRoles() {
     <section id="roles" className="py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6">
         <Fade>
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Open Roles</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">Open Roles</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-4">
             Current openings. Start building early.
           </h2>

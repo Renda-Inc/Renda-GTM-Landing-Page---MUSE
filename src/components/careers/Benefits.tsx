@@ -49,7 +49,7 @@ export default function Benefits() {
     <section className="py-16 lg:py-20 bg-secondary/40">
       <div className="max-w-7xl mx-auto px-6">
         <Fade>
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Benefits</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-4">Benefits</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-black/80 hover:text-black transition-colors duration-300 leading-tight mb-10">
             Built for people who do their best work.
           </h2>

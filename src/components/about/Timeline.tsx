@@ -83,7 +83,7 @@ export default function Timeline() {
       </div>
 
       {/* Right: image */}
-      <div className="rounded-xl overflow-hidden">
+      <div className="rounded-3xl overflow-hidden">
         <img
           src={current.image}
           alt={current.title}

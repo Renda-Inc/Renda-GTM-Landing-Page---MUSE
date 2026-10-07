@@ -32,7 +32,7 @@ export default function WorkingPrinciples() {
           </p>
         </Fade>
 
-        <Fade className="mt-12 overflow-hidden rounded-xl">
+        <Fade className="mt-12 overflow-hidden rounded-3xl">
           <img
             src={workspaceImg}
             alt="Team collaborating in a bright workspace"

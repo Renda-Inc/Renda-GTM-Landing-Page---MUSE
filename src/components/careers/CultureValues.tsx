@@ -48,8 +48,8 @@ export default function CultureValues() {
           </p>
         </div>
 
+        <div className="mt-14 flex w-full gap-3 h-[520px] lg:h-[640px]">
 
-        <div className="flex w-full gap-3 h-[520px] lg:h-[640px]">
           {values.map((v, i) => {
             const isActive = i === active;
             return (

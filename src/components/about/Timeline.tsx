@@ -11,7 +11,7 @@ export default function Timeline() {
     <div className="grid lg:grid-cols-2 gap-12 items-center">
       {/* Left: year, description, tracker */}
       <div>
-        <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Our Journey</p>
+        <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">Our Journey</p>
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight mb-10">
           From conviction to product.
         </h2>
@@ -83,7 +83,7 @@ export default function Timeline() {
       </div>
 
       {/* Right: image */}
-      <div className="rounded-xl overflow-hidden">
+      <div className="rounded-3xl overflow-hidden">
         <img
           src={current.image}
           alt={current.title}

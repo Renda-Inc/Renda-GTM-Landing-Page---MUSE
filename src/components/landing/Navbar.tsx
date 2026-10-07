@@ -31,7 +31,7 @@ const navDropdowns: Dropdown[] = [
     href: "/personal-banking",
     columns: [
       {
-        title: "PERSONAL BANKING",
+        title: "Personal banking",
         items: [
           { label: "Smart Accounts", href: "/personal-banking" },
           { label: "Cards & Payments", href: "/personal-banking#cards-payments" },
@@ -41,7 +41,7 @@ const navDropdowns: Dropdown[] = [
         ],
       },
       {
-        title: "BUSINESS BANKING",
+        title: "Business banking",
         items: [
           { label: "Renda Business", href: "/business-banking" },
           { label: "Business Accounts", href: "/business-banking", soon: true },
@@ -50,7 +50,7 @@ const navDropdowns: Dropdown[] = [
         ],
       },
       {
-        title: "ALFIE",
+        title: "Alfie",
         items: [
           { label: "How Alfie Works", href: "/#alfie" },
           { label: "Alfie for Individuals", href: "/personal-banking" },
@@ -229,7 +229,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                     >
                       <div className="px-8 py-8">
                         <div
-                          className={`grid gap-x-12 gap-y-2 ${
+                          className={`group/cols grid gap-x-12 gap-y-2 ${
                             isSingleColumn && dropdown.featured
                               ? "grid-cols-[1fr_1.2fr]"
                               : dropdown.featured
@@ -242,7 +242,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                           {dropdown.columns.map((col, ci) => (
                             <div key={ci} className="flex flex-col gap-2">
                               {col.title && (
-                                <span className="text-[11px] font-semibold tracking-[0.12em] text-foreground/45 mb-2">
+                                <span className="text-base font-semibold text-foreground mb-2 whitespace-nowrap">
                                   {col.title}
                                 </span>
                               )}
@@ -250,7 +250,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                                 <a
                                   key={item.label}
                                   href={item.href}
-                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground hover:font-semibold transition-all duration-150 whitespace-nowrap"
+                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground transition-colors duration-200 group-hover/cols:text-foreground/60 hover:!text-foreground whitespace-nowrap"
                                 >
                                   {item.label}
                                   {item.soon && (

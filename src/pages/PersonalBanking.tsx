@@ -57,7 +57,7 @@ function Divider() {
 /* ─── Section eyebrow ─── */
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">
+    <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">
       {children}
     </p>
   );
@@ -92,7 +92,7 @@ export default function PersonalBanking() {
       {/* ════════════ HERO ════════════ */}
       <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">
         <Fade className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-6">
             Personal Banking
           </p>
           <h1
@@ -122,7 +122,7 @@ export default function PersonalBanking() {
         </Fade>
 
         <Fade className="mt-16 max-w-7xl mx-auto px-6">
-          <div className="rounded-xl overflow-hidden">
+          <div className="rounded-3xl overflow-hidden">
             <img
               src={heroLifestyle}
               alt="Person using Renda app"
@@ -230,7 +230,7 @@ export default function PersonalBanking() {
                 </p>
               </div>
 
-              <div className="rounded-xl overflow-hidden">
+              <div className="rounded-3xl overflow-hidden">
                 <img
                   src={cardInHand.url}
                   alt="Hand holding a Renda Smart Card"
@@ -246,7 +246,7 @@ export default function PersonalBanking() {
           <Fade className="max-w-7xl mx-auto px-6">
             {/* Component B — Payments */}
             <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div className="order-2 lg:order-1 rounded-xl overflow-hidden">
+              <div className="order-2 lg:order-1 rounded-3xl overflow-hidden">
                 <img
                   src={lifestyleCafe}
                   alt="Tapping to pay at a cafe"
@@ -338,7 +338,7 @@ export default function PersonalBanking() {
             </div>
 
             <div className="space-y-5">
-              <div className="rounded-xl overflow-hidden">
+              <div className="rounded-3xl overflow-hidden">
                 <img
                   src={lifestyleGathering}
                   alt="Friends splitting a bill"
@@ -372,7 +372,7 @@ export default function PersonalBanking() {
       <section id="savings-goals" className="scroll-mt-20 py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-xl overflow-hidden order-2 lg:order-1">
+            <div className="rounded-3xl overflow-hidden order-2 lg:order-1">
               <img
                 src={lifestyleStudying}
                 alt="Planning savings goals"

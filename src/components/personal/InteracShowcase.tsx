@@ -25,7 +25,7 @@ export default function InteracShowcase() {
 
   return (
     <div>
-      <div className="relative rounded-xl overflow-hidden h-[264px] lg:h-[396px] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
+      <div className="relative rounded-3xl overflow-hidden h-[264px] lg:h-[396px] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
         {interacSlides.map((s, i) => (
           <div
             key={s.title}

@@ -150,7 +150,7 @@ export default function ConnectedSystem() {
                     zIndex: 10 - Math.round(Math.abs(distance) * 2),
                   }}
                 >
-                  <div className="relative h-full overflow-hidden rounded-xl border border-white/15 bg-foreground shadow-2xl">
+                  <div className="relative h-full overflow-hidden rounded-3xl border border-white/15 bg-foreground shadow-2xl">
                     <img
                       src={s.image}
                       alt={s.title}

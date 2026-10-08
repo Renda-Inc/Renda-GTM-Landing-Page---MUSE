@@ -140,7 +140,7 @@ export default function Footer() {
                   {col.heading}
                 </p>
                 {col.links.length > 0 && (
-                  <ul className="space-y-2 text-base">
+                  <ul className="space-y-2 text-[17px]">
                     {col.links.map((link) => (
                       <li key={link.label}>
                         <a

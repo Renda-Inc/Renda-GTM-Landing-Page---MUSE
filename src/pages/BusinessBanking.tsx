@@ -30,7 +30,7 @@ export default function BusinessBanking() {
                 Running a business means holding the whole financial picture in your head; money coming in, money going out, what's owed, and what's next. Renda brings that entire side of your business into one connected experience.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-3xl overflow-hidden">
               <img
                 src={businessVision}
                 alt="A business owner reviewing financials"
@@ -53,7 +53,7 @@ export default function BusinessBanking() {
               Banking and financial operations come together in one intelligent platform, with Alfie connecting the numbers, activity, and decisions behind your business.
             </p>
           </div>
-          <div className="mt-12 rounded-2xl overflow-hidden">
+          <div className="mt-12 rounded-3xl overflow-hidden">
             <img
               src={businessDashboard}
               alt="Renda Business dashboard showing accounts, spend, and tax estimates"
@@ -73,7 +73,7 @@ export default function BusinessBanking() {
       <section className="py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div className="order-last lg:order-first rounded-2xl overflow-hidden">
+            <div className="order-last lg:order-first rounded-3xl overflow-hidden">
               <img
                 src={businessAlfie}
                 alt="A business owner reviewing performance late in the evening"
@@ -107,7 +107,7 @@ export default function BusinessBanking() {
                 Renda Business is coming soon. Join the early access list to be considered for the
                 first group of businesses invited onto the platform, and help shape it as we build.
               </p>
-              <div className="mt-10 rounded-2xl overflow-hidden">
+              <div className="mt-10 rounded-3xl overflow-hidden">
                 <img
                   src={businessAccess}
                   alt="A small team welcoming a new partner"

@@ -250,7 +250,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                                 <a
                                   key={item.label}
                                   href={item.href}
-                                  className="flex items-center gap-2.5 py-1.5 text-[15px] text-foreground/90 transition-colors duration-200 group-hover/cols:text-foreground/60 hover:!text-foreground/90 whitespace-nowrap"
+                                  className="flex items-center gap-2.5 py-1.5 text-base text-foreground/90 transition-colors duration-200 group-hover/cols:text-foreground/60 hover:!text-foreground/90 whitespace-nowrap"
                                 >
                                   {item.label}
                                   {item.soon && (

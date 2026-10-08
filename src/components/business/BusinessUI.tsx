@@ -24,7 +24,7 @@ export function Divider() {
 
 export function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className={`text-[15px] font-semibold tracking-[0.08em] mb-8 ${light ? "text-white" : "text-black"}`}>
+    <p className={`text-[15px] font-semibold tracking-[0.08em] mb-8 ${light ? "text-white" : "text-brand-orange"}`}>
       {children}
     </p>
   );

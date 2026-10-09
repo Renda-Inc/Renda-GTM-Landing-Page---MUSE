@@ -25,7 +25,7 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
 }
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
-  return <p className={`mb-5 text-[15px] font-semibold tracking-[0.08em] ${light ? "text-background" : "text-foreground"}`}>{children}</p>;
+  return <p className={`mb-5 text-[15px] font-semibold tracking-[0.08em] ${light ? "text-background" : "text-brand-orange"}`}>{children}</p>;
 }
 
 function SectionHeading({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -77,7 +77,7 @@ function HowItWorks() {
           })}
         </Reveal>
 
-        <Reveal className="mt-14 rounded-xl overflow-hidden">
+        <Reveal className="mt-14 rounded-3xl overflow-hidden">
           <img
             src={heroImage}
             alt="Alfie connecting financial systems"
@@ -168,7 +168,7 @@ export default function Alfie() {
 
       <section id="individuals" className="scroll-mt-16 py-16 lg:py-24">
         <Reveal className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center lg:gap-20">
-          <div className="relative h-[420px] overflow-hidden rounded-xl lg:h-[600px]">
+          <div className="relative h-[420px] overflow-hidden rounded-3xl lg:h-[600px]">
             <img src={individualImage} alt="An individual using Alfie to understand personal finances" className="h-full w-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent" />
             <p className="absolute bottom-7 left-7 right-7 text-xl font-medium text-background md:text-2xl">Built into Renda.</p>
@@ -195,7 +195,7 @@ export default function Alfie() {
               </p>
               <div className="mt-8"><QuestionList questions={businessQuestions} dark /></div>
             </div>
-            <div className="relative h-[440px] overflow-hidden rounded-xl lg:h-[620px]">
+            <div className="relative h-[440px] overflow-hidden rounded-3xl lg:h-[620px]">
               <img src={businessImage} alt="Business financial systems interpreted by Alfie" className="h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-transparent to-transparent" />
               <p className="absolute bottom-8 left-8 right-8 max-w-lg text-xl font-medium leading-snug text-background md:text-2xl">
@@ -220,7 +220,7 @@ export default function Alfie() {
               Alfie gives enterprises and government organizations the ability to reason across complex financial information, systems, regulations, and workflows — securely and at scale.
             </p>
           </Reveal>
-          <Reveal className="mt-12 overflow-hidden rounded-xl">
+          <Reveal className="mt-12 overflow-hidden rounded-3xl">
             <img src={enterpriseImage} alt="Enterprise and government financial operations" className="h-[320px] w-full object-cover md:h-[500px]" loading="lazy" />
           </Reveal>
           <div className="mt-12 grid border-t border-border md:grid-cols-2 lg:grid-cols-3">
@@ -249,7 +249,7 @@ export default function Alfie() {
                 ))}
               </div>
             </div>
-            <div className="order-1 relative h-[420px] overflow-hidden rounded-xl lg:order-2 lg:h-[600px]">
+            <div className="order-1 relative h-[420px] overflow-hidden rounded-3xl lg:order-2 lg:h-[600px]">
               <img src={agentsImage} alt="Specialized Alfie agents coordinating financial work" className="h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-br from-foreground/55 via-transparent to-foreground/45" />
               <div className="absolute left-7 top-7 flex items-center gap-3 rounded-full border border-background/20 bg-foreground/50 px-4 py-2 text-sm font-semibold text-background backdrop-blur-md">

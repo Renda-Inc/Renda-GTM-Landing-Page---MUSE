@@ -52,7 +52,7 @@ const navDropdowns: Dropdown[] = [
       {
         title: "Alfie",
         items: [
-          { label: "How Alfie Works", href: "/#alfie" },
+          { label: "How Alfie Works", href: "/alfie" },
           { label: "Alfie for Individuals", href: "/personal-banking" },
           { label: "Alfie for Business", href: "/business-banking" },
           { label: "Alfie for Enterprise & Government", href: "/#alfie" },

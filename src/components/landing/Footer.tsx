@@ -95,7 +95,7 @@ export default function Footer() {
               <img src={rendaLogoWhite} alt="Renda" className="h-8 w-auto" />
             </a>
             <p className="mt-3 text-base text-background/80 max-w-xs leading-relaxed">
-              The AI-native bank. Intelligence-first financial infrastructure for individuals and businesses.
+              The Intelligence-first financial infrastructure for individuals and businesses.
             </p>
             <div className="mt-6 flex flex-col gap-4">
               <div className="flex items-center gap-4">

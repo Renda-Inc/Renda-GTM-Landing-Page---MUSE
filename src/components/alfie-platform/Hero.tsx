@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section className="pt-36 md:pt-44">
       <div className="mx-auto flex max-w-7xl flex-col items-center px-6 text-center">
-        <RollingHeadline text="The intelligence layer for financial systems." />
+        <RollingHeadline text={["The intelligence layer for financial", "systems."]} />
         <Reveal delay={200}>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#E0E0E0]">
             Alfie gives organizations the ability to understand financial information, reason across complex financial

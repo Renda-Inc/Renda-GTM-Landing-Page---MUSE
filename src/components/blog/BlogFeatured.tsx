@@ -21,7 +21,7 @@ export default function BlogFeatured({ articles, visible }: Props) {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-10">
+        <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-10">
           Featured
         </p>
 
@@ -30,9 +30,9 @@ export default function BlogFeatured({ articles, visible }: Props) {
             <Link
               key={article.slug}
               to={`/blog/${article.slug}`}
-              className="group block rounded-2xl overflow-hidden bg-background shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="group block rounded-3xl overflow-hidden bg-background shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="aspect-[16/9] overflow-hidden">
+              <div className="aspect-[16/9] rounded-3xl overflow-hidden">
                 <img
                   src={article.image}
                   alt={article.title}

@@ -8,7 +8,7 @@ export default function BlogHero({ heroImage }: Props) {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+    <section className="relative min-h-[60vh] flex items-end overflow-hidden rounded-3xl">
       {/* Full-bleed background — same pattern as homepage hero */}
       <div className="absolute inset-0">
         <img

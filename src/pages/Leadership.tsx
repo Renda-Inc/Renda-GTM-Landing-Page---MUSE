@@ -42,7 +42,7 @@ function Fade({ children, className = "" }: { children: React.ReactNode; classNa
 function LeaderCard({ leader }: { leader: { name: string; role: string; photo: string } }) {
   return (
     <div>
-      <div className="relative w-full overflow-hidden rounded-2xl bg-black/5 aspect-[4/5]">
+      <div className="relative w-full overflow-hidden rounded-3xl bg-black/5 aspect-[4/5]">
         <img
           src={leader.photo}
           alt={leader.name}
@@ -69,7 +69,7 @@ export default function Leadership() {
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16">
           <Fade className="text-center">
-            <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-4">Leadership</p>
+            <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-4">Leadership</p>
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-black leading-tight">
               The people behind Renda.
             </h1>

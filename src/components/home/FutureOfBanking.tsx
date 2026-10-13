@@ -43,7 +43,7 @@ function Collage({ pieces }: { pieces: Piece[] }) {
           src={p.src}
           alt={p.alt}
           loading="lazy"
-          className={`${p.cls} rounded-xl object-cover aspect-[4/5] shadow-sm`}
+          className={`${p.cls} rounded-3xl object-cover aspect-[4/5] shadow-sm`}
         />
       ))}
     </>
@@ -71,7 +71,7 @@ export default function FutureOfBanking() {
             {eras.map((era, i) => (
               <span
                 key={era}
-                className={`absolute top-0 ${eraPos[i]} text-[15px] font-semibold tracking-[0.08em] text-black/45 transition-all duration-[1200ms] ease-in-out ${
+                className={`absolute top-0 ${eraPos[i]} text-[15px] font-semibold tracking-[0.08em] text-brand-orange transition-all duration-[1200ms] ease-in-out ${
                   step === i ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
                 }`}
               >
@@ -95,9 +95,9 @@ export default function FutureOfBanking() {
       {/* Mobile: collage keeps its loose character in two scattered rows */}
       <div className="md:hidden px-4">
         <div className="flex gap-3 items-end justify-center">
-          <img src={oldBranch} alt="Traditional bank branch" loading="lazy" className="w-[26%] aspect-[4/5] object-cover rounded-lg rotate-[-4deg]" />
-          <img src={oldPaperwork} alt="Paper bank statements" loading="lazy" className="w-[30%] aspect-[4/5] object-cover rounded-lg rotate-[3deg] mb-5" />
-          <img src={oldCash} alt="Cash and a paper ledger" loading="lazy" className="w-[24%] aspect-[4/5] object-cover rounded-lg rotate-[5deg]" />
+          <img src={oldBranch} alt="Traditional bank branch" loading="lazy" className="w-[26%] aspect-[4/5] object-cover rounded-3xl rotate-[-4deg]" />
+          <img src={oldPaperwork} alt="Paper bank statements" loading="lazy" className="w-[30%] aspect-[4/5] object-cover rounded-3xl rotate-[3deg] mb-5" />
+          <img src={oldCash} alt="Cash and a paper ledger" loading="lazy" className="w-[24%] aspect-[4/5] object-cover rounded-3xl rotate-[5deg]" />
         </div>
 
         <div className="py-12 text-center">
@@ -105,7 +105,7 @@ export default function FutureOfBanking() {
             {eras.map((era, i) => (
               <span
                 key={era}
-                className={`absolute inset-x-0 text-[13px] font-semibold tracking-[0.08em] text-black/45 transition-all duration-[1200ms] ease-in-out ${
+                className={`absolute inset-x-0 text-[13px] font-semibold tracking-[0.08em] text-brand-orange transition-all duration-[1200ms] ease-in-out ${
                   step === i ? "opacity-100 translate-x-0" : "opacity-0 translate-x-3"
                 }`}
               >
@@ -120,9 +120,9 @@ export default function FutureOfBanking() {
         </div>
 
         <div className="flex gap-3 items-start justify-center">
-          <img src={newPhone} alt="Checking a banking app on the move" loading="lazy" className="w-[28%] aspect-[4/5] object-cover rounded-lg rotate-[3deg] mt-4" />
-          <img src={newTap} alt="Paying by phone at a cafe" loading="lazy" className="w-[30%] aspect-[4/5] object-cover rounded-lg rotate-[-3deg]" />
-          <img src={newUi} alt="A clean financial interface" loading="lazy" className="w-[24%] aspect-[4/5] object-cover rounded-lg rotate-[4deg] mt-6" />
+          <img src={newPhone} alt="Checking a banking app on the move" loading="lazy" className="w-[28%] aspect-[4/5] object-cover rounded-3xl rotate-[3deg] mt-4" />
+          <img src={newTap} alt="Paying by phone at a cafe" loading="lazy" className="w-[30%] aspect-[4/5] object-cover rounded-3xl rotate-[-3deg]" />
+          <img src={newUi} alt="A clean financial interface" loading="lazy" className="w-[24%] aspect-[4/5] object-cover rounded-3xl rotate-[4deg] mt-6" />
         </div>
       </div>
     </section>

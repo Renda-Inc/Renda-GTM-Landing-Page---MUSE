@@ -65,7 +65,7 @@ export default function BlogShowcase() {
         <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-14 items-center">
           {/* Intro */}
           <div>
-            <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-8">Insights</p>
+            <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">Insights</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-black/80 hover:text-black transition-colors duration-300">
               Stay up to date with the latest news.
             </h2>
@@ -108,7 +108,7 @@ export default function BlogShowcase() {
                     i === 0 ? "" : "lg:opacity-95"
                   }`}
                 >
-                  <div className="rounded-xl overflow-hidden">
+                  <div className="rounded-3xl overflow-hidden">
                     <img
                       src={a.image}
                       alt={a.title}

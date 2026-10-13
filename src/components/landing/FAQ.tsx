@@ -46,7 +46,7 @@ export default function FAQ() {
         }`}
       >
         <div className="mb-10 lg:mb-12">
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-black mb-6">FAQ</p>
+          <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-6">FAQ</p>
           <h2
             className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-black/80"
             style={{ fontFamily: SF_FONT }}

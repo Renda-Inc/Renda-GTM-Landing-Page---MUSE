@@ -37,7 +37,7 @@ export function Divider() {
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className={`text-[15px] font-semibold tracking-[0.08em] mb-8 ${light ? "text-white" : "text-black"}`}>
+    <p className={`text-[15px] font-semibold tracking-[0.08em] mb-8 ${light ? "text-white" : "text-brand-orange"}`}>
       {children}
     </p>
   );
@@ -101,7 +101,7 @@ export function SmartAccounts() {
 
         <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
           {accountCards.map((a) => (
-            <div key={a.name} className="relative rounded-xl overflow-hidden group">
+            <div key={a.name} className="relative rounded-3xl overflow-hidden group">
               <img
                 src={a.img}
                 alt={`${a.name} account`}
@@ -212,7 +212,7 @@ export function MeetAlfie() {
           {alfiePanels.map((p) => (
             <div
               key={p.title}
-              className={`relative rounded-xl overflow-hidden group transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-25px_rgba(0,0,0,0.45)] ${
+              className={`relative rounded-3xl overflow-hidden group transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-25px_rgba(0,0,0,0.45)] ${
                 p.tall ? "h-[520px]" : "h-[460px]"
               }`}
             >
@@ -290,7 +290,7 @@ export function DailyMoney() {
                 type="button"
                 onClick={() => select(i)}
                 aria-expanded={isActive}
-                className="relative rounded-xl overflow-hidden bg-[#111111] transition-all duration-700 ease-in-out focus:outline-none"
+                className="relative rounded-3xl overflow-hidden bg-[#111111] transition-all duration-700 ease-in-out focus:outline-none"
                 style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
               >
                 <img
@@ -433,7 +433,7 @@ export function Pricing() {
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
           {plans.map((p) => (
-            <div key={p.name} className="relative rounded-xl overflow-hidden group text-left">
+            <div key={p.name} className="relative rounded-3xl overflow-hidden group text-left">
               <img
                 src={p.img}
                 alt={`Renda ${p.name} plan`}

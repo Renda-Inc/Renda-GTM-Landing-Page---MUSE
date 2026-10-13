@@ -39,7 +39,7 @@ export default function BlogArticle() {
       {/* ── Full-width hero image ── */}
       <section className="w-full">
         <div className="max-w-[1200px] mx-auto px-6 pt-24 md:pt-28">
-          <div className="w-full aspect-[4/3] md:aspect-[16/9] rounded-xl overflow-hidden bg-muted">
+          <div className="w-full aspect-[4/3] md:aspect-[16/9] rounded-3xl overflow-hidden bg-muted">
             <img
               src={article.image}
               alt={article.title}
@@ -120,7 +120,7 @@ export default function BlogArticle() {
                   to={`/blog/${r.slug}`}
                   className="group block"
                 >
-                  <div className="aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-3">
+                  <div className="aspect-[16/10] rounded-3xl overflow-hidden bg-muted mb-3">
                     <img
                       src={r.image}
                       alt={r.title}

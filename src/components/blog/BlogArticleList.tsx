@@ -33,7 +33,7 @@ export default function BlogArticleList({ articles }: Props) {
               className="group flex flex-col md:flex-row md:items-start gap-5 md:gap-8 py-8 first:pt-0"
             >
               {/* Thumbnail */}
-              <div className="shrink-0 w-full md:w-52 aspect-[16/9] md:aspect-[4/3] rounded-xl overflow-hidden bg-muted">
+              <div className="shrink-0 w-full md:w-52 aspect-[16/9] md:aspect-[4/3] rounded-3xl overflow-hidden bg-muted">
                 <img
                   src={article.image}
                   alt={article.title}

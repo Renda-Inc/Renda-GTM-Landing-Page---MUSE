@@ -6,7 +6,7 @@ export default function HeroSection() {
   const { ref, isVisible } = useFadeIn();
 
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden bg-accent-blue">
+    <section className="relative min-h-screen flex items-end overflow-hidden rounded-3xl bg-accent-blue">
       {/* Full-bleed lifestyle background */}
       <div className="absolute inset-0">
         <img

@@ -51,7 +51,7 @@ const goalCards = [
 function SavingsStory() {
   return (
     <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-      <div className="order-last lg:order-first relative rounded-xl overflow-hidden h-[320px] lg:h-[440px]">
+      <div className="order-last lg:order-first relative rounded-3xl overflow-hidden h-[320px] lg:h-[440px]">
         <img
           src={lifestyleStudying}
           alt="Planning savings goals"

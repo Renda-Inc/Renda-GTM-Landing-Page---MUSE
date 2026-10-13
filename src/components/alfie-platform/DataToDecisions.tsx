@@ -42,7 +42,7 @@ export default function DataToDecisions() {
             >
               <p className="text-[13px] font-medium tracking-wide text-[#7BE0A5]">{step.num}</p>
               <p className="mt-4 text-xl font-medium text-white">{step.title}</p>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#A0A0A0]">{step.text}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-white/90">{step.text}</p>
             </div>
           ))}
         </div>

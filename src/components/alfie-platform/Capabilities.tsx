@@ -45,7 +45,7 @@ export default function Capabilities() {
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
             Alfie: One layer. Four ways to build with it.
           </h2>
-          <p className="mt-5 max-w-2xl text-lg text-[#A0A0A0]">
+          <p className="mt-5 max-w-2xl text-lg text-white/90">
             Intelligence for your products. Infrastructure for your teams. Every capability shares the same financial
             understanding underneath.
           </p>
@@ -62,7 +62,7 @@ export default function Capabilities() {
                 aria-hidden={active !== i}
               >
                 <img src={cap.image} alt={cap.title} className="h-full w-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/90 via-[#0D0D0D]/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/90 via-[#000000]/25 to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
                   <p className="text-2xl font-semibold text-white md:text-4xl">{cap.title}</p>
                   <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-[#E0E0E0] md:text-lg">{cap.text}</p>
@@ -79,7 +79,7 @@ export default function Capabilities() {
               type="button"
               onClick={() => setActive(i)}
               className={`text-[15px] transition-colors ${
-                active === i ? "text-white" : "text-[#A0A0A0] hover:text-[#E0E0E0]"
+                active === i ? "text-white" : "text-white/90 hover:text-white"
               }`}
             >
               {cap.title}

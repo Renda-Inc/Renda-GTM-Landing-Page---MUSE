@@ -4,12 +4,12 @@
 
 export default function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.07] bg-[#0D0D0D]/80 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.07] bg-[#000000]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6">
         <a href="/alfie-platform" className="text-[17px] font-semibold tracking-tight text-white">
           Alfie
         </a>
-        <nav className="flex items-center gap-6 text-[13px] text-[#A0A0A0]">
+        <nav className="flex items-center gap-6 text-[13px] text-white/90">
           <a href="#capabilities" className="hidden transition-colors hover:text-white sm:inline">
             Integrations
           </a>

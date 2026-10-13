@@ -8,7 +8,7 @@ import BuildWithAlfieCTA from "@/components/alfie-platform/BuildWithAlfieCTA";
 import AlfieFooter from "@/components/alfie-platform/AlfieFooter";
 
 const SF_PRO = '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif';
-const BG = "#0D0D0D";
+const BG = "#000000";
 
 /* ---------------- page ---------------- */
 

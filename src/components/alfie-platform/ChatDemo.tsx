@@ -63,9 +63,9 @@ export default function ChatDemo() {
         }`}
       >
         <p className="text-[13px] font-medium tracking-wide text-[#7BE0A5]">Alfie</p>
-        <p className="mt-2 text-[15px] leading-relaxed text-[#A0A0A0]">{demoScript[step].a}</p>
+        <p className="mt-2 text-[15px] leading-relaxed text-white/90">{demoScript[step].a}</p>
       </div>
-      <p className="mt-3 text-[13px] text-[#A0A0A0]">Coming soon.</p>
+      <p className="mt-3 text-[13px] text-white/90">Coming soon.</p>
     </div>
   );
 }

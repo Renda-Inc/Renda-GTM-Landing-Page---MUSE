@@ -69,7 +69,7 @@ export default function Organizations() {
           </h2>
         </div>
         <Reveal delay={200}>
-          <p className="mt-5 max-w-xl text-lg text-[#A0A0A0]">
+          <p className="mt-5 max-w-xl text-lg text-white/90">
             Select an organization to see how the intelligence layer applies.
           </p>
         </Reveal>
@@ -85,11 +85,11 @@ export default function Organizations() {
                   onFocus={() => setHovered(i)}
                   onClick={() => setExpanded(i)}
                   className={`flex w-full items-center justify-between border-b border-white/[0.07] py-6 text-left transition-colors ${
-                    hovered === i ? "text-white" : "text-[#A0A0A0]"
+                    hovered === i ? "text-white" : "text-white/90"
                   }`}
                 >
                   <span className="text-xl font-medium md:text-2xl">{org.name}</span>
-                  <span className="text-[13px] text-[#A0A0A0]">0{i + 1}</span>
+                  <span className="text-[13px] text-white/90">0{i + 1}</span>
                 </button>
               ))}
             </div>
@@ -104,7 +104,7 @@ export default function Organizations() {
                   aria-hidden={hovered !== i}
                 >
                   <img src={org.image} alt={org.name} className="h-full w-full object-cover" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/90 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/90 to-transparent" />
                   <p className="absolute bottom-7 left-7 right-7 text-[15px] leading-relaxed text-[#E0E0E0]">
                     {org.text}
                   </p>
@@ -127,7 +127,7 @@ export default function Organizations() {
               />
             </div>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[#E0E0E0]">{organizations[expanded].text}</p>
-            <p className="mt-6 text-[13px] text-[#A0A0A0]">Click anywhere or press Esc to go back.</p>
+            <p className="mt-6 text-[13px] text-white/90">Click anywhere or press Esc to go back.</p>
           </div>
         )}
       </div>

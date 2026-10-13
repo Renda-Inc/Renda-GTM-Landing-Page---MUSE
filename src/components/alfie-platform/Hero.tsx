@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section className="pt-36 md:pt-44">
       <div className="mx-auto flex max-w-7xl flex-col items-center px-6 text-center">
-        <RollingHeadline text="The intelligence layer for financial systems." />
+        <RollingHeadline text={["The intelligence layer for financial", "systems."]} />
         <Reveal delay={200}>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#E0E0E0]">
             Alfie gives organizations the ability to understand financial information, reason across complex financial
@@ -36,7 +36,7 @@ export default function Hero() {
           <ChatDemo />
         </Reveal>
         <Reveal delay={420}>
-          <p className="mt-10 text-[14px] text-[#A0A0A0]">
+          <p className="mt-10 text-[14px] text-white/90">
             For financial institutions, fintechs, enterprises, and government.
           </p>
         </Reveal>
@@ -50,7 +50,7 @@ export default function Hero() {
             alt="Financial intelligence infrastructure"
             className="h-full w-full object-cover will-change-transform"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-transparent to-[#0D0D0D]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-transparent to-[#000000]" />
         </div>
       </Reveal>
     </section>

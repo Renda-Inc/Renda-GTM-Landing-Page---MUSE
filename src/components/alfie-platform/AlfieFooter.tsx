@@ -12,7 +12,7 @@ export default function AlfieFooter() {
   return (
     <footer className="border-t border-white/[0.07] py-14">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-        <p className="max-w-sm text-[14px] leading-relaxed text-[#A0A0A0]">
+        <p className="max-w-sm text-[14px] leading-relaxed text-white/90">
           Alfie — Financial intelligence infrastructure for the organizations that handle money. Built by Renda.
         </p>
         {footerCols.map((col) => (
@@ -21,7 +21,7 @@ export default function AlfieFooter() {
             <ul className="mt-4 space-y-3">
               {col.links.map((link) => (
                 <li key={link}>
-                  <span className="text-[14px] text-[#A0A0A0] transition-colors hover:text-[#E0E0E0]">{link}</span>
+                  <span className="text-[14px] text-white/90 transition-colors hover:text-white">{link}</span>
                 </li>
               ))}
             </ul>
@@ -29,7 +29,7 @@ export default function AlfieFooter() {
         ))}
       </div>
       <div className="mx-auto mt-12 max-w-7xl px-6">
-        <p className="border-t border-white/[0.07] pt-6 text-[13px] text-[#A0A0A0]">
+        <p className="border-t border-white/[0.07] pt-6 text-[13px] text-white/90">
           Alfie is currently in development. Coming soon.
         </p>
       </div>

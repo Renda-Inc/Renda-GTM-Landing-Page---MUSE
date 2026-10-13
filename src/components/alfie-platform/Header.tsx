@@ -9,12 +9,18 @@ export default function Header() {
         <a href="/alfie-platform" className="text-[17px] font-semibold tracking-tight text-white">
           Alfie
         </a>
-        <nav className="flex items-center gap-6 text-[13px] text-white/90">
+        <nav className="flex items-center gap-6 text-[15px] text-white/90">
           <a href="#capabilities" className="hidden transition-colors hover:text-white sm:inline">
-            Integrations
+            Product
+          </a>
+          <a href="#capabilities" className="hidden transition-colors hover:text-white sm:inline">
+            Research
           </a>
           <a href="#capabilities" className="hidden transition-colors hover:text-white sm:inline">
             Developers
+          </a>
+          <a href="#organizations" className="hidden transition-colors hover:text-white sm:inline">
+            Solutions
           </a>
           <a href="#organizations" className="hidden transition-colors hover:text-white sm:inline">
             Compliance

@@ -44,13 +44,13 @@ export default function ChatDemo() {
   }, [step]);
 
   return (
-    <div className="w-full max-w-2xl">
+    <div className="w-full max-w-2xl text-left">
       <div
         onMouseEnter={() => setFocused(true)}
         onMouseLeave={() => setFocused(false)}
         className={`flex items-center gap-3 rounded-2xl border bg-white/[0.04] px-5 py-4 transition-all duration-500 ${
           focused ? "border-white/25 shadow-[0_0_40px_-12px_rgba(255,255,255,0.35)]" : "border-white/10"
-        }`}
+        } ${step === 2 ? "justify-end" : ""}`}
       >
         <span className="text-[15px] leading-relaxed text-[#E0E0E0]">
           {typed}

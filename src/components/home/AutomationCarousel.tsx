@@ -25,7 +25,7 @@ const automations = [
 ];
 
 export default function AutomationCarousel() {
-  const [viewportRef, api] = useEmblaCarousel({ align: "start", containScroll: false });
+  const [viewportRef, api] = useEmblaCarousel({ align: "start", containScroll: "keepSnaps" });
   const [canGoBack, setCanGoBack] = useState(false);
   const [canGoForward, setCanGoForward] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);

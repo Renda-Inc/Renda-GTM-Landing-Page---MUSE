@@ -32,7 +32,7 @@ export default function BlogFeatured({ articles, visible }: Props) {
               to={`/blog/${article.slug}`}
               className="group block rounded-3xl overflow-hidden bg-background shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="aspect-[16/9] rounded-3xl overflow-hidden">
+              <div className="aspect-[16/9] rounded-t-3xl overflow-hidden">
                 <img
                   src={article.image}
                   alt={article.title}

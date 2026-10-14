@@ -11,3 +11,8 @@
 - [x] Update Blog Featured label and photo corners, including opened articles
 - [x] Update Leadership label and portrait corners
 - [x] Verify page colors, corners, and article navigation
+
+## Banner and Automation updates
+- [x] Remove Home and Blog banner rounding; keep Featured photo rounding only at the top
+- [x] Replace Automation drawers with equally expanded, edge-reaching images and arrow navigation
+- [x] Verify banner corners and Automation navigation

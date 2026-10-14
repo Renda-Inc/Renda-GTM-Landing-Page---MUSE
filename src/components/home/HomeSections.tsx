@@ -1,14 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import AutomationCarousel from "@/components/home/AutomationCarousel";
 import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
-import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
 import lifestyleHobby from "@/assets/lifestyle-creative-hobby.jpg";
 import lifestyleCooking from "@/assets/lifestyle-friends-cooking.jpg";
-import lifestyleHike from "@/assets/lifestyle-adventure-hike.jpg";
 import lifestyleBeach from "@/assets/lifestyle-beach.jpg";
-import lifestyleDreamJob from "@/assets/lifestyle-dream-job.jpg";
 import planEveryday from "@/assets/plan-everyday.jpg";
 import planPlus from "@/assets/plan-plus.jpg";
 
@@ -235,44 +232,10 @@ export function MeetAlfie() {
   );
 }
 
-/* ─── 7. Daily money accordion ─── */
-const automations = [
-  {
-    title: "Smart salary sorting",
-    desc: "Automatically split your paycheck the moment it hits; route cash to rent, set aside bill money, and fund your savings goals instantly.",
-    image: lifestyleGathering,
-  },
-  {
-    title: "Real-time cash flow",
-    desc: "See exactly what you have left to spend today after accounting for upcoming bills, subscriptions, and savings targets.",
-    image: lifestyleHike,
-  },
-  {
-    title: "Instant payments",
-    desc: "Send money via Interac with automated recurring notes and smart tracking built right in.",
-    image: lifestyleDreamJob,
-  },
-];
-
+/* ─── 7. Daily money carousel ─── */
 export function DailyMoney() {
-  const [active, setActive] = useState(0);
-  const pausedUntil = useRef(0);
-
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      if (Date.now() < pausedUntil.current) return;
-      setActive((i) => (i + 1) % automations.length);
-    }, 4000);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const select = (i: number) => {
-    setActive(i);
-    pausedUntil.current = Date.now() + 6000;
-  };
-
   return (
-    <section className="py-16 lg:py-20">
+    <section className="py-16 lg:py-20 overflow-hidden">
       <Fade className="max-w-7xl mx-auto px-6">
         <Eyebrow>Automation</Eyebrow>
         <H2>Your daily money, fully automated.</H2>
@@ -280,63 +243,7 @@ export function DailyMoney() {
           No more manual budgets or spreadsheet tracking. Renda handles the heavy lifting so your
           money is always where it needs to be.
         </Body>
-
-        <div className="mt-12 flex w-full gap-3 h-[420px] lg:h-[520px]">
-          {automations.map((a, i) => {
-            const isActive = i === active;
-            return (
-              <button
-                key={a.title}
-                type="button"
-                onClick={() => select(i)}
-                aria-expanded={isActive}
-                className="relative rounded-3xl overflow-hidden bg-[#111111] transition-all duration-700 ease-in-out focus:outline-none"
-                style={{ flexGrow: isActive ? 6 : 1, flexBasis: 0, minWidth: 0 }}
-              >
-                <img
-                  src={a.image}
-                  alt={a.title}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}`}
-                  loading="lazy"
-                />
-                <div className={`absolute inset-0 transition-opacity duration-700 ${isActive ? "bg-gradient-to-t from-black/75 via-black/20 to-black/30 opacity-100" : "opacity-0"}`} />
-
-                {isActive ? (
-                  <div className="relative h-full flex flex-col justify-end p-8 lg:p-10 text-left">
-                    <div className="h-[3px] w-12 rounded-full bg-[#EB8F00] mb-5" />
-                    <h3 className="text-white text-2xl md:text-3xl font-medium tracking-tight" style={{ fontFamily: SF_FONT }}>
-                      {a.title}
-                    </h3>
-                    <p className="mt-3 text-white/75 text-sm md:text-base font-medium leading-relaxed max-w-md">
-                      {a.desc}
-                    </p>
-                  </div>
-                ) : (
-                  <div className="relative h-full flex items-center justify-center">
-                    <span
-                      className="text-white/80 text-base font-medium tracking-tight whitespace-nowrap"
-                      style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", fontFamily: SF_FONT }}
-                    >
-                      {a.title}
-                    </span>
-                  </div>
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="flex justify-center gap-2 mt-8">
-          {automations.map((a, i) => (
-            <button
-              key={a.title}
-              type="button"
-              onClick={() => select(i)}
-              aria-label={`Show ${a.title}`}
-              className={`rounded-full transition-all duration-300 ${i === active ? "w-6 h-2 bg-foreground" : "w-2 h-2 bg-black/25"}`}
-            />
-          ))}
-        </div>
+        <AutomationCarousel />
       </Fade>
     </section>
   );

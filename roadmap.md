@@ -18,6 +18,6 @@
 - [x] Verify banner corners and Automation navigation
 
 ## Automation navigation refinements
-- [ ] Match Insights arrow feedback and add Careers-style navigation dots
-- [ ] Allow images to scroll visibly through both screen edges
-- [ ] Verify arrows, dots, and edge visibility
+- [x] Match Insights arrow feedback and add Careers-style navigation dots
+- [x] Allow images to scroll visibly through both screen edges
+- [x] Verify arrows, dots, and edge visibility

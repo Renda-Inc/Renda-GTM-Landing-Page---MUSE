@@ -16,3 +16,8 @@
 - [x] Remove Home and Blog banner rounding; keep Featured photo rounding only at the top
 - [x] Replace Automation drawers with equally expanded, edge-reaching images and arrow navigation
 - [x] Verify banner corners and Automation navigation
+
+## Automation navigation refinements
+- [ ] Match Insights arrow feedback and add Careers-style navigation dots
+- [ ] Allow images to scroll visibly through both screen edges
+- [ ] Verify arrows, dots, and edge visibility

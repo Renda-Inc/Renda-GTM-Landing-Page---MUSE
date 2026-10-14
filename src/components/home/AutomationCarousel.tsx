@@ -25,13 +25,15 @@ const automations = [
 ];
 
 export default function AutomationCarousel() {
-  const [viewportRef, api] = useEmblaCarousel({ align: "start", containScroll: "trimSnaps" });
+  const [viewportRef, api] = useEmblaCarousel({ align: "start", containScroll: false });
   const [canGoBack, setCanGoBack] = useState(false);
   const [canGoForward, setCanGoForward] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const updateControls = useCallback(() => {
     if (!api) return;
     setCanGoBack(api.canScrollPrev());
     setCanGoForward(api.canScrollNext());
+    setSelectedIndex(api.selectedScrollSnap());
   }, [api]);
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function AutomationCarousel() {
 
   return (
     <div className="mt-12" role="region" aria-roledescription="carousel" aria-label="Daily money automation">
-      <div ref={viewportRef} className="w-[calc(50vw+50%)] overflow-hidden">
+      <div ref={viewportRef} className="w-[calc(50vw+50%)] overflow-visible">
         <div className="flex touch-pan-y gap-3 pr-6">
           {automations.map((automation, index) => (
             <div
@@ -67,12 +69,27 @@ export default function AutomationCarousel() {
         </div>
       </div>
       <div className="mt-8 flex gap-3">
-        <Button type="button" variant="outline" size="icon" className="h-12 w-12 rounded-full" aria-label="Previous automation" title="Previous automation" disabled={!canGoBack} onClick={() => api?.scrollPrev()}>
+        <Button type="button" variant="outline" size="icon" className="h-12 w-12 rounded-full border-foreground/15 text-foreground/70 hover:bg-foreground/5 hover:text-foreground/70" aria-label="Previous automation" title="Previous automation" disabled={!canGoBack} onClick={() => api?.scrollPrev()}>
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <Button type="button" variant="outline" size="icon" className="h-12 w-12 rounded-full" aria-label="Next automation" title="Next automation" disabled={!canGoForward} onClick={() => api?.scrollNext()}>
+        <Button type="button" variant="outline" size="icon" className="h-12 w-12 rounded-full border-foreground/15 text-foreground/70 hover:bg-foreground/5 hover:text-foreground/70" aria-label="Next automation" title="Next automation" disabled={!canGoForward} onClick={() => api?.scrollNext()}>
           <ArrowRight className="h-5 w-5" />
         </Button>
+      </div>
+      <div className="mt-6 flex items-center justify-center gap-2" aria-label="Automation slides">
+        {automations.map((automation, index) => (
+          <Button
+            key={automation.title}
+            type="button"
+            variant="ghost"
+            className="group h-8 w-6 p-0 rounded-full hover:bg-transparent"
+            aria-label={`Go to automation ${index + 1}`}
+            aria-current={index === selectedIndex ? "true" : undefined}
+            onClick={() => api?.scrollTo(index)}
+          >
+            <span className={`block h-2 rounded-full transition-all duration-300 ${index === selectedIndex ? "w-6 bg-foreground" : "w-2 bg-foreground/25 group-hover:bg-foreground/50"}`} />
+          </Button>
+        ))}
       </div>
     </div>
   );

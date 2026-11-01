@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { values } from "./content";
 
 /* ── Values Accordion (vertical image accordion) ─────────── */
-const VALUES_ROTATE_MS = 4000;
+const VALUES_ROTATE_MS = 7000;
 const VALUES_RESUME_MS = 6000;
 
 export default function ValuesAccordion() {

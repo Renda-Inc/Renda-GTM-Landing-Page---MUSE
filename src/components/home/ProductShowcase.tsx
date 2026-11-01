@@ -9,7 +9,7 @@ const SF_FONT =
 const STORY_MS = 7000;
 const TICK_MS = 50;
 
-const stories = ["Cards", "Savings", "Transfer"];
+const stories = ["Cards", "Savings", "RenPay"];
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className="text-[15px] font-semibold tracking-[0.08em] mb-8 text-white">{children}</p>;
@@ -103,7 +103,7 @@ function TransferStory() {
   return (
     <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
       <div>
-        <Eyebrow>Peer-to-peer</Eyebrow>
+        <Eyebrow>RenPay</Eyebrow>
         <H2>Send money instantly.</H2>
         <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
           Move money across the Renda network in seconds using a Renda ID or QR code.

@@ -14,7 +14,7 @@ const BG = "#000000";
 
 export default function AlfiePlatform() {
   return (
-    <main className="min-h-screen" style={{ fontFamily: SF_PRO, backgroundColor: BG }}>
+    <main className="alfie-platform min-h-screen" style={{ fontFamily: SF_PRO, backgroundColor: BG }}>
       <Header />
       <Hero />
       <Marquee />

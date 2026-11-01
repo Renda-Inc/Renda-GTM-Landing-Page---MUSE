@@ -21,3 +21,10 @@
 - [x] Match Insights arrow feedback and add Careers-style navigation dots
 - [x] Allow images to scroll visibly through both screen edges
 - [x] Verify arrows, dots, and edge visibility
+
+## RenPay and Alfie updates
+- [x] Add thin illuminated outlines to Alfie Platform images and update organization contexts/details
+- [x] Rename the peer-to-peer payment product to RenPay across applicable pages and navigation
+- [x] Set automatic image drawers to 7 seconds and test the timing
+- [x] Align Automation dots alongside the arrows
+- [x] Verify organization expansion, navigation and desktop/mobile presentation

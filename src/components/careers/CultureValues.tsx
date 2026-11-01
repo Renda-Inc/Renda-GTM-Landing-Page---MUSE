@@ -15,7 +15,7 @@ const values = [
   { title: "Inclusion Improves Intelligence", desc: "Diverse perspectives make better products. We actively build a team that reflects the global population we serve.", image: team6 },
 ];
 
-const ROTATE_MS = 4000;
+const ROTATE_MS = 7000;
 const RESUME_DELAY_MS = 6000;
 
 export default function CultureValues() {

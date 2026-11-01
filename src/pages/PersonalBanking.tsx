@@ -310,7 +310,7 @@ export default function PersonalBanking() {
         <Fade className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <Eyebrow>Move Money Your Way</Eyebrow>
+              <Eyebrow>RenPay</Eyebrow>
               <H2>Instant transfers. Real network.</H2>
               <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
                 Send money instantly to anyone in the Renda network. Add contacts using a

@@ -93,7 +93,7 @@ const signalCards = [
 ];
 
 /* ── Signal accordion (mirrors ValuesAccordion) ────────── */
-const ROTATE_MS = 4000;
+const ROTATE_MS = 7000;
 const RESUME_MS = 6000;
 
 function SignalAccordion() {

@@ -68,7 +68,8 @@ export default function AutomationCarousel() {
           ))}
         </div>
       </div>
-      <div className="mt-8 flex gap-3">
+      <div className="mt-8 flex items-center justify-between gap-4">
+      <div className="flex items-center gap-3">
         <Button type="button" variant="outline" size="icon" className="h-12 w-12 rounded-full border-foreground/15 text-foreground/70 hover:bg-foreground/5 hover:text-foreground/70" aria-label="Previous automation" title="Previous automation" disabled={!canGoBack} onClick={() => api?.scrollPrev()}>
           <ArrowLeft className="h-5 w-5" />
         </Button>
@@ -76,7 +77,7 @@ export default function AutomationCarousel() {
           <ArrowRight className="h-5 w-5" />
         </Button>
       </div>
-      <div className="mt-6 flex items-center justify-center gap-2" aria-label="Automation slides">
+      <div className="flex items-center gap-1" aria-label="Automation slides">
         {automations.map((automation, index) => (
           <Button
             key={automation.title}
@@ -90,6 +91,7 @@ export default function AutomationCarousel() {
             <span className={`block h-2 rounded-full transition-all duration-300 ${index === selectedIndex ? "w-6 bg-foreground" : "w-2 bg-foreground/25 group-hover:bg-foreground/50"}`} />
           </Button>
         ))}
+      </div>
       </div>
     </div>
   );

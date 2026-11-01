@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import { Reveal } from "./Reveal";
 import { useInView } from "@/hooks/use-in-view";
 import orgFinancial from "@/assets/alfie-org-financial.jpg";
-import orgFintech from "@/assets/alfie-org-fintech.jpg";
 import orgInsurance from "@/assets/alfie-org-insurance.jpg";
 import orgEnterprise from "@/assets/alfie-org-enterprise.jpg";
 import orgGovernment from "@/assets/alfie-org-government.jpg";
@@ -11,28 +10,27 @@ import orgGovernment from "@/assets/alfie-org-government.jpg";
 
 const organizations = [
   {
-    name: "Financial institutions",
-    text: "Build financial experiences that understand customers, not just accounts.",
+    name: "Financial Institutions",
+    text: "Financial intelligence infrastructure for the institutions building and delivering financial services.",
+    details: "From fintechs and payment providers to banks, investment firms, and wealth managers, Alfie provides financial data processing, transaction categorization, reasoning, forecasting, and conversational intelligence through APIs and SDKs. It gives product and technology teams the intelligence layer to build smarter financial products without assembling complex data and modelling infrastructure from scratch.",
     image: orgFinancial,
   },
   {
-    name: "Fintechs",
-    text: "Give financial products intelligence without building the entire intelligence layer themselves.",
-    image: orgFintech,
-  },
-  {
     name: "Insurance",
-    text: "Bring financial context and intelligence into underwriting, claims, risk, and customer experiences.",
+    text: "Better financial evidence. More informed decisions.",
+    details: "Underwriting and claims processes depend on understanding complex financial information. Alfie analyzes statements, documents, and transaction histories, extracts relevant information, identifies patterns, and produces traceable findings with supporting evidence. This helps reduce manual review, improve consistency, and support more informed decisions while maintaining an auditable record.",
     image: orgInsurance,
   },
   {
     name: "Enterprise",
-    text: "Make complex financial operations easier to understand and act on.",
+    text: "Complex financial operations, easier to understand and act on.",
+    details: "Finance teams operate across ledgers, banks, entities, and spreadsheets. Alfie connects financial information across these environments to support reconciliation, identify anomalies, answer questions in natural language, and prepare or initiate authorized workflows. It gives organizations a more connected view of their financial operations and helps teams move from analysis to action.",
     image: orgEnterprise,
   },
   {
     name: "Government",
-    text: "Help teams analyze financial information at scale and make complex workflows more intelligent.",
+    text: "Financial analysis at scale, with intelligent workflows.",
+    details: "Government organizations manage complex financial information across departments, programs, and public services. Alfie helps review, classify, reconcile, and explain financial activity at scale, supporting analysis, reporting, and operational workflows. Its architecture can support deployment, data residency, access controls, and audit requirements appropriate to regulated public-sector environments.",
     image: orgGovernment,
   },
 ];
@@ -94,7 +92,7 @@ export default function Organizations() {
               ))}
             </div>
 
-            <div className="relative h-[300px] overflow-hidden rounded-2xl md:h-[440px]">
+            <div className="alfie-image-frame relative h-[300px] overflow-hidden rounded-2xl md:h-[440px]">
               {organizations.map((org, i) => (
                 <div
                   key={org.name}
@@ -105,7 +103,7 @@ export default function Organizations() {
                 >
                   <img src={org.image} alt={org.name} className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/90 to-transparent" />
-                  <p className="absolute bottom-7 left-7 right-7 text-[15px] leading-relaxed text-[#E0E0E0]">
+                  <p className="absolute bottom-7 left-7 right-7 text-lg leading-relaxed text-primary-foreground/90">
                     {org.text}
                   </p>
                 </div>
@@ -119,15 +117,14 @@ export default function Organizations() {
             role="presentation"
           >
             <h3 className="text-2xl font-semibold text-white md:text-4xl">{organizations[expanded].name}</h3>
-            <div className="mt-8 overflow-hidden rounded-2xl">
+            <div className="alfie-image-frame relative mt-8 overflow-hidden rounded-2xl">
               <img
                 src={organizations[expanded].image}
                 alt={organizations[expanded].name}
                 className="h-[320px] w-full object-cover md:h-[560px]"
               />
             </div>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[#E0E0E0]">{organizations[expanded].text}</p>
-            <p className="mt-6 text-[13px] text-white/90">Click anywhere or press Esc to go back.</p>
+            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-primary-foreground/90">{organizations[expanded].details}</p>
           </div>
         )}
       </div>

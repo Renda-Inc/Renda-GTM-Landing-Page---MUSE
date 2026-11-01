@@ -43,7 +43,7 @@ export default function Hero() {
       </div>
 
       <Reveal className="mt-20 md:mt-28">
-        <div className="relative h-[46vh] w-full overflow-hidden md:h-[70vh]">
+        <div className="alfie-image-frame relative h-[46vh] w-full overflow-hidden md:h-[70vh]">
           <img
             ref={imgRef}
             src={heroImage}

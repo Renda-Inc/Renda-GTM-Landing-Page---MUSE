@@ -52,7 +52,7 @@ export default function Capabilities() {
         </Reveal>
 
         <Reveal className="mt-14">
-          <div className="relative h-[380px] w-full overflow-hidden rounded-2xl md:h-[560px]">
+          <div className="alfie-image-frame relative h-[380px] w-full overflow-hidden rounded-2xl md:h-[560px]">
             {capabilities.map((cap, i) => (
               <div
                 key={cap.title}

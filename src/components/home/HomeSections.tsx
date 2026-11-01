@@ -300,7 +300,7 @@ export function HomeCTA() {
             href="#waitlist"
             className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-semibold hover:bg-foreground/90 hover:-translate-y-0.5 transition-all duration-300"
           >
-            Get early access
+            Sign Up
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

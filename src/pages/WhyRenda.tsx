@@ -328,7 +328,7 @@ export default function WhyRenda() {
             href="#waitlist"
             className="mt-10 inline-flex h-12 px-8 items-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
           >
-            Get Early Access
+            Sign Up
           </a>
         </Fade>
       </section>

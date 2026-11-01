@@ -28,3 +28,9 @@
 - [x] Set automatic image drawers to 7 seconds and test the timing
 - [x] Align Automation dots alongside the arrows
 - [x] Verify organization expansion, navigation and desktop/mobile presentation
+
+## Sign-up wording and banner buttons
+- [x] Remove the header sign-in link from desktop and mobile navigation
+- [x] Rename early-access calls to action "Sign Up" and the home banner one "Create an account"
+- [x] Make the banner app button black with white text and drop the App Store and Google Play links
+- [x] Verify the updated header, banner and mobile menu in the preview

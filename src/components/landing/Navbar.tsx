@@ -302,14 +302,6 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="#"
-            className={`text-[15px] font-medium transition-colors duration-200 ${
-              scrolled || activeDropdown || variant === "solid" ? "text-foreground/60 hover:text-foreground" : "text-white/70 hover:text-white"
-            }`}
-          >
-            Sign In
-          </a>
-          <a
             href="#waitlist"
             className={`group h-10 px-6 inline-flex items-center gap-2 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all duration-200 ${
               scrolled || activeDropdown || variant === "solid"
@@ -317,7 +309,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                 : "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20"
             }`}
           >
-            Get Early Access
+            Sign Up
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
@@ -377,18 +369,11 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
             ))}
             <div className="pt-4 border-t border-border space-y-3">
               <a
-                href="#"
-                className="block text-center py-2 text-base font-medium text-foreground"
-                onClick={() => setMobileOpen(false)}
-              >
-                Sign In
-              </a>
-              <a
                 href="#waitlist"
                 className="h-11 inline-flex items-center justify-center gap-2 w-full rounded-full bg-foreground text-background text-base font-semibold"
                 onClick={() => setMobileOpen(false)}
               >
-                Get Early Access
+                Sign Up
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

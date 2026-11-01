@@ -1,4 +1,4 @@
-import { ArrowRight, Apple } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroLifestyle from "@/assets/hero-lifestyle.jpg";
 import { useFadeIn } from "@/hooks/use-fade-in";
 
@@ -44,28 +44,14 @@ export default function HeroSection() {
               href="#waitlist"
               className="group inline-flex items-center gap-2 h-14 px-8 rounded-full bg-white text-foreground text-base font-semibold hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300 shadow-xl"
             >
-              Join the Waitlist
+              Create an account
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
               href="#"
-              className="inline-flex items-center gap-2 h-14 px-8 rounded-full border border-white/30 text-white text-base font-medium hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
+              className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-medium hover:bg-foreground/85 hover:-translate-y-0.5 transition-all duration-300"
             >
               Download the App
-            </a>
-          </div>
-
-          {/* App store buttons */}
-          <div className="mt-5 flex items-center gap-4">
-            <a href="#" className="inline-flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors text-sm">
-              <Apple className="w-4 h-4" />
-              <span>Download on the App Store</span>
-            </a>
-            <a href="#" className="inline-flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors text-sm">
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.395 13l2.303-2.492zM5.864 2.658L16.8 9.99l-2.303 2.303L5.864 2.658z"/>
-              </svg>
-              <span>Get it on Google Play</span>
             </a>
           </div>
         </div>

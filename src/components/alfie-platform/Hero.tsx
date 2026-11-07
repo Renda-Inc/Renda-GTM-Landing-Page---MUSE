@@ -42,15 +42,17 @@ export default function Hero() {
         </Reveal>
       </div>
 
-      <Reveal className="mt-20 md:mt-28">
-        <div className="alfie-image-frame relative h-[46vh] w-full overflow-hidden md:h-[70vh]">
-          <img
-            ref={imgRef}
-            src={heroImage}
-            alt="Financial intelligence infrastructure"
-            className="h-full w-full object-cover will-change-transform"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-transparent to-[#000000]" />
+      <Reveal className="mt-20 mb-16 md:mt-28 md:mb-24">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <div className="alfie-image-frame relative aspect-[16/9] w-full overflow-hidden md:aspect-[21/9]">
+            <img
+              ref={imgRef}
+              src={heroImage}
+              alt="Financial intelligence infrastructure"
+              className="h-full w-full object-cover will-change-transform"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-transparent to-[#000000]" />
+          </div>
         </div>
       </Reveal>
     </section>

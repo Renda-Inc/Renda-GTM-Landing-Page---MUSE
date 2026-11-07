@@ -44,7 +44,7 @@ export default function Hero() {
 
       <Reveal className="mt-20 mb-16 md:mt-28 md:mb-24">
         <div className="mx-auto w-full max-w-7xl px-6">
-          <div className="alfie-image-frame relative aspect-[16/9] w-full overflow-hidden md:aspect-[21/9]">
+          <div className="alfie-image-frame relative aspect-[16/9] w-full overflow-hidden rounded-3xl md:aspect-[21/9]">
             <img
               ref={imgRef}
               src={heroImage}

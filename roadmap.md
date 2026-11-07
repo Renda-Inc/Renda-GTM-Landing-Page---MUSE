@@ -38,3 +38,8 @@
 ## Header dropdown alignment
 - [x] Position dropdowns from their navigation items and verify switching and resizing
 - [x] Remove arrows from Sign Up and Create an account buttons
+
+## Blog label wording
+- [x] Rename "Blog / Insights" to "Blog & Insights" in the home button, footer and menu
+- [x] Remove the arrow from the Explore Blog & Insights button
+- [x] Verify the button and footer labels in the preview

@@ -60,7 +60,7 @@ const footerColumns = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Careers", href: "/careers" },
-      { label: "Blog / Insights", href: "/blog" },
+      { label: "Blog & Insights", href: "/blog" },
       { label: "Our Investors", href: "/investors" },
     ],
   },

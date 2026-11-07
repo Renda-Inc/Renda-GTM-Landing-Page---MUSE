@@ -77,8 +77,7 @@ export default function BlogShowcase() {
               to="/blog"
               className="mt-8 inline-flex items-center gap-2 h-12 px-7 rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
             >
-              Explore Blog / Insights
-              <ArrowRight className="w-4 h-4" />
+              Explore Blog &amp; Insights
             </Link>
           </div>
 

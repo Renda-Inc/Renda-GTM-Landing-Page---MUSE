@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useDropdownPosition } from "@/hooks/use-dropdown-position";
 import rendaLogoBlack from "@/assets/renda-logo-black.png";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
 import featuredAlfie from "@/assets/about-alfie.jpg";
@@ -141,6 +142,10 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { headerRef, triggerRefs, position } = useDropdownPosition(
+    activeDropdown,
+    navDropdowns.find((dropdown) => dropdown.label === activeDropdown)?.columns.length === 1,
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -174,7 +179,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
             : "bg-transparent"
         }`}
       >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+      <div ref={headerRef} className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
@@ -200,6 +205,11 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
               onMouseLeave={handleMouseLeave}
             >
               <button
+                ref={(node) => {
+                  if (node) triggerRefs.current.set(dropdown.label, node);
+                  else triggerRefs.current.delete(dropdown.label);
+                }}
+                aria-expanded={isActive}
                 className={`px-4 py-2 text-[15px] font-medium transition-colors duration-200 inline-flex items-center gap-1 ${
                   darkMode
                     ? isActive
@@ -218,9 +228,9 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                 )}
               </button>
 
-              {isActive && (
-                <div className="fixed top-[64px] left-0 right-0 pointer-events-none z-50">
-                  <div className="max-w-7xl mx-auto px-6 md:px-10">
+              {isActive && position && (
+                <div className="fixed pointer-events-none z-50" style={position}>
+                  <div>
                     <div
                       className={`pointer-events-auto bg-background rounded-2xl shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)] animate-fade-in ${
                         isSingleColumn ? "max-w-xl" : ""
@@ -310,7 +320,6 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
             }`}
           >
             Sign Up
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
 
@@ -374,7 +383,6 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                 onClick={() => setMobileOpen(false)}
               >
                 Sign Up
-                <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import heroLifestyle from "@/assets/hero-lifestyle.jpg";
 import { useFadeIn } from "@/hooks/use-fade-in";
 
@@ -45,7 +44,6 @@ export default function HeroSection() {
               className="group inline-flex items-center gap-2 h-14 px-8 rounded-full bg-white text-foreground text-base font-semibold hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300 shadow-xl"
             >
               Create an account
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
               href="#"

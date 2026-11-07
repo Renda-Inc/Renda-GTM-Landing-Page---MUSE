@@ -5,3 +5,4 @@
 - Keep scroll visibility behavior in reusable hooks under `src/hooks/` so presentation components remain focused on rendering.
 - Use strict TypeScript in the application to catch unsafe assumptions before changes reach the preview.
 - Keep Home Automation carousel behavior in its own section component and use Embla for slide navigation and touch gestures so routing and shared Home sections remain independent of carousel state.
+- Measure desktop dropdown triggers in a reusable positioning hook, centering panels within the header content bounds so the full-width Product panel remains contained and resizing stays consistent.

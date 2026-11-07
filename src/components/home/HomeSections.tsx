@@ -1,5 +1,5 @@
 import AutomationCarousel from "@/components/home/AutomationCarousel";
-import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
+import { ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";
@@ -301,7 +301,6 @@ export function HomeCTA() {
             className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-semibold hover:bg-foreground/90 hover:-translate-y-0.5 transition-all duration-300"
           >
             Sign Up
-            <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </Fade>

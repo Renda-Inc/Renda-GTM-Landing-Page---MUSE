@@ -34,3 +34,7 @@
 - [x] Rename early-access calls to action "Sign Up" and the home banner one "Create an account"
 - [x] Make the banner app button black with white text and drop the App Store and Google Play links
 - [x] Verify the updated header, banner and mobile menu in the preview
+
+## Header dropdown alignment
+- [x] Position dropdowns from their navigation items and verify switching and resizing
+- [x] Remove arrows from Sign Up and Create an account buttons

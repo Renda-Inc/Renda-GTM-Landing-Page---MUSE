@@ -1,5 +1,5 @@
 import AutomationCarousel from "@/components/home/AutomationCarousel";
-import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
+import { ShieldCheck, Sparkles, TrendingUp, CreditCard, Globe2, Sparkle } from "lucide-react";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleStudying from "@/assets/lifestyle-studying.jpg";

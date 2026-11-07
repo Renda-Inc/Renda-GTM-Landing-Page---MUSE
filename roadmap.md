@@ -36,5 +36,5 @@
 - [x] Verify the updated header, banner and mobile menu in the preview
 
 ## Header dropdown alignment
-- [ ] Position dropdowns from their navigation items and verify switching and resizing
-- [ ] Remove arrows from Sign Up and Create an account buttons
+- [x] Position dropdowns from their navigation items and verify switching and resizing
+- [x] Remove arrows from Sign Up and Create an account buttons

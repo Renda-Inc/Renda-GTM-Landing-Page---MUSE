@@ -209,7 +209,6 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                   if (node) triggerRefs.current.set(dropdown.label, node);
                   else triggerRefs.current.delete(dropdown.label);
                 }}
-                aria-expanded={isActive}
                 className={`px-4 py-2 text-[15px] font-medium transition-colors duration-200 inline-flex items-center gap-1 ${
                   darkMode
                     ? isActive

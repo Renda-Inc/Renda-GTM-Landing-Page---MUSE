@@ -104,7 +104,7 @@ export default function EarlyAccessForm() {
 
       <button
         type="submit"
-        className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-semibold hover:bg-foreground/90 hover:-translate-y-0.5 transition-all duration-300"
+        className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-semibold hover:bg-foreground hover:-translate-y-0.5 transition-all duration-300"
       >
         Join the early access list
         <ArrowRight className="w-4 h-4" />

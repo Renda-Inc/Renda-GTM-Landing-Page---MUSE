@@ -145,7 +145,7 @@ export default function AlfieSystemDiagram() {
                   isOn ? "max-h-24 opacity-100 mt-3" : "max-h-0 opacity-0"
                 } ${alignRight ? "text-right" : "text-left"}`}
               >
-                <p className="px-2 text-sm text-white/75 font-medium leading-relaxed">{n.desc}</p>
+                <p className="px-2 text-sm text-white/80 font-medium leading-relaxed">{n.desc}</p>
               </div>
             </div>
           );
@@ -170,7 +170,7 @@ export default function AlfieSystemDiagram() {
               <p className="text-sm font-semibold text-white" style={{ fontFamily: SF_FONT }}>
                 {n.title}
               </p>
-              <p className="mt-1 text-sm text-white/70 font-medium leading-relaxed">{n.desc}</p>
+              <p className="mt-1 text-sm text-white/80 font-medium leading-relaxed">{n.desc}</p>
             </div>
           ))}
         </div>

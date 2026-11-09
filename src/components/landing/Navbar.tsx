@@ -314,7 +314,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
             href="#waitlist"
             className={`group h-10 px-6 inline-flex items-center gap-2 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all duration-200 ${
               scrolled || activeDropdown || variant === "solid"
-                ? "bg-foreground text-background hover:bg-foreground/90"
+                ? "bg-foreground text-background hover:bg-foreground"
                 : "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20"
             }`}
           >

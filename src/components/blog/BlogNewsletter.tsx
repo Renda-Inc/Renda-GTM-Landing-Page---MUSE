@@ -15,7 +15,7 @@ export default function BlogNewsletter() {
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
           Stay informed.
         </h2>
-        <p className="mt-4 text-base text-background/70 leading-relaxed">
+        <p className="mt-4 text-base text-background/80 leading-relaxed">
           Get our latest thinking on AI, banking, and financial infrastructure — delivered
           monthly. No noise.
         </p>

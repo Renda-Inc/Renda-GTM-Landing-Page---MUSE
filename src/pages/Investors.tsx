@@ -97,7 +97,7 @@ export default function Investors() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
               Stewards of the company.
             </h2>
-            <p className="text-base text-background/70 font-medium leading-relaxed">
+            <p className="text-base text-background/80 font-medium leading-relaxed">
               Our board brings decades of experience across banking, regulation, technology, and consumer products.
             </p>
           </div>
@@ -106,7 +106,7 @@ export default function Investors() {
             {board.map((m) => (
               <div key={m.name}>
                 <p className="text-xl font-medium text-background mb-1">{m.name}</p>
-                <p className="text-lg text-background/70">{m.title}</p>
+                <p className="text-lg text-background/80">{m.title}</p>
               </div>
             ))}
           </div>
@@ -126,14 +126,14 @@ export default function Investors() {
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-background mb-4">
                   Investor Relations
                 </h2>
-                <p className="text-base text-background/70 font-medium leading-relaxed">
+                <p className="text-base text-background/80 font-medium leading-relaxed">
                   For general enquiries, partnership opportunities, or to request access to confidential investor materials, please reach out to our investor relations team.
                 </p>
               </div>
 
               <div className="rounded-2xl bg-background/[0.06] border border-background/10 p-8">
                 <Mail className="w-6 h-6 text-background/80 mb-4" />
-                <p className="text-sm text-background/60 mb-2">Email</p>
+                <p className="text-sm text-background/80 mb-2">Email</p>
                 <a
                   href="mailto:investors@renda.com"
                   className="text-lg font-semibold text-background hover:text-background/80 transition-colors break-all"

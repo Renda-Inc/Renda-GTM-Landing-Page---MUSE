@@ -54,7 +54,7 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white max-w-3xl">
               Building the Intelligence Layer for Modern Finance.
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
               An AI-native financial institution powered by Alfie, designed to understand your money, not just move it.
             </p>
           </Fade>

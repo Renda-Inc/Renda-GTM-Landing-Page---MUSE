@@ -49,7 +49,7 @@ export default function Philosophy() {
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
                     <p className="text-2xl font-bold text-background">{stat.value}</p>
-                    <p className="text-sm text-background/60">{stat.label}</p>
+                    <p className="text-sm text-background/80">{stat.label}</p>
                   </div>
                 ))}
               </div>

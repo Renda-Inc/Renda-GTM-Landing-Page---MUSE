@@ -451,7 +451,7 @@ export default function PersonalBanking() {
       <section className="py-16 lg:py-20 relative overflow-hidden" style={{ backgroundColor: "#111111" }}>
         <Fade className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <h2
-            className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white"
+            className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-white"
             style={{ fontFamily: SF_FONT }}
           >
             One intelligent system. Total financial clarity.

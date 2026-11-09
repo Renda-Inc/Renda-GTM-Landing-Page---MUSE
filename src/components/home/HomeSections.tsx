@@ -55,7 +55,7 @@ function H2({ children, light = false }: { children: React.ReactNode; light?: bo
 
 function Body({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className={`mt-6 text-base md:text-lg font-medium leading-relaxed ${light ? "text-white/60" : "text-black"}`}>
+    <p className={`mt-6 text-base md:text-lg font-medium leading-relaxed ${light ? "text-white/80" : "text-black"}`}>
       {children}
     </p>
   );
@@ -298,7 +298,7 @@ export function HomeCTA() {
         <div className="mt-10 flex justify-center">
           <a
             href="#waitlist"
-            className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-semibold hover:bg-foreground/90 hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-semibold hover:bg-foreground hover:-translate-y-0.5 transition-all duration-300"
           >
             Sign Up
           </a>
@@ -332,7 +332,7 @@ export function Pricing() {
       <Fade className="max-w-5xl mx-auto px-6 text-center">
         <Eyebrow light>Plans</Eyebrow>
         <H2 light>Pick the plan that fits your life.</H2>
-        <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-2xl mx-auto">
           Start free and upgrade whenever you want more of Alfie working in the background. No
           hidden fees, cancel any time.
         </p>
@@ -355,9 +355,9 @@ export function Pricing() {
                   <span className="text-3xl lg:text-4xl font-semibold text-white tracking-tight">
                     {p.price}
                   </span>
-                  <span className="text-sm text-white/60 font-medium mb-1">{p.cadence}</span>
+                  <span className="text-sm text-white/80 font-medium mb-1">{p.cadence}</span>
                 </div>
-                <p className="mt-3 text-base font-medium text-white/75 leading-relaxed">{p.line}</p>
+                <p className="mt-3 text-base font-medium text-white/80 leading-relaxed">{p.line}</p>
               </div>
             </div>
           ))}

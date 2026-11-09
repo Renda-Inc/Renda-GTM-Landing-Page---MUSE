@@ -92,7 +92,7 @@ export default function ConnectedSystem() {
         <div className="text-center max-w-3xl mx-auto">
           <Eyebrow light>One connected system</Eyebrow>
           <H2 light>Every part of your business finances, connected.</H2>
-          <p className="mt-6 text-base md:text-lg text-white/70 font-medium leading-relaxed">
+          <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed">
             Not five separate tools to switch between. One financial system, connected through
             Renda's banking infrastructure and Alfie.
           </p>

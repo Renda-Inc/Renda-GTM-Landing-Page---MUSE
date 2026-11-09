@@ -199,7 +199,7 @@ export default function WhyRenda() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-white max-w-3xl">
               Why Renda Exists.
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
               Banking has become more digital, but it hasn't become more intelligent. We believe your bank should do more than record what happened.
             </p>
           </Fade>
@@ -260,7 +260,7 @@ export default function WhyRenda() {
             <div className="order-1 lg:order-2">
               <Eyebrow light>Signal Over Noise</Eyebrow>
               <H2 light>Signal over noise.</H2>
-              <p className="mt-6 text-base md:text-lg text-white/70 font-medium leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed">
                 Most financial institutions overwhelm you with transactions, notifications, and dashboards. Renda filters out the noise, surfacing only the insights that matter; quietly, clearly, and when they're most useful.
               </p>
             </div>

@@ -150,7 +150,7 @@ function Hero() {
           <h1 className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
             Financial intelligence.<br />Not just conversation.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-background/70 md:text-xl">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-background/80 md:text-xl">
             Alfie connects financial data, context, reasoning, workflows, and authorized actions. Conversation is simply one way to work with the intelligence.
           </p>
         </div>
@@ -263,7 +263,7 @@ export default function Alfie() {
       <section id="contact" className="scroll-mt-16 bg-foreground py-20 text-background lg:py-28">
         <Reveal className="mx-auto max-w-4xl px-6 text-center">
           <SectionHeading light>Financial intelligence for the work that matters.</SectionHeading>
-          <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-background/75 md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-background/80 md:text-lg">
             From personal finances to the world's most complex financial organizations, Alfie is designed to turn financial information into intelligence — and intelligence into action.
           </p>
         </Reveal>

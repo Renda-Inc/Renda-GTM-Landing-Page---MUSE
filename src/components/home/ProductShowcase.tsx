@@ -32,7 +32,7 @@ function CardsStory() {
     <div className="text-center">
       <Eyebrow>Renda Card</Eyebrow>
       <H2>Your card, made smarter.</H2>
-      <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed max-w-2xl mx-auto">
+      <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-2xl mx-auto">
         Your Renda Card works with Alfie to understand every purchase, provide intelligent insights,
         and give you complete control from your app.
       </p>
@@ -77,7 +77,7 @@ function SavingsStory() {
       <div>
         <Eyebrow>Saving with purpose</Eyebrow>
         <H2>Build toward what matters.</H2>
-        <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
+        <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed">
           Create personalized Savings Goals with Alfie and adapt automatically as your finances
           change.
         </p>
@@ -105,7 +105,7 @@ function TransferStory() {
       <div>
         <Eyebrow>RenPay</Eyebrow>
         <H2>Send money instantly.</H2>
-        <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
+        <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed">
           Move money across the Renda network in seconds using a Renda ID or QR code.
         </p>
       </div>
@@ -131,7 +131,7 @@ function TransferStory() {
                 </div>
                 <div>
                   <p className="text-base font-semibold text-white/90">{s.title}</p>
-                  <p className="text-sm text-white/50 font-medium">{s.desc}</p>
+                  <p className="text-sm text-white/80 font-medium">{s.desc}</p>
                 </div>
               </div>
             );

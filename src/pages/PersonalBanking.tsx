@@ -205,7 +205,7 @@ export default function PersonalBanking() {
                 Cards & Payments
               </p>
               <h2
-                className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white/90 leading-tight tracking-tight"
+                className="text-3xl md:text-4xl font-semibold text-white/90 leading-tight tracking-tight"
                 style={{ fontFamily: SF_FONT }}
               >
                 A card that learns. Payments that just work.
@@ -223,7 +223,7 @@ export default function PersonalBanking() {
                 >
                   Your financial operating system, in your wallet.
                 </h3>
-                <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
+                <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed">
                   Your Renda Smart Card is more than a payment card. Connected directly to
                   Alfie, it understands every purchase, surfaces meaningful insights in real
                   time, and gives you effortless control from wherever you are.
@@ -261,7 +261,7 @@ export default function PersonalBanking() {
                 >
                   Tap. Pay. Understand.
                 </h3>
-                <p className="mt-6 text-base md:text-lg text-white/60 font-medium leading-relaxed">
+                <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed">
                   Every time you use your Renda Smart Card, Alfie captures the moment, not just
                   the transaction. You get real-time context, instant categorization, and
                   intelligent feedback that helps you spend smarter.
@@ -291,7 +291,7 @@ export default function PersonalBanking() {
                       </div>
                       <div>
                         <h4 className="text-base font-semibold text-white/90">{f.title}</h4>
-                        <p className="text-[15px] text-white/60 font-medium leading-relaxed mt-1">{f.desc}</p>
+                        <p className="text-[15px] text-white/80 font-medium leading-relaxed mt-1">{f.desc}</p>
                       </div>
                     </div>
                   ))}

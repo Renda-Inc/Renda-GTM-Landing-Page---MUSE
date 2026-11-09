@@ -47,7 +47,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#"
-              className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-medium hover:bg-foreground/85 hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-foreground text-background text-base font-medium hover:bg-foreground hover:-translate-y-0.5 transition-all duration-300"
             >
               Download the App
             </a>

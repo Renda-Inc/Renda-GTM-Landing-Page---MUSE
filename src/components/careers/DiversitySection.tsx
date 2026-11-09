@@ -17,7 +17,7 @@ export default function DiversitySection() {
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
           Better perspective build better products.
         </h2>
-        <div className="mt-10 space-y-6 text-base md:text-lg text-background/70 font-medium leading-relaxed max-w-2xl mx-auto">
+        <div className="mt-10 space-y-6 text-base md:text-lg text-background/80 font-medium leading-relaxed max-w-2xl mx-auto">
           <p>
             We're building financial infrastructure for a global population. That requires a team that reflects the diversity of the people we serve, in background, experience, identity, and thought.
           </p>

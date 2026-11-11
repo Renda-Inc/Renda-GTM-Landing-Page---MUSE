@@ -3,7 +3,6 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import ScrollHero from "@/components/business/ScrollHero";
 import ConnectedSystem from "@/components/business/ConnectedSystem";
-import EarlyAccessForm from "@/components/business/EarlyAccessForm";
 import { Fade, Divider, Eyebrow, H2 } from "@/components/business/BusinessUI";
 import { SF_FONT } from "@/lib/typography";
 import businessAlfie from "@/assets/business-alfie.jpg";
@@ -107,18 +106,17 @@ export default function BusinessBanking() {
                 Renda Business is coming soon. Join the early access list to be considered for the
                 first group of businesses invited onto the platform, and help shape it as we build.
               </p>
-              <div className="mt-10 rounded-3xl overflow-hidden">
-                <img
-                  src={businessAccess}
-                  alt="A small team welcoming a new partner"
-                  className="w-full h-[240px] lg:h-[300px] object-cover"
-                  loading="lazy"
-                  width={1440}
-                  height={1088}
-                />
-              </div>
             </div>
-            <EarlyAccessForm />
+            <div className="rounded-3xl overflow-hidden">
+              <img
+                src={businessAccess}
+                alt="A small team welcoming a new partner"
+                className="w-full h-[320px] lg:h-[440px] object-cover"
+                loading="lazy"
+                width={1440}
+                height={1088}
+              />
+            </div>
           </div>
         </Fade>
       </section>

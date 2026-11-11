@@ -14,8 +14,6 @@ import {
   Zap,
   Tag,
   Eye,
-  Users,
-  QrCode,
   Target,
   PiggyBank,
   Banknote,
@@ -323,24 +321,6 @@ export default function PersonalBanking() {
                 Renda ID or QR code, then move money immediately, without delays, friction,
                 or unnecessary steps.
               </p>
-
-
-              <div className="mt-10 grid sm:grid-cols-2 gap-4">
-                {[
-                  { icon: Users, label: "Renda ID" },
-                  { icon: QrCode, label: "QR Code Scan" },
-                ].map((m) => (
-                  <div
-                    key={m.label}
-                    className="bg-white rounded-2xl p-5 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <m.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-semibold text-black/80">{m.label}</span>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="space-y-5">
@@ -397,35 +377,6 @@ export default function PersonalBanking() {
             </div>
           </div>
 
-          {/* Goal progress mockup */}
-          <div className="mt-16 bg-[#F6F5F2] rounded-2xl p-8 max-w-3xl mx-auto shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)]">
-            <div className="flex items-center gap-2 mb-6">
-              <Target className="w-4 h-4 text-primary" />
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground">
-                Goal Progress
-              </p>
-            </div>
-            <div className="space-y-5">
-              {[
-                { name: "Emergency Fund", current: "$3,240", target: "$5,000", pct: 65 },
-                { name: "Vacation 2026", current: "$1,800", target: "$4,000", pct: 45 },
-                { name: "New Laptop", current: "$720", target: "$1,500", pct: 48 },
-              ].map((g) => (
-                <div key={g.name}>
-                  <div className="flex justify-between text-sm mb-2">
-                    <span className="text-black/80 font-semibold">{g.name}</span>
-                    <span className="text-black font-medium">{g.current} / {g.target}</span>
-                  </div>
-                  <div className="h-2 bg-white rounded-full overflow-hidden">
-                    <div className="h-full rounded-full bg-primary transition-all duration-700" style={{ width: `${g.pct}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 bg-white rounded-xl px-5 py-4 text-[15px] text-black/80 leading-relaxed">
-              "You're ahead of schedule on your emergency fund. I've increased this week's contribution by $15."
-            </div>
-          </div>
         </Fade>
       </section>
 

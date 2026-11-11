@@ -62,7 +62,7 @@ export default function Help() {
               return (
                 <Fade key={cat.slug}>
                   <div className="bg-white rounded-2xl p-8 h-full flex flex-col border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                    <div className="w-14 h-14 rounded-2xl bg-white/55 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_rgba(0,0,0,0.05)] flex items-center justify-center mb-6 group-hover:bg-white/75 transition-colors duration-500">
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
                     <h2 className="text-lg font-semibold text-foreground mb-2">{cat.title}</h2>

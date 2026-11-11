@@ -1,73 +1,128 @@
-# Welcome to your Lovable project
+# Renda Banking - GTM version
 
-## Project info
+Design a modern, intelligence-first fintech landing page for a Canadian AI-native neobank called Renda.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Brand positioning:
+Renda is not a traditional bank and not a generic fintech. It is an AI-native bank built around financial intelligence, powered by a financial AI called Alfie.
+The tone is calm, confident, serious, and thoughtful — not flashy, playful, or hype-driven.
 
-## How can I edit this code?
+Inspiration (structure & credibility, not visuals):
+Revolut, Wealthsimple
 
-There are several ways of editing your application.
+Typography:
+Use the same font style as aisance.io for the landing page.
 
-**Use Lovable**
+PAGE STRUCTURE (follow this order exactly)
+1. Hero
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Headline:
+“Meet the bank built around intelligence.”
 
-Changes made via Lovable will be committed automatically to this repo.
+Supporting line:
+“Banking that actually helps you.”
 
-**Use your preferred IDE**
+Subheadline:
+“Renda is an AI-native bank powered by Alfie — a financial AI that helps you understand, manage, and move your money with clarity, not confusion.”
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Include a primary CTA button.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Core Belief
 
-Follow these steps:
+Present a belief-driven section explaining that money and life are dynamic, and banking should adapt, explain, and help users make better decisions over time.
+Emphasize that Renda started with intelligence — not dashboards.
+
+3. Alfie Introduction (Light Tease)
+
+Introduce Alfie emotionally and visually, without deep technical explanation.
+This section should make users curious about Alfie as a financial intelligence system.
+
+4. Problem: What’s Broken
+
+Explain that banking hasn’t evolved while people have.
+Highlight lack of guidance, lack of context, and lack of understanding in traditional banks and fintechs.
+
+5. Philosophy
+
+Clearly state that most banks overload users with data.
+Emphasize “signal over noise” and respect for user attention.
+
+6. Alfie (Core Moat)
+
+Explain Alfie as a financial intelligence layer, not a chatbot.
+Show that it reasons about money, understands context, and supports better decisions over time.
+
+7. Signals Over Noise (Very Important Section)
+
+This is the most important scroll depth.
+Visually and textually emphasize that Alfie surfaces what matters, when it matters — not constant alerts or dashboards.
+
+8. Product Capabilities (High-Level)
+
+Present familiar banking foundations (accounts, cards, payments) but emphasize smarter execution powered by intelligence.
+
+9. Trust & Responsibility
+
+Communicate seriousness around AI + money.
+Emphasize user control, transparency, and responsibility.
+
+10. Future-Facing Vision
+
+Show growth without overpromising.
+Alfie starts with individuals but is built to support businesses and broader financial decision-making over time.
+
+11. Alfie as Infrastructure
+
+Position Alfie as a modular intelligence system, not a single feature.
+Signal platform depth and long-term strategic vision.
+
+12. Belief-Driven Close
+
+Reaffirm the mission with a short, emotional close.
+Include a final CTA.
+
+13. Footer
+
+Footer should include sections for:
+
+Alfie AI (Individuals / Businesses / Platform)
+
+Company
+
+Legal
+
+DESIGN REQUIREMENTS
+
+Minimal, editorial, modern fintech aesthetic
+
+Generous whitespace
+
+Strong hierarchy and readable typography
+
+No cartoon illustrations
+
+No flashy gradients or gimmicks
+
+Calm, confident, premium feel
+
+The page should feel like a serious financial company building long-term infrastructure, not a consumer app chasing trends.
+
+This project was built with [Lovable](https://lovable.dev).
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/bc41e1f8-6f34-4df2-b7a2-36331c15c8e7).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

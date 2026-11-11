@@ -264,37 +264,28 @@ export function ComingSoon() {
         <Eyebrow>Coming soon</Eyebrow>
         <H2>What we're building next.</H2>
 
-        <div className="relative mt-16">
-          {/* Soft ambient wash so the glass has light to refract — page stays white */}
-          <div aria-hidden className="pointer-events-none absolute -inset-10 overflow-visible">
-            <div className="absolute -top-16 left-[6%] w-96 h-96 rounded-full bg-primary/15 blur-3xl" />
-            <div className="absolute top-1/3 right-[4%] w-80 h-80 rounded-full bg-amber-200/40 blur-3xl" />
-            <div className="absolute -bottom-20 left-[38%] w-72 h-72 rounded-full bg-orange-100/50 blur-3xl" />
-          </div>
-
-          <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {soon.map((f) => (
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {soon.map((f) => (
+            <div
+              key={f.title}
+              className="relative overflow-hidden rounded-[1.75rem] p-9 bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1.5 hover:bg-black/[0.075] hover:shadow-[0_26px_50px_-12px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,0,0,0.04)] group min-h-[260px]"
+            >
+              {/* Specular sheen across the top of the glass */}
               <div
-                key={f.title}
-                className="relative overflow-hidden rounded-[1.75rem] p-9 bg-white/40 backdrop-blur-xl backdrop-saturate-150 border border-white/70 shadow-[0_8px_32px_rgba(31,38,135,0.07),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(255,255,255,0.35)] transition-all duration-500 hover:-translate-y-1.5 hover:bg-white/55 hover:shadow-[0_24px_48px_-12px_rgba(31,38,135,0.14),inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(255,255,255,0.4)] group min-h-[260px]"
-              >
-                {/* Specular sheen across the top of the glass */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/70 via-white/15 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-white/60 backdrop-blur-md border border-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_4px_14px_rgba(31,38,135,0.06)] flex items-center justify-center mb-6 group-hover:bg-white/80 transition-colors duration-500">
-                    <f.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
-                    {f.title}
-                  </h3>
-                  <p className="text-base text-black/70 font-medium leading-relaxed">{f.desc}</p>
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              <div className="relative">
+                <div className="w-14 h-14 rounded-2xl bg-white/55 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_rgba(0,0,0,0.05)] flex items-center justify-center mb-6 group-hover:bg-white/75 transition-colors duration-500">
+                  <f.icon className="w-7 h-7 text-primary" />
                 </div>
+                <h3 className="text-lg font-semibold text-black/85 mb-3" style={{ fontFamily: SF_FONT }}>
+                  {f.title}
+                </h3>
+                <p className="text-base text-black/70 font-medium leading-relaxed">{f.desc}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </Fade>
     </section>

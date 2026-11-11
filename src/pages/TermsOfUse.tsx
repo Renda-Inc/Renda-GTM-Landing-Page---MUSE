@@ -50,7 +50,7 @@ export default function TermsOfUse() {
                   <Link
                     key={policy.slug}
                     to={`/terms/${policy.slug}`}
-                    className="group flex items-start gap-5 p-6 sm:p-7 rounded-2xl bg-[#F6F5F2] border border-transparent transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]"
+                    className="group flex items-start gap-5 p-6 sm:p-7 rounded-2xl bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-black/[0.075] hover:shadow-[0_26px_50px_-12px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,0,0,0.04)]"
                   >
                     <FileText className="w-6 h-6 text-black mt-0.5 shrink-0" />
                     <div className="flex-1 min-w-0">

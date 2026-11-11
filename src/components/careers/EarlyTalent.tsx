@@ -55,7 +55,7 @@ export default function EarlyTalent() {
 
           {/* Right — Application form */}
           <Fade>
-            <div className="bg-[#F6F5F2] rounded-2xl p-8 border border-transparent sticky top-32">
+            <div className="bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 rounded-2xl p-8 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] sticky top-32">
               <h3 className="text-xl font-semibold text-foreground mb-2">Send us your resume</h3>
               <p className="text-sm text-black font-medium mb-8">
                 Tell us about yourself and we'll be in touch if there's a fit.

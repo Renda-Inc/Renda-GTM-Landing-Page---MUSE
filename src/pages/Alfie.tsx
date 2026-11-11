@@ -61,17 +61,23 @@ function HowItWorks() {
             return (
               <div
                 key={stage.name}
-                className="bg-[#F6F5F2] rounded-2xl p-9 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] group min-h-[260px]"
+                className="relative overflow-hidden rounded-[1.75rem] p-9 bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1.5 hover:bg-black/[0.075] hover:shadow-[0_26px_50px_-12px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,0,0,0.04)] group min-h-[260px]"
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="relative">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_PRO }}>
+                    {stage.name}
+                  </h3>
+                  <p className="text-base text-black font-medium leading-relaxed">
+                    {stage.desc}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_PRO }}>
-                  {stage.name}
-                </h3>
-                <p className="text-base text-black font-medium leading-relaxed">
-                  {stage.desc}
-                </p>
               </div>
             );
           })}

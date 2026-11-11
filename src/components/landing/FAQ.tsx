@@ -65,7 +65,7 @@ export default function FAQ() {
             return (
               <div
                 key={i}
-                className={`bg-[#F6F5F2] transition-all duration-500 ease-in-out ${
+                className={`bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] transition-all duration-500 ease-in-out ${
                   isOpen ? "rounded-[32px]" : "rounded-full"
                 }`}
               >

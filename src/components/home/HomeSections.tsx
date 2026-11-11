@@ -87,7 +87,7 @@ export function SmartAccounts() {
             meaningful insights, and support better financial decisions.
           </p>
 
-          <div className="mt-8 inline-flex items-start gap-3 rounded-xl bg-[#F6F5F2] px-5 py-4 text-left">
+          <div className="mt-8 inline-flex items-start gap-3 rounded-xl bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_6px_20px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.65)] px-5 py-4 text-left">
             <ShieldCheck className="w-5 h-5 text-black/70 mt-0.5 shrink-0" />
             <p className="text-sm text-black/70 font-medium leading-relaxed">
               Your money is protected. CDIC-eligible deposit protection through our sponsor bank,
@@ -279,10 +279,10 @@ export function ComingSoon() {
                 <div className="w-14 h-14 rounded-2xl bg-white/55 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_rgba(0,0,0,0.05)] flex items-center justify-center mb-6 group-hover:bg-white/75 transition-colors duration-500">
                   <f.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-black/85 mb-3" style={{ fontFamily: SF_FONT }}>
+                <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
                   {f.title}
                 </h3>
-                <p className="text-base text-black/70 font-medium leading-relaxed">{f.desc}</p>
+                <p className="text-base text-black font-medium leading-relaxed">{f.desc}</p>
               </div>
             </div>
           ))}

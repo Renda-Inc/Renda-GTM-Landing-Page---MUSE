@@ -33,14 +33,3 @@ export const timeline = [
 ];
 
 
-export const vcPartners = [
-  { name: "Y Combinator", logo: "YC" },
-  { name: "Andreessen Horowitz", logo: "a16z" },
-  { name: "Sequoia Capital", logo: "Sequoia" },
-  { name: "Accel", logo: "Accel" },
-  { name: "Index Ventures", logo: "Index" },
-  { name: "Ribbit Capital", logo: "Ribbit" },
-  { name: "Lightspeed", logo: "Lightspeed" },
-  { name: "General Catalyst", logo: "GC" },
-];
-

@@ -2,7 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import { ArrowRight } from "lucide-react";
-import { beliefs, values, vcPartners } from "@/components/about/content";
+import { beliefs, values } from "@/components/about/content";
 import Timeline from "@/components/about/Timeline";
 import ValuesAccordion from "@/components/about/ValuesAccordion";
 import aboutOverhead from "@/assets/about-overhead.jpg";
@@ -229,30 +229,6 @@ export default function About() {
       </section>
 
 
-
-      {/* ── Partners & Backers ────────────────────────────── */}
-      <section className="py-16 lg:py-20">
-        <Fade className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-[15px] font-semibold tracking-[0.08em] text-brand-orange mb-8">Partners & Backers</p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            Backed by those who believe.
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            We're fortunate to be supported by investors and partners who share our long-term vision for intelligent finance.
-          </p>
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-5">
-            {vcPartners.map((p) => (
-              <div
-                key={p.name}
-                className="h-24 rounded-2xl border border-border bg-card hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 flex flex-col items-center justify-center gap-1"
-              >
-                <span className="text-lg font-bold text-foreground">{p.logo}</span>
-                <span className="text-xs text-muted-foreground">{p.name}</span>
-              </div>
-            ))}
-          </div>
-        </Fade>
-      </section>
 
       <Divider />
 

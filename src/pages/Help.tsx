@@ -31,7 +31,7 @@ export default function Help() {
           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
       }}
     >
-      <Navbar />
+      <Navbar variant="solid" />
 
       {/* Hero */}
       <section

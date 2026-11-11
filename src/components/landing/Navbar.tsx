@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useDropdownPosition } from "@/hooks/use-dropdown-position";
-import rendaLogoBlack from "@/assets/renda-logo-black.png";
+import rendaLogoOrange from "@/assets/renda-logo-orange.png";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
 import featuredAlfie from "@/assets/about-alfie.jpg";
 import featuredBelief from "@/assets/about-belief.jpg";
@@ -182,7 +182,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
-            src={scrolled || activeDropdown || variant === "solid" ? rendaLogoBlack : rendaLogoWhite}
+            src={scrolled || activeDropdown || variant === "solid" ? rendaLogoOrange : rendaLogoWhite}
             alt="Renda"
             className="h-7 w-auto transition-opacity duration-300"
           />

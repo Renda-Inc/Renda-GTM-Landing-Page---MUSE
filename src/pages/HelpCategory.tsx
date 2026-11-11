@@ -20,7 +20,7 @@ export default function HelpCategory() {
             '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
         }}
       >
-        <Navbar />
+        <Navbar variant="solid" />
         <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h1 className="text-3xl font-semibold text-foreground">Category not found</h1>
@@ -44,7 +44,7 @@ export default function HelpCategory() {
           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
       }}
     >
-      <Navbar />
+      <Navbar variant="solid" />
 
       {/* Header */}
       <section className="pt-32 lg:pt-40 pb-10">

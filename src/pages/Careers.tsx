@@ -28,7 +28,7 @@ export default function Careers() {
           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
       }}
     >
-      <Navbar />
+      <Navbar variant="solid" />
       <CareersHero />
       <WhyJoinRenda />
       <Divider />

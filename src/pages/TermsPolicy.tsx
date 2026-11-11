@@ -26,7 +26,7 @@ export default function TermsPolicy() {
   if (!policy || !parentSection) {
     return (
       <main className="min-h-screen bg-background" style={fontStyle}>
-        <Navbar />
+        <Navbar variant="solid" />
         <section className="pt-32 pb-24 lg:pt-44 lg:pb-32">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h1 className="text-3xl font-semibold text-foreground">Policy not found</h1>
@@ -42,7 +42,7 @@ export default function TermsPolicy() {
 
   return (
     <main className="min-h-screen bg-background text-foreground" style={fontStyle}>
-      <Navbar />
+      <Navbar variant="solid" />
 
       <section className="pt-32 lg:pt-40 pb-10 px-6">
         <div className="max-w-4xl mx-auto">

@@ -85,7 +85,7 @@ export default function PersonalBanking() {
 
   return (
     <main className="min-h-screen bg-background" style={{ fontFamily: SF_FONT }}>
-      <Navbar />
+      <Navbar variant="solid" />
 
       {/* ════════════ HERO ════════════ */}
       <section className="pt-32 pb-16 lg:pt-44 lg:pb-24">

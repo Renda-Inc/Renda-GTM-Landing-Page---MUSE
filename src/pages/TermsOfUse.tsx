@@ -14,7 +14,7 @@ export default function TermsOfUse() {
           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',
       }}
     >
-      <Navbar />
+      <Navbar variant="solid" />
 
       {/* Hero */}
       <header className="pt-32 pb-16 px-6">

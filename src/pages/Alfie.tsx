@@ -68,7 +68,7 @@ function HowItWorks() {
                   className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"
                 />
                 <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <div className="w-14 h-14 rounded-2xl bg-white/55 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_rgba(0,0,0,0.05)] flex items-center justify-center mb-6 group-hover:bg-white/75 transition-colors duration-500">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_PRO }}>

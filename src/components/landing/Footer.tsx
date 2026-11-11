@@ -91,7 +91,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 xl:gap-24 justify-center">
           <div className="lg:max-w-xs shrink-0">
             <a href="/">
-              <img src={rendaLogoWhite} alt="Renda" className="h-16 w-auto" />
+              <img src={rendaLogoWhite} alt="Renda" className="h-[42px] w-auto" />
             </a>
             <p className="mt-3 text-base text-background/80 max-w-xs leading-relaxed">
               The Intelligence-first financial infrastructure for individuals and businesses.

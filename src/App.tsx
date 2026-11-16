@@ -22,7 +22,6 @@ const TermsPolicy = lazy(() => import("./pages/TermsPolicy"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const WhyRenda = lazy(() => import("./pages/WhyRenda"));
 const Leadership = lazy(() => import("./pages/Leadership"));
-const AlfiePlatform = lazy(() => import("./pages/AlfiePlatform"));
 const Alfie = lazy(() => import("./pages/Alfie"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -48,7 +47,6 @@ const App = () => (
             <Route path="/business-banking" element={<BusinessBanking />} />
             <Route path="/why-renda" element={<WhyRenda />} />
             <Route path="/leadership" element={<Leadership />} />
-            <Route path="/alfie-platform" element={<AlfiePlatform />} />
             <Route path="/alfie" element={<Alfie />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogArticle />} />

@@ -28,15 +28,6 @@ const footerColumns = [
     ],
   },
   {
-    heading: "Platform",
-    links: [
-      { label: "Alfie Platform", href: "/alfie-platform" },
-      { label: "Alfie as Infrastructure", href: "#infrastructure" },
-      { label: "Developer & Integration", href: "#" },
-      { label: "Security & Compliance", href: "#" },
-    ],
-  },
-  {
     heading: "Alfie",
     links: [
       { label: "How Alfie Works", href: "/alfie" },

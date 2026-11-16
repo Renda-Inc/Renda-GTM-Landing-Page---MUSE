@@ -6,7 +6,6 @@ import rendaLogoOrange from "@/assets/renda-logo-orange.png";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
 import featuredAlfie from "@/assets/about-alfie.jpg";
 import featuredBelief from "@/assets/about-belief.jpg";
-import featuredPlatform from "@/assets/timeline-alfie.jpg";
 import featuredCompany from "@/assets/about-overhead.jpg";
 
 const SF_PRO =
@@ -90,27 +89,6 @@ const navDropdowns: Dropdown[] = [
       title: "Finance should empower, not overwhelm",
       desc: "Read the founding conviction behind Renda's approach to modern money.",
       href: "/why-renda#philosophy",
-    },
-  },
-  {
-    label: "Platform",
-    href: "#infrastructure",
-    columns: [
-      {
-        items: [
-          { label: "Alfie Platform", href: "/alfie-platform" },
-          { label: "Alfie as Infrastructure", href: "#infrastructure" },
-          { label: "Developer & Integration", href: "#" },
-          { label: "Security & Compliance", href: "#" },
-        ],
-      },
-    ],
-    featured: {
-      eyebrow: "FEATURED",
-      image: featuredPlatform,
-      title: "Alfie as financial infrastructure",
-      desc: "How the reasoning engine powers fintechs, platforms, and partners.",
-      href: "#infrastructure",
     },
   },
   {

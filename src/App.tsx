@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 // instead of one large bundle for the whole site.
 const Index = lazy(() => import("./pages/Index"));
 const Sample = lazy(() => import("./pages/Sample"));
+const Sample2 = lazy(() => import("./pages/Sample2"));
 const About = lazy(() => import("./pages/About"));
 const Careers = lazy(() => import("./pages/Careers"));
 const PersonalBanking = lazy(() => import("./pages/PersonalBanking"));
@@ -43,6 +44,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/sample" element={<Sample />} />
+            <Route path="/sample-2" element={<Sample2 />} />
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/personal-banking" element={<PersonalBanking />} />

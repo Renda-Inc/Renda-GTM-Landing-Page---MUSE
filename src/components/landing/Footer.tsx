@@ -151,9 +151,14 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-background/15 text-sm text-background/60 flex flex-wrap items-center justify-between gap-3">
           <span>© {new Date().getFullYear()} Renda. All rights reserved.</span>
-          <a href={siteLink("/sample")} className="text-background/70 transition-colors hover:text-background">
-            Sample page
-          </a>
+          <span className="flex items-center gap-5">
+            <a href={siteLink("/sample")} className="text-background/70 transition-colors hover:text-background">
+              Sample page
+            </a>
+            <a href={siteLink("/sample-2")} className="text-background/70 transition-colors hover:text-background">
+              Sample 2
+            </a>
+          </span>
         </div>
       </div>
     </footer>

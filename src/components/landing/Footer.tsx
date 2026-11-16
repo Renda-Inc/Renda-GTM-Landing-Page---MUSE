@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Facebook } from "lucide-react";
+import { siteLink } from "@/lib/site-link";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
 
 const SF_PRO =
@@ -143,7 +144,7 @@ export default function Footer() {
                     {col.links.map((link) => (
                       <li key={link.label}>
                         <a
-                          href={link.href}
+                          href={siteLink(link.href)}
                           className="text-background transition-colors duration-200 group-hover/cols:text-background/60 hover:!text-background"
                         >
                           {link.label}

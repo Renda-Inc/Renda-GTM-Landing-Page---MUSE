@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useDropdownPosition } from "@/hooks/use-dropdown-position";
+import { siteLink } from "@/lib/site-link";
 import rendaLogoOrange from "@/assets/renda-logo-orange.png";
 import rendaLogoWhite from "@/assets/renda-logo-white.png";
 import featuredAlfie from "@/assets/about-alfie.jpg";
@@ -257,7 +258,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                               {col.items.map((item) => (
                                 <a
                                   key={item.label}
-                                  href={item.href}
+                                  href={siteLink(item.href)}
                                   className="flex items-center gap-2.5 py-1.5 text-base text-foreground/90 transition-colors duration-200 group-hover/cols:text-foreground/60 hover:!text-foreground/90 whitespace-nowrap"
                                 >
                                   {item.label}
@@ -272,7 +273,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                           ))}
                           {dropdown.featured && (
                             <a
-                              href={dropdown.featured.href}
+                              href={siteLink(dropdown.featured.href)}
                               className="block group rounded-2xl overflow-hidden bg-secondary/60 hover:bg-secondary transition-colors"
                             >
                               <div className="aspect-[16/10] overflow-hidden">
@@ -356,7 +357,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
                         {col.items.map((item) => (
                           <a
                             key={item.label}
-                            href={item.href}
+                            href={siteLink(item.href)}
                             className="flex items-center gap-2 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                             onClick={() => setMobileOpen(false)}
                           >

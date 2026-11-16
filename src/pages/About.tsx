@@ -189,7 +189,7 @@ export default function About() {
                 Meet the people leading the efforts for a new kind of financial experience — bringing together financial infrastructure, intelligent technology, and the products that will shape the future of finance.
               </p>
               <a
-                href="/leadership"
+                href={`${import.meta.env.BASE_URL}leadership`}
                 className="mt-8 inline-flex h-12 px-8 items-center gap-2 rounded-full bg-white text-[#111111] text-base font-semibold hover:bg-white/90 transition-colors"
               >
                 Meet the team

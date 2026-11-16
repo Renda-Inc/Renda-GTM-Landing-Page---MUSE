@@ -180,7 +180,7 @@ export default function Navbar({ variant = "default" }: { variant?: "default" | 
       >
       <div ref={headerRef} className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <a href={import.meta.env.BASE_URL} className="flex items-center">
           <img
             src={scrolled || activeDropdown || variant === "solid" ? rendaLogoOrange : rendaLogoWhite}
             alt="Renda"

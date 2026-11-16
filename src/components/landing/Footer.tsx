@@ -90,7 +90,7 @@ export default function Footer() {
       <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 2xl:px-32">
         <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 xl:gap-24 justify-center">
           <div className="lg:max-w-xs shrink-0">
-            <a href="/">
+            <a href={import.meta.env.BASE_URL}>
               <img src={rendaLogoWhite} alt="Renda" className="h-[42px] w-auto" />
             </a>
             <p className="mt-3 text-base text-background/80 max-w-xs leading-relaxed">
@@ -118,7 +118,7 @@ export default function Footer() {
               {/* QR Code — download the app */}
               <div className="bg-background p-2 rounded-xl w-32 h-32 self-start">
                 <img
-                  src="/qr-download.svg"
+                  src={`${import.meta.env.BASE_URL}qr-download.svg`}
                   alt="QR code to download the Renda app"
                   className="w-full h-full"
                   width={128}

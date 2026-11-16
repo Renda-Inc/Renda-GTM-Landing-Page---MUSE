@@ -149,8 +149,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-background/15 text-sm text-background/60">
-          © {new Date().getFullYear()} Renda. All rights reserved.
+        <div className="mt-16 pt-8 border-t border-background/15 text-sm text-background/60 flex flex-wrap items-center justify-between gap-3">
+          <span>© {new Date().getFullYear()} Renda. All rights reserved.</span>
+          <a href={siteLink("/sample")} className="text-background/70 transition-colors hover:text-background">
+            Sample page
+          </a>
         </div>
       </div>
     </footer>

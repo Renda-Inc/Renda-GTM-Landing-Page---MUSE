@@ -251,10 +251,10 @@ export function DailyMoney() {
 
 /* ─── 8. Coming soon ─── */
 const soon = [
-  { icon: TrendingUp, title: "Investing", desc: "Grow long-term wealth with Alfie's context on your whole financial picture." },
-  { icon: CreditCard, title: "Credit", desc: "Borrowing that understands your cash flow, not just your score." },
-  { icon: Globe2, title: "International payments", desc: "Move money across borders with clarity on every fee." },
-  { icon: Sparkle, title: "More, powered by Alfie", desc: "Every new Renda product is built on the same intelligence layer." },
+  { icon: TrendingUp, tint: "bg-[#FDEBD3]", title: "Investing", desc: "Grow long-term wealth with Alfie's context on your whole financial picture." },
+  { icon: CreditCard, tint: "bg-[#F1EAFB]", title: "Credit", desc: "Borrowing that understands your cash flow, not just your score." },
+  { icon: Globe2, tint: "bg-[#E0EDFB]", title: "International payments", desc: "Move money across borders with clarity on every fee." },
+  { icon: Sparkle, tint: "bg-[#DFF7F5]", title: "More, powered by Alfie", desc: "Every new Renda product is built on the same intelligence layer." },
 ];
 
 export function ComingSoon() {
@@ -268,15 +268,10 @@ export function ComingSoon() {
           {soon.map((f) => (
             <div
               key={f.title}
-              className="relative overflow-hidden rounded-[1.75rem] p-9 bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1.5 hover:bg-black/[0.075] hover:shadow-[0_26px_50px_-12px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,0,0,0.04)] group min-h-[260px]"
+              className={`rounded-[1.75rem] p-9 ${f.tint} transition-transform duration-500 hover:scale-[1.02] min-h-[260px]`}
             >
-              {/* Specular sheen across the top of the glass */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-              />
-              <div className="relative">
-                <div className="w-14 h-14 rounded-2xl bg-white/55 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_rgba(0,0,0,0.05)] flex items-center justify-center mb-6 group-hover:bg-white/75 transition-colors duration-500">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-white/80 ring-1 ring-black/5 flex items-center justify-center mb-6">
                   <f.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>

@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "What is Renda?",
     answer:
-      "Renda is Canada's first conversational AI neobank. We're building the AI-powered financial operating system for the next generation. Through Alfie, our proprietary AI, you can understand, automate, and manage your money through natural conversation — replacing confusing banking interfaces with clarity.",
+      "Renda is Canada's first conversational AI neobank. We're building the AI-powered financial operating system for the next generation. Through Alfie, our proprietary AI, you can understand, automate, and manage your money through natural conversation, replacing confusing banking interfaces with clarity.",
   },
   {
     question: "What can I do with Renda?",
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "What is Alfie?",
     answer:
-      "Alfie is Renda's proprietary financial AI, and your AI financial partner. It helps you understand your money, answer financial questions, automate decisions, and plan for the future — all through simple conversation. Think of it as a financial operating system for your life.",
+      "Alfie is Renda's proprietary financial AI, and your AI financial partner. It helps you understand your money, answer financial questions, automate decisions, and plan for the future, all through simple conversation. Think of it as a financial operating system for your life.",
   },
   {
     question: "When will Renda launch? Who can join?",

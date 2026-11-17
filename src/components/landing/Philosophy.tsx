@@ -30,7 +30,7 @@ export default function Philosophy() {
                 noise to find what matters.
               </p>
               <p className="text-foreground font-medium">
-                Renda is designed to respect your time and surface only what's relevant —
+                Renda is designed to respect your time and surface only what's relevant,
                 when it's relevant.
               </p>
             </div>

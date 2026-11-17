@@ -186,7 +186,7 @@ export default function About() {
                 The people behind Renda.
               </h2>
               <p className="text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-xl">
-                Meet the people leading the efforts for a new kind of financial experience — bringing together financial infrastructure, intelligent technology, and the products that will shape the future of finance.
+                Meet the people leading the efforts for a new kind of financial experience, bringing together financial infrastructure, intelligent technology, and the products that will shape the future of finance.
               </p>
               <a
                 href={`${import.meta.env.BASE_URL}leadership`}

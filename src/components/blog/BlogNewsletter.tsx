@@ -16,7 +16,7 @@ export default function BlogNewsletter() {
           Stay informed.
         </h2>
         <p className="mt-4 text-base text-background/80 leading-relaxed">
-          Get our latest thinking on AI, banking, and financial infrastructure — delivered
+          Get our latest thinking on AI, banking, and financial infrastructure, delivered
           monthly. No noise.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">

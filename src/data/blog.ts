@@ -28,7 +28,7 @@ export const articles: Article[] = [
     slug: "why-ai-native-banking",
     title: "Why AI-Native Banking Is Inevitable",
     excerpt:
-      "The financial industry is approaching an inflection point. Legacy infrastructure wasn't built for intelligence — and retrofitting AI onto outdated systems won't be enough.",
+      "The financial industry is approaching an inflection point. Legacy infrastructure wasn't built for intelligence, and retrofitting AI onto outdated systems won't be enough.",
     category: "AI & Finance",
     date: "Feb 12, 2026",
     readTime: "8 min read",
@@ -39,7 +39,7 @@ export const articles: Article[] = [
     slug: "introducing-smartspend",
     title: "Introducing SmartSpend: Accounts That Understand Your Money",
     excerpt:
-      "Today we're unveiling SmartSpend — a new kind of account that doesn't just store your money, but actively helps you understand and manage it.",
+      "Today we're unveiling SmartSpend, a new kind of account that doesn't just store your money, but actively helps you understand and manage it.",
     category: "Product",
     date: "Feb 5, 2026",
     readTime: "5 min read",
@@ -80,7 +80,7 @@ export const articles: Article[] = [
     slug: "future-of-savings",
     title: "The End of Set-and-Forget Savings",
     excerpt:
-      "Static savings rules ignore the reality of how people live. Adaptive savings — powered by real-time financial intelligence — represents a fundamental shift.",
+      "Static savings rules ignore the reality of how people live. Adaptive savings, powered by real-time financial intelligence, represents a fundamental shift.",
     category: "AI & Finance",
     date: "Jan 6, 2026",
     readTime: "6 min read",
@@ -100,7 +100,7 @@ export const articles: Article[] = [
     slug: "building-alfie-platform",
     title: "Under the Hood: Building the Alfie Intelligence Platform",
     excerpt:
-      "A look at the engineering decisions behind Alfie — from real-time transaction analysis to conversational financial insights.",
+      "A look at the engineering decisions behind Alfie, from real-time transaction analysis to conversational financial insights.",
     category: "Product",
     date: "Dec 10, 2025",
     readTime: "9 min read",

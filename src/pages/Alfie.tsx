@@ -219,7 +219,7 @@ export default function Alfie() {
             <Eyebrow>Enterprise & Government</Eyebrow>
             <SectionHeading>Intelligence for the financial systems that matter.</SectionHeading>
             <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-foreground md:text-lg">
-              Alfie gives enterprises and government organizations the ability to reason across complex financial information, systems, regulations, and workflows — securely and at scale.
+              Alfie gives enterprises and government organizations the ability to reason across complex financial information, systems, regulations, and workflows, securely and at scale.
             </p>
           </Reveal>
           <Reveal className="mt-12 overflow-hidden rounded-3xl">
@@ -243,7 +243,7 @@ export default function Alfie() {
               <Eyebrow>Alfie Agents</Eyebrow>
               <SectionHeading>From intelligence to work.</SectionHeading>
               <p className="mt-6 text-base font-medium leading-relaxed text-foreground md:text-lg">
-                Alfie can move beyond answering questions to performing financial work — analyzing information, preparing reports, monitoring activity, coordinating workflows, and surfacing issues for human review.
+                Alfie can move beyond answering questions to performing financial work, analyzing information, preparing reports, monitoring activity, coordinating workflows, and surfacing issues for human review.
               </p>
               <div className="mt-10 grid grid-cols-2 border-t border-border">
                 {agents.map((agent) => (
@@ -266,7 +266,7 @@ export default function Alfie() {
         <Reveal className="mx-auto max-w-4xl px-6 text-center">
           <SectionHeading light>Financial intelligence for the work that matters.</SectionHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-relaxed text-background/80 md:text-lg">
-            From personal finances to the world's most complex financial organizations, Alfie is designed to turn financial information into intelligence — and intelligence into action.
+            From personal finances to the world's most complex financial organizations, Alfie is designed to turn financial information into intelligence, and intelligence into action.
           </p>
         </Reveal>
       </section>

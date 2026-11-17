@@ -1,3 +1,4 @@
+import "@fontsource-variable/geist";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import Footer from "@/components/landing/Footer";
@@ -19,7 +20,7 @@ import {
 const Index = () => {
   return (
     <main
-      className="min-h-screen bg-background"
+      className="home-geist-headers min-h-screen bg-background"
       style={{
         fontFamily:
           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", system-ui, "Helvetica Neue", Arial, sans-serif',

@@ -138,6 +138,19 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+
+  /* Test (2026-11-17): Loop page header treatment on the Home page only.
+     Geist for headings, tight tracking, medium weight. Revert by removing
+     this block and the home-geist-headers class in src/pages/Index.tsx. */
+  .home-geist-headers h1,
+  .home-geist-headers h2,
+  .home-geist-headers h3,
+  .home-geist-headers h4 {
+    font-family: "Geist Variable", "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    font-weight: 500;
+  }
   }
 }
 

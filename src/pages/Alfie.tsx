@@ -37,10 +37,10 @@ function SectionHeading({ children, light = false }: { children: React.ReactNode
 }
 
 const stages = [
-  { name: "Connect", desc: "Bring together the financial data, systems, documents, and information Alfie needs.", icon: Link2 },
-  { name: "Understand", desc: "Alfie builds context across financial activity, recognizing relationships, patterns, obligations, risks, and opportunities.", icon: Brain },
-  { name: "Reason", desc: "Analyze information, investigate questions, understand scenarios, and determine what matters.", icon: Lightbulb },
-  { name: "Act", desc: "Turn intelligence into recommendation.", icon: Zap },
+  { name: "Connect", tint: "bg-[#FDEBD3]", desc: "Bring together the financial data, systems, documents, and information Alfie needs.", icon: Link2 },
+  { name: "Understand", tint: "bg-[#F1EAFB]", desc: "Alfie builds context across financial activity, recognizing relationships, patterns, obligations, risks, and opportunities.", icon: Brain },
+  { name: "Reason", tint: "bg-[#E0EDFB]", desc: "Analyze information, investigate questions, understand scenarios, and determine what matters.", icon: Lightbulb },
+  { name: "Act", tint: "bg-[#DFF7F5]", desc: "Turn intelligence into recommendation.", icon: Zap },
 ];
 
 function HowItWorks() {
@@ -61,14 +61,10 @@ function HowItWorks() {
             return (
               <div
                 key={stage.name}
-                className="relative overflow-hidden rounded-[1.75rem] p-9 bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1.5 hover:bg-black/[0.075] hover:shadow-[0_26px_50px_-12px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,0,0,0.04)] group min-h-[260px]"
+                className={`rounded-[1.75rem] p-9 ${stage.tint} transition-transform duration-500 hover:scale-[1.02] min-h-[260px]`}
               >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-white/55 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_rgba(0,0,0,0.05)] flex items-center justify-center mb-6 group-hover:bg-white/75 transition-colors duration-500">
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-white/80 ring-1 ring-black/5 flex items-center justify-center mb-6">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_PRO }}>

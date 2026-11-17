@@ -151,6 +151,11 @@
     line-height: 1.05;
     font-weight: 500;
   }
+
+  /* Hero headline only: next level of boldness (user, 2026-11-17). */
+  .home-geist-headers h1 {
+    font-weight: 800;
+  }
   }
 }
 

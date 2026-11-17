@@ -136,60 +136,112 @@ export default function PersonalBanking() {
       {/* ════════════ SMART ACCOUNTS ════════════ */}
       <section id="smart-accounts" className="scroll-mt-20 py-16 lg:py-20">
         <Fade className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <Eyebrow>Smart Accounts</Eyebrow>
-              <H2>Your money shouldn't just sit there. It should think.</H2>
-              <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
-                Meet SmartSpend and SenseSave, intelligent accounts monitored by Alfie to
-                deliver meaningful insights and help you make more confident financial
-                decisions.
+          <div className="max-w-3xl">
+            <Eyebrow>Smart Accounts</Eyebrow>
+            <H2>Two accounts that do the thinking with you.</H2>
+            <p className="mt-6 text-base md:text-lg text-black font-medium leading-relaxed">
+              Meet SmartSpend and SenseSave, intelligent accounts monitored by Alfie to
+              deliver meaningful insights and help you make more confident financial
+              decisions.
+            </p>
+          </div>
+
+          {/* Account cards, same layout and size as Sample 2 */}
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[32px] bg-[#FAF7F1] p-9">
+              <Wallet className="w-[26px] h-[26px] text-primary" />
+              <h3
+                className="mt-4 text-[26px] font-semibold tracking-tight text-black/80"
+                style={{ fontFamily: SF_FONT }}
+              >
+                SmartSpend
+              </h3>
+              <p className="mt-2 max-w-md text-base text-black font-medium leading-relaxed">
+                Your everyday account, with real-time intelligence built in. Balances that tell you what is actually
+                safe to spend, after bills and goals, not just what is sitting there.
               </p>
+              <div className="mt-7 space-y-3">
+                {[
+                  { label: "Groceries", spent: "$312 of $450", pct: 69 },
+                  { label: "Dining out", spent: "$128 of $200", pct: 64 },
+                  { label: "Transport", spent: "$74 of $120", pct: 62 },
+                ].map((b) => (
+                  <div key={b.label} className="rounded-2xl bg-white px-5 py-4 shadow-sm">
+                    <div className="flex justify-between text-sm font-medium text-black/80">
+                      <span>{b.label}</span>
+                      <span>{b.spent}</span>
+                    </div>
+                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-black/[0.07]">
+                      <div className="h-full rounded-full bg-primary" style={{ width: `${b.pct}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Alfie Insight mockup */}
-            <div className="bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] rounded-2xl p-8 space-y-5 shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)]">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-primary" />
-                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground">
-                  Alfie Insight
-                </p>
+            <div className="rounded-[32px] bg-[#171008] p-9 text-white">
+              <PiggyBank className="w-[26px] h-[26px] text-primary" />
+              <h3
+                className="mt-4 text-[26px] font-semibold tracking-tight text-white"
+                style={{ fontFamily: SF_FONT }}
+              >
+                SenseSave
+              </h3>
+              <p className="mt-2 max-w-md text-base text-white/60 font-medium leading-relaxed">
+                Savings that adapt to your income and spending patterns. Alfie saves more on good weeks, eases off on
+                tight ones, and never leaves you short for a bill.
+              </p>
+              <div className="mt-7 grid grid-cols-3 gap-3 text-center">
+                {[
+                  { state: "Good week", action: "Save more", active: false },
+                  { state: "Normal week", action: "Stay the course", active: true },
+                  { state: "Tight week", action: "Save less", active: false },
+                ].map((s) => (
+                  <div
+                    key={s.state}
+                    className={`rounded-2xl px-3 py-4 ${s.active ? "bg-white text-black/80" : "bg-white/[0.07] text-white/70 ring-1 ring-white/10"}`}
+                  >
+                    <p className="text-xs font-medium opacity-70">{s.state}</p>
+                    <p className="mt-1 text-sm font-semibold leading-tight">{s.action}</p>
+                  </div>
+                ))}
               </div>
-              <div className="space-y-4">
-                <div className="bg-white rounded-xl px-5 py-4 text-[15px] text-black/80 leading-relaxed shadow-sm">
-                  "Your subscription spending increased 18% this quarter. Two services overlap, want me to flag them?"
-                </div>
-                <div className="bg-primary/10 rounded-xl px-5 py-4 text-[15px] text-black/80 leading-relaxed border border-primary/20">
-                  "I moved $120 to SenseSave. Your groceries came in under pattern this week."
-                </div>
-              </div>
-              <p className="text-sm text-black font-medium">
-                Conversations that move you forward, instead of charts you never check.
+              <p className="mt-6 text-sm leading-relaxed text-white/50 font-medium">
+                You set the goals and the guardrails. Alfie adjusts inside them, and shows its working every time.
               </p>
             </div>
           </div>
 
-          {/* Feature boxes */}
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Waste + adjustments, pastel cards matching the account cards above in width */}
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
             {[
-              { icon: Wallet, title: "SmartSpend", desc: "Your everyday account, with real-time intelligence built in." },
-              { icon: PiggyBank, title: "SenseSave", desc: "Savings that adapt to your income and spending patterns." },
-              { icon: TrendingDown, title: "Waste Detection", desc: "Alfie spots overlapping subscriptions and silent leaks." },
-              { icon: Sliders, title: "Live Adjustments", desc: "Reshape your week with insights at the moment that matters." },
+              {
+                icon: TrendingDown,
+                tint: "bg-[#FDEBD3]",
+                title: "Waste Detection",
+                desc: "Alfie spots overlapping subscriptions, price creep and silent leaks, then tells you exactly what each one costs you per year.",
+              },
+              {
+                icon: Sliders,
+                tint: "bg-[#F1EAFB]",
+                title: "Live Adjustments",
+                desc: "Plans change mid-week. Reshape budgets and goals with insights delivered at the moment that matters, not in a report at month end.",
+              },
             ].map((f) => (
               <div
                 key={f.title}
-                className="relative overflow-hidden rounded-[1.75rem] p-9 bg-black/[0.055] backdrop-blur-xl backdrop-saturate-150 border border-black/[0.06] shadow-[0_10px_34px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.65),inset_0_-1px_0_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1.5 hover:bg-black/[0.075] hover:shadow-[0_26px_50px_-12px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,0,0,0.04)] group min-h-[260px]"
+                className={`flex gap-5 rounded-[1.75rem] p-8 ${f.tint} transition-transform duration-500 hover:scale-[1.02]`}
               >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/50 via-white/10 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-white/55 backdrop-blur-md border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_14px_rgba(0,0,0,0.05)] flex items-center justify-center mb-6 group-hover:bg-white/75 transition-colors duration-500">
-                    <f.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-black/80 mb-3">{f.title}</h3>
+                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/80 ring-1 ring-black/5 flex items-center justify-center">
+                  <f.icon className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h3
+                    className="text-lg font-semibold text-black/80 mb-2"
+                    style={{ fontFamily: SF_FONT }}
+                  >
+                    {f.title}
+                  </h3>
                   <p className="text-base text-black font-medium leading-relaxed">{f.desc}</p>
                 </div>
               </div>

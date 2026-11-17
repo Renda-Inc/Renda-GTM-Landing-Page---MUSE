@@ -138,25 +138,29 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+}
 
-  /* Test (2026-11-17): Loop page header treatment on the Home page only.
-     Geist for headings, tight tracking, medium weight. Revert by removing
-     this block and the home-geist-headers class in src/pages/Index.tsx. */
-  .home-geist-headers h1,
-  .home-geist-headers h2,
-  .home-geist-headers h3,
-  .home-geist-headers h4 {
-    font-family: "Geist Variable", "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
-    letter-spacing: -0.035em;
-    line-height: 1.05;
-    font-weight: 500;
-  }
+/* Geist headers (Loop page treatment), site-wide from 2026-11-17.
+   Body headers at 500, page hero h1s at 600, Home hero at 700.
+   Sample concept pages are excluded (route check in App.tsx).
+   Kept outside @layer base so the selectors are not nested under body. */
+body.geist-headers h1,
+body.geist-headers h2,
+body.geist-headers h3,
+body.geist-headers h4 {
+  font-family: "Geist Variable", "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif !important;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  font-weight: 500;
+}
 
-  /* Hero headline only: next level of boldness (user, 2026-11-17). */
-  .home-geist-headers h1 {
-    font-weight: 800;
-  }
-  }
+body.geist-headers h1 {
+  font-weight: 600;
+}
+
+body.route-home h1 {
+  font-weight: 700;
 }
 
 @layer utilities {

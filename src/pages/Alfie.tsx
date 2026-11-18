@@ -67,7 +67,7 @@ function HowItWorks() {
                   <div className="w-14 h-14 rounded-2xl bg-white/80 ring-1 ring-black/5 flex items-center justify-center mb-6">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_PRO }}>
+                  <h3 className="text-xl font-semibold tracking-tight text-black/80 mb-3" style={{ fontFamily: SF_PRO }}>
                     {stage.name}
                   </h3>
                   <p className="text-base text-black font-medium leading-relaxed">

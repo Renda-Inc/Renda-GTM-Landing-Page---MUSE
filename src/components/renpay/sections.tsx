@@ -170,30 +170,9 @@ export function RenPayHero() {
             Sending money should feel like sending a message.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-black font-medium max-w-xl leading-relaxed">
-            RenPay is how Renda people pay each other. Find a friend by Renda ID or QR code, tap send, and the money is
+            RenPay is how Renda users pay each other. Find a friend by Renda ID or QR code, tap send, and the money is
             there in seconds, right inside the bank where the rest of your money already lives.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <a
-              href="#waitlist"
-              className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
-            >
-              Get RenPay with Renda
-            </a>
-            <a
-              href="#how-it-works"
-              className="h-12 px-8 inline-flex items-center justify-center rounded-full border border-black/15 bg-background text-foreground text-base font-medium hover:bg-black/5 transition"
-            >
-              See How It Works
-            </a>
-          </div>
-          <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-2 text-sm font-medium text-black/70">
-            {["Instant, Renda to Renda", "No account numbers to type", "Every payment labelled by Alfie"].map((t) => (
-              <li key={t} className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-primary" /> {t}
-              </li>
-            ))}
-          </ul>
         </Fade>
 
         <Fade className="relative">
@@ -421,19 +400,19 @@ const alfiePoints = [
     icon: Sparkles,
     tint: "bg-[#FDEBD3]",
     title: "Labelled the moment it lands",
-    desc: "A payment app sees a transfer. Your bank sees what it means. Alfie marks repayments, rent shares and gifts for what they are, and files each one into the right budget.",
+    desc: "Alfie marks repayments, rent shares and gifts for what they are, and files each one into the right budget.",
   },
   {
     icon: Repeat,
     tint: "bg-[#F1EAFB]",
     title: "Patterns become one tap",
-    desc: "The same split every Friday, the same rent share every month. Alfie learns the rhythm and offers it back as a single confirmation instead of a fresh form.",
+    desc: "The same split every Friday, the same rent share every month. Alfie learns the rhythm and offers it back as one tap.",
   },
   {
     icon: ShieldCheck,
     tint: "bg-[#E0EDFB]",
     title: "Checked before it sends",
-    desc: "RenPay payments are instant, so RenPay confirms the person, the amount, and anything unusual before you send, not after. A first payment to someone new gets an extra look.",
+    desc: "Payments are instant, so RenPay confirms the person and the amount before you send. First payments to someone new get an extra look.",
   },
 ];
 
@@ -524,10 +503,6 @@ export function RenPayClosing() {
         >
           Your people are already paying each other. Give them a better way.
         </h2>
-        <p className="mt-6 text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-2xl mx-auto">
-          RenPay comes with every Renda account, Everyday at $0 a month and Plus at $9.96. Open Renda, find your
-          people, and the first split is settled tonight.
-        </p>
         <div className="mt-10">
           <a
             href="#waitlist"

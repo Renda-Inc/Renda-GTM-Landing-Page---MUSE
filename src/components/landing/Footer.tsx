@@ -158,9 +158,6 @@ export default function Footer() {
             <a href={siteLink("/sample-2")} className="text-background/70 transition-colors hover:text-background">
               Sample 2
             </a>
-            <a href={siteLink("/sample-3")} className="text-background/70 transition-colors hover:text-background">
-              Sample 3
-            </a>
           </span>
         </div>
       </div>

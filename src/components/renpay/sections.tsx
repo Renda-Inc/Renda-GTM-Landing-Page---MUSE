@@ -247,7 +247,7 @@ export function HowItWorks() {
                 </div>
                 <span className="text-sm font-bold tracking-[0.14em] text-black/30">{s.step}</span>
               </div>
-              <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
+              <h3 className="text-[26px] font-semibold tracking-tight text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
                 {s.title}
               </h3>
               <p className="text-base text-black font-medium leading-relaxed">{s.desc}</p>
@@ -264,19 +264,16 @@ export function HowItWorks() {
 const moments = [
   {
     img: friendsCooking,
-    tint: "bg-[#FDEBD3]",
     title: "Split the dinner, not the friendship",
     desc: "Four people, one bill, settled before dessert. Everyone pays their share from the table, and nobody owes anyone by Monday.",
   },
   {
     img: cafeLaptop,
-    tint: "bg-[#F1EAFB]",
     title: "Rent, bills, and the roommate math",
     desc: "Send your share the moment it is due, with the note attached. Alfie remembers the pattern, so next month it is one tap.",
   },
   {
     img: adventureHike,
-    tint: "bg-[#E0EDFB]",
     title: "The group trip, squared away",
     desc: "One person books, everyone settles up as you go. Each payment is labelled, so the trip adds up cleanly at the end.",
   },
@@ -295,8 +292,8 @@ export function Moments() {
           {moments.map((m) => (
             <div key={m.title} className="rounded-[1.75rem] overflow-hidden bg-white shadow-sm">
               <img src={m.img} alt={m.title} className="h-[220px] w-full object-cover" loading="lazy" />
-              <div className={`p-8 ${m.tint} h-full`}>
-                <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
+              <div className="p-8 h-full">
+                <h3 className="text-[26px] font-semibold tracking-tight text-black/80 mb-3 leading-snug" style={{ fontFamily: SF_FONT }}>
                   {m.title}
                 </h3>
                 <p className="text-base text-black font-medium leading-relaxed">{m.desc}</p>
@@ -321,11 +318,11 @@ export function SplitAndRequest() {
         </div>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[1.75rem] bg-[#E0EDFB] p-9 transition-transform duration-500 hover:scale-[1.01]">
-            <div className="w-14 h-14 rounded-2xl bg-white/80 ring-1 ring-black/5 flex items-center justify-center mb-6">
+          <div className="rounded-[1.75rem] bg-[#F6F5F2] p-9 transition-transform duration-500 hover:scale-[1.01]">
+            <div className="w-14 h-14 rounded-2xl bg-white ring-1 ring-black/5 flex items-center justify-center mb-6">
               <Split className="w-7 h-7 text-primary" />
             </div>
-            <h3 className="text-lg font-semibold text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
+            <h3 className="text-[26px] font-semibold tracking-tight text-black/80 mb-3" style={{ fontFamily: SF_FONT }}>
               Split it on the spot
             </h3>
             <p className="text-base text-black font-medium leading-relaxed max-w-md">
@@ -358,10 +355,10 @@ export function SplitAndRequest() {
             <div className="w-14 h-14 rounded-2xl bg-white/10 ring-1 ring-white/10 flex items-center justify-center mb-6">
               <Receipt className="w-7 h-7 text-primary" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-3" style={{ fontFamily: SF_FONT }}>
+            <h3 className="text-[26px] font-semibold tracking-tight text-white mb-3" style={{ fontFamily: SF_FONT }}>
               Request it without the awkward
             </h3>
-            <p className="text-base text-white/70 font-medium leading-relaxed max-w-md">
+            <p className="text-base text-white/80 font-medium leading-relaxed max-w-md">
               Send a request with the amount and what it was for. If it sits unpaid, Alfie sends one gentle reminder,
               so you never have to write the chasing text yourself.
             </p>

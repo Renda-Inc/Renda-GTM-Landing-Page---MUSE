@@ -16,6 +16,7 @@ const Sample3 = lazy(() => import("./pages/Sample3"));
 const About = lazy(() => import("./pages/About"));
 const Careers = lazy(() => import("./pages/Careers"));
 const PersonalBanking = lazy(() => import("./pages/PersonalBanking"));
+const RenPay = lazy(() => import("./pages/RenPay"));
 const BusinessBanking = lazy(() => import("./pages/BusinessBanking"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
@@ -67,6 +68,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/personal-banking" element={<PersonalBanking />} />
+            <Route path="/renpay" element={<RenPay />} />
             <Route path="/business-banking" element={<BusinessBanking />} />
             <Route path="/why-renda" element={<WhyRenda />} />
             <Route path="/leadership" element={<Leadership />} />

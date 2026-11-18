@@ -19,6 +19,7 @@ import {
   Banknote,
   ShieldCheck,
 } from "lucide-react";
+import { siteLink } from "@/lib/site-link";
 import heroLifestyle from "@/assets/hero-lifestyle.jpg";
 import lifestyleCafe from "@/assets/lifestyle-cafe-laptop.jpg";
 import lifestyleGathering from "@/assets/lifestyle-casual-gathering.jpg";
@@ -373,6 +374,14 @@ export default function PersonalBanking() {
                 Renda ID or QR code, then move money immediately, without delays, friction,
                 or unnecessary steps.
               </p>
+              <div className="mt-8">
+                <a
+                  href={siteLink("/renpay")}
+                  className="h-12 px-8 inline-flex items-center justify-center rounded-full bg-foreground text-background text-base font-medium hover:opacity-90 transition-opacity"
+                >
+                  Explore RenPay
+                </a>
+              </div>
             </div>
 
             <div className="space-y-5">

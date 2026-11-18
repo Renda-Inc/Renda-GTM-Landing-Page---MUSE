@@ -36,7 +36,7 @@ const navDropdowns: Dropdown[] = [
         items: [
           { label: "Smart Accounts", href: "/personal-banking" },
           { label: "Cards & Payments", href: "/personal-banking#cards-payments" },
-          { label: "RenPay", href: "/personal-banking#p2p" },
+          { label: "RenPay", href: "/renpay" },
           { label: "Savings & Goals", href: "/personal-banking#savings-goals" },
           { label: "Interac", href: "/personal-banking#interac" },
         ],
